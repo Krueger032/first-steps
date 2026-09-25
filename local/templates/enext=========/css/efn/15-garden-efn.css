@@ -1,0 +1,135 @@
+@font-face {
+  font-family: '15-garden-efn';
+  src:  url('../../fonts/efn/15-garden-efn.eot?7x9pd6');
+  src:  url('../../fonts/efn/15-garden-efn.eot?7x9pd6#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/15-garden-efn.ttf?7x9pd6') format('truetype'),
+    url('../../fonts/efn/15-garden-efn.woff?7x9pd6') format('woff'),
+    url('../../fonts/efn/15-garden-efn.svg?7x9pd6#15-garden-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn15-"], [class*=" efn15-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '15-garden-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn15-greenhouse:before {
+  content: "\e900";
+}
+.efn15-seedlings:before {
+  content: "\e901";
+}
+.efn15-seeds:before {
+  content: "\e902";
+}
+.efn15-tulip-bulb:before {
+  content: "\e903";
+}
+.efn15-thuja:before {
+  content: "\e904";
+}
+.efn15-plant-pot:before {
+  content: "\e905";
+}
+.efn15-fertilizer-bag:before {
+  content: "\e906";
+}
+.efn15-fertilizers:before {
+  content: "\e907";
+}
+.efn15-liquid-fertilizer:before {
+  content: "\e908";
+}
+.efn15-soil-bag:before {
+  content: "\e909";
+}
+.efn15-compost-bin:before {
+  content: "\e90a";
+}
+.efn15-spray-bottle:before {
+  content: "\e90b";
+}
+.efn15-insect-control:before {
+  content: "\e90c";
+}
+.efn15-watering-can:before {
+  content: "\e90d";
+}
+.efn15-secateurs:before {
+  content: "\e90e";
+}
+.efn15-garden-hose:before {
+  content: "\e90f";
+}
+.efn15-lawn-roll:before {
+  content: "\e910";
+}
+.efn15-garden-storage-box:before {
+  content: "\e911";
+}
+.efn15-shed:before {
+  content: "\e922";
+}
+.efn15-storage-shed:before {
+  content: "\e912";
+}
+.efn15-garage:before {
+  content: "\e91b";
+}
+.efn15-garden-tent:before {
+  content: "\e91d";
+}
+.efn15-fence:before {
+  content: "\e913";
+}
+.efn15-fence-panel:before {
+  content: "\e91a";
+}
+.efn15-gate:before {
+  content: "\e91e";
+}
+.efn15-doghouse:before {
+  content: "\e919";
+}
+.efn15-swing:before {
+  content: "\e923";
+}
+.efn15-garden-swing:before {
+  content: "\e914";
+}
+.efn15-bench:before {
+  content: "\e917";
+}
+.efn15-picnic-bench:before {
+  content: "\e921";
+}
+.efn15-garden-furniture:before {
+  content: "\e91c";
+}
+.efn15-chaise-lounge:before {
+  content: "\e918";
+}
+.efn15-inflatable-pool:before {
+  content: "\e920";
+}
+.efn15-barbeque-grill:before {
+  content: "\e915";
+}
+.efn15-metal-skewers:before {
+  content: "\e916";
+}
+.efn15-grill-grate:before {
+  content: "\e91f";
+}

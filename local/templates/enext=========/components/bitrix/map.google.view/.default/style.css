@@ -1,0 +1,91 @@
+.object-item-marker{	
+	display: flex;
+	padding: 16px 40px 16px 16px;
+}
+
+.object-item-marker-image{	
+	width: 92px;
+	min-width: 92px;	
+	height: 49px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 12px;
+}
+
+.object-item-marker-image > img{
+	width: auto;
+	max-width: 92px !important;
+	height: auto;
+	max-height: 49px;
+}
+
+.object-item-marker-caption{
+	width: 100%;
+}
+
+.object-item-marker-title{
+	font-family: "Museo Sans Cyrl 500", sans-serif;
+	font-size: 20px;
+	color: #263238;	
+	line-height: 24px;
+}
+
+.object-item-marker-address{
+	display: flex;	
+	margin-top: 6px;
+}
+
+.object-item-marker-address > i{
+	margin-right: 6px;
+	margin-top: 2px;
+	font-size: 16px;
+	color: #b2c7cb;
+}
+
+.object-item-marker-address > span{
+	font-family: "Museo Sans Cyrl 300", sans-serif;
+	font-size: 16px;
+	color: #78909c;
+	line-height: 19px;
+}
+
+.object-item-marker-link:link,
+.object-item-marker-link:visited{
+	display: inline-flex;
+	align-items: center;
+	margin-top: 10px;
+	padding: 9px 16px 8px;
+	font-family: "Museo Sans Cyrl 300", sans-serif;
+	font-size: 16px;
+	color: #263238;
+	text-decoration: none;
+	line-height: 19px;
+	border: 1px solid #e3ecef;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+.bx-no-touch .object-item-marker-link:hover,
+.bx-touch .object-item-marker-link:active{
+	color: #fff;
+	border-color: #6639b6;
+	background: #6639b6;
+}
+
+.object-item-marker-icon-close{
+	font-size: 16px;
+	color: #78909c;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;	
+}
+
+.bx-no-touch .object-item-marker-icon-close:hover,
+.bx-touch .object-item-marker-icon-close:active{
+	color: #6639b6;
+}

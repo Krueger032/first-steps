@@ -1,0 +1,81 @@
+.popup-window.simple-prediction-popup-window{
+	width: 288px;	
+	padding: 12px 40px 12px 18px;
+	left: 50% !important;
+	top: unset !important;
+	bottom: 100%;
+	font-family: "Museo Sans Cyrl 300", sans-serif;
+	font-size: 14px;	
+	line-height: 17px;
+	background: #f6eec7;	
+	-moz-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	z-index: 202 !important;
+}
+
+.popup-window.simple-prediction-popup-window:after{
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	margin-left: -6px;
+	content: "";
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #f6eec7;
+}
+
+.simple-prediction-popup-window .popup-window-content{
+	background: none;
+}
+
+.simple-prediction-popup-window .catalog-element-popup-element{
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+}
+
+.simple-prediction-popup-window .popup-window-close-icon{
+	width: 16px;
+	height: 16px;
+	right: 12px;
+	top: 12px;
+	opacity: 1;
+}
+
+.simple-prediction-popup-window .popup-window-close-icon:after{
+	content: none;
+}
+
+.simple-prediction-popup-window .popup-window-close-icon > i{
+	font-size: 16px;
+	color: #b2c7cb;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .simple-prediction-popup-window .popup-window-close-icon:hover > i,
+.bx-touch .simple-prediction-popup-window .popup-window-close-icon:active > i{
+	color: #78909c;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.popup-window.simple-prediction-popup-window{
+		width: auto;
+		left: 0 !important;
+		right: 0;
+		-moz-transform: unset;
+		-o-transform: unset;
+		-webkit-transform: unset;
+		transform: unset;
+	}
+}
+
+/***DESKTOPS***/
+@media(min-width: 1043px) and (max-width: 1271px){
+	.popup-window.simple-prediction-popup-window{
+		width: 231px;
+	}
+}

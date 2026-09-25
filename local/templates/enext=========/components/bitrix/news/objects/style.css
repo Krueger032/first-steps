@@ -1,0 +1,119 @@
+/***SECTION_PIC***/
+.catalog-section-pic{
+	height: -moz-calc(100vw * 0.1374);
+	height: -webkit-calc(100vw * 0.1374);
+	height: calc(100vw * 0.1374);
+	position: relative;
+	background: #566b75;
+}
+
+.slide-menu-option-1-active .catalog-section-pic{	
+	height: -moz-calc((100vw - 324px) * 0.1374);
+	height: -webkit-calc((100vw - 324px) * 0.1374);
+	height: calc((100vw - 324px) * 0.1374);
+}
+
+.slide-menu-interface-2-0-1-inner .catalog-section-pic,
+.slide-menu-option-2 .catalog-section-pic{
+	height: -moz-calc((100vw - 72px) * 0.1374);
+	height: -webkit-calc((100vw - 72px) * 0.1374);
+	height: calc((100vw - 72px) * 0.1374);
+}
+
+.catalog-section-pic > a{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.catalog-section-pic > a:link,
+.catalog-section-pic > a:visited{
+	text-decoration: none;
+}
+
+.catalog-section-pic img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/***OBJECTS***/
+.objects-container .preview,
+.objects-container .objects{
+	margin-top: 32px;
+}
+
+.objects-container .description{
+	margin-top: 64px;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	/***SECTION_PIC***/
+	.catalog-section-pic,
+	.slide-menu-interface-2-0-1-inner .catalog-section-pic,
+	.slide-menu-option-1-active .catalog-section-pic,
+	.slide-menu-option-2 .catalog-section-pic{
+		height: -moz-calc(100vw * 0.1374);
+		height: -webkit-calc(100vw * 0.1374);
+		height: calc(100vw * 0.1374);
+	}
+
+	/***OBJECTS***/
+	.objects-cols{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.objects-col:first-child{
+		order: 1;
+	}
+
+	.objects-container .catalog-section-list{
+		margin-top: 0;
+	}
+	
+	.objects-container .preview,
+	.objects-container .objects{
+		margin-top: 18px;
+	}
+
+	.objects-container .description{
+		margin-top: 32px;
+	}
+}
+
+/***DESKTOPS_LARGE_DESKTOPS***/
+@media(min-width: 1043px){
+	/***OBJECTS***/
+	.objects-container > div:first-child{
+		margin-top: 0;
+	}
+}
+
+@media(min-width: 1043px) and (max-width: 1271px){
+	/***SECTION_PIC***/
+	.slide-menu-option-1-active .catalog-section-pic{
+		height: -moz-calc(100vw * 0.1374);
+		height: -webkit-calc(100vw * 0.1374);
+		height: calc(100vw * 0.1374);
+	}
+}
+
+@media(min-width: 1272px) and (max-width: 1545px){
+	/***SECTION_PIC***/
+	.slide-menu-option-1-active .catalog-section-pic{
+		height: -moz-calc(100vw * 0.1374);
+		height: -webkit-calc(100vw * 0.1374);
+		height: calc(100vw * 0.1374);
+	}
+}

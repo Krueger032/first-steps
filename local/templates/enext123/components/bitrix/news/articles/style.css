@@ -1,0 +1,175 @@
+/***SECTION_PIC***/
+.catalog-section-pic{
+	height: -moz-calc(100vw * 0.1374);
+	height: -webkit-calc(100vw * 0.1374);
+	height: calc(100vw * 0.1374);
+	position: relative;
+	background: #566b75;
+}
+
+.slide-menu-option-1-active .catalog-section-pic{	
+	height: -moz-calc((100vw - 324px) * 0.1374);
+	height: -webkit-calc((100vw - 324px) * 0.1374);
+	height: calc((100vw - 324px) * 0.1374);
+}
+
+.slide-menu-interface-2-0-1-inner .catalog-section-pic,
+.slide-menu-option-2 .catalog-section-pic{
+	height: -moz-calc((100vw - 72px) * 0.1374);
+	height: -webkit-calc((100vw - 72px) * 0.1374);
+	height: calc((100vw - 72px) * 0.1374);
+}
+
+.catalog-section-pic > a{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.catalog-section-pic > a:link,
+.catalog-section-pic > a:visited{
+	text-decoration: none;
+}
+
+.catalog-section-pic img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/***ARTICLES***/
+.articles-container .articles-links{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -6px;
+	margin-top: 26px;
+}
+
+.articles-container .articles-link{
+	margin-left: 6px;
+	margin-top: 6px;
+	padding: 9px 16px 8px;	
+	white-space: nowrap;
+	border: 2px solid #e3ecef;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.articles-container .articles-link:link,
+.articles-container .articles-link:visited{
+	color: #263238;
+	text-decoration: none;
+}
+
+.bx-no-touch .articles-container .articles-link:hover,
+.bx-touch .articles-container .articles-link:active{
+	border-color: #78909c;
+	background: #e3ecef;
+}
+
+.articles-container .articles-link.active,
+.bx-no-touch .articles-container .articles-link.active:hover,
+.bx-touch .articles-container .articles-link.active:active{
+	border-color: #6639b6;
+	background: rgba(102, 57, 182, 0.16);
+}
+
+.articles-container .articles-link > span{	
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 6px;
+	margin-top: -2px;
+	padding: 2px 5px 1px;
+	font-size: 11px;
+	color: #566b75;
+	line-height: 13px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	background: #ced9db;
+}
+
+.articles-container .articles-link.active > span,
+.bx-no-touch .articles-container .articles-link.active:hover > span,
+.bx-touch .articles-container .articles-link.active:active > span{
+	color: #fff;
+	background: #78909c;
+}
+
+.articles-container .articles-items{
+	margin-top: 32px;
+}
+
+.articles-container .description{
+	margin-top: 64px;
+}
+
+.articles-container > div:first-child{
+	margin-top: 0;
+}
+
+.articles-container .articles-links:first-child{
+	margin-top: -6px;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	/***SECTION_PIC***/
+	.catalog-section-pic,
+	.slide-menu-interface-2-0-1-inner .catalog-section-pic,
+	.slide-menu-option-1-active .catalog-section-pic,
+	.slide-menu-option-2 .catalog-section-pic{
+		height: -moz-calc(100vw * 0.1374);
+		height: -webkit-calc(100vw * 0.1374);
+		height: calc(100vw * 0.1374);
+	}
+
+	/***ARTICLES***/
+	.articles-container .articles-links{
+		margin-top: 26px;
+	}
+
+	.articles-container .articles-items{
+		margin-top: 18px;
+	}
+
+	.articles-container .description{
+		margin-top: 32px;
+	}
+}
+
+/***DESKTOPS_LARGE_DESKTOPS***/
+@media(min-width: 1043px) and (max-width: 1271px){
+	/***SECTION_PIC***/
+	.slide-menu-option-1-active .catalog-section-pic{
+		height: -moz-calc(100vw * 0.1374);
+		height: -webkit-calc(100vw * 0.1374);
+		height: calc(100vw * 0.1374);
+	}
+}
+
+@media(min-width: 1272px) and (max-width: 1545px){
+	/***SECTION_PIC***/
+	.slide-menu-option-1-active .catalog-section-pic{
+		height: -moz-calc(100vw * 0.1374);
+		height: -webkit-calc(100vw * 0.1374);
+		height: calc(100vw * 0.1374);
+	}
+}

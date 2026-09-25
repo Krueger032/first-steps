@@ -1,0 +1,97 @@
+.bx-authform-title-container{
+	width: 100%;
+	display: table;
+	padding: 16px 24px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-khtml-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	background-color: #f1f6f7;
+}
+
+.bx-authform-title,
+.bx-authform-title-icon,
+.bx-authform-title-val{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.bx-authform-title-icon{
+	padding-right: 12px;
+}
+
+.bx-authform-title-icon i{
+	font-size: 23px;
+	color: #b2c7cb;
+}
+
+.bx-authform-title-val{    
+    color: #263238;    
+}
+
+.bx-authform-content-container{
+	margin-bottom: 18px;
+	padding: 23px 8px 11px;	
+	color: #263238;	
+	border: 1px solid #e3ecef;
+	border-top: none;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	-khtml-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+
+.bx-authform-label-container,
+.bx-authform-note-container{
+	font-size: 14px;
+	color: #78909c;
+	line-height: 17px;
+}
+
+.bx-authform-label-container{
+	margin-bottom: 4px;
+}
+
+.bx-authform-note-container{
+	margin-top: 4px;
+}
+
+.bx-authform-buttons-container{
+	display: flex;
+}
+
+.form-group.bx-authform-buttons-container .btn{
+	width: auto;
+}
+
+.bx-authform-buttons-container .btn + .btn{
+	margin-left: 8px;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.bx-authform-title-container{
+		padding: 10px 12px 11px;
+	}
+	
+	.bx-authform-content-container{
+		padding: 12px 0 0 0;
+	}
+	
+	.bx-authform-content{
+		padding: 0 11px !important;;
+	}
+
+	.bx-authform-buttons-container{
+		flex-direction: column;
+	}
+
+	.form-group.bx-authform-buttons-container .btn{
+		width: 100%;
+	}
+
+	.bx-authform-buttons-container .btn + .btn{
+		margin-left: 0;
+		margin-top: 6px;
+	}
+}

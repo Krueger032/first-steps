@@ -1,0 +1,22 @@
+.brands-container .description{
+	margin-top: 64px;
+}
+
+.brands-container > div:first-child{
+	margin-top: 0;
+}
+
+.collections-other{
+	margin-top: 64px;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.brands-container .description{
+		margin-top: 32px;
+	}
+
+	.collections-other{
+		margin-top: 32px;
+	}
+}

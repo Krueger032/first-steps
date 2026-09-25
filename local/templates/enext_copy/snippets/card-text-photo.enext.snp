@@ -1,0 +1,10 @@
+<div class="content-block-card">
+	<div class="content-block-card-text">
+		<div class="content-block__title">Текст Фото</div>
+		<div class="content-block__text"><p>Наш магазин инструментов представлен такими мировыми брендами, как Makita, Bosch, Metabo, DeWalt, Sparky, Kress. Они давно успели заработать безупречную репутацию среди профессионалов ремонтных и строительных работ! Качество этих марок подтверждают многие промышленные гиганты, которые работают с ними уже не один десяток лет. Компания «Магазин инструментов» поставляет электроинструмент на условиях официального дилера большинства известных фирм-производителей техники.</p></div>
+	</div>
+	<div class="content-block-card-photo">
+		<img src="/upload/stub-image.png" width="1280" height="720" alt="" title="" />
+		<div class="content-block__caption">Источник или описание фото при необходимости</div>
+	</div>
+</div>

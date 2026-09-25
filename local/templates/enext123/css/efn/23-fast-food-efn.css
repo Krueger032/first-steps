@@ -1,0 +1,106 @@
+@font-face {
+  font-family: '23-fast-food-efn';
+  src:  url('../../fonts/efn/23-fast-food-efn.eot?o31njc');
+  src:  url('../../fonts/efn/23-fast-food-efn.eot?o31njc#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/23-fast-food-efn.woff2?o31njc') format('woff2'),
+    url('../../fonts/efn/23-fast-food-efn.ttf?o31njc') format('truetype'),
+    url('../../fonts/efn/23-fast-food-efn.woff?o31njc') format('woff'),
+    url('../../fonts/efn/23-fast-food-efn.svg?o31njc#23-fast-food-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn23-"], [class*=" efn23-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '23-fast-food-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn23-pizza-slice:before {
+  content: "\e900";
+}
+.efn23-pizza:before {
+  content: "\e901";
+}
+.efn23-burger:before {
+  content: "\e902";
+}
+.efn23-french-fries:before {
+  content: "\e903";
+}
+.efn23-fast-food:before {
+  content: "\e904";
+}
+.efn23-gyros:before {
+  content: "\e905";
+}
+.efn23-chicken-wing:before {
+  content: "\e906";
+}
+.efn23-chicken-legs:before {
+  content: "\e907";
+}
+.efn23-hot-dog:before {
+  content: "\e908";
+}
+.efn23-kebab:before {
+  content: "\e909";
+}
+.efn23-pita:before {
+  content: "\e90a";
+}
+.efn23-taco:before {
+  content: "\e90b";
+}
+.efn23-noodles-box:before {
+  content: "\e90c";
+}
+.efn23-fried-egg:before {
+  content: "\e90d";
+}
+.efn23-hot-chili-pepper:before {
+  content: "\e90e";
+}
+.efn23-drink:before {
+  content: "\e90f";
+}
+.efn23-paper-cup:before {
+  content: "\e910";
+}
+.efn23-coffee-cup:before {
+  content: "\e911";
+}
+.efn23-cup-ice-cream:before {
+  content: "\e912";
+}
+.efn23-tea-cup:before {
+  content: "\e913";
+}
+.efn23-water-bottle:before {
+  content: "\e914";
+}
+.efn23-donut:before {
+  content: "\e915";
+}
+.efn23-cupcake:before {
+  content: "\e916";
+}
+.efn23-cheesecake:before {
+  content: "\e917";
+}
+.efn23-croissant:before {
+  content: "\e918";
+}
+.efn23-pancake:before {
+  content: "\e919";
+}

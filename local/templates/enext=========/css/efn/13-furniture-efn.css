@@ -1,0 +1,100 @@
+@font-face {
+  font-family: '13-furniture-efn';
+  src:  url('../../fonts/efn/13-furniture-efn.eot?38542j');
+  src:  url('../../fonts/efn/13-furniture-efn.eot?38542j#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/13-furniture-efn.woff2?38542j') format('woff2'),
+    url('../../fonts/efn/13-furniture-efn.ttf?38542j') format('truetype'),
+    url('../../fonts/efn/13-furniture-efn.woff?38542j') format('woff'),
+    url('../../fonts/efn/13-furniture-efn.svg?38542j#13-furniture-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn13-"], [class*=" efn13-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '13-furniture-efn' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn13-double-bed:before {
+  content: "\e900";
+}
+.efn13-single-bed:before {
+  content: "\e901";
+}
+.efn13-sofa:before {
+  content: "\e902";
+}
+.efn13-armchair:before {
+  content: "\e903";
+}
+.efn13-chair:before {
+  content: "\e904";
+}
+.efn13-table:before {
+  content: "\e905";
+}
+.efn13-mattress:before {
+  content: "\e906";
+}
+.efn13-wardrobe:before {
+  content: "\e907";
+}
+.efn13-closet:before {
+  content: "\e908";
+}
+.efn13-baby-bed:before {
+  content: "\e909";
+}
+.efn13-bunk-bed:before {
+  content: "\e90a";
+}
+.efn13-kids-room-furniture:before {
+  content: "\e90b";
+}
+.efn13-bag-chair:before {
+  content: "\e90c";
+}
+.efn13-hallway-furniture:before {
+  content: "\e90d";
+}
+.efn13-tv-stand:before {
+  content: "\e90e";
+}
+.efn13-living-room-tv-furniture:before {
+  content: "\e90f";
+}
+.efn13-working-desk:before {
+  content: "\e910";
+}
+.efn13-drawer-chest:before {
+  content: "\e911";
+}
+.efn13-kitchen:before {
+  content: "\e912";
+}
+.efn13-lounge-area:before {
+  content: "\e913";
+}
+.efn13-office-chair:before {
+  content: "\e914";
+}
+.efn13-rattan-swing-chair:before {
+  content: "\e915";
+}
+.efn13-table-chairs:before {
+  content: "\e916";
+}
+.efn13-bathroom-furniture:before {
+  content: "\e917";
+}

@@ -1,0 +1,4 @@
+<div class="content-block-photo">
+	<img src="/upload/stub-image.png" width="1280" height="720" alt="" title="" />
+	<div class="content-block__caption">Источник или описание фото при необходимости</div>
+</div>

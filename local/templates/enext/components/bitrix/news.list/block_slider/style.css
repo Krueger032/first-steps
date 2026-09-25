@@ -1,0 +1,341 @@
+.slider-wrapper{
+	width: 100%;
+}
+
+.slider{
+	overflow: hidden;
+}
+
+.slider .slider-item{
+	width: 100%;
+	height: -moz-calc(100vw / 3.32);
+	height: -webkit-calc(100vw / 3.32);
+	height: calc(100vw / 3.32);	
+	position: relative;
+	background: #6639b6;
+}
+
+.slide-menu-interface-2-0-1 .slider .slider-item{		
+	height: -moz-calc((100vw - 276px) / 3.32);
+	height: -webkit-calc((100vw - 276px) / 3.32);
+	height: calc((100vw - 276px) / 3.32);
+}
+
+.slide-menu-option-1-active .slider .slider-item{		
+	height: -moz-calc((100vw - 324px) / 3.32);
+	height: -webkit-calc((100vw - 324px) / 3.32);
+	height: calc((100vw - 324px) / 3.32);
+}
+
+.slide-menu-option-2 .slider .slider-item{		
+	height: -moz-calc((100vw - 72px) / 3.32);
+	height: -webkit-calc((100vw - 72px) / 3.32);
+	height: calc((100vw - 72px) / 3.32);
+}
+
+.slider .slider-item + .slider-item{
+	display: none;
+}
+
+.slider-item__video,
+.slider-item__pic,
+.slider-item__caption{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.slider-item__video{
+	width: auto;
+	min-width: 100%;
+	height: auto;
+	min-height: 100%;
+	right: unset;
+	bottom: unset;
+}
+
+.slider-item__pic > img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.slider-item__caption{	
+	display: flex;
+	flex-direction: column;	
+	justify-content: flex-end;
+	padding: 80px 0;
+}
+
+.slider-item__caption.top{
+	justify-content: flex-start;
+}
+
+.slider-item__caption.middle{
+	justify-content: center;
+}
+
+.slider-item__block{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 17px;
+}
+
+.slider-item__caption.left .slider-item__block{
+	align-items: flex-start;
+}
+
+.slider-item__caption.right .slider-item__block{
+	align-items: flex-end;
+}
+
+.slider-item__title{
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+	font-size: 36px;
+	color: #fff;
+	line-height: 43px;	
+}
+
+.slider-item__text{
+	font-size: 24px;	
+	color:#fff;
+	line-height: 29px;
+}
+
+.slider-item__buttons{
+	display: flex;
+	margin-top: 17px;
+}
+
+.slider-item__buttons > a{
+	position: relative;
+	z-index: 200;
+}
+
+.slider-item__buttons > a + a{
+	margin-left: 12px;
+}
+
+.slider-item__link{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.slider .owl-prev,
+.slider .owl-next{
+	width: 60px;
+	height: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: -40px;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	text-align: center;	
+	background-color: #000;
+	opacity: 0;
+	cursor: pointer;
+	-webkit-transition: background-color 0.15s ease 0s, opacity 0.15s ease 0s;
+	-moz-transition: background-color 0.15s ease 0s, opacity 0.15s ease 0s;
+	-o-transition: background-color 0.15s ease 0s, opacity 0.15s ease 0s;
+	transition: background-color 0.15s ease 0s, opacity 0.15s ease 0s;
+}
+
+.slider .owl-prev{
+	left: -60px;
+	-moz-border-radius: 0px 4px 4px 0px;
+	-webkit-border-radius: 0px 4px 4px 0px;
+	-khtml-border-radius: 0px 4px 4px 0px;
+	border-radius: 0px 4px 4px 0px;
+}
+
+.bx-no-touch .slider:hover .owl-prev{
+	left: 0px;
+	opacity: 0.33;
+}
+
+.slider .owl-next{
+	right: -60px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	-webkit-border-radius: 4px 0px 0px 4px;
+	-khtml-border-radius: 4px 0px 0px 4px;
+	border-radius: 4px 0px 0px 4px;
+}
+
+.bx-no-touch .slider:hover .owl-next{
+	right: 0px;
+	opacity: 0.33;
+}
+
+.slider .owl-prev.disabled,
+.slider .owl-next.disabled{
+	display: none;
+}
+
+.bx-no-touch .slider .owl-prev:hover,
+.bx-touch .slider .owl-prev:active,
+.bx-no-touch .slider .owl-next:hover,
+.bx-touch .slider .owl-next:active{
+	background-color: #6639b6;
+	opacity: 1;
+}
+
+.slider .owl-prev i,
+.slider .owl-next i{
+	font-size: 48px;
+	color: #fff;	
+}
+
+.slider .owl-controls{
+	width:100%;
+	position:absolute;
+	left:0;
+	bottom:32px;	
+}
+
+.slider .owl-dots{
+	display:table;
+	margin:-16px auto 0px;
+	position:relative;
+	top:-32px;
+}
+
+.slider .owl-dot{
+	float:left;
+	margin-right:10px;
+}
+
+.slider .owl-dot:last-child{
+	margin:0px;
+}
+
+.slider .owl-dot span{
+	width:16px;
+	height:16px;
+	display:block;
+	border: 1px solid #fff;	
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.slider .owl-dot.active span{
+	background-color: #fff;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.slider .slider-item{		
+		min-height: 157px;
+	}
+
+	.slide-menu-interface-2-0-1 .slider .slider-item,
+	.slide-menu-option-1-active .slider .slider-item,
+	.slide-menu-option-2 .slider .slider-item{
+		height: -moz-calc(100vw / 3.32);
+		height: -webkit-calc(100vw / 3.32);
+		height: calc(100vw / 3.32);
+	}
+	
+	.slider .slider-item:before{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		content: "";
+		background: -moz-linear-gradient(top, rgba(38, 50, 56, 0) 0%, #263238 100%);
+		background: -webkit-linear-gradient(top, rgba(38, 50, 56, 0) 0%, #263238 100%);
+		background: linear-gradient(to bottom, rgba(38, 50, 56, 0) 0%, #263238 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#263238", endColorstr="#263238", GradientType=0);
+	}
+
+	.slider-item__caption{		
+		justify-content: center !important;
+		padding: 18px 0;
+	}
+	
+	.slider-item__block{
+		align-items: center !important;
+		padding: 0;
+	}
+
+	.slider-item__title,
+	.slider-item__text{
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-shadow: none;
+		white-space: nowrap;
+	}
+
+	.slider-item__title{
+		font-family: "Museo Sans Cyrl 500", sans-serif;
+		font-size: 24px;
+		line-height: 29px;
+	}
+	
+	.slider-item__text{
+		margin-top: 7px;
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	.slider-item__buttons{
+		margin-top: 12px;
+	}
+
+	.slider-item__buttons > a + a{
+		display: none;
+	}
+	
+	.slider .owl-prev,
+	.slider .owl-next,
+	.slider .owl-dots{
+		display: none;
+	}
+}
+
+/***DESKTOPS_LARGE_DESKTOPS***/
+@media(min-width: 1043px) and (max-width: 1271px){
+	.slide-menu-interface-2-0-1 .slider .slider-item{		
+		height: -moz-calc((100vw - 72px) / 3.32);
+		height: -webkit-calc((100vw - 72px) / 3.32);
+		height: calc((100vw - 72px) / 3.32);
+	}
+
+	.slide-menu-option-1-active .slider .slider-item{
+		height: -moz-calc(100vw / 3.32);
+		height: -webkit-calc(100vw / 3.32);
+		height: calc(100vw / 3.32);
+	}
+}
+
+@media(min-width: 1272px) and (max-width: 1545px){
+	.slide-menu-interface-2-0-1 .slider .slider-item{		
+		height: -moz-calc((100vw - 72px) / 3.32);
+		height: -webkit-calc((100vw - 72px) / 3.32);
+		height: calc((100vw - 72px) / 3.32);
+	}
+
+	.slide-menu-option-1-active .slider .slider-item{
+		height: -moz-calc(100vw / 3.32);
+		height: -webkit-calc(100vw / 3.32);
+		height: calc(100vw / 3.32);
+	}
+}

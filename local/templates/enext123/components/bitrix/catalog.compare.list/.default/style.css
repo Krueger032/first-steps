@@ -1,0 +1,125 @@
+.catalog-compare-list-container{
+	position: fixed;
+	left: -9999px;
+	z-index: 203;
+}
+
+.catalog-compare-list{
+	position: fixed;
+	left: -9999px;
+	bottom: 0;
+	overflow: hidden;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-khtml-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	-webkit-box-shadow: 0 0 32px rgba(38, 50, 56, 0.16);
+	-moz-box-shadow: 0 0 32px rgba(38, 50, 56, 0.16);
+	box-shadow: 0 0 32px rgba(38, 50, 56, 0.16);
+	background: #fff;
+	opacity: 0;
+	-moz-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: opacity 0.3s ease 0s;
+	-moz-transition: opacity 0.3s ease 0s;
+	-o-transition: opacity 0.3s ease 0s;
+	transition: opacity 0.3s ease 0s;
+}
+
+.catalog-compare-list.active{
+	left: 50%;
+	opacity: 1;
+}
+
+.catalog-compare-link{
+	height: 56px;
+	display: flex;
+	align-items: center;
+	padding: 0 18px;	
+	background: rgba(102, 57, 182, 0.16);
+}
+
+.catalog-compare-link:link,
+.catalog-compare-link:visited{
+	text-decoration: none;
+}
+
+.bx-no-touch .catalog-compare-link:hover,
+.bx-touch .catalog-compare-link:active{
+	background: rgba(102, 57, 182, 0.32);
+}
+
+.catalog-compare-count{
+	padding: 1px 5px;
+	font-size: 11px;
+	color: #fff;
+	line-height: 13px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	background: #6639b6;
+}
+
+.catalog-compare-title{
+	margin-left: 12px;
+	overflow: hidden;
+	color: #263238;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.catalog-compare-icon{
+	margin-left: 12px;
+}
+
+.catalog-compare-icon > i{
+	font-size: 24px;
+	color: #b2c7cb;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .catalog-compare-link:hover .catalog-compare-icon > i,
+.bx-touch .catalog-compare-link:active .catalog-compare-icon > i{
+	color: #78909c;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.catalog-compare-list-container{
+		left: -100%;
+	}
+	
+	.catalog-compare-list{
+		width: 100%;
+		left: -100%;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		-khtml-border-radius: 0;
+		border-radius: 0;
+		-moz-transform: unset;
+		-o-transform: unset;
+		-webkit-transform: unset;
+		transform: unset;
+	}
+
+	.slide-menu-interface-2-0-1 .catalog-compare-list,
+	.slide-menu-interface-2-0-1-inner .catalog-compare-list,
+	.slide-menu-interface-2-0-2 .catalog-compare-list,
+	.slide-menu-interface-2-0-3 .catalog-compare-list{
+		bottom: 62px;
+	}
+
+	.catalog-compare-list.active{
+		left: 0;
+	}
+
+	.catalog-compare-link{
+		justify-content: space-between;
+	}
+}

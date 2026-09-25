@@ -1,0 +1,110 @@
+.soc-serv-main .soc-serv-title,
+.soc-serv-main .soc-serv-title-acc{
+	margin: 0px 0px 7px;
+	font-size: 14px;
+	color: #78909c;
+	line-height: 17px;
+}
+
+.soc-serv-main .soc-serv-title-acc{
+	margin: 15px 0px 7px;
+}
+
+.soc-serv-main .soc-serv-accounts td + td{
+	padding-left: 6px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 1px;
+	background-image: url('/bitrix/js/socialservices/css/icons_v5.png');
+	background-repeat: no-repeat;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.openid{
+	background-position: 0px -192px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.yandex{
+	background-position: 0px 0px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.openid-mail-ru{
+	background-position: 0px -48px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.livejournal{
+	background-position: 0px -16px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.liveinternet{
+	background-position: 0px -128px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.blogger{
+	background-position: 0px -144px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.rambler{
+	background-position: 0px -160px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.liveid{
+	background-position: 0px -176px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.facebook{
+	background-position: 0px -32px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.twitter{
+	background-position: 0px -96px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.vkontakte{
+	background-position: 0px -80px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.mymailru{
+	background-position: 0px -64px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.google{
+	background-position: 0px -112px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.odnoklassniki{
+	background-position: 0px -208px;
+}
+
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .bx-ss-icon.bitrix24{
+	background-position: 0px -378px;
+}
+
+/*
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .soc-serv-link:link,
+.soc-serv-main .soc-serv-accounts .bx-ss-icons .soc-serv-link:visited{
+	color: #486daa;
+}
+
+.bx-no-touch .soc-serv-main .soc-serv-accounts .bx-ss-icons .soc-serv-link:hover,
+.bx-touch .soc-serv-main .soc-serv-accounts .bx-ss-icons .soc-serv-link:active{
+	color: #d00;
+}
+*/
+
+.soc-serv-main .soc-serv-accounts .split-item-actions .split-delete-item:link,
+.soc-serv-main .soc-serv-accounts .split-item-actions .split-delete-item:visited{
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url('images/grey_del.gif');
+}
+
+.bx-no-touch .soc-serv-main .soc-serv-accounts .split-item-actions .split-delete-item:hover,
+.bx-touch .soc-serv-main .soc-serv-accounts .split-item-actions .split-delete-item:active{
+	background: url('images/red_del.gif') no-repeat;
+}

@@ -1,0 +1,100 @@
+@font-face {
+  font-family: '04-interior-efn';
+  src:  url('../../fonts/efn/04-interior-efn.eot?ila1dv');
+  src:  url('../../fonts/efn/04-interior-efn.eot?ila1dv#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/04-interior-efn.woff2?ila1dv') format('woff2'),
+    url('../../fonts/efn/04-interior-efn.ttf?ila1dv') format('truetype'),
+    url('../../fonts/efn/04-interior-efn.woff?ila1dv') format('woff'),
+    url('../../fonts/efn/04-interior-efn.svg?ila1dv#04-interior-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn04-"], [class*=" efn04-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '04-interior-efn' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn04-curtain-rod:before {
+  content: "\e900";
+}
+.efn04-curtain-pipe:before {
+  content: "\e901";
+}
+.efn04-ceiling-bracket:before {
+  content: "\e902";
+}
+.efn04-wall-bracket:before {
+  content: "\e903";
+}
+.efn04-curtain-clip-ring:before {
+  content: "\e904";
+}
+.efn04-curtains:before {
+  content: "\e905";
+}
+.efn04-roller-blind:before {
+  content: "\e906";
+}
+.efn04-jalousie:before {
+  content: "\e907";
+}
+.efn04-vertical-jalousie:before {
+  content: "\e908";
+}
+.efn04-wallpaper:before {
+  content: "\e909";
+}
+.efn04-carpet:before {
+  content: "\e90a";
+}
+.efn04-ceiling-plinth:before {
+  content: "\e90b";
+}
+.efn04-plinth:before {
+  content: "\e90c";
+}
+.efn04-antique-column:before {
+  content: "\e90d";
+}
+.efn04-flower-pot:before {
+  content: "\e90e";
+}
+.efn04-vase:before {
+  content: "\e90f";
+}
+.efn04-desk-clock:before {
+  content: "\e910";
+}
+.efn04-candelabrum:before {
+  content: "\e911";
+}
+.efn04-linens:before {
+  content: "\e912";
+}
+.efn04-mirror:before {
+  content: "\e913";
+}
+.efn04-photo-frame:before {
+  content: "\e914";
+}
+.efn04-picture:before {
+  content: "\e915";
+}
+.efn04-statuette:before {
+  content: "\e916";
+}
+.efn04-storage-box:before {
+  content: "\e917";
+}

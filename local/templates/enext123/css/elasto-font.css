@@ -1,0 +1,2818 @@
+@font-face {
+  font-family: 'ELASTO-FONT';
+  src:  url('../fonts/ELASTO-FONT.eot?ism1sn');
+  src:  url('../fonts/ELASTO-FONT.eot?ism1sn#iefix') format('embedded-opentype'),
+    url('../fonts/ELASTO-FONT.woff2?ism1sn') format('woff2'),
+    url('../fonts/ELASTO-FONT.ttf?ism1sn') format('truetype'),
+    url('../fonts/ELASTO-FONT.woff?ism1sn') format('woff'),
+    url('../fonts/ELASTO-FONT.svg?ism1sn#ELASTO-FONT') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ef {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ELASTO-FONT' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ef-lawn-roll:before {
+  content: "\ec4a";
+}
+.ef-fence:before {
+  content: "\ec4b";
+}
+.ef-garden-swing:before {
+  content: "\ec4c";
+}
+.ef-bench:before {
+  content: "\ec4d";
+}
+.ef-hammock:before {
+  content: "\ec4e";
+}
+.ef-mangal:before {
+  content: "\ec4f";
+}
+.ef-metal-skewers:before {
+  content: "\ec50";
+}
+.ef-grill-grate:before {
+  content: "\ec51";
+}
+.ef-pool:before {
+  content: "\ec52";
+}
+.ef-chaise-lounge:before {
+  content: "\ec53";
+}
+.ef-beach-umbrella:before {
+  content: "\ec54";
+}
+.ef-garden-tent:before {
+  content: "\ec55";
+}
+.ef-greenhouse:before {
+  content: "\ec56";
+}
+.ef-seeds:before {
+  content: "\ec57";
+}
+.ef-garden-soil:before {
+  content: "\ec58";
+}
+.ef-seedlings:before {
+  content: "\ec59";
+}
+.ef-fertilizers:before {
+  content: "\ec5a";
+}
+.ef-garden-shed:before {
+  content: "\ec5b";
+}
+.ef-storage-shed:before {
+  content: "\ec5c";
+}
+.ef-garage:before {
+  content: "\ec5d";
+}
+.ef-log-house:before {
+  content: "\ec91";
+}
+.ef-summerhouse:before {
+  content: "\ec92";
+}
+.ef-child-slide:before {
+  content: "\ec93";
+}
+.ef-playhouse:before {
+  content: "\ec94";
+}
+.ef-swing:before {
+  content: "\ec95";
+}
+.ef-picnic-bench:before {
+  content: "\ec96";
+}
+.ef-garden-furniture:before {
+  content: "\ec97";
+}
+.ef-gates:before {
+  content: "\ec98";
+}
+.ef-dog-kennel:before {
+  content: "\ec99";
+}
+.ef-garden-storage:before {
+  content: "\ec9a";
+}
+.ef-fence-panel:before {
+  content: "\ec9b";
+}
+.ef-bbq-hut:before {
+  content: "\ec9c";
+}
+.ef-camping-barrel:before {
+  content: "\ec9d";
+}
+.ef-garden-office:before {
+  content: "\ec9e";
+}
+.ef-notebook:before {
+  content: "\e97d";
+}
+.ef-mobile:before {
+  content: "\e97e";
+}
+.ef-smart-watch:before {
+  content: "\ec23";
+}
+.ef-fitness-bracelet:before {
+  content: "\ec24";
+}
+.ef-tablet:before {
+  content: "\e97f";
+}
+.ef-monitor:before {
+  content: "\e982";
+}
+.ef-pc-system:before {
+  content: "\e983";
+}
+.ef-pc:before {
+  content: "\e984";
+}
+.ef-modem:before {
+  content: "\ec25";
+}
+.ef-camera:before {
+  content: "\e980";
+}
+.ef-tv:before {
+  content: "\e981";
+}
+.ef-tv-box:before {
+  content: "\ec26";
+}
+.ef-tv-remote:before {
+  content: "\ec27";
+}
+.ef-video-projector:before {
+  content: "\ec28";
+}
+.ef-game-console:before {
+  content: "\e986";
+}
+.ef-game-pad:before {
+  content: "\ec29";
+}
+.ef-acoustic:before {
+  content: "\e985";
+}
+.ef-refrigerator:before {
+  content: "\e98d";
+}
+.ef-freezer:before {
+  content: "\ec2a";
+}
+.ef-deep-freezer:before {
+  content: "\ec2b";
+}
+.ef-washing-machine:before {
+  content: "\e98b";
+}
+.ef-tumble-dryer:before {
+  content: "\ec2c";
+}
+.ef-dishwasher:before {
+  content: "\ec2d";
+}
+.ef-kitchen-hood:before {
+  content: "\e992";
+}
+.ef-cooker:before {
+  content: "\e98c";
+}
+.ef-oven:before {
+  content: "\ec2e";
+}
+.ef-hob:before {
+  content: "\ec2f";
+}
+.ef-gas-stove:before {
+  content: "\ec30";
+}
+.ef-gas-tabletop-stove:before {
+  content: "\ec31";
+}
+.ef-electric-tabletop-stove:before {
+  content: "\ec32";
+}
+.ef-slow-cooker:before {
+  content: "\e990";
+}
+.ef-microwave-oven:before {
+  content: "\ec33";
+}
+.ef-microwave:before {
+  content: "\ec34";
+}
+.ef-mini-oven:before {
+  content: "\ec35";
+}
+.ef-bread-maker:before {
+  content: "\ec36";
+}
+.ef-toaster:before {
+  content: "\ec37";
+}
+.ef-sandwich-maker:before {
+  content: "\ec38";
+}
+.ef-food-processor:before {
+  content: "\ec39";
+}
+.ef-food-steamer:before {
+  content: "\ec3a";
+}
+.ef-food-dryer:before {
+  content: "\ec3b";
+}
+.ef-mixer:before {
+  content: "\ec3c";
+}
+.ef-blender:before {
+  content: "\ec3d";
+}
+.ef-juicer:before {
+  content: "\ec3e";
+}
+.ef-kettle:before {
+  content: "\e98a";
+}
+.ef-coffee-maker:before {
+  content: "\ec3f";
+}
+.ef-coffee-machine:before {
+  content: "\ec40";
+}
+.ef-coffee-grinder:before {
+  content: "\ec41";
+}
+.ef-scales:before {
+  content: "\ec43";
+}
+.ef-vacuum-cleaner:before {
+  content: "\e98e";
+}
+.ef-iron:before {
+  content: "\e98f";
+}
+.ef-electric-razor:before {
+  content: "\ec44";
+}
+.ef-epilator:before {
+  content: "\ec45";
+}
+.ef-hair-clipper:before {
+  content: "\ec46";
+}
+.ef-hairdryer:before {
+  content: "\e991";
+}
+.ef-curling-iron:before {
+  content: "\ec47";
+}
+.ef-sewing-machine:before {
+  content: "\ec48";
+}
+.ef-navigator:before {
+  content: "\e987";
+}
+.ef-car-receiver:before {
+  content: "\e988";
+}
+.ef-dvr:before {
+  content: "\e989";
+}
+.ef-hole-puncher:before {
+  content: "\ec17";
+}
+.ef-marker-board:before {
+  content: "\ec18";
+}
+.ef-paper-tray:before {
+  content: "\ec03";
+}
+.ef-document-tray:before {
+  content: "\ec04";
+}
+.ef-binder:before {
+  content: "\ec05";
+}
+.ef-cardboard-folder:before {
+  content: "\ec06";
+}
+.ef-archive-box:before {
+  content: "\ec07";
+}
+.ef-file-folder:before {
+  content: "\ec08";
+}
+.ef-elastic-folder:before {
+  content: "\ec09";
+}
+.ef-ring-binder:before {
+  content: "\ec0a";
+}
+.ef-binder-dividers:before {
+  content: "\ec0b";
+}
+.ef-button-folder:before {
+  content: "\ec0c";
+}
+.ef-clipboard:before {
+  content: "\ec0d";
+}
+.ef-folder:before {
+  content: "\ec0e";
+}
+.ef-hghlighter:before {
+  content: "\ec0f";
+}
+.ef-pen-marker:before {
+  content: "\ec10";
+}
+.ef-pen-refill-rods:before {
+  content: "\ec11";
+}
+.ef-self-inking-stamp:before {
+  content: "\ec12";
+}
+.ef-number-stamp:before {
+  content: "\ec13";
+}
+.ef-dater:before {
+  content: "\ec14";
+}
+.ef-rubber-band:before {
+  content: "\ec15";
+}
+.ef-wet-sponge:before {
+  content: "\ec16";
+}
+.ef-clip:before {
+  content: "\e9e4";
+}
+.ef-binder-clip:before {
+  content: "\ebbc";
+}
+.ef-calculator:before {
+  content: "\ebbd";
+}
+.ef-pens-stand:before {
+  content: "\ebbe";
+}
+.ef-pencil:before {
+  content: "\ebbf";
+}
+.ef-pen:before {
+  content: "\ebc0";
+}
+.ef-scissors:before {
+  content: "\ebc1";
+}
+.ef-stationery-knife:before {
+  content: "\ebc2";
+}
+.ef-stapler:before {
+  content: "\ebc3";
+}
+.ef-staples:before {
+  content: "\ebc4";
+}
+.ef-office-glue:before {
+  content: "\ebc5";
+}
+.ef-correction-fluid:before {
+  content: "\ebc6";
+}
+.ef-duct-tape:before {
+  content: "\ebc7";
+}
+.ef-push-pin:before {
+  content: "\ebc8";
+}
+.ef-magnifier:before {
+  content: "\ebc9";
+}
+.ef-stamp-ink:before {
+  content: "\ebca";
+}
+.ef-ink-pad:before {
+  content: "\ebcb";
+}
+.ef-ink:before {
+  content: "\ebcc";
+}
+.ef-office-basket:before {
+  content: "\ebcd";
+}
+.ef-thread-needle:before {
+  content: "\ebce";
+}
+.ef-computer-accessories:before {
+  content: "\eba0";
+}
+.ef-mouse:before {
+  content: "\eba1";
+}
+.ef-keyboard:before {
+  content: "\eba2";
+}
+.ef-keyboard-mouse:before {
+  content: "\eba3";
+}
+.ef-mouse-wireless:before {
+  content: "\eba4";
+}
+.ef-keyboard-wireless:before {
+  content: "\eba5";
+}
+.ef-devices-wireless:before {
+  content: "\eba6";
+}
+.ef-mouse-pad:before {
+  content: "\eba7";
+}
+.ef-usb-flash-drive:before {
+  content: "\eba8";
+}
+.ef-memory-card:before {
+  content: "\eba9";
+}
+.ef-external-hard-disk:before {
+  content: "\ebaa";
+}
+.ef-usb-gadget:before {
+  content: "\ebab";
+}
+.ef-usb-cable:before {
+  content: "\ebac";
+}
+.ef-data-cable:before {
+  content: "\ebad";
+}
+.ef-usb-hub:before {
+  content: "\ebae";
+}
+.ef-webcam:before {
+  content: "\ebaf";
+}
+.ef-headphones:before {
+  content: "\ebb0";
+}
+.ef-desktop-microphone:before {
+  content: "\ebb1";
+}
+.ef-uninterrupted-power-supply:before {
+  content: "\ebb2";
+}
+.ef-battery:before {
+  content: "\ebb3";
+}
+.ef-pc-cleaning-products:before {
+  content: "\ebb4";
+}
+.ef-printer:before {
+  content: "\ec19";
+}
+.ef-mfp:before {
+  content: "\ec1a";
+}
+.ef-laminator:before {
+  content: "\ec1b";
+}
+.ef-toner-cartridge:before {
+  content: "\ec1c";
+}
+.ef-ink-cartridge:before {
+  content: "\ec1d";
+}
+.ef-card-reader:before {
+  content: "\ec1e";
+}
+.ef-phone-case:before {
+  content: "\ec1f";
+}
+.ef-phone-glass:before {
+  content: "\ec20";
+}
+.ef-mobile-glass:before {
+  content: "\ec21";
+}
+.ef-software:before {
+  content: "\ec22";
+}
+.ef-electric-fireplace:before {
+  content: "\ebb5";
+}
+.ef-gas-heater:before {
+  content: "\ebb6";
+}
+.ef-halogen-heater:before {
+  content: "\ebb7";
+}
+.ef-heat-gun:before {
+  content: "\ebb8";
+}
+.ef-kerosene-heater:before {
+  content: "\ebb9";
+}
+.ef-boiler:before {
+  content: "\eb6d";
+}
+.ef-electric-boiler:before {
+  content: "\eb6e";
+}
+.ef-electrical-boiler:before {
+  content: "\eb6f";
+}
+.ef-gas-boiler:before {
+  content: "\eb70";
+}
+.ef-solid-fuel-boiler:before {
+  content: "\eb71";
+}
+.ef-indirect-heating-boiler:before {
+  content: "\eb72";
+}
+.ef-heating-boiler:before {
+  content: "\eb73";
+}
+.ef-electric-water-boiler:before {
+  content: "\eb74";
+}
+.ef-expansion-tank:before {
+  content: "\eb75";
+}
+.ef-expansion-water-tank:before {
+  content: "\eb76";
+}
+.ef-circulation-pump:before {
+  content: "\eb77";
+}
+.ef-coaxial-chimney:before {
+  content: "\eb78";
+}
+.ef-flue-pipes:before {
+  content: "\eb79";
+}
+.ef-chimney-pipes:before {
+  content: "\eb7a";
+}
+.ef-chimney-cap:before {
+  content: "\eb7b";
+}
+.ef-modern-radiator:before {
+  content: "\eb7c";
+}
+.ef-electric-radiator:before {
+  content: "\eb7d";
+}
+.ef-warm-floor:before {
+  content: "\eb7e";
+}
+.ef-thermostat:before {
+  content: "\eb7f";
+}
+.ef-oil-radiator:before {
+  content: "\eb80";
+}
+.ef-convector:before {
+  content: "\eb81";
+}
+.ef-infrared-heater:before {
+  content: "\eb82";
+}
+.ef-carbon-heater:before {
+  content: "\eb83";
+}
+.ef-fan-heater:before {
+  content: "\eb84";
+}
+.ef-fan:before {
+  content: "\eb85";
+}
+.ef-air-conditioner:before {
+  content: "\eb86";
+}
+.ef-dehumidifier:before {
+  content: "\eb87";
+}
+.ef-humidifier:before {
+  content: "\eb88";
+}
+.ef-fireplace:before {
+  content: "\eb89";
+}
+.ef-thermometer:before {
+  content: "\eb8a";
+}
+.ef-warm-house:before {
+  content: "\eb8b";
+}
+.ef-house-cooling:before {
+  content: "\eb8c";
+}
+.ef-house-heating:before {
+  content: "\eb8d";
+}
+.ef-smart-house:before {
+  content: "\eb8e";
+}
+.ef-water-supply-home:before {
+  content: "\eb8f";
+}
+.ef-gas:before {
+  content: "\eb90";
+}
+.ef-gas-flame:before {
+  content: "\eb91";
+}
+.ef-motorcycle:before {
+  content: "\e9a8";
+}
+.ef-motorcycle-helmet:before {
+  content: "\eb33";
+}
+.ef-open-face-helmet:before {
+  content: "\eb34";
+}
+.ef-helmet-visor:before {
+  content: "\eb35";
+}
+.ef-balaclava:before {
+  content: "\eb36";
+}
+.ef-moto-gloves:before {
+  content: "\eb45";
+}
+.ef-moto-jacket:before {
+  content: "\eb37";
+}
+.ef-thermal-underwear:before {
+  content: "\eb38";
+}
+.ef-motorcycle-suit:before {
+  content: "\eb39";
+}
+.ef-motorcycle-body-armor:before {
+  content: "\eb3a";
+}
+.ef-moto-pants:before {
+  content: "\eb3b";
+}
+.ef-motorcycle-knee-pads:before {
+  content: "\eb3c";
+}
+.ef-moto-boots:before {
+  content: "\eb3d";
+}
+.ef-raincoat:before {
+  content: "\eb3e";
+}
+.ef-motorcycle-cover:before {
+  content: "\eb3f";
+}
+.ef-bike-lock:before {
+  content: "\eb40";
+}
+.ef-motorcycle-tire:before {
+  content: "\eb41";
+}
+.ef-bike-chain:before {
+  content: "\eb42";
+}
+.ef-sprocket:before {
+  content: "\eb43";
+}
+.ef-generator:before {
+  content: "\eab9";
+}
+.ef-air-compressor:before {
+  content: "\eabf";
+}
+.ef-gasoline-compressor:before {
+  content: "\eb2f";
+}
+.ef-vertical-compressor:before {
+  content: "\eb2a";
+}
+.ef-screw-compressor:before {
+  content: "\eb2b";
+}
+.ef-diesel-compressor:before {
+  content: "\eb31";
+}
+.ef-spiral-compressor:before {
+  content: "\eb32";
+}
+.ef-air-receiver:before {
+  content: "\eb2c";
+}
+.ef-piston-block:before {
+  content: "\eb30";
+}
+.ef-filter-lubricator:before {
+  content: "\eb2d";
+}
+.ef-quick-coupling:before {
+  content: "\eb2e";
+}
+.ef-woman-face:before {
+  content: "\eb02";
+}
+.ef-lip-care:before {
+  content: "\eb03";
+}
+.ef-hand:before {
+  content: "\eb04";
+}
+.ef-body:before {
+  content: "\eb05";
+}
+.ef-feet-care:before {
+  content: "\eb06";
+}
+.ef-manicure:before {
+  content: "\eb07";
+}
+.ef-woman-hair:before {
+  content: "\eb08";
+}
+.ef-hair-dye:before {
+  content: "\eb09";
+}
+.ef-hair-balm:before {
+  content: "\eb0a";
+}
+.ef-hair-spray:before {
+  content: "\eb0b";
+}
+.ef-shampoo-conditioner:before {
+  content: "\eb0c";
+}
+.ef-shower-gel:before {
+  content: "\eb0d";
+}
+.ef-shampoo:before {
+  content: "\eb0e";
+}
+.ef-care-products:before {
+  content: "\eb0f";
+}
+.ef-liquid-soap:before {
+  content: "\eb10";
+}
+.ef-soap:before {
+  content: "\eb11";
+}
+.ef-soft-soap:before {
+  content: "\eb12";
+}
+.ef-toothpaste:before {
+  content: "\eb13";
+}
+.ef-oral-care:before {
+  content: "\eb14";
+}
+.ef-toothbrushs:before {
+  content: "\eb15";
+}
+.ef-dental-floss:before {
+  content: "\eb16";
+}
+.ef-oral-rinse:before {
+  content: "\eb17";
+}
+.ef-shaving:before {
+  content: "\eb18";
+}
+.ef-depilation:before {
+  content: "\eb19";
+}
+.ef-shaving-foam:before {
+  content: "\eb1a";
+}
+.ef-deodorant:before {
+  content: "\eb1b";
+}
+.ef-antiperspirant:before {
+  content: "\eb1c";
+}
+.ef-bath-salt:before {
+  content: "\eb1d";
+}
+.ef-napkins:before {
+  content: "\eb1e";
+}
+.ef-cotton-pads:before {
+  content: "\eb1f";
+}
+.ef-cotton-buds:before {
+  content: "\eb20";
+}
+.ef-wet-wipes:before {
+  content: "\eb21";
+}
+.ef-paper-towel:before {
+  content: "\eb22";
+}
+.ef-toilet-paper:before {
+  content: "\eb23";
+}
+.ef-spray:before {
+  content: "\eb24";
+}
+.ef-suntan-cream:before {
+  content: "\eb25";
+}
+.ef-feminine-pads:before {
+  content: "\eb26";
+}
+.ef-daily-sanitary-pads:before {
+  content: "\eb27";
+}
+.ef-tampon:before {
+  content: "\eb28";
+}
+.ef-love:before {
+  content: "\eb29";
+}
+.ef-concrete-truck:before {
+  content: "\eade";
+}
+.ef-truck-crane:before {
+  content: "\eadd";
+}
+.ef-manipulator-truck:before {
+  content: "\eae7";
+}
+.ef-aerial-platform:before {
+  content: "\eadf";
+}
+.ef-truck:before {
+  content: "\eaed";
+}
+.ef-platform-truck:before {
+  content: "\eaea";
+}
+.ef-vacuum-truck:before {
+  content: "\eaee";
+}
+.ef-tipper-truck:before {
+  content: "\eaeb";
+}
+.ef-garbage-truck:before {
+  content: "\eae6";
+}
+.ef-crawler-excavator:before {
+  content: "\eae2";
+}
+.ef-wheel-excavator:before {
+  content: "\eaef";
+}
+.ef-bulldozer:before {
+  content: "\eae1";
+}
+.ef-mini-excavator:before {
+  content: "\eae8";
+}
+.ef-drilling-machine:before {
+  content: "\eae3";
+}
+.ef-mini-loader:before {
+  content: "\eae9";
+}
+.ef-forklift-truck:before {
+  content: "\eae4";
+}
+.ef-front-loader:before {
+  content: "\eae5";
+}
+.ef-wheel-loader:before {
+  content: "\eaf0";
+}
+.ef-backhoe-loader:before {
+  content: "\eae0";
+}
+.ef-tractor:before {
+  content: "\eaec";
+}
+.ef-washing-powder:before {
+  content: "\eac9";
+}
+.ef-spray-bottle:before {
+  content: "\eaca";
+}
+.ef-liquid-detergent:before {
+  content: "\eacb";
+}
+.ef-toilet-cleaner:before {
+  content: "\eacc";
+}
+.ef-dishwashing-liquid:before {
+  content: "\eacd";
+}
+.ef-sponge:before {
+  content: "\eace";
+}
+.ef-means-washing-floor:before {
+  content: "\eacf";
+}
+.ef-washing-floor:before {
+  content: "\ead0";
+}
+.ef-bucket:before {
+  content: "\ead1";
+}
+.ef-pipe-cleaning:before {
+  content: "\ead2";
+}
+.ef-air-freshener:before {
+  content: "\ead3";
+}
+.ef-garbage-bag:before {
+  content: "\ead4";
+}
+.ef-garbage-bags:before {
+  content: "\ead5";
+}
+.ef-insect-control:before {
+  content: "\ead6";
+}
+.ef-household-gloves:before {
+  content: "\ead7";
+}
+.ef-latex-gloves:before {
+  content: "\ead8";
+}
+.ef-classic-mop:before {
+  content: "\ead9";
+}
+.ef-mop:before {
+  content: "\eada";
+}
+.ef-rags:before {
+  content: "\eadb";
+}
+.ef-cleaning-brush:before {
+  content: "\eadc";
+}
+.ef-car:before {
+  content: "\e908";
+}
+.ef-electric-car:before {
+  content: "\ebba";
+}
+.ef-engine:before {
+  content: "\e917";
+}
+.ef-electric-engine:before {
+  content: "\ebbb";
+}
+.ef-oil:before {
+  content: "\e91c";
+}
+.ef-accumulator:before {
+  content: "\e901";
+}
+.ef-manual-transmission:before {
+  content: "\e91b";
+}
+.ef-automatic-transmission:before {
+  content: "\e905";
+}
+.ef-steering-wheel:before {
+  content: "\e921";
+}
+.ef-air-filter:before {
+  content: "\e902";
+}
+.ef-air-filter-round:before {
+  content: "\e903";
+}
+.ef-air-filters:before {
+  content: "\e904";
+}
+.ef-oil-filter:before {
+  content: "\e91d";
+}
+.ef-brake-disc:before {
+  content: "\e906";
+}
+.ef-clutch:before {
+  content: "\e915";
+}
+.ef-shock-absorber:before {
+  content: "\e91e";
+}
+.ef-suspension:before {
+  content: "\e923";
+}
+.ef-tires:before {
+  content: "\e926";
+}
+.ef-tyres-all-weather:before {
+  content: "\e928";
+}
+.ef-tyres-summer:before {
+  content: "\e929";
+}
+.ef-tyres-winter:before {
+  content: "\e92a";
+}
+.ef-wheels:before {
+  content: "\e92b";
+}
+.ef-steel-wheels:before {
+  content: "\e920";
+}
+.ef-car-body:before {
+  content: "\e909";
+}
+.ef-car-hood:before {
+  content: "\e90e";
+}
+.ef-car-door:before {
+  content: "\e90c";
+}
+.ef-crankcase-protection:before {
+  content: "\e916";
+}
+.ef-windshield:before {
+  content: "\e92c";
+}
+.ef-hood-deflector:before {
+  content: "\e91a";
+}
+.ef-glass-deflector:before {
+  content: "\e918";
+}
+.ef-tow-hitch:before {
+  content: "\e927";
+}
+.ef-car-light:before {
+  content: "\e910";
+}
+.ef-headlight:before {
+  content: "\e919";
+}
+.ef-car-lamp:before {
+  content: "\e90f";
+}
+.ef-car-mat:before {
+  content: "\e911";
+}
+.ef-car-muffler:before {
+  content: "\e912";
+}
+.ef-spark-plug:before {
+  content: "\e91f";
+}
+.ef-timing-belt:before {
+  content: "\e925";
+}
+.ef-car-brush:before {
+  content: "\e90a";
+}
+.ef-canister:before {
+  content: "\e907";
+}
+.ef-suitcase-tools:before {
+  content: "\e922";
+}
+.ef-car-polish:before {
+  content: "\e914";
+}
+.ef-car-paint:before {
+  content: "\e913";
+}
+.ef-car-cosmetics:before {
+  content: "\e90b";
+}
+.ef-technical-fluids:before {
+  content: "\e924";
+}
+.ef-5l-bottle:before {
+  content: "\e900";
+}
+.ef-car-glasses-cleaner:before {
+  content: "\e90d";
+}
+.ef-house:before {
+  content: "\e93e";
+}
+.ef-paint-roller:before {
+  content: "\e944";
+}
+.ef-brush:before {
+  content: "\e92f";
+}
+.ef-trowel:before {
+  content: "\e955";
+}
+.ef-hammer:before {
+  content: "\e93b";
+}
+.ef-wrench:before {
+  content: "\e959";
+}
+.ef-window:before {
+  content: "\e957";
+}
+.ef-door:before {
+  content: "\e937";
+}
+.ef-cement:before {
+  content: "\e932";
+}
+.ef-tin:before {
+  content: "\e954";
+}
+.ef-paint-tin:before {
+  content: "\e945";
+}
+.ef-sealant:before {
+  content: "\e94d";
+}
+.ef-roof:before {
+  content: "\e94b";
+}
+.ef-metal-tile:before {
+  content: "\e942";
+}
+.ef-bitumen-shingles:before {
+  content: "\e92e";
+}
+.ef-ceramic-tiles-roof:before {
+  content: "\e933";
+}
+.ef-composite-roof:before {
+  content: "\e934";
+}
+.ef-seam-roof:before {
+  content: "\e94e";
+}
+.ef-wavy-roof:before {
+  content: "\e956";
+}
+.ef-slate-roof:before {
+  content: "\e950";
+}
+.ef-metal-profile:before {
+  content: "\e941";
+}
+.ef-polycarbonate:before {
+  content: "\e947";
+}
+.ef-stone-wool:before {
+  content: "\e951";
+}
+.ef-stone-wool-pack:before {
+  content: "\e952";
+}
+.ef-roof-drain:before {
+  content: "\e94c";
+}
+.ef-armature:before {
+  content: "\e92d";
+}
+.ef-reinforcing-mesh:before {
+  content: "\e94a";
+}
+.ef-silicate-brick:before {
+  content: "\e94f";
+}
+.ef-building-block:before {
+  content: "\e930";
+}
+.ef-building-brick:before {
+  content: "\e931";
+}
+.ef-hollow-block:before {
+  content: "\e93d";
+}
+.ef-glass-block:before {
+  content: "\e93a";
+}
+.ef-wooden-boards:before {
+  content: "\e958";
+}
+.ef-lumber:before {
+  content: "\e940";
+}
+.ef-drywall:before {
+  content: "\e938";
+}
+.ef-corner-bead:before {
+  content: "\e936";
+}
+.ef-hatch-cover:before {
+  content: "\e93c";
+}
+.ef-reinforced-concrete-well:before {
+  content: "\e949";
+}
+.ef-tiles:before {
+  content: "\e953";
+}
+.ef-parquet:before {
+  content: "\e946";
+}
+.ef-radiator:before {
+  content: "\e948";
+}
+.ef-stairs:before {
+  content: "\eaa2";
+}
+.ef-putty-knife:before {
+  content: "\ebf8";
+}
+.ef-screwdriver:before {
+  content: "\ebf9";
+}
+.ef-spanner:before {
+  content: "\ebfa";
+}
+.ef-repair:before {
+  content: "\ebfb";
+}
+.ef-tools:before {
+  content: "\ebfc";
+}
+.ef-hand-tools:before {
+  content: "\ebfd";
+}
+.ef-saw:before {
+  content: "\ebfe";
+}
+.ef-showel:before {
+  content: "\ebff";
+}
+.ef-yardstick:before {
+  content: "\ec00";
+}
+.ef-wrench-case:before {
+  content: "\ec01";
+}
+.ef-repair-tools:before {
+  content: "\ec02";
+}
+.ef-screw:before {
+  content: "\e9b0";
+}
+.ef-bolt:before {
+  content: "\e9b3";
+}
+.ef-metal-nail:before {
+  content: "\ec67";
+}
+.ef-lock-washer:before {
+  content: "\ec68";
+}
+.ef-laminate:before {
+  content: "\ec7d";
+}
+.ef-underlayment:before {
+  content: "\ec7e";
+}
+.ef-vinyl-floor:before {
+  content: "\ec7f";
+}
+.ef-linoleum:before {
+  content: "\ec80";
+}
+.ef-plinth:before {
+  content: "\ec81";
+}
+.ef-ceiling-plinth:before {
+  content: "\ec9f";
+}
+.ef-foam-underlayment:before {
+  content: "\ec82";
+}
+.ef-floor-threshold:before {
+  content: "\ec83";
+}
+.ef-wallpaper:before {
+  content: "\ec84";
+}
+.ef-curtains:before {
+  content: "\ec85";
+}
+.ef-roller-blind:before {
+  content: "\eca0";
+}
+.ef-curtain-pipe:before {
+  content: "\eca1";
+}
+.ef-home-decoration:before {
+  content: "\ec86";
+}
+.ef-bricks:before {
+  content: "\ec87";
+}
+.ef-concrete-mixer:before {
+  content: "\ec88";
+}
+.ef-construction-helmet:before {
+  content: "\ec89";
+}
+.ef-corner-ruler:before {
+  content: "\ec8a";
+}
+.ef-divider:before {
+  content: "\ec8b";
+}
+.ef-drill-bit:before {
+  content: "\ec8c";
+}
+.ef-dry-mix-plaster:before {
+  content: "\ec8d";
+}
+.ef-ladder:before {
+  content: "\ec8e";
+}
+.ef-rocks:before {
+  content: "\ec8f";
+}
+.ef-sledgehammer:before {
+  content: "\ec90";
+}
+.ef-man:before {
+  content: "\e964";
+}
+.ef-girl:before {
+  content: "\eb46";
+}
+.ef-boy:before {
+  content: "\eb47";
+}
+.ef-childrens:before {
+  content: "\eb48";
+}
+.ef-dress:before {
+  content: "\e960";
+}
+.ef-skirt:before {
+  content: "\eb49";
+}
+.ef-tunic:before {
+  content: "\eb4a";
+}
+.ef-shirt:before {
+  content: "\e969";
+}
+.ef-baby-body:before {
+  content: "\e95a";
+}
+.ef-singlet:before {
+  content: "\eb4b";
+}
+.ef-fur-coat:before {
+  content: "\eb4c";
+}
+.ef-women-coat:before {
+  content: "\eb4d";
+}
+.ef-formal-shirt:before {
+  content: "\eb4e";
+}
+.ef-sweater:before {
+  content: "\eb4f";
+}
+.ef-sports-suit:before {
+  content: "\eb50";
+}
+.ef-parka:before {
+  content: "\eb51";
+}
+.ef-down-jacket:before {
+  content: "\eb52";
+}
+.ef-men-coat:before {
+  content: "\eb53";
+}
+.ef-blazer:before {
+  content: "\eb54";
+}
+.ef-vest:before {
+  content: "\eb55";
+}
+.ef-hoodie:before {
+  content: "\eb56";
+}
+.ef-windbreaker:before {
+  content: "\eb57";
+}
+.ef-vest-jacket:before {
+  content: "\eb58";
+}
+.ef-high-heels:before {
+  content: "\eb59";
+}
+.ef-heels:before {
+  content: "\eb5a";
+}
+.ef-ankle-boots:before {
+  content: "\eb5b";
+}
+.ef-women-boots:before {
+  content: "\eb5c";
+}
+.ef-uggi:before {
+  content: "\eb5d";
+}
+.ef-ballet-flat-shoes:before {
+  content: "\eb5e";
+}
+.ef-espadrilles:before {
+  content: "\eb5f";
+}
+.ef-slip-ons:before {
+  content: "\eb60";
+}
+.ef-sneakers:before {
+  content: "\eb61";
+}
+.ef-moccasins:before {
+  content: "\eb62";
+}
+.ef-boots:before {
+  content: "\eb63";
+}
+.ef-male-shoes:before {
+  content: "\e965";
+}
+.ef-children-shoes:before {
+  content: "\e95e";
+}
+.ef-slippers:before {
+  content: "\eb64";
+}
+.ef-socks:before {
+  content: "\eb65";
+}
+.ef-pajamas:before {
+  content: "\eb66";
+}
+.ef-underwear:before {
+  content: "\e96b";
+}
+.ef-swim-trunks:before {
+  content: "\eb67";
+}
+.ef-bra:before {
+  content: "\e95c";
+}
+.ef-swimsuit:before {
+  content: "\eb68";
+}
+.ef-pants:before {
+  content: "\e966";
+}
+.ef-shorts:before {
+  content: "\eb69";
+}
+.ef-cap:before {
+  content: "\e95d";
+}
+.ef-scarf:before {
+  content: "\eb6a";
+}
+.ef-tie:before {
+  content: "\eb6b";
+}
+.ef-watch:before {
+  content: "\e96c";
+}
+.ef-belt:before {
+  content: "\eb6c";
+}
+.ef-handbag:before {
+  content: "\e963";
+}
+.ef-suitcase:before {
+  content: "\e96a";
+}
+.ef-cosmetics:before {
+  content: "\e95f";
+}
+.ef-glasses:before {
+  content: "\e962";
+}
+.ef-ring:before {
+  content: "\e968";
+}
+.ef-bouquet:before {
+  content: "\e95b";
+}
+.ef-perfume:before {
+  content: "\e967";
+}
+.ef-gift:before {
+  content: "\e961";
+}
+.ef-drill:before {
+  content: "\e971";
+}
+.ef-perforator:before {
+  content: "\e97a";
+}
+.ef-cordless-screwdriver:before {
+  content: "\e970";
+}
+.ef-airbrush:before {
+  content: "\e96d";
+}
+.ef-circular-saw:before {
+  content: "\e96f";
+}
+.ef-milling-disk:before {
+  content: "\e979";
+}
+.ef-angle-grinder:before {
+  content: "\e96e";
+}
+.ef-polish-machine:before {
+  content: "\e97b";
+}
+.ef-electric-construction-mixer:before {
+  content: "\e972";
+}
+.ef-electric-planer:before {
+  content: "\e975";
+}
+.ef-electric-jig-saw:before {
+  content: "\e974";
+}
+.ef-electric-hacksaw:before {
+  content: "\e973";
+}
+.ef-electric-scissors:before {
+  content: "\e976";
+}
+.ef-engraver:before {
+  content: "\e977";
+}
+.ef-jackhammer:before {
+  content: "\e978";
+}
+.ef-wall-chaser:before {
+  content: "\e97c";
+}
+.ef-bit-holder:before {
+  content: "\eb9c";
+}
+.ef-hexagon-socket:before {
+  content: "\eb9d";
+}
+.ef-toolbox:before {
+  content: "\eb9e";
+}
+.ef-storage-case:before {
+  content: "\eb9f";
+}
+.ef-grass-trimmer:before {
+  content: "\ea53";
+}
+.ef-gasoline-trimmer:before {
+  content: "\eabe";
+}
+.ef-lawn-mower:before {
+  content: "\ea58";
+}
+.ef-lawn-mower-rider:before {
+  content: "\eac2";
+}
+.ef-lawn-mower-robot:before {
+  content: "\eac3";
+}
+.ef-cultivator:before {
+  content: "\ea19";
+}
+.ef-motoblock:before {
+  content: "\ea5a";
+}
+.ef-mini-tractor:before {
+  content: "\ea59";
+}
+.ef-plow:before {
+  content: "\ea5b";
+}
+.ef-hand-snow-plow:before {
+  content: "\ea54";
+}
+.ef-hedgecutters:before {
+  content: "\ea55";
+}
+.ef-chain-saw:before {
+  content: "\ea11";
+}
+.ef-blower:before {
+  content: "\ea10";
+}
+.ef-pole-saw:before {
+  content: "\eac5";
+}
+.ef-earth-borer:before {
+  content: "\eabc";
+}
+.ef-garden-trolley:before {
+  content: "\ea52";
+}
+.ef-garden-tools:before {
+  content: "\ea51";
+}
+.ef-ax:before {
+  content: "\eaba";
+}
+.ef-irrigation-system:before {
+  content: "\ea57";
+}
+.ef-garden-hose:before {
+  content: "\eabd";
+}
+.ef-garden-shredder:before {
+  content: "\ea50";
+}
+.ef-high-pressure-washer:before {
+  content: "\ea56";
+}
+.ef-backpack-sprayer:before {
+  content: "\eabb";
+}
+.ef-washing-vacuum-cleaner:before {
+  content: "\ea5c";
+}
+.ef-mesh-face-shield:before {
+  content: "\eac4";
+}
+.ef-workwear:before {
+  content: "\eac8";
+}
+.ef-gloves:before {
+  content: "\eac0";
+}
+.ef-rubber-boots:before {
+  content: "\eac6";
+}
+.ef-lawn-mower-oil:before {
+  content: "\eac1";
+}
+.ef-trimming-line:before {
+  content: "\eac7";
+}
+.ef-pizza:before {
+  content: "\e993";
+}
+.ef-pizza-piece:before {
+  content: "\e994";
+}
+.ef-burger:before {
+  content: "\e995";
+}
+.ef-french-fries:before {
+  content: "\e996";
+}
+.ef-hot-dog:before {
+  content: "\e997";
+}
+.ef-taco:before {
+  content: "\e998";
+}
+.ef-gyros-pita:before {
+  content: "\e999";
+}
+.ef-pita:before {
+  content: "\e99a";
+}
+.ef-pancake:before {
+  content: "\e99b";
+}
+.ef-pie:before {
+  content: "\e99c";
+}
+.ef-coffee-beans:before {
+  content: "\e9e8";
+}
+.ef-coffee:before {
+  content: "\e9e9";
+}
+.ef-coffee-steam:before {
+  content: "\e9ea";
+}
+.ef-tea-cup:before {
+  content: "\e9eb";
+}
+.ef-tea-bag:before {
+  content: "\e9ec";
+}
+.ef-cheesecake:before {
+  content: "\e9ed";
+}
+.ef-croissant:before {
+  content: "\e9ee";
+}
+.ef-cupcake:before {
+  content: "\e9ef";
+}
+.ef-donut:before {
+  content: "\e9f0";
+}
+.ef-drink:before {
+  content: "\e9f1";
+}
+.ef-juice-pack:before {
+  content: "\e9f2";
+}
+.ef-water-bottle:before {
+  content: "\e9f3";
+}
+.ef-orange-juice:before {
+  content: "\e9f4";
+}
+.ef-fresh-juice:before {
+  content: "\e9f5";
+}
+.ef-orange:before {
+  content: "\e9f6";
+}
+.ef-apple:before {
+  content: "\e9f7";
+}
+.ef-chinese-food-box:before {
+  content: "\e9f8";
+}
+.ef-sushi:before {
+  content: "\e9f9";
+}
+.ef-ice-cream-horn:before {
+  content: "\e9fa";
+}
+.ef-ice-cream-stick:before {
+  content: "\e9fb";
+}
+.ef-kebab:before {
+  content: "\e9fc";
+}
+.ef-chili:before {
+  content: "\e9fd";
+}
+.ef-double-bed:before {
+  content: "\ea05";
+}
+.ef-mattress-spring:before {
+  content: "\ec69";
+}
+.ef-mattress-springless:before {
+  content: "\ec6a";
+}
+.ef-mattress-topper:before {
+  content: "\ec6b";
+}
+.ef-metal-bed:before {
+  content: "\ec6c";
+}
+.ef-sofa:before {
+  content: "\ea16";
+}
+.ef-armchair:before {
+  content: "\e99d";
+}
+.ef-bed:before {
+  content: "\e99f";
+}
+.ef-bunk-bed:before {
+  content: "\e9a2";
+}
+.ef-couch:before {
+  content: "\ea01";
+}
+.ef-car-bed:before {
+  content: "\e9a3";
+}
+.ef-mattress:before {
+  content: "\ea0e";
+}
+.ef-bag-chair:before {
+  content: "\e99e";
+}
+.ef-corner-sofa:before {
+  content: "\ea00";
+}
+.ef-kitchen-corner-sofa:before {
+  content: "\ea0b";
+}
+.ef-ottoman:before {
+  content: "\ea12";
+}
+.ef-table-chair:before {
+  content: "\ea18";
+}
+.ef-chair:before {
+  content: "\e9a4";
+}
+.ef-table:before {
+  content: "\ea17";
+}
+.ef-wardrobe:before {
+  content: "\ea1c";
+}
+.ef-bookcase:before {
+  content: "\e9a1";
+}
+.ef-cupboard:before {
+  content: "\ea03";
+}
+.ef-closet:before {
+  content: "\e9a5";
+}
+.ef-hallway-furniture:before {
+  content: "\ea08";
+}
+.ef-shoe-bench:before {
+  content: "\ea15";
+}
+.ef-hanger-stand:before {
+  content: "\ea09";
+}
+.ef-living-room-tv-furniture:before {
+  content: "\ea0d";
+}
+.ef-tv-stand:before {
+  content: "\ea1a";
+}
+.ef-shelving:before {
+  content: "\ea14";
+}
+.ef-shelves:before {
+  content: "\ea13";
+}
+.ef-drawer:before {
+  content: "\ea06";
+}
+.ef-bedside-table:before {
+  content: "\e9a0";
+}
+.ef-coffee-table:before {
+  content: "\e9fe";
+}
+.ef-kitchen:before {
+  content: "\ea0a";
+}
+.ef-computer-table:before {
+  content: "\e9ff";
+}
+.ef-desk:before {
+  content: "\e939";
+}
+.ef-crib:before {
+  content: "\ea02";
+}
+.ef-dressing-table:before {
+  content: "\ea07";
+}
+.ef-linens:before {
+  content: "\ea0c";
+}
+.ef-table-lamp:before {
+  content: "\ea04";
+}
+.ef-office-chair:before {
+  content: "\e93f";
+}
+.ef-office-furniture:before {
+  content: "\e943";
+}
+.ef-mirror:before {
+  content: "\ea0f";
+}
+.ef-wall-clock:before {
+  content: "\ea1b";
+}
+.ef-bath:before {
+  content: "\e9b6";
+}
+.ef-stone-bath:before {
+  content: "\ec42";
+}
+.ef-bath-curtains:before {
+  content: "\e9b7";
+}
+.ef-bathroom-screen:before {
+  content: "\e9b8";
+}
+.ef-faucet:before {
+  content: "\e935";
+}
+.ef-bidet-faucet:before {
+  content: "\e9b9";
+}
+.ef-faucet-bathroom:before {
+  content: "\e9ba";
+}
+.ef-faucet-kitchen:before {
+  content: "\e9bb";
+}
+.ef-board-faucet:before {
+  content: "\eaf1";
+}
+.ef-stand-faucet:before {
+  content: "\eaf2";
+}
+.ef-flush-mounted-faucet:before {
+  content: "\eaf3";
+}
+.ef-faucet-shower:before {
+  content: "\e9bc";
+}
+.ef-hand-shower:before {
+  content: "\eaf4";
+}
+.ef-shower-headset:before {
+  content: "\eaf5";
+}
+.ef-hygienic-shower:before {
+  content: "\eaf6";
+}
+.ef-shower-stand:before {
+  content: "\eaf7";
+}
+.ef-siphon:before {
+  content: "\e9bd";
+}
+.ef-washbasin:before {
+  content: "\e9be";
+}
+.ef-washbasin-pedestal:before {
+  content: "\e9bf";
+}
+.ef-pedestal:before {
+  content: "\e9c0";
+}
+.ef-bathroom-curbstone:before {
+  content: "\e9c1";
+}
+.ef-bathroom-column-cabinet:before {
+  content: "\e9c2";
+}
+.ef-bathroom-furnitute:before {
+  content: "\eaf8";
+}
+.ef-bathroom-furnitute-classic:before {
+  content: "\eaf9";
+}
+.ef-bathroom-drawer:before {
+  content: "\e9c3";
+}
+.ef-wall-hung-bath-cabinet:before {
+  content: "\e9c4";
+}
+.ef-mirror-box:before {
+  content: "\e9c5";
+}
+.ef-bathroom-mirror:before {
+  content: "\e9c6";
+}
+.ef-toilet:before {
+  content: "\e9c7";
+}
+.ef-in-wall-toilet-system:before {
+  content: "\e9c8";
+}
+.ef-flush-button:before {
+  content: "\eafa";
+}
+.ef-floorstanding-toilet:before {
+  content: "\e9c9";
+}
+.ef-floorstanding-bidet:before {
+  content: "\e9ca";
+}
+.ef-wall-hung-toilet:before {
+  content: "\e9cb";
+}
+.ef-wall-hung-bidet:before {
+  content: "\e9cc";
+}
+.ef-urinal:before {
+  content: "\e9cd";
+}
+.ef-toilet-brush:before {
+  content: "\e9ce";
+}
+.ef-toilet-roll-holder:before {
+  content: "\e9cf";
+}
+.ef-toilet-stand:before {
+  content: "\eafb";
+}
+.ef-towel-warmer:before {
+  content: "\e9d0";
+}
+.ef-towel-rail:before {
+  content: "\e9d1";
+}
+.ef-heated-rail:before {
+  content: "\e9d2";
+}
+.ef-heated-towel-rail:before {
+  content: "\e9d3";
+}
+.ef-shower-cabin:before {
+  content: "\e9d4";
+}
+.ef-shower-door:before {
+  content: "\e9d5";
+}
+.ef-shower-trays:before {
+  content: "\e9d6";
+}
+.ef-shower-partition:before {
+  content: "\e9d7";
+}
+.ef-shower-system:before {
+  content: "\e9d8";
+}
+.ef-shower-panel:before {
+  content: "\e9d9";
+}
+.ef-shower-screen:before {
+  content: "\e9da";
+}
+.ef-shower-seat:before {
+  content: "\eafc";
+}
+.ef-soap-dish:before {
+  content: "\e9db";
+}
+.ef-bathroom-accessories:before {
+  content: "\e9dc";
+}
+.ef-towel-hook:before {
+  content: "\eafd";
+}
+.ef-cotton-pad-container:before {
+  content: "\eafe";
+}
+.ef-bathroom-shelves:before {
+  content: "\eaff";
+}
+.ef-bath-shelves:before {
+  content: "\eb00";
+}
+.ef-bath-toilet-mats:before {
+  content: "\e9dd";
+}
+.ef-taps-fittings:before {
+  content: "\e9de";
+}
+.ef-shower-drain:before {
+  content: "\ec49";
+}
+.ef-adapters-fittings:before {
+  content: "\eb01";
+}
+.ef-kitchen-sink:before {
+  content: "\e9df";
+}
+.ef-pet-shop:before {
+  content: "\eab6";
+}
+.ef-cat:before {
+  content: "\e9b5";
+}
+.ef-dog:before {
+  content: "\eaac";
+}
+.ef-dry-food:before {
+  content: "\eab0";
+}
+.ef-cat-canned-goods:before {
+  content: "\eaa6";
+}
+.ef-dog-canned-goods:before {
+  content: "\eaad";
+}
+.ef-cat-food:before {
+  content: "\eaa7";
+}
+.ef-dog-food:before {
+  content: "\eaae";
+}
+.ef-dog-goodies:before {
+  content: "\eaaf";
+}
+.ef-pet-bowl:before {
+  content: "\eab3";
+}
+.ef-pet-tray:before {
+  content: "\eab7";
+}
+.ef-litter-box:before {
+  content: "\eab1";
+}
+.ef-cat-litter:before {
+  content: "\eaa9";
+}
+.ef-cat-litter-box:before {
+  content: "\eaaa";
+}
+.ef-collar-leash:before {
+  content: "\eaab";
+}
+.ef-muzzle:before {
+  content: "\eab2";
+}
+.ef-pet-brush:before {
+  content: "\eab4";
+}
+.ef-pet-carrier:before {
+  content: "\eab5";
+}
+.ef-cat-house:before {
+  content: "\eaa8";
+}
+.ef-scratching-stone:before {
+  content: "\eab8";
+}
+.ef-fish:before {
+  content: "\ebe4";
+}
+.ef-parrot:before {
+  content: "\ebe5";
+}
+.ef-hamster:before {
+  content: "\ebe6";
+}
+.ef-mouse-face:before {
+  content: "\ebe7";
+}
+.ef-small-mouse:before {
+  content: "\ebe8";
+}
+.ef-turtle:before {
+  content: "\ebe9";
+}
+.ef-snake:before {
+  content: "\ebea";
+}
+.ef-fish-food:before {
+  content: "\ebeb";
+}
+.ef-parrot-food:before {
+  content: "\ebec";
+}
+.ef-hamster-food:before {
+  content: "\ebed";
+}
+.ef-turtle-food:before {
+  content: "\ebee";
+}
+.ef-pets-food:before {
+  content: "\ebef";
+}
+.ef-aquarium:before {
+  content: "\ebf0";
+}
+.ef-bird-cage:before {
+  content: "\ebf1";
+}
+.ef-hamster-wheel:before {
+  content: "\ebf2";
+}
+.ef-mouse-house:before {
+  content: "\ebf3";
+}
+.ef-terrarium:before {
+  content: "\ebf4";
+}
+.ef-vitamins:before {
+  content: "\ebf5";
+}
+.ef-drugs:before {
+  content: "\ebf6";
+}
+.ef-veterinary:before {
+  content: "\ebf7";
+}
+.ef-board-game:before {
+  content: "\ec5e";
+}
+.ef-rubik-cube:before {
+  content: "\ec65";
+}
+.ef-book:before {
+  content: "\ec5f";
+}
+.ef-development:before {
+  content: "\ec60";
+}
+.ef-puzzle:before {
+  content: "\ec64";
+}
+.ef-paintbrush:before {
+  content: "\ec62";
+}
+.ef-spade:before {
+  content: "\ec66";
+}
+.ef-playing-cards:before {
+  content: "\ec63";
+}
+.ef-kids-brick:before {
+  content: "\e9b4";
+}
+.ef-figure:before {
+  content: "\ec61";
+}
+.ef-bike:before {
+  content: "\e9a6";
+}
+.ef-atv:before {
+  content: "\e9a7";
+}
+.ef-motobike:before {
+  content: "\eb44";
+}
+.ef-scooter:before {
+  content: "\e9a9";
+}
+.ef-helmet:before {
+  content: "\e9aa";
+}
+.ef-gyroscooter:before {
+  content: "\e9ab";
+}
+.ef-exercise-bike:before {
+  content: "\e9ac";
+}
+.ef-basketball:before {
+  content: "\e9ad";
+}
+.ef-football:before {
+  content: "\e9ae";
+}
+.ef-hunting:before {
+  content: "\e9af";
+}
+.ef-fishing:before {
+  content: "\e9b1";
+}
+.ef-needlework:before {
+  content: "\e9b2";
+}
+.ef-knife:before {
+  content: "\ea5d";
+}
+.ef-folding-knife:before {
+  content: "\ea5e";
+}
+.ef-multitool:before {
+  content: "\ea5f";
+}
+.ef-axe:before {
+  content: "\ea60";
+}
+.ef-flint:before {
+  content: "\ea61";
+}
+.ef-tactical-pencil:before {
+  content: "\ea62";
+}
+.ef-flashlight:before {
+  content: "\ea65";
+}
+.ef-binoculars:before {
+  content: "\ea63";
+}
+.ef-paracord:before {
+  content: "\ea6b";
+}
+.ef-tactical-watch:before {
+  content: "\ea70";
+}
+.ef-tactical-backpack:before {
+  content: "\ea6c";
+}
+.ef-tactical-helmet:before {
+  content: "\ea6e";
+}
+.ef-tactical-glasses:before {
+  content: "\ea6d";
+}
+.ef-military-clothing:before {
+  content: "\ea67";
+}
+.ef-tactical-vest:before {
+  content: "\ea6f";
+}
+.ef-bulletproof-vest:before {
+  content: "\ea64";
+}
+.ef-military-gloves:before {
+  content: "\ea68";
+}
+.ef-military-trousers:before {
+  content: "\ea6a";
+}
+.ef-knee-pads:before {
+  content: "\ea66";
+}
+.ef-military-shoes:before {
+  content: "\ea69";
+}
+.ef-fire-extinguisher:before {
+  content: "\ea29";
+}
+.ef-firehose:before {
+  content: "\ea2a";
+}
+.ef-fire-cabinet:before {
+  content: "\ea2b";
+}
+.ef-fireproof-fittings:before {
+  content: "\ea2c";
+}
+.ef-sprinkler:before {
+  content: "\ea2d";
+}
+.ef-control-panel:before {
+  content: "\ea2e";
+}
+.ef-motion-sensor:before {
+  content: "\ea2f";
+}
+.ef-smoke-detector:before {
+  content: "\ea30";
+}
+.ef-heat-detector:before {
+  content: "\ea31";
+}
+.ef-fire-alarm-manual-call-point:before {
+  content: "\ea32";
+}
+.ef-magnetic-contact-switch:before {
+  content: "\ea33";
+}
+.ef-fire-alarm:before {
+  content: "\ea34";
+}
+.ef-fire-alarm-sound-light:before {
+  content: "\ea35";
+}
+.ef-fire-alarm-lightning:before {
+  content: "\ea36";
+}
+.ef-security-dvr:before {
+  content: "\ea37";
+}
+.ef-surveillance-camera:before {
+  content: "\ea38";
+}
+.ef-dome-camera:before {
+  content: "\ea39";
+}
+.ef-turnstile:before {
+  content: "\ea3a";
+}
+.ef-magnetic-key:before {
+  content: "\ea3b";
+}
+.ef-wire:before {
+  content: "\ea3c";
+}
+.ef-cable-hank:before {
+  content: "\ea3d";
+}
+.ef-gofra:before {
+  content: "\ea3e";
+}
+.ef-pvc-pipes:before {
+  content: "\ea3f";
+}
+.ef-cable-channel:before {
+  content: "\ea40";
+}
+.ef-junction-box:before {
+  content: "\ea41";
+}
+.ef-electric-box:before {
+  content: "\ea42";
+}
+.ef-circuit-breaker:before {
+  content: "\ea43";
+}
+.ef-relay:before {
+  content: "\ea44";
+}
+.ef-electricity-meter:before {
+  content: "\ea45";
+}
+.ef-lightning-protection:before {
+  content: "\ea46";
+}
+.ef-outlet-switch:before {
+  content: "\ea47";
+}
+.ef-electric-switch:before {
+  content: "\ea48";
+}
+.ef-outlet:before {
+  content: "\ea49";
+}
+.ef-nippers-wiring-tool:before {
+  content: "\ea4a";
+}
+.ef-led-lamp:before {
+  content: "\ea4b";
+}
+.ef-lightbulb:before {
+  content: "\eb92";
+}
+.ef-ceiling-spot:before {
+  content: "\ea4c";
+}
+.ef-led-strip-light:before {
+  content: "\ea4d";
+}
+.ef-led-strip:before {
+  content: "\eb93";
+}
+.ef-led-diode:before {
+  content: "\eb94";
+}
+.ef-led-power-supply:before {
+  content: "\eb95";
+}
+.ef-power-supply-led:before {
+  content: "\eb96";
+}
+.ef-power-supply:before {
+  content: "\eb97";
+}
+.ef-led-driver:before {
+  content: "\eb98";
+}
+.ef-led-backlight-module:before {
+  content: "\eb99";
+}
+.ef-led-profile:before {
+  content: "\eb9a";
+}
+.ef-light-control-mobile:before {
+  content: "\eb9b";
+}
+.ef-outdoor-spot:before {
+  content: "\ea4e";
+}
+.ef-extension-cable:before {
+  content: "\ea4f";
+}
+.ef-chandelier:before {
+  content: "\ec6d";
+}
+.ef-ceiling-fixture:before {
+  content: "\ec6e";
+}
+.ef-ceiling-light:before {
+  content: "\ec6f";
+}
+.ef-pendant-light:before {
+  content: "\ec70";
+}
+.ef-mini-pendant:before {
+  content: "\ec71";
+}
+.ef-metal-pendant-light:before {
+  content: "\ec72";
+}
+.ef-island-lighting:before {
+  content: "\ec73";
+}
+.ef-sconce:before {
+  content: "\ec74";
+}
+.ef-torchere:before {
+  content: "\ec75";
+}
+.ef-spot-light:before {
+  content: "\ec76";
+}
+.ef-track-lighting:before {
+  content: "\ec77";
+}
+.ef-backlight:before {
+  content: "\ec78";
+}
+.ef-street-lamp:before {
+  content: "\ec79";
+}
+.ef-street-light:before {
+  content: "\ec7a";
+}
+.ef-garden-lantern:before {
+  content: "\ec7b";
+}
+.ef-lightbox:before {
+  content: "\ec7c";
+}
+.ef-al:before {
+  content: "\ea71";
+}
+.ef-zn:before {
+  content: "\ea72";
+}
+.ef-cu:before {
+  content: "\ea73";
+}
+.ef-sn:before {
+  content: "\ea74";
+}
+.ef-pb:before {
+  content: "\ea75";
+}
+.ef-i-beam:before {
+  content: "\ea76";
+}
+.ef-i-beam-flat:before {
+  content: "\ea77";
+}
+.ef-metal-channel:before {
+  content: "\ea78";
+}
+.ef-metal-channel-flat:before {
+  content: "\ea79";
+}
+.ef-rolled-corner-bar:before {
+  content: "\ea7a";
+}
+.ef-rolled-corner-bar-flat:before {
+  content: "\ea7b";
+}
+.ef-unequal-angle-bar:before {
+  content: "\ebe2";
+}
+.ef-steel-strip-bar:before {
+  content: "\ea7c";
+}
+.ef-steel-strip-bar-flat:before {
+  content: "\ea7d";
+}
+.ef-square-bars:before {
+  content: "\ea7e";
+}
+.ef-square-bars-flat:before {
+  content: "\ea7f";
+}
+.ef-bright-round-bars:before {
+  content: "\ea80";
+}
+.ef-bright-round-bars-flat:before {
+  content: "\ea81";
+}
+.ef-hexagon-bars:before {
+  content: "\ea82";
+}
+.ef-hexagon-bars-flat:before {
+  content: "\ea83";
+}
+.ef-pipe-rolling:before {
+  content: "\ea84";
+}
+.ef-pipe-rolling-flat:before {
+  content: "\ea85";
+}
+.ef-pipe-rolling-hot:before {
+  content: "\ea86";
+}
+.ef-electric-welded-pipe:before {
+  content: "\ea87";
+}
+.ef-pipe-rolling-zn:before {
+  content: "\ea88";
+}
+.ef-pipe-rolling-electro:before {
+  content: "\ea89";
+}
+.ef-profile-pipe:before {
+  content: "\ea8a";
+}
+.ef-profile-pipe-flat:before {
+  content: "\ea8b";
+}
+.ef-tubes-electro-square:before {
+  content: "\ebe1";
+}
+.ef-pipe-rectangular:before {
+  content: "\ebda";
+}
+.ef-rectangular-pipe:before {
+  content: "\ea8c";
+}
+.ef-rectangular-pipe-flat:before {
+  content: "\ea8d";
+}
+.ef-tubes-electro-rectangular:before {
+  content: "\ebe0";
+}
+.ef-long-products:before {
+  content: "\ea8e";
+}
+.ef-pipes:before {
+  content: "\ebdb";
+}
+.ef-pipes-rect:before {
+  content: "\ebdc";
+}
+.ef-aluminum-scrap:before {
+  content: "\ebcf";
+}
+.ef-ingots:before {
+  content: "\ebd3";
+}
+.ef-ingot:before {
+  content: "\ebd2";
+}
+.ef-rebar:before {
+  content: "\ea8f";
+}
+.ef-rolled-steel:before {
+  content: "\ea90";
+}
+.ef-rolled-steel-flat:before {
+  content: "\ea91";
+}
+.ef-rolled-sheet:before {
+  content: "\ea92";
+}
+.ef-rolled-sheet-hot:before {
+  content: "\ea93";
+}
+.ef-rolled-sheet-zn:before {
+  content: "\ea94";
+}
+.ef-rolled-sheet-fluted:before {
+  content: "\ea95";
+}
+.ef-rolled-sheet-expanded:before {
+  content: "\ea96";
+}
+.ef-metal-profile-zn:before {
+  content: "\ea97";
+}
+.ef-rabitz:before {
+  content: "\ea98";
+}
+.ef-rabitz-zn:before {
+  content: "\ea99";
+}
+.ef-rabitz-pvc:before {
+  content: "\ea9a";
+}
+.ef-mesh-rolls:before {
+  content: "\ea9b";
+}
+.ef-grid-fence:before {
+  content: "\ea9c";
+}
+.ef-metal-rope:before {
+  content: "\ea9d";
+}
+.ef-wire-rod:before {
+  content: "\ea9e";
+}
+.ef-steel-rope:before {
+  content: "\ebe3";
+}
+.ef-pipe-cross:before {
+  content: "\ebd7";
+}
+.ef-pipe-tee:before {
+  content: "\ebdd";
+}
+.ef-pipe-angle:before {
+  content: "\ebd4";
+}
+.ef-pipe-line:before {
+  content: "\ebd8";
+}
+.ef-pipe-bend:before {
+  content: "\ebd5";
+}
+.ef-pipe-nipple:before {
+  content: "\ebd9";
+}
+.ef-tube-nipple:before {
+  content: "\ebdf";
+}
+.ef-pipe-coupling:before {
+  content: "\ebd6";
+}
+.ef-pipeline-accessories:before {
+  content: "\ea9f";
+}
+.ef-flange:before {
+  content: "\ebd0";
+}
+.ef-threaded-fitting:before {
+  content: "\ebde";
+}
+.ef-hex-nut:before {
+  content: "\ebd1";
+}
+.ef-bolt-nut:before {
+  content: "\eaa1";
+}
+.ef-electrode:before {
+  content: "\eaa0";
+}
+.ef-baby-nipple:before {
+  content: "\ea23";
+}
+.ef-xmas-tree:before {
+  content: "\e9e2";
+}
+.ef-sun:before {
+  content: "\ea1d";
+}
+.ef-wind:before {
+  content: "\ea1e";
+}
+.ef-drop:before {
+  content: "\ea1f";
+}
+.ef-fire:before {
+  content: "\ea20";
+}
+.ef-electro:before {
+  content: "\ea21";
+}
+.ef-snowflake:before {
+  content: "\ea22";
+}
+.ef-leaf:before {
+  content: "\e9e3";
+}
+.ef-star:before {
+  content: "\ea28";
+}
+.ef-shield:before {
+  content: "\ea25";
+}
+.ef-eye:before {
+  content: "\ea26";
+}
+.ef-music:before {
+  content: "\ea27";
+}
+.ef-oak-tree:before {
+  content: "\e9e0";
+}
+.ef-fir-tree:before {
+  content: "\e9e1";
+}
+.ef-empty:before {
+  content: "\ea24";
+}
+.ef-minimarket:before {
+  content: "\eaa5";
+}
+.ef-altop-o:before {
+  content: "\eaa4";
+}
+.ef-elektrosila:before {
+  content: "\eaa3";
+}
+.ef-bitrix:before {
+  content: "\e9e6";
+}
+.ef-elasto:before {
+  content: "\e9e7";
+}
+.ef-altop:before {
+  content: "\e9e5";
+}
