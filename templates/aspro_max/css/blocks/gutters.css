@@ -1,0 +1,59 @@
+.mi {
+	--mi: 0px;
+	margin-inline: var(--mi);
+}
+.mi--16 {
+	--mi: 16px;
+}
+
+.mt {
+	--mt: 0px;
+	margin-top: var(--mt);
+}
+.mt--auto {
+	--mt: auto;
+}
+.mt--12 {
+	--mt: 12px;
+}
+.mt--16 {
+	--mt: 16px;
+}
+.mt--32 {
+  --mt: clamp(24px, 3vw, 32px);
+}
+
+.mb {
+	--mb: 0px;
+	margin-bottom: var(--mb);
+}
+.mb--12 {
+	--mb: 12px;
+}
+
+.mr {
+	--mr: 0px;
+	margin-right: var(--mr);
+}
+.mr--12 {
+	--mr: 12px;
+}
+
+.ml {
+	--ml: 0px;
+	margin-left: var(--ml);
+}
+.ml--12 {
+	--ml: 12px;
+}
+
+.pt {
+	--pt: 0px;
+	padding-top: var(--pt);
+}
+.pt--8 {
+	--pt: 8px;
+}
+.pt--12 {
+	--pt: 12px;
+}

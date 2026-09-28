@@ -1,0 +1,224 @@
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    exit;
+}
+
+if (!include_once($_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/vendor/php/solution.php')) {
+    throw new \Exception('Error include solution constants');
+}
+
+$frame = $this->createFrame()->begin('');
+$imgPath = $arResult['FORM_IMAGE'] ? $arResult['FORM_IMAGE']['URL'] : '';
+
+$classesBlockForm = '';
+
+if(!$imgPath) {
+    $classesBlockForm = 'form-narrow ';
+}
+?>
+<div class="content_wrapper_block front_sections_only">
+    <div class="maxwidth-theme">
+        <div class="sections_wrapper">
+            <div class="form  <?=$arResult['arForm']['SID'];?>">
+                <div class="form__inner flexbox justify-center flexbox--row flexbox--gap flexbox--gap-60">
+                    <div class="inline flex1 <?=$classesBlockForm;?>">
+                        <!--noindex-->
+                        <?if (!$arResult["FORM_NOTE"]):?>
+                            <div class="form_head">
+                                <?if ($arResult['isFormTitle'] == 'Y'):?>
+                                    <div class="top_block">
+                                        <h2 class="top_block_title">
+                                            <?=$arResult['FORM_TITLE'];?>
+                                        </h2>
+                                    </div>
+                                <?endif;?>
+
+                                <?if ($arResult['isFormDescription'] == 'Y'):?>
+                                    <div class="form_desc">
+                                        <?=$arResult['FORM_DESCRIPTION'];?>
+                                    </div>
+                                <?endif;?>
+                            </div>
+                        <?endif;?>
+                        <?if ($arResult['isFormErrors'] == 'Y' || strlen($arResult['FORM_NOTE'])):?>
+                            <div class="form_result centered-text <?=$arResult['isFormErrors'] == 'Y' ? 'error' : 'success';?>">
+                                <?if ($arResult['isFormErrors'] == 'Y'):?>
+                                    <?=$arResult['FORM_ERRORS_TEXT'];?>
+                                <?else:?>
+                                    <?=TSolution::showIconSvg(' colored', SITE_TEMPLATE_PATH.'/images/svg/success.svg');?>
+                                    <span class="success_text">
+                                        <?$successNoteFile = SITE_DIR."include/form/success_{$arResult['arForm']['SID']}.php";?>
+                                        <?if (file_exists($_SERVER['DOCUMENT_ROOT'].$successNoteFile)):?>
+                                        <?$APPLICATION->IncludeFile($successNoteFile, [], ['MODE' => 'html', 'NAME' => 'Form success note']);?>
+                                        <?else:?>
+                                            <?=GetMessage('FORM_SUCCESS');?>
+                                        <?endif;?>
+                                    </span>
+                                    <script>
+                                        if (arMaxOptions['THEME']['USE_FORMS_GOALS'] !== 'NONE') {
+                                            const eventdata = {
+                                                goal: 'goal_webform_success'
+                                            };
+                                            if (arMaxOptions['THEME']['USE_FORMS_GOALS'] !== 'COMMON') {
+                                                eventdata.goal += '_<?=$arResult['arForm']['ID'];?>';
+                                            }
+                                            BX.onCustomEvent('onCounterGoals', [eventdata]);
+                                        }
+                                    </script>
+                                <?endif;?>
+                            </div>
+                        <?endif;?>
+                        <?if (!$arResult["FORM_NOTE"]):?>
+
+                            <?=$arResult['FORM_HEADER'];?>
+
+                            <?=bitrix_sessid_post();?>
+
+                            <div class="form_body">
+                                <?if (is_array($arResult['QUESTIONS'])):?>
+                                        <?foreach ($arResult['QUESTIONS'] as $FIELD_SID => $arQuestion):?>
+                                            <?TSolution::drawFormField($FIELD_SID, $arQuestion);?>
+                                        <?endforeach;?>
+                                <?endif;?>
+                                <div class="clearboth"></div>
+
+                                <?$bHiddenCaptcha = (isset($arParams['HIDDEN_CAPTCHA']) ? $arParams['HIDDEN_CAPTCHA'] : TSolution::GetFrontParametrValue('HIDDEN_CAPTCHA'));?>
+                                <?if ($arResult['isUseCaptcha'] == 'Y'):?>
+                                    <div class="form-control captcha-row clearfix">
+                                        <label><span><?=GetMessage('FORM_CAPRCHE_TITLE');?>&nbsp;<span class="star">*</span></span></label>
+                                        <div class="captcha_image">
+                                            <img src="/bitrix/tools/captcha.php?captcha_sid=<?=htmlspecialcharsbx($arResult['CAPTCHACode']);?>">
+                                            <input type="hidden" name="captcha_sid" value="<?=htmlspecialcharsbx($arResult['CAPTCHACode']);?>">
+                                            <div class="captcha_reload"></div>
+                                        </div>
+
+                                        <div class="captcha_input">
+                                            <input type="text" class="inputtext captcha" name="captcha_word" size="30" maxlength="50" value="" required />
+                                        </div>
+                                    </div>
+                                <?elseif ($bHiddenCaptcha == 'Y'):?>
+                                    <textarea name="nspm" style="display:none;"></textarea>
+                                <?endif;?>
+
+                                <div class="clearboth"></div>
+                            </div>
+
+                            <div class="mt mt--32">
+                                <?
+                                $showLicence = (isset($arParams['SHOW_LICENCE']) ? $arParams['SHOW_LICENCE'] : TSolution::GetFrontParametrValue('SHOW_LICENCE'));
+                                ?>
+                                <?if($showLicence == 'Y'):?>
+                                    <?
+                                    TSolution\Functions::showBlockHtml([
+                                        'FILE' => 'consent/userconsent.php',
+                                        'PARAMS' => [
+                                            'OPTION_CODE' => 'AGREEMENT_'.$arResult['arForm']['SID'].'_FORM',
+                                            'SUBMIT_TEXT' => $arResult["arForm"]["BUTTON"],
+                                            'REPLACE_FIELDS' => $arQuestionsText ?: [],
+                                            'INPUT_NAME' => "licenses_inline",
+                                            'INPUT_ID' => "licenses_inline_".$arResult["arForm"]["ID"],
+                                        ]
+                                    ]);
+                                    ?>
+                                <?endif;?>
+
+                                <div class="line-block form_footer__bottom line-block--0 line-block--gap line-block--gap-20">
+                                    <button type="submit" class="btn btn-default basket read_more btn-lg has-ripple" value="submit">
+                                        <span><?=$arResult['arForm']['BUTTON'];?></span>
+                                    </button>
+
+                                    <div class="line-block__item">
+                                        <?$APPLICATION->IncludeFile(SITE_DIR.'include/required_message.php', [], ['MODE' => 'html']);?>
+                                    </div>
+                                </div>
+                                <input type="hidden" class="btn btn-default" value="<?=$arResult['arForm']['BUTTON'];?>" name="web_form_submit">
+
+                                <script>
+                                    BX.Aspro.Utils.readyDOM(() => {
+                                        $('form[name="<?=$arResult['arForm']['VARNAME'];?>"]').validate({
+                                            submitHandler: (form) => {
+                                                if ($('form[name="<?=$arResult['arForm']['VARNAME'];?>"]').valid()) {
+                                                    setTimeout(() => {
+                                                        $(form).find('button[type="submit"]').attr("disabled", "disabled");
+                                                    }, 500);
+
+                                                    var eventdata = {
+                                                        type: 'form_submit',
+                                                        form: form,
+                                                        form_name: '<?=$arResult['arForm']['VARNAME'];?>',
+                                                    };
+                                                    BX.onCustomEvent('onSubmitForm', [eventdata]);
+                                                }
+                                            },
+                                            messages: {
+                                                licenses_inline: {
+                                                    required: BX.message('JS_REQUIRED_LICENSES'),
+                                                },
+                                            },
+                                        });
+
+
+                                        if (arAsproOptions['THEME']['DATE_MASK'].length) {
+                                            $('form[name="<?=$arResult['arForm']['VARNAME'];?>"] input.date').inputmask('datetime', {
+                                                inputFormat: arAsproOptions['THEME']['DATE_MASK'],
+                                                placeholder: arAsproOptions['THEME']['DATE_PLACEHOLDER'],
+                                                showMaskOnHover: false,
+                                            });
+                                        }
+
+                                        if (arAsproOptions['THEME']['DATETIME_MASK'].length) {
+                                            $('form[name="<?=$arResult['arForm']['VARNAME'];?>"] input.datetime').inputmask('datetime', {
+                                                inputFormat: arAsproOptions['THEME']['DATETIME_MASK'],
+                                                placeholder: arAsproOptions['THEME']['DATETIME_PLACEHOLDER'],
+                                                showMaskOnHover: false,
+                                            });
+                                        }
+
+                                        $('form[name="<?=$arResult['arForm']['VARNAME'];?>"] input[type=file]:not(".uniform-ignore")').uniform({
+                                            fileButtonHtml: BX.message('JS_FILE_BUTTON_NAME'),
+                                            fileDefaultHtml: BX.message('JS_FILE_DEFAULT'),
+                                        });
+
+                                        $('form[name="<?=$arResult['arForm']['VARNAME'];?>"] .add_file').on('click', function(){
+                                            const index = $(this).closest('.input').find('input[type=file]').length+1;
+
+                                            $(this).closest('.form-group').find('.input').append(
+                                                `<input type="file" id="POPUP_FILE" name="FILE_n${index}" class="inputfile" value="" />`
+                                            );
+
+                                            $('input[type=file]:not(".uniform-ignore")').uniform({
+                                                fileButtonHtml: BX.message('JS_FILE_BUTTON_NAME'),
+                                                fileDefaultHtml: BX.message('JS_FILE_DEFAULT'),
+                                            });
+                                        });
+
+                                        $('form[name="<?=$arResult['arForm']['VARNAME'];?>"] .add_file').on('click', function(){
+                                            const index = $(this).closest('.input').find('input[type=file]').length+1;
+
+                                            $(this).closest('.form-group').find('.input').append(
+                                                `<input type="file" id="POPUP_FILE" name="FILE_n${index}" class="inputfile" value="" />`
+                                            );
+
+                                            $('input[type=file]:not(".uniform-ignore")').uniform({
+                                                fileButtonHtml: BX.message('JS_FILE_BUTTON_NAME'),
+                                                fileDefaultHtml: BX.message('JS_FILE_DEFAULT'),
+                                            });
+                                        });
+                                    });
+                                </script>
+                            </div>
+
+                            <?=$arResult['FORM_FOOTER'];?>
+                        <?endif;?>
+
+                        <!--/noindex-->
+                    </div>
+                    <?if($imgPath && !$arResult["FORM_NOTE"]):?>
+                        <div class="form-img flex1 hide-991 rounded3" style="background-image: url(<?=$imgPath?>)"></div>
+                    <?endif;?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?$frame->end();?>

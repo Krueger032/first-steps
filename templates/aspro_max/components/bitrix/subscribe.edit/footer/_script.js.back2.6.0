@@ -1,0 +1,11 @@
+BX.Aspro.Utils.readyDOM(() => {
+  BX.Aspro.Loader.addExt('validate').then(() => {
+    $("form.subscribe-form").validate({
+      rules: {
+        EMAIL: {
+          email: true
+        }
+      }
+    });
+	});
+});

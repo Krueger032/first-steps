@@ -1,0 +1,110 @@
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    exit;
+}
+
+if (!include_once($_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/vendor/php/solution.php')) {
+    throw new Exception('Error include solution constants');
+}
+
+$arAuthServices = $arPost = [];
+if (is_array($arParams['~AUTH_SERVICES'])) {
+    $arAuthServices = $arParams['~AUTH_SERVICES'];
+}
+
+if (is_array($arParams['~POST'])) {
+    $arPost = $arParams['~POST'];
+}
+?>
+<?if ($arParams['POPUP']):?>
+    <?php
+    // only one float div per page
+    if (defined('BX_SOCSERV_POPUP')) {
+        return;
+    }
+    define('BX_SOCSERV_POPUP', true);
+    ?>
+    <div style="display:none">
+        <div id="bx_auth_float" class="bx-auth-float">
+<?endif;?>
+
+<?if (($arParams['~CURRENT_SERVICE'] != '') && $arParams['~FOR_SPLIT'] != 'Y'):?>
+    <script>
+        BX.ready(() => {
+            BxShowAuthService('<?=CUtil::JSEscape($arParams['~CURRENT_SERVICE']);?>', '<?=$arParams['~SUFFIX'];?>')
+        });
+    </script>
+<?endif;?>
+
+<?if ($arParams['~FOR_SPLIT'] == 'Y'):?>
+    <div class="bx-auth-serv-icons">
+        <?foreach($arAuthServices as $service):?>
+            <?php
+            if (($arParams['~FOR_SPLIT'] == 'Y') && is_array($service['FORM_HTML'])) {
+                $onClickEvent = $service['FORM_HTML']['ON_CLICK'];
+            } else {
+                $onClickEvent = "onclick=\"BxShowAuthService('".$service['ID']."', '".$arParams['SUFFIX']."')\"";
+            }
+            ?>
+            <a title="<?=htmlspecialcharsbx($service['NAME']);?>" href="javascript:void(0)" <?=$onClickEvent;?> id="bx_auth_href_<?=$arParams['SUFFIX'];?><?=$service['ID'];?>"><i class="bx-ss-icon <?=htmlspecialcharsbx($service['ICON']);?>"></i></a>
+        <?endforeach;?>
+    </div>
+<?endif;?>
+
+<div class="bx-auth row">
+    <form method="post" name="bx_auth_services<?=$arParams['SUFFIX'];?>" target="_top" action="<?=$arParams['AUTH_URL'];?>">
+        <?if ($arParams['~FOR_SPLIT'] != 'Y'):?>
+            <div class="bx-auth-services">
+                <?foreach($arAuthServices as $service):?>
+                    <?if (strpos($service['FORM_HTML'], 'OPENID_IDENTITY') !== false):?>
+                        <div>
+                            <a href="javascript:void(0)" onclick="BxShowAuthService('<?=$service['ID'];?>', '<?=$arParams['SUFFIX'];?>')" id="bx_auth_href_<?=$arParams['SUFFIX'];?><?=$service['ID'];?>">
+                                <i class="soc-icon <?=htmlspecialcharsbx($service['ICON']);?>" title="<?=htmlspecialcharsbx($service['ICON']);?>" alt="<?=htmlspecialcharsbx($service['ICON']);?>"></i>
+                            </a>
+                        </div>
+                    <?else:?>
+                        <span class="auth">
+                            <?$service['FORM_HTML'] = str_replace('">', '"><i class="soc-icon '.htmlspecialcharsbx($service['ICON']).'" title="'.htmlspecialcharsbx($service['ICON']).'" alt="'.htmlspecialcharsbx($service['ICON']).'"></i>', $service['FORM_HTML']);?>
+                            <?=$service['FORM_HTML'];?>
+                        </span>
+                    <?endif;?>
+                <?endforeach;?>
+            </div>
+        <?endif;?>
+
+        <?if ($arParams['~AUTH_LINE'] != 'N'):?>
+            <div class="bx-auth-line clearfix"></div>
+        <?endif;?>
+
+        <div class="bx-auth-service-form" id="bx_auth_serv<?=$arParams['SUFFIX'];?>" style="display:none">
+            <?foreach($arAuthServices as $service):?>
+                <?if (($arParams['~FOR_SPLIT'] != 'Y') || (!is_array($service['FORM_HTML']))):?>
+                    <?$service['FORM_HTML'] = str_replace('"button"', '"btn btn-default"', $service['FORM_HTML']);?>
+                    <?$service['FORM_HTML'] = str_replace('type="text"', 'type="text" required', $service['FORM_HTML']);?>
+                    <div id="bx_auth_serv_<?=$arParams['SUFFIX'];?><?=$service['ID'];?>" style="display:none"><?=$service['FORM_HTML'];?></div>
+                <?endif;?>
+            <?endforeach;?>
+        </div>
+
+        <?foreach($arPost as $key => $value):?>
+            <?if (!preg_match('|OPENID_IDENTITY|', $key)):?>
+                <input type="hidden" name="<?=$key;?>" value="<?=$value;?>" />
+            <?endif;?>
+        <?endforeach;?>
+
+        <input type="hidden" name="auth_service_id" value="" />
+    </form>
+</div>
+
+<script>
+    BX.Aspro.Utils.readyDOM(() => {
+        BX.Aspro.Loader.addExt('validate').then(() => {
+            $("form[name=bx_auth_services<?=$arParams['SUFFIX'];?>]").validate();
+        });
+    });
+</script>
+
+<?if ($arParams['POPUP']):?>
+        </div>
+    </div>
+<?endif;?>

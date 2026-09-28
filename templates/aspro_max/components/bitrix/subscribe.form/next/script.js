@@ -1,0 +1,11 @@
+BX.Aspro.Utils.readyDOM(() => {
+  BX.Aspro.Loader.addExt("validate").then(() => {
+    $("form.sform_footer").validate({
+      rules: {
+        sf_EMAIL: {
+          email: true,
+        },
+      },
+    });
+  });
+});
