@@ -1,0 +1,1 @@
+<?$MESS["DROP_FILE"] = "<span>Click to download</span> or drag photo (up to #COUNT_FILES# files, ".$_SESSION['BLOG_MAX_IMAGE_SIZE']." mb per file)";?>

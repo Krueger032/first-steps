@@ -1,0 +1,3 @@
+<?
+$MESS['CRM_FORMS_LEAD_TITLE_DEFAULT'] = 'Request of webform #FORM_NAME# from #DATE_CREATE# from site #SERVER_NAME#';
+$MESS['CRM_ORDERS_LEAD_TITLE_DEFAULT'] = 'Order #ACCOUNT_NUMBER# from #DATE_INSERT# from site #SERVER_NAME#';

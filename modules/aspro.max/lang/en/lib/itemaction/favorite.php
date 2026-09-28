@@ -1,0 +1,9 @@
+<?
+$MESS['ITEMACTION_FAVORITE_TITLE'] = 'Favorites';
+$MESS['ITEMACTION_FAVORITE_ERROR_ITEM_ID'] = 'Invalid item id';
+$MESS['ITEMACTION_FAVORITE_ERROR_IBLOCK_ID'] = 'Invalid favorite items infoblock id';
+$MESS['ITEMACTION_FAVORITE_ERROR_ITEM'] = 'Item not found';
+$MESS['ITEMACTION_FAVORITE_ERROR_USER_ID'] = 'Invalid user id';
+$MESS['ITEMACTION_FAVORITE_ERROR_PARENT_SECTION'] = 'Invalid parent section id';
+$MESS['ITEMACTION_FAVORITE_ERROR_ITEMS'] = 'Invalid items';
+$MESS['ITEMACTION_FAVORITE_ERROR_COLLECTION'] = 'Invalid collection';

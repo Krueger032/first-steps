@@ -1,0 +1,12 @@
+<?
+$MESS['ASPRO_POPUP__MENU__GLOBAL_ASPRO_MENU_TEXT'] = 'Аспро';
+$MESS['ASPRO_POPUP__MENU__GLOBAL_ASPRO_MENU_TITLE'] = 'Аспро';
+
+$MESS['ASPRO_POPUP__MENU__ROOT_TITLE'] = 'Аспро: Маркетинговые окна';
+$MESS['ASPRO_POPUP__MENU__ROOT_TEXT'] = 'Аспро: Маркетинговые окна';
+
+$MESS['ASPRO_POPUP__MENU__MODULE_UPDATE_TEXT'] = 'Обновления';
+$MESS['ASPRO_POPUP__MENU__MODULE_UPDATE_TITLE'] = 'Обновления';
+
+$MESS['ASPRO_POPUP__MENU__MODULE_GROUP_RIGHTS_TEXT'] = 'Права доступа';
+$MESS['ASPRO_POPUP__MENU__MODULE_GROUP_RIGHTS_TITLE'] = 'Права доступа';

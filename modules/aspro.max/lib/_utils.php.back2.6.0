@@ -1,0 +1,21 @@
+<?php
+
+namespace Aspro\Max;
+
+use \Bitrix\Main\IO\File;
+
+class Utils
+{
+	public static function implodeClasses(array $arClasses, string $delimiter = ' '): string
+	{
+		return implode($delimiter, $arClasses);
+	}
+
+	public static function getPathWithTimestamp(string $path): string
+	{
+		$file = new File($_SERVER['DOCUMENT_ROOT'].$path);
+		if (!$file->isExists()) return $path;
+
+		return $path.'?'.$file->getModificationTime();
+	}
+}

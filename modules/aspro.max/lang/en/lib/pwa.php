@@ -1,0 +1,21 @@
+<?php
+$MESS["PWA_BACKGROUND_COLOR_TITLE"] = 'Background color #';
+$MESS["PWA_DISPLAY_BROWSER"] = 'Browser';
+$MESS["PWA_DISPLAY_FULLSCREEN"] = 'Fullscreen';
+$MESS["PWA_DISPLAY_MINIMAL"] = 'Minimum';
+$MESS["PWA_DISPLAY_STANDALONE"] = 'Standalone';
+$MESS["PWA_DISPLAY_TITLE"] = 'Display';
+$MESS["PWA_FILENAME_TITLE"] = 'Manifest File Name';
+$MESS["PWA_ICON_36_TITLE"] = 'Icon 36x36';
+$MESS["PWA_ICON_48_TITLE"] = 'Icon 48x48';
+$MESS["PWA_ICON_72_TITLE"] = 'Icon 72x72';
+$MESS["PWA_ICON_96_TITLE"] = 'Icon 96x96';
+$MESS["PWA_ICON_144_TITLE"] = 'Icon 144x144';
+$MESS["PWA_ICON_192_TITLE"] = 'Icon 192x192';
+$MESS["PWA_NAME_TITLE"] = 'Title';
+$MESS["PWA_OPTIONS"] = 'Web App';
+$MESS["PWA_ORIENTATION_TITLE"] = 'Orientation';
+$MESS["PWA_SHORT_NAME_TITLE"] = 'Short name';
+$MESS["PWA_START_URL_TITLE"] = 'Start Page';
+$MESS["PWA_THEME_COLOR_TITLE"] = 'Theme color #';
+$MESS["PWA_USE_TITLE"] = 'Include manifest for site';

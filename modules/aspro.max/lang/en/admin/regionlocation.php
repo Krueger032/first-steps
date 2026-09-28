@@ -1,0 +1,10 @@
+<?
+$MESS['REGION_LOCATION_ERROR_NO_RIGHTS_FOR_VIEWING'] = 'Access Denied';
+$MESS['REGION_LOCATION_ERROR_NO_RIGHTS_FOR_ADD'] = 'Insufficient rights to add';
+$MESS['REGION_LOCATION_ERROR_NO_RIGHTS_FOR_DELETE'] = 'Insufficient rights to delete';
+$MESS['REGION_LOCATION_ERROR_MODULE_NOT_INCLUDED'] = 'Required module #MODULE_NAME# not installed';
+$MESS['REGION_LOCATION_ERROR_BAD_PARAMS'] = 'Bad request parameters';
+$MESS['REGION_LOCATION_ERROR_REQUEST'] = 'Error executing request';
+$MESS['REGION_LOCATION_POPUP_TITLE'] = 'Pick an icon';
+$MESS['REGION_LOCATION_POPUP_SELECT'] = 'Select';
+$MESS['REGION_LOCATION_POPUP_CLOSE'] = 'Close';

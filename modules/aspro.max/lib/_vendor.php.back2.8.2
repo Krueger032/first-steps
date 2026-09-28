@@ -1,0 +1,15 @@
+<?php
+
+namespace Aspro\Max;
+
+use Bitrix\Main\Loader;
+
+class Vendor
+{
+    public static function includeSkuComponent(string $template = '', array $params = [], ?\CBitrixComponent $parentComponent = null)
+    {
+        if (Loader::includeModule('aspro.sku')) {
+            $GLOBALS['APPLICATION']->IncludeComponent('aspro:sku.list', $template, $params, $parentComponent, ['HIDE_ICONS' => 'Y']);
+        }
+    }
+}

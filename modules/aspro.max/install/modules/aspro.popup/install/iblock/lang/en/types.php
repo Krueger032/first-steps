@@ -1,0 +1,8 @@
+<?
+$MESS["ASPRO_POPUP_ADV_EN_TYPE_NAME"] = "Marketing popup";
+$MESS["ASPRO_POPUP_ADV_EN_ELEMENT_NAME"] = "Elements";
+$MESS["ASPRO_POPUP_ADV_EN_SECTION_NAME"] = "Sections";
+$MESS["ASPRO_POPUP_ADV_RU_TYPE_NAME"] = "Маркетинговые окна";
+$MESS["ASPRO_POPUP_ADV_RU_ELEMENT_NAME"] = "Элементы";
+$MESS["ASPRO_POPUP_ADV_RU_SECTION_NAME"] = "Разделы";
+?>

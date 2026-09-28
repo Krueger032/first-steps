@@ -1,0 +1,3 @@
+<?
+$MESS['ASPRO_PREMIER_TRANSFORM_FACTORY_UNKNOWN_PROPERTY_TYPE'] = 'Неизвестный тип свойства #PROPERTY_TYPE#';
+?>

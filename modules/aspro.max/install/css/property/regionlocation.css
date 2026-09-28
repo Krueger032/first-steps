@@ -1,0 +1,196 @@
+@-webkit-keyframes aspro_property_regionlocation_item_delete_animate {
+	0%{-webkit-transform: scale(1);}
+	25%{-webkit-transform: scale(1.2);}
+	100%{-webkit-transform: scale(.1);}
+}
+@keyframes aspro_property_regionlocation_item_delete_animate {
+	0%{transform: scale(1);}
+	25%{transform: scale(1.2);}
+	100%{transform: scale(.1);}
+}
+.aspro_property_regionlocation_item {
+	font-size: 13px;
+}
+tr:nth-child(1)>td>.aspro_property_regionlocation_item--detail .inner_wrapper .location-text__input, 
+tr:nth-child(2)>td>.aspro_property_regionlocation_item--detail .inner_wrapper .location-text__input {
+	border-width: 2px;
+}
+.aspro_property_regionlocation_item--admlistview {
+	text-align: left;
+	margin: 0 0 10px 0;
+	min-width: 180px;
+    margin-left: 20px;
+}
+.aspro_property_regionlocation_item--admlistview:first-child {
+	margin-left: 0;
+}
+.aspro_property_regionlocation_item--admlistview:first-child .location-name {
+	font-weight: bold;
+}
+.aspro_property_regionlocation_item--admlistedit {
+	width: max-content;
+	min-width: 466px;
+}
+.aspro_property_regionlocation_item--deleted {
+	-webkit-animation: aspro_property_regionlocation_item_delete_animate .5s linear;
+	animation: aspro_property_regionlocation_item_delete_animate .5s linear;
+}
+.aspro_property_regionlocation_item * {
+	box-sizing: border-box;
+}
+.aspro_property_regionlocation_item .wrapper {
+	position: relative;
+}
+.aspro_property_regionlocation_item:not(.aspro_property_regionlocation_item--admlistview) .wrapper {
+	padding-right: 20px;
+}
+.aspro_property_regionlocation_item--multiple:not(.aspro_property_regionlocation_item--admlistview) .wrapper {
+	padding-left: 30px;
+}
+.aspro_property_regionlocation_item .inner_wrapper {
+	display: inline-block;
+	position: relative;
+}
+.aspro_property_regionlocation_item:not(.aspro_property_regionlocation_item--admlistview) .inner_wrapper {
+	font-size: 0;
+}
+.aspro_property_regionlocation_item .inner {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+.aspro_property_regionlocation_item .value_wrapper {
+	margin: 5px 2px;
+	font-size: 13px;
+}
+.adm-workarea .aspro_property_regionlocation_item input[type=text] {
+	height: 33px;
+	box-shadow: none;
+	border-color: #c1d2db;
+	padding-left: 8px;
+	padding-right: 8px;
+	width: 250px;
+	max-width: 100%;
+}
+.aspro_property_regionlocation_item .remove {
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: url(../../../images/aspro.max/delete.svg) center center no-repeat;
+	cursor: pointer;
+	opacity: 0.7;
+	top: 11px;
+	right: -29px;
+}
+.aspro_property_regionlocation_item .remove:hover {
+	opacity: 1;
+}
+.aspro_property_regionlocation_item .drag {
+    opacity: 0.4;
+    text-align: center;
+    position: absolute;
+    left: -28px;
+    top: 11px;
+    width: 20px;
+    height: 20px;
+    cursor: move;
+    cursor: -webkit-grabbing;
+    background: url(../../../images/aspro.max/dragarrow_admin.svg) center center no-repeat;
+}
+.aspro_property_regionlocation_item .drag:hover {
+    opacity: 1;
+}
+.aspro_property_regionlocation_item--hiddendrag .drag {
+    display: none;
+}
+.aspro_property_regionlocation_item .location-container * {
+	box-sizing: border-box;
+}
+.aspro_property_regionlocation_item .location-container {
+	position: relative;
+}
+.aspro_property_regionlocation_item .location-text {
+	position: relative;
+}
+.aspro_property_regionlocation_item .location-text__input {
+	box-sizing: border-box;
+	width: 100%;
+}
+.aspro_property_regionlocation_item .location-path {
+	color: gray;
+	font-size: 11px;
+	padding: 3px 8px 2px;
+	max-width: 250px;
+	white-space: normal;
+}
+.aspro_property_regionlocation_item--admlistview .location-path {
+	padding-left: 0;
+	padding-right: 0;
+}
+.aspro_property_regionlocation_item .location-results {
+	border-radius: 4px;
+	box-shadow: 0 0 3px #000;
+	margin-top: 5px; 
+	opacity: 0;
+	overflow: hidden;
+	pointer-events: none;
+	position: absolute; 
+	visibility: hidden;
+	width: 100%;
+	z-index: 1;
+}
+.aspro_property_regionlocation_item .location-results.ontop {
+	bottom: calc(100% + 5px);
+}
+.aspro_property_regionlocation_item .location-results.show {
+	opacity: 1;
+	pointer-events: all;
+	visibility: visible;
+}
+.aspro_property_regionlocation_item .results__table {
+	max-height: 294px;
+	overflow-y: auto;
+}
+.aspro_property_regionlocation_item .location-results__item-cell {
+	background-color: #FFF;
+	display: block;
+	padding: 10px;
+	cursor: pointer;
+}
+.aspro_property_regionlocation_item .location-results__item:nth-child(2n+1) .location-results__item-cell {
+	background-color: #f5f9f9;
+}
+.aspro_property_regionlocation_item .location-results__item .location-results__item-cell:hover,
+.aspro_property_regionlocation_item .location-results__item-input:checked + .location-results__item-cell {
+	background-color: #e0e9ec;
+}
+.aspro_property_regionlocation_item .location-results__item-input {
+	opacity: 0;
+	position: absolute;
+	visibility: hidden;
+	z-index: -1;
+}
+.aspro_property_regionlocation_item .location-results__item-cell .location-results__item-path {
+	color: gray;
+	font-size: 11px;
+}
+.aspro_property_regionlocation_item .location-results.hidden,
+.aspro_property_regionlocation_item .location-text__clear.hidden {
+	display: none;
+}
+.aspro_property_regionlocation_item .location-text .ui-ctl-icon-loader {
+	height: 31px;
+}
+input[type="button"].aspro_property_regionlocation_btn--multi {
+	margin-bottom: 6px;
+}
+.main-grid-wrapper.no_overflow {
+	overflow: visible;
+}
+.main-grid-wrapper.no_overflow .main-grid-container {
+	overflow: visible;
+}
+.main-grid-wrapper.no_overflow .main-grid-table {
+	overflow: visible;
+}

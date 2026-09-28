@@ -1,0 +1,44 @@
+<?php
+
+$MESS["ASPRO_MAX_NO_SITE_INSTALLED"] = 'No sites found with "Aspro: Max - Online Store" solution installed<br />
+<input type="button" value="Set" style="margin-top: 10px;" onclick="document.location.href=\'/bitrix/admin/wizard_install.php?lang=ru&wizardName=aspro:max&#SESSION_ID#\'">';
+$MESS["ERROR_INCLUDE_MODULE"] = 'Module connection failed';
+$MESS["MAIN_OPTIONS_SITE_TITLE"] = "&laquo;#SITE_NAME#&raquo; (#SITE_ID#)";
+$MESS["MAIN_OPT_APPLY"] = "Apply";
+$MESS["MAIN_OPT_APPLY_TITLE"] = "Apply Settings";
+$MESS["MAIN_OPT_CANCEL"] = "Cancel";
+$MESS["MAIN_OPT_CANCEL_TITLE"] = "Cancel settings";
+$MESS["MAX_MODULE_CONTROL_CENTER_ERROR"] = 'Could not get solution installation information';
+$MESS["MAX_MODULE_CURL_INFO"] = "This functionality requires the cURL library";
+$MESS["MAX_MODULE_DOMAIN"] = "Domain";
+$MESS["MAX_MODULE_DOMAINS"] = "Domains";
+$MESS["MAX_MODULE_FIELD_NO_VALUE"] = "Required field #FIELD# (#SITE_ID#) is empty";
+$MESS["MAX_MODULE_FILENAME"] = "Sitemap file #FILE#";
+$MESS["MAX_MODULE_FILENAME_FULL"] = "The sitemap file #FILE# (#SITE_ID#) does not exist";
+$MESS["MAX_MODULE_FILENAME_GENERATE"] = "Sitemap file #FILE# (#SITE_ID#) regenerated successfully";
+$MESS["MAX_MODULE_FILES"] = "Files";
+$MESS["MAX_MODULE_GENERATE_SHORT"] = "Regenerate";
+$MESS["MAX_MODULE_GENERATE_SITEMAP"] = "Regenerate sitemap.xml";
+$MESS["MAX_MODULE_MAIN_CONFIG"] = "Main Settings";
+$MESS["MAX_MODULE_NOT_EXISTS"] = "doesn't exist";
+$MESS["MAX_MODULE_NOT_INCLUDED"] = 'Failed to connect module Aspro: Max';
+$MESS["MAX_MODULE_NOT_INSTALLED"] = 'Module "Aspro: Max - online store" not installed. Please <a href="/bitrix/admin/partner_modules.php">install the module</a> and try again.';
+$MESS["MAX_MODULE_ROBOTS_MAIN"] = "Main robots.txt";
+$MESS["MAX_MODULE_SITEMAP_ADD_ROBOTS_TITLE"] = "Add sitemap to robots.txt";
+$MESS["MAX_MODULE_SITEMAP_DOMAIN"] = "Sitemap for domain #DOMAIN#";
+$MESS["MAX_MODULE_SITEMAP_ERROR"] = "Enable region and select \"on subdomains\" type to enable sitemap regeneration";
+$MESS["MAX_MODULE_SITEMAP_INFO"] = "<p>When you click the <b>\"Regenerate sitemap.xml\"</b> button, all files in the site root will be copied with the mask specified in the settings <b>Sitemap address< /b> to the directory <b>/aspro_regions/sitemap/</b> for each domain of the form <b>files_by_mask_DOMAIN.xml</b> in which the site address specified in the settings <b>Site address in the sitemap</b> for each domain</p>";
+$MESS["MAX_MODULE_SITEMAP_NAME_TITLE"] = "Sitemap Address";
+$MESS["MAX_MODULE_SITEMAP_NEW_NAME_TITLE"] = "Dynamic sitemap address";
+$MESS["MAX_MODULE_SITEMAP_URL_TITLE"] = "Site address in sitemap";
+$MESS["MAX_NO_RIGHTS_FOR_VIEWING"] = 'Access Denied';
+$MESS["MAX_PAGE_TITLE"] = 'Generate sitemap.xml';
+$MESS["NO_RIGHTS_FOR_VIEWING"] = "Insufficient rights to view";
+$MESS["SCOM_BUTTON_DESCRIPTION"] = "Launch the Change Site Design and Settings Wizard";
+$MESS["SCOM_BUTTON_NAME"] = "Setup#BR#setup wizard";
+$MESS["STOM_BUTTON_CONFIRM_W2"] = "The Aspro directory set as the demo directory will be removed. All your changes inside it will be lost. Do you want to delete the demo directory?";
+$MESS["STOM_BUTTON_NAME_W1"] = "<b>Store Setup Wizard</b>";
+$MESS["STOM_BUTTON_NAME_W3"] = "Delete demo directory";
+$MESS["STOM_BUTTON_TITLE_W1"] = "Launch the Change Store Design and Setup Wizard";
+$MESS["STOM_BUTTON_TITLE_W3"] = "Deleting Demo Catalog";
+$MESS["TABS_SETTINGS"] = 'Tab display settings';

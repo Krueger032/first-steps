@@ -1,0 +1,2 @@
+<?
+$MESS['MORPHOLOGY_ACCUSATIV'] = 'ВН';
