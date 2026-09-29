@@ -1,0 +1,316 @@
+@font-face {
+  font-family: '17-appliances-electronics-efn';
+  src:  url('../../fonts/efn/17-appliances-electronics-efn.eot?78nc8g');
+  src:  url('../../fonts/efn/17-appliances-electronics-efn.eot?78nc8g#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/17-appliances-electronics-efn.woff2?78nc8g') format('woff2'),
+    url('../../fonts/efn/17-appliances-electronics-efn.ttf?78nc8g') format('truetype'),
+    url('../../fonts/efn/17-appliances-electronics-efn.woff?78nc8g') format('woff'),
+    url('../../fonts/efn/17-appliances-electronics-efn.svg?78nc8g#17-appliances-electronics-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn17-"], [class*=" efn17-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '17-appliances-electronics-efn' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn17-refrigerator:before {
+  content: "\e900";
+}
+.efn17-freezer:before {
+  content: "\e901";
+}
+.efn17-double-door-refrigerator:before {
+  content: "\e902";
+}
+.efn17-washing-machine:before {
+  content: "\e903";
+}
+.efn17-tumble-dryer:before {
+  content: "\e904";
+}
+.efn17-dishwasher:before {
+  content: "\e905";
+}
+.efn17-cooker:before {
+  content: "\e906";
+}
+.efn17-built-in-oven:before {
+  content: "\e907";
+}
+.efn17-hob:before {
+  content: "\e908";
+}
+.efn17-gas-stove:before {
+  content: "\e909";
+}
+.efn17-tabletop-stove:before {
+  content: "\e90a";
+}
+.efn17-gas-tabletop-stove:before {
+  content: "\e90b";
+}
+.efn17-kitchen-hood:before {
+  content: "\e90c";
+}
+.efn17-kettle:before {
+  content: "\e90d";
+}
+.efn17-coffee-machine:before {
+  content: "\e90e";
+}
+.efn17-coffee-maker:before {
+  content: "\e90f";
+}
+.efn17-coffee-grinder:before {
+  content: "\e910";
+}
+.efn17-microwave:before {
+  content: "\e911";
+}
+.efn17-mini-oven:before {
+  content: "\e912";
+}
+.efn17-bread-maker:before {
+  content: "\e913";
+}
+.efn17-sandwich-maker:before {
+  content: "\e914";
+}
+.efn17-toaster:before {
+  content: "\e915";
+}
+.efn17-digital-scales:before {
+  content: "\e916";
+}
+.efn17-kitchen-scales:before {
+  content: "\e917";
+}
+.efn17-slow-cooker:before {
+  content: "\e918";
+}
+.efn17-food-steamer:before {
+  content: "\e919";
+}
+.efn17-food-dryer:before {
+  content: "\e91a";
+}
+.efn17-hand-mixer:before {
+  content: "\e91b";
+}
+.efn17-mixer:before {
+  content: "\e91c";
+}
+.efn17-food-processor:before {
+  content: "\e91d";
+}
+.efn17-kitchen-processor:before {
+  content: "\e91e";
+}
+.efn17-juicer:before {
+  content: "\e91f";
+}
+.efn17-meat-grinder:before {
+  content: "\e920";
+}
+.efn17-blender:before {
+  content: "\e921";
+}
+.efn17-hand-blender:before {
+  content: "\e922";
+}
+.efn17-iron:before {
+  content: "\e923";
+}
+.efn17-vacuum-cleaner:before {
+  content: "\e924";
+}
+.efn17-hoover:before {
+  content: "\e925";
+}
+.efn17-robot-vacuum-cleaner:before {
+  content: "\e926";
+}
+.efn17-sewing-machine:before {
+  content: "\e927";
+}
+.efn17-hair-dryer:before {
+  content: "\e928";
+}
+.efn17-curling-iron:before {
+  content: "\e929";
+}
+.efn17-hair-clipper:before {
+  content: "\e92a";
+}
+.efn17-epilator:before {
+  content: "\e92b";
+}
+.efn17-electric-razor:before {
+  content: "\e92c";
+}
+.efn17-scales:before {
+  content: "\e92d";
+}
+.efn17-digital-clock:before {
+  content: "\e92e";
+}
+.efn17-tv:before {
+  content: "\e92f";
+}
+.efn17-television:before {
+  content: "\e930";
+}
+.efn17-tv-box:before {
+  content: "\e931";
+}
+.efn17-tv-remote:before {
+  content: "\e932";
+}
+.efn17-antenna:before {
+  content: "\e933";
+}
+.efn17-tv-wall-bracket:before {
+  content: "\e934";
+}
+.efn17-tv-bracket:before {
+  content: "\e935";
+}
+.efn17-speakers:before {
+  content: "\e936";
+}
+.efn17-stereo-system:before {
+  content: "\e937";
+}
+.efn17-notebook:before {
+  content: "\e938";
+}
+.efn17-tablet:before {
+  content: "\e939";
+}
+.efn17-mobile:before {
+  content: "\e93a";
+}
+.efn17-mouse-pad:before {
+  content: "\e93b";
+}
+.efn17-smart-speaker:before {
+  content: "\e93c";
+}
+.efn17-video-projector:before {
+  content: "\e93d";
+}
+.efn17-desktop-microphone:before {
+  content: "\e93e";
+}
+.efn17-cordless-phone:before {
+  content: "\e93f";
+}
+.efn17-landline-phone:before {
+  content: "\e940";
+}
+.efn17-smart-watch:before {
+  content: "\e941";
+}
+.efn17-fitness-bracelet:before {
+  content: "\e942";
+}
+.efn17-phone-case:before {
+  content: "\e943";
+}
+.efn17-mobile-glass:before {
+  content: "\e944";
+}
+.efn17-battery:before {
+  content: "\e945";
+}
+.efn17-bluetooth-speaker:before {
+  content: "\e946";
+}
+.efn17-boombox:before {
+  content: "\e947";
+}
+.efn17-radio:before {
+  content: "\e948";
+}
+.efn17-camera:before {
+  content: "\e949";
+}
+.efn17-video-camera:before {
+  content: "\e94a";
+}
+.efn17-car-dvr:before {
+  content: "\e94b";
+}
+.efn17-graphics-tablet:before {
+  content: "\e94c";
+}
+.efn17-software:before {
+  content: "\e94d";
+}
+.efn17-mfp:before {
+  content: "\e94e";
+}
+.efn17-printer:before {
+  content: "\e94f";
+}
+.efn17-laminator:before {
+  content: "\e950";
+}
+.efn17-ink-cartridge:before {
+  content: "\e951";
+}
+.efn17-toner-cartridge:before {
+  content: "\e952";
+}
+.efn17-gps-navigator:before {
+  content: "\e953";
+}
+.efn17-car-stereo:before {
+  content: "\e954";
+}
+.efn17-game-console:before {
+  content: "\e955";
+}
+.efn17-electric-scooter:before {
+  content: "\e956";
+}
+.efn17-card-reader:before {
+  content: "\e957";
+}
+.efn17-external-hard-disk:before {
+  content: "\e958";
+}
+.efn17-power-bank:before {
+  content: "\e959";
+}
+.efn17-usb-cable:before {
+  content: "\e95a";
+}
+.efn17-usb-gadget:before {
+  content: "\e95b";
+}
+.efn17-usb-hub:before {
+  content: "\e95c";
+}
+.efn17-mobile-charger:before {
+  content: "\e95d";
+}
+.efn17-memory-card:before {
+  content: "\e95e";
+}
+.efn17-vr-headset:before {
+  content: "\e95f";
+}

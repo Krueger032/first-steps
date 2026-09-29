@@ -1,0 +1,183 @@
+@font-face {
+  font-family: '05-electricity-efn';
+  src:  url('../../fonts/efn/05-electricity-efn.eot?tmpb45');
+  src:  url('../../fonts/efn/05-electricity-efn.eot?tmpb45#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/05-electricity-efn.ttf?tmpb45') format('truetype'),
+    url('../../fonts/efn/05-electricity-efn.woff?tmpb45') format('woff'),
+    url('../../fonts/efn/05-electricity-efn.svg?tmpb45#05-electricity-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn05-"], [class*=" efn05-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '05-electricity-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn05-lightning:before {
+  content: "\e900";
+}
+.efn05-lightning-protection:before {
+  content: "\e901";
+}
+.efn05-cable:before {
+  content: "\e902";
+}
+.efn05-wire:before {
+  content: "\e903";
+}
+.efn05-cable-hank:before {
+  content: "\e904";
+}
+.efn05-corrugated-pipe:before {
+  content: "\e905";
+}
+.efn05-pipes:before {
+  content: "\e906";
+}
+.efn05-rectangular-tubes:before {
+  content: "\e907";
+}
+.efn05-cable-channel:before {
+  content: "\e908";
+}
+.efn05-junction-box:before {
+  content: "\e909";
+}
+.efn05-junction-box-round:before {
+  content: "\e90a";
+}
+.efn05-quick-wire-connector:before {
+  content: "\e90b";
+}
+.efn05-wire-connector:before {
+  content: "\e90c";
+}
+.efn05-flag-terminal:before {
+  content: "\e90d";
+}
+.efn05-ring-terminal:before {
+  content: "\e90e";
+}
+.efn05-spade-terminal:before {
+  content: "\e90f";
+}
+.efn05-cable-tie:before {
+  content: "\e910";
+}
+.efn05-insulating-tape:before {
+  content: "\e911";
+}
+.efn05-outlet:before {
+  content: "\e912";
+}
+.efn05-socket:before {
+  content: "\e913";
+}
+.efn05-electric-switch:before {
+  content: "\e914";
+}
+.efn05-outlet-switch:before {
+  content: "\e915";
+}
+.efn05-electric-box:before {
+  content: "\e916";
+}
+.efn05-electricity-meter:before {
+  content: "\e917";
+}
+.efn05-circuit-breaker:before {
+  content: "\e918";
+}
+.efn05-relay-din-rail:before {
+  content: "\e919";
+}
+.efn05-din-rail-busbar:before {
+  content: "\e91a";
+}
+.efn05-terminal-block:before {
+  content: "\e91b";
+}
+.efn05-led-diode:before {
+  content: "\e91c";
+}
+.efn05-led-strip:before {
+  content: "\e91d";
+}
+.efn05-led-strip-light:before {
+  content: "\e91e";
+}
+.efn05-led-backlight-module:before {
+  content: "\e91f";
+}
+.efn05-led-driver:before {
+  content: "\e920";
+}
+.efn05-led-power-supply:before {
+  content: "\e921";
+}
+.efn05-electric-plug:before {
+  content: "\e932";
+}
+.efn05-plug:before {
+  content: "\e922";
+}
+.efn05-power-strip:before {
+  content: "\e923";
+}
+.efn05-extension-cord:before {
+  content: "\e924";
+}
+.efn05-lightbulb:before {
+  content: "\e925";
+}
+.efn05-led-lamp:before {
+  content: "\e926";
+}
+.efn05-lamp-holder:before {
+  content: "\e927";
+}
+.efn05-gu10:before {
+  content: "\e928";
+}
+.efn05-tube-lamp:before {
+  content: "\e929";
+}
+.efn05-fluorescent-lamp:before {
+  content: "\e92a";
+}
+.efn05-ceiling-spot:before {
+  content: "\e92b";
+}
+.efn05-floodlight:before {
+  content: "\e92c";
+}
+.efn05-fuorescent-starter:before {
+  content: "\e92d";
+}
+.efn05-light-control:before {
+  content: "\e92e";
+}
+.efn05-remote-control-switch:before {
+  content: "\e92f";
+}
+.efn05-solar-power:before {
+  content: "\e930";
+}
+.efn05-battery:before {
+  content: "\e933";
+}
+.efn05-wire-stripper:before {
+  content: "\e931";
+}
