@@ -1,0 +1,100 @@
+@font-face {
+  font-family: '16-pc-hardware-efn';
+  src:  url('../../fonts/efn/16-pc-hardware-efn.eot?5py088');
+  src:  url('../../fonts/efn/16-pc-hardware-efn.eot?5py088#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/16-pc-hardware-efn.woff2?5py088') format('woff2'),
+    url('../../fonts/efn/16-pc-hardware-efn.ttf?5py088') format('truetype'),
+    url('../../fonts/efn/16-pc-hardware-efn.woff?5py088') format('woff'),
+    url('../../fonts/efn/16-pc-hardware-efn.svg?5py088#16-pc-hardware-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn16-"], [class*=" efn16-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '16-pc-hardware-efn' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn16-cpu:before {
+  content: "\e900";
+}
+.efn16-mainboard:before {
+  content: "\e901";
+}
+.efn16-graphics-card:before {
+  content: "\e902";
+}
+.efn16-ram:before {
+  content: "\e903";
+}
+.efn16-hdd:before {
+  content: "\e904";
+}
+.efn16-ssd:before {
+  content: "\e905";
+}
+.efn16-dvd-rom:before {
+  content: "\e906";
+}
+.efn16-pc-cooler:before {
+  content: "\e907";
+}
+.efn16-power-supply-pc:before {
+  content: "\e908";
+}
+.efn16-pc-case:before {
+  content: "\e909";
+}
+.efn16-monitor:before {
+  content: "\e90a";
+}
+.efn16-pc:before {
+  content: "\e90b";
+}
+.efn16-wifi-router:before {
+  content: "\e90c";
+}
+.efn16-keyboard:before {
+  content: "\e90d";
+}
+.efn16-computer-mouse:before {
+  content: "\e90e";
+}
+.efn16-mouse-keyboard-combo:before {
+  content: "\e90f";
+}
+.efn16-computer-speakers:before {
+  content: "\e910";
+}
+.efn16-headphones:before {
+  content: "\e911";
+}
+.efn16-webcam:before {
+  content: "\e912";
+}
+.efn16-computer-cable:before {
+  content: "\e913";
+}
+.efn16-flash-drive:before {
+  content: "\e914";
+}
+.efn16-lan-switch:before {
+  content: "\e915";
+}
+.efn16-sound-card:before {
+  content: "\e916";
+}
+.efn16-wifi-card:before {
+  content: "\e917";
+}

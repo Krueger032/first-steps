@@ -1,0 +1,105 @@
+/***MENU***/
+.horizontal-multilevel-menu{
+	height: 48px;
+	float: left;
+	margin: 0; 
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+.horizontal-multilevel-menu > li{
+	float: left;
+}
+
+.horizontal-multilevel-menu > li > a{
+	height: 48px;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	color: #566b75;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.bx-no-touch .top-menu .horizontal-multilevel-menu > li:hover > a,
+.bx-touch .top-menu .horizontal-multilevel-menu > li:active > a,
+.horizontal-multilevel-menu > li.active > a{ 	
+	color: #6639b6;
+	background: #e3ecef;
+}
+
+.horizontal-multilevel-menu > li > a > i{
+	margin-left: 12px;
+	font-size: 16px;
+	color: #ced9db;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .top-menu .horizontal-multilevel-menu > li:hover > a > i,
+.bx-touch .top-menu .horizontal-multilevel-menu > li:active > a > i,
+.top-menu .horizontal-multilevel-menu > li.active > a > i{
+	color: #78909c;
+}
+
+/***DROPDOWN_MENU***/
+.horizontal-multilevel-dropdown-menu{	
+	position: absolute;
+	left: -9999px;
+	top: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 1px solid #e3ecef;
+	-webkit-box-shadow: 0 0 24px rgba(38, 50, 56, 0.16);
+    -moz-box-shadow: 0 0 24px rgba(38, 50, 56, 0.16);
+    box-shadow: 0 0 24px rgba(38, 50, 56, 0.16);
+	background: #fff;
+}
+
+.horizontal-multilevel-dropdown-menu > li{
+	position: relative;
+}
+
+.horizontal-multilevel-dropdown-menu > li + li{
+	border-top: 1px solid #e3ecef;
+}
+
+.horizontal-multilevel-dropdown-menu > li > a{	
+	display: flex;
+	align-items: center;	
+	padding: 15px 16px 14px;
+	color: #263238;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.bx-no-touch .horizontal-multilevel-dropdown-menu > li:hover > a,
+.bx-touch .horizontal-multilevel-dropdown-menu > li:active > a,
+.horizontal-multilevel-dropdown-menu > li.active > a{ 	
+	color: #6639b6;
+	background: #f1f6f7;
+}
+
+.horizontal-multilevel-dropdown-menu > li > a > i{
+	margin-left: 12px;
+	font-size: 16px;
+	color: #b2c7cb;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .horizontal-multilevel-dropdown-menu > li:hover > a > i,
+.bx-touch .horizontal-multilevel-dropdown-menu > li:active > a > i,
+.horizontal-multilevel-dropdown-menu > li.active > a > i{
+	color: #566b75;
+}
+
+.horizontal-multilevel-dropdown-menu > li > .horizontal-multilevel-dropdown-menu{
+	top: -1px;
+}

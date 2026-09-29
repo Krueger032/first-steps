@@ -1,0 +1,142 @@
+@font-face {
+  font-family: '22-pet-shop-efn';
+  src:  url('../../fonts/efn/22-pet-shop-efn.eot?ynebdf');
+  src:  url('../../fonts/efn/22-pet-shop-efn.eot?ynebdf#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/22-pet-shop-efn.woff2?ynebdf') format('woff2'),
+    url('../../fonts/efn/22-pet-shop-efn.ttf?ynebdf') format('truetype'),
+    url('../../fonts/efn/22-pet-shop-efn.woff?ynebdf') format('woff'),
+    url('../../fonts/efn/22-pet-shop-efn.svg?ynebdf#22-pet-shop-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn22-"], [class*=" efn22-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '22-pet-shop-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn22-paw:before {
+  content: "\e900";
+}
+.efn22-cat:before {
+  content: "\e901";
+}
+.efn22-dog:before {
+  content: "\e902";
+}
+.efn22-raccoon:before {
+  content: "\e903";
+}
+.efn22-hamster:before {
+  content: "\e904";
+}
+.efn22-mouse:before {
+  content: "\e905";
+}
+.efn22-_rabbit:before {
+  content: "\e906";
+}
+.efn22-parrot:before {
+  content: "\e907";
+}
+.efn22-turtle:before {
+  content: "\e908";
+}
+.efn22-fish:before {
+  content: "\e909";
+}
+.efn22-spider:before {
+  content: "\e90a";
+}
+.efn22-ant:before {
+  content: "\e90b";
+}
+.efn22-ant-farm:before {
+  content: "\e90c";
+}
+.efn22-pet-bowl:before {
+  content: "\e90d";
+}
+.efn22-canned-food:before {
+  content: "\e90e";
+}
+.efn22-canned-fish:before {
+  content: "\e90f";
+}
+.efn22-cat-litter:before {
+  content: "\e910";
+}
+.efn22-pet-food:before {
+  content: "\e911";
+}
+.efn22-dog-food:before {
+  content: "\e912";
+}
+.efn22-bird-food:before {
+  content: "\e913";
+}
+.efn22-fish-food:before {
+  content: "\e914";
+}
+.efn22-bone:before {
+  content: "\e915";
+}
+.efn22-carrot:before {
+  content: "\e916";
+}
+.efn22-cat-house:before {
+  content: "\e917";
+}
+.efn22-scratching-post:before {
+  content: "\e918";
+}
+.efn22-aquarium:before {
+  content: "\e919";
+}
+.efn22-terrarium:before {
+  content: "\e91a";
+}
+.efn22-bird-cage:before {
+  content: "\e91b";
+}
+.efn22-hamster-wheel:before {
+  content: "\e91c";
+}
+.efn22-pet-house:before {
+  content: "\e91d";
+}
+.efn22-cat-litter-tray:before {
+  content: "\e91e";
+}
+.efn22-muzzle:before {
+  content: "\e91f";
+}
+.efn22-leash-collar:before {
+  content: "\e920";
+}
+.efn22-pet-brush:before {
+  content: "\e921";
+}
+.efn22-pet-carrier:before {
+  content: "\e922";
+}
+.efn22-vitamins:before {
+  content: "\e923";
+}
+.efn22-drugs:before {
+  content: "\e924";
+}
+.efn22-veterinary:before {
+  content: "\e925";
+}

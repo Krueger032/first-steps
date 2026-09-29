@@ -1,0 +1,96 @@
+.product-item-viewed:link,
+.product-item-viewed:visited{
+	display: block;
+	position: relative;
+	text-decoration: none;
+}
+
+/***IMAGE***/
+.product-item-viewed-image{	
+	height: 70px;
+	display: block;
+	position: relative;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #fff;				
+	overflow: hidden;	
+}
+
+.bx-no-touch .product-item-viewed:hover .product-item-viewed-image,
+.bx-touch .product-item-viewed:active .product-item-viewed-image{
+	border: 2px solid #78909c;
+}
+
+.product-item-viewed-image img{
+	width: auto;
+	height: auto;
+	max-width: 70px;
+	max-height: 70px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	-moz-transform: translateY(-50%) translateX(-50%);
+	-ms-transform: translateY(-50%) translateX(-50%);
+	-o-transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
+}
+
+/***TOOLTIP***/
+.product-item-viewed-tooltip{
+    width: 162px;
+	margin: 0 0 10px -81px;
+	padding: 7px 12px 9px;
+	position: absolute;
+	left: -9999px;
+	bottom: 100%;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	line-height: 17px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	background: #000;
+	opacity: 0;	
+	-moz-transform: translate3d(0px, -10px, 0px);
+	-o-transform: translate3d(0px, -10px, 0px);
+	-webkit-transform: translate3d(0px, -10px, 0px);
+	transform: translate3d(0px, -10px, 0px);
+	-webkit-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+	-moz-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+	-o-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+	transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+	
+}
+
+.product-item-viewed-tooltip:after{
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	margin-left: -6px;
+	content: "";
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #000;
+}
+
+.bx-no-touch .product-item-viewed:hover .product-item-viewed-tooltip,
+.bx-touch .product-item-viewed:active .product-item-viewed-tooltip{
+	left: 50%;
+	opacity: 0.85;
+	-moz-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+	-o-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+	transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+}
+
+/***PHONES_DESKTOPS***/
+@media(max-width: 1271px){
+	.product-item-viewed{
+		margin-bottom: 12px;
+	}
+}

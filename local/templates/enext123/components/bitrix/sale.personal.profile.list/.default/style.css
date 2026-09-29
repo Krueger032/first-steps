@@ -1,0 +1,96 @@
+.sppl-title-container {
+	width: 100%;
+    display: table;
+    padding: 16px 24px;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -khtml-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    background-color: #f1f6f7;
+}
+
+.sppl-title__val {
+	float: none;
+	display: inline-block;
+    vertical-align: middle;    
+    color: #263238;
+}
+
+.sppl-block-container {
+	padding: 24px 23px;    
+    color: #263238;   
+    border: 1px solid #e3ecef;
+    border-top: none;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -khtml-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.sppl-inner-items.nof div {
+    float: none;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.sppl-inner-item a:link,
+.sppl-inner-item a:visited {
+	color: #263238;
+	text-decoration: none;
+}
+
+.sppl-inner-item a:hover {
+	color: #6639b6;
+}
+
+/***STYLE***/
+.sppl-s-center-t {
+	text-align: center;
+}
+
+.sppl-s-right-t {
+	text-align: right;
+}
+
+.sppl-s-separator-blocks:not(:last-child) {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e3ecef;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.sppl-title-container,
+	.sppl-block-container{
+		width: -moz-calc(100% + 36px);
+		width: -webkit-calc(100% + 36px);
+		width: calc(100% + 36px);		
+		margin-left: -18px;
+		margin-right: -18px;
+		padding: 12px;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		-khtml-border-radius: 0;
+		border-radius: 0;
+	}
+	
+	.sppl-block-container{		
+		border-left: none;
+		border-right: none;
+	}
+
+	.sppl-inner-item .btn{
+		width: 45px;
+		float: right;
+		padding: 0;
+	}
+
+	.sppl-inner-item .btn i{
+		padding: 0;
+	}
+	
+	.sppl-s-separator-blocks:not(:last-child) {
+		padding-bottom: 12px;
+		margin-bottom: 12px;
+	}
+}

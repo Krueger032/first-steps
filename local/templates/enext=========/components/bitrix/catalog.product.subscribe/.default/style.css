@@ -1,0 +1,87 @@
+.bx-catalog-subscribe-popup-window{
+	font-family: "Museo Sans Cyrl 300", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	overflow: hidden;
+}
+
+.popup-window.bx-catalog-subscribe-popup-window.popup-window-with-titlebar{
+	padding: 0;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-titlebar{
+	width: 100%;
+	height: 65px;
+	display: table;
+	padding: 0 50px 0 32px;
+	background-color: #f1f6f7;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-titlebar-text{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0;
+	font-family: "Museo Sans Cyrl 500", sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	color: #263238;
+	line-height: 24px;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-content{
+	padding: 18px 32px 0;
+}
+
+.bx-catalog-subscribe-alert{
+	padding-bottom: 32px;
+}
+
+.bx-catalog-subscribe-alert .alert{
+	margin: 0;
+}
+
+.bx-catalog-subscribe-form-caption{
+	margin: -3px 0 9px;
+	font-size: 16px;
+	color: #263238;
+	line-height: 19px;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-close-icon{
+	width: 50px;
+	height: 65px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+	cursor: pointer;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-close-icon:after{
+	content: none;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-close-icon > i{
+	font-size: 16px;
+	color: #78909c;
+}
+
+.bx-no-touch .bx-catalog-subscribe-popup-window .popup-window-close-icon:hover > i,
+.bx-touch .bx-catalog-subscribe-popup-window .popup-window-close-icon:active > i{
+	color: #6639b6;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-buttons{
+	padding: 0 32px 32px;
+}
+
+.bx-catalog-subscribe-popup-window .popup-window-buttons button{
+	width: 100%;
+}

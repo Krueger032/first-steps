@@ -1,0 +1,256 @@
+.catalog-store-amount-items{
+	width: 100%;
+	display: table;
+}
+
+/***ITEM***/
+.catalog-store-amount-item{
+	display: table-row;
+}
+
+.catalog-store-amount-item-col{
+	width: 1px;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 24px 0;
+	border-bottom: 1px solid #e3ecef;
+}
+
+.catalog-store-amount-item-col-image{
+	padding-right: 12px;
+}
+
+.catalog-store-amount-item-col-info{
+	width: auto;
+	padding-right: 24px;
+}
+
+/***ITEM_IMAGE***/
+.catalog-store-amount-item-image{
+	width: 100px;
+	min-width: 100px;
+	height: 64px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #e3ecef;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.catalog-store-amount-item-image:link,
+.catalog-store-amount-item-image:visited{
+	text-decoration: none;
+}
+
+.catalog-store-amount-item-image > img{
+	width: auto;
+	height: auto;
+	max-width: 76px;
+	max-height: 40px;
+}
+
+/***ITEM_TITLE***/
+.catalog-store-amount-item-title{
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+	color: #263238;
+}
+
+.catalog-store-amount-item-title:link,
+.catalog-store-amount-item-title:visited{
+	color: #263238;
+	text-decoration: none;
+}
+
+.bx-no-touch a.catalog-store-amount-item-title:hover,
+.bx-touch a.catalog-store-amount-item-title:active{
+	color: #6639b6;
+}
+
+/***ITEM_ADDRESS***/
+.catalog-store-amount-item-address{
+	display: flex;
+	margin-top: 6px;
+}
+
+.catalog-store-amount-item-address > i{
+	margin-right: 5px;
+	margin-top: 2px;
+	font-size: 16px;
+	color: #b2c7cb;
+}
+
+.catalog-store-amount-item-address > span{
+	color: #78909c;
+}
+
+/***ITEM_HOURS***/
+.catalog-store-amount-item-hours{
+	display: flex;
+	align-items: center;
+	margin-top: 5px;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.catalog-store-amount-item-hours-hidden{
+	display: none;
+}
+
+.catalog-store-amount-item-hours-loader{
+	width: 16px;
+	height: 16px;
+	margin-right: 7px;
+	position: relative;
+}
+
+.catalog-store-amount-item-hours-loader:after,
+.catalog-store-amount-item-hours-loader > div,
+.catalog-store-amount-item-hours-loader > div > span,
+.catalog-store-amount-item-hours-loader > div > span:after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.catalog-store-amount-item-hours-loader:after{
+	content: "";
+	border: 3px solid #e3ecef;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-khtml-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.catalog-store-amount-item-hours-loader > div{
+	z-index: 1;
+	-webkit-animation: loaderRotate1 4.8s linear infinite;
+	animation: loaderRotate1 4.8s linear infinite;
+}
+
+.catalog-store-amount-item-hours-loader > div > span{
+	clip: rect(0, 16px, 16px, 8px);
+	-webkit-animation: loaderRotate2 1.2s linear infinite;
+	animation: loaderRotate2 1.2s linear infinite;
+}
+
+.catalog-store-amount-item-hours-loader > div > span:after{
+	content: "";
+	clip: rect(0, 16px, 16px, 8px);
+	border: 3px solid #6639b6;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-khtml-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-animation: loaderRotate3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+	animation: loaderRotate3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+.catalog-store-amount-item-hours-icon{
+	width: 5px;
+	height: 5px;
+	margin-right: 7px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+.catalog-store-amount-item-hours-icon-open{	
+	background: #3ac769;
+}
+
+.catalog-store-amount-item-hours-icon-closed{
+	background: #ed4343;
+}
+
+.catalog-store-amount-item-hours-break{
+	margin-left: 7px;
+	color: #78909c;
+}
+
+/***ITEM_PROP***/
+.catalog-store-amount-item-prop{
+	margin-top: 6px;
+	color: #78909c;
+}
+
+.catalog-store-amount-item-prop + .catalog-store-amount-item-prop{
+	margin-top: 5px;
+}
+
+.catalog-store-amount-item-prop > a:link,
+.catalog-store-amount-item-prop > a:visited{
+	color: #263238;
+	text-decoration: none;
+}
+
+/***ITEM_QUANTITY***/
+.catalog-store-amount-item-quantity{
+	display: table;
+	white-space: nowrap;
+}
+
+.catalog-store-amount-item-quantity-icon,
+.catalog-store-amount-item-quantity-val{
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 19px;
+}
+
+.catalog-store-amount-item-quantity-icon{
+	font-size: 16px;
+	color: #008D55;
+}
+
+.catalog-store-amount-item-quantity-not-avl .catalog-store-amount-item-quantity-icon{
+	color: #b2c7cb;
+}
+
+.catalog-store-amount-item-quantity-val{
+	padding-left: 6px;	
+	color: #78909C;	
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.catalog-store-amount-items{
+		width: -moz-calc(100% + 36px);
+		width: -webkit-calc(100% + 36px);
+		width: calc(100% + 36px);
+		margin-left: -18px;
+		border-top: 1px solid #e3ecef;
+	}
+
+	/***ITEM***/
+	.catalog-store-amount-item{
+		width: 100%;
+		display: table;
+		padding: 18px;
+		border-bottom: 1px solid #e3ecef;
+	}
+
+	.catalog-store-amount-item-col{
+		width: 100%;
+		float: left;
+		padding: 0;
+		border: none;
+	}
+
+	.catalog-store-amount-item-col-image{
+		width: 112px;
+		float: none;
+		vertical-align: top;
+		padding-right: 12px;
+	}
+
+	/***ITEM_QUANTITY***/
+	.catalog-store-amount-item-quantity{
+		margin-top: 6px;
+		white-space: normal;
+	}
+}

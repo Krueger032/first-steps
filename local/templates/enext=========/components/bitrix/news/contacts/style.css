@@ -1,0 +1,20 @@
+.contacts-container .description,
+.contacts-container .objects{
+	margin-top: 64px;
+}
+
+.contacts-container > div:first-child{
+	margin-top: 0;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.contacts-container{
+		margin-top: -32px;
+	}
+	
+	.contacts-container .description,
+	.contacts-container .objects{
+		margin-top: 32px;
+	}
+}

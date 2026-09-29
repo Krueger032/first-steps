@@ -1,0 +1,246 @@
+.sopc-pp-list{
+	opacity: 0;
+}
+
+.sopc-pp-company{
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.sopc-pp .sopc-pp-company{
+	height: auto;
+}
+
+.sopc-pp-company:hover .sopc-pp-company-graf-container{
+	-webkit-box-shadow: 0 0 36px rgba(85, 104, 110, 0.18);
+    -moz-box-shadow: 0 0 36px rgba(85, 104, 110, 0.18);
+    box-shadow: 0 0 36px rgba(85, 104, 110, 0.18);
+}
+
+.sopc-pp-company-graf-container{
+    padding: 18px;
+    position: relative;
+	border: 1px solid #e3ecef;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;	
+    cursor: pointer;
+    -webkit-transition: all 0.15s ease 0s;
+    -moz-transition: all 0.15s ease 0s;
+    -o-transition: all 0.15s ease 0s;
+    transition: all 0.15s ease 0s;
+}
+
+.sopc-pp-company-graf{
+	width: 100%;
+    height: 84px;
+    display: table;
+}
+
+.sopc-pp-company-image{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.sopc-pp-company-image > img{
+    max-width: 156px;
+    max-height: 84px;
+    width: auto;
+    height: auto;
+}
+
+.sopc-pp-company-descr{
+    width: 18px;
+    height: 18px;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.sopc-pp-company-descr > i{   
+    font-size: 21px;
+    color: #ced9db;   
+    -webkit-transition: all 0.15s ease 0s;
+    -moz-transition: all 0.15s ease 0s;
+    -o-transition: all 0.15s ease 0s;
+    transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .sopc-pp-company-descr:hover > i,
+.bx-touch .sopc-pp-company-descr:active > i{
+    color: #78909c;
+}
+
+.sopc-pp-company-popup{
+    width: 258px;
+    margin-left: -150px;
+    margin-top: 25px;
+    padding: 14px 18px 15px;
+    position: absolute;
+    left: -9999px;
+	top: 30px;	
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 36px rgba(85, 104, 110, 0.18);
+    -moz-box-shadow: 0 0 36px rgba(85, 104, 110, 0.18);
+    box-shadow: 0 0 36px rgba(85, 104, 110, 0.18);
+    background-color: #fff;
+    opacity: 0;
+	z-index: 5;
+    -moz-transform: translate3d(0px, 10px, 0px);
+    -o-transform: translate3d(0px, 10px, 0px);
+    -webkit-transform: translate3d(0px, 10px, 0px);
+    transform: translate3d(0px, 10px, 0px);
+    -webkit-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+    -moz-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+    -o-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+.sopc-pp-company-popup:after{
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    margin-left: -12px;
+    content: "";
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #fff;
+}
+
+.bx-no-touch .sopc-pp-company-descr:hover + .sopc-pp-company-popup,
+.bx-touch .sopc-pp-company-descr:active + .sopc-pp-company-popup{
+	left: 100%;
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    -o-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+}
+
+.sopc-pp-company-popup-title{
+    display: block;
+    margin-bottom: 18px;
+    font-family: "Museo Sans Cyrl 500", sans-serif;	
+}
+
+.sopc-pp-company-smalltitle-container{
+   height: 36px;
+   margin-top: 14px;
+   overflow: hidden;
+  }
+
+.sopc-pp-company-smalltitle-block{
+	width: 100%;
+	height: 36px;
+	display: table;
+}
+
+.sopc-pp-company-smalltitle{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+	line-height: 17px;
+}
+
+.sopc-order-select-info,
+.sale-order-pay{
+	margin-bottom: 9px;
+	font-size: 14px;
+    color: #78909c;
+	line-height: 17px;
+}
+
+.sopc-order-select-info p,
+.sale-order-pay p{
+	padding: 0;
+}
+
+.sopc-order-select-info p + p,
+.sale-order-pay p + p{
+	padding-top: 3px;
+}
+
+.bold-black{	
+    font-family: "Museo Sans Cyrl 700", sans-serif;
+	color: #263238;
+}
+
+.sale-order-pay-block{
+	display: table;
+	margin-top: 9px;
+}
+
+.sale-order-pay-block > *{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.sale-order-pay-block > .sale-order-pay-block-input{
+	padding: 0 6px;
+}
+
+.sale-order-pay-button,
+.sale-order-pay-error{
+	margin-top: 12px;
+}
+
+.sale-order-pay-description{
+	margin-top: 5px;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.sopc-pp-company{
+		padding-bottom: 18px;
+	}
+
+	.sopc-pp-company-graf-container{
+		padding: 12px;
+	}
+
+	.sopc-pp-company-graf{
+		height: 42px;
+	}
+
+	.sopc-pp-company-image > img{
+		max-width: 78px;
+		max-height: 42px;
+	}
+
+	.sopc-pp-company-popup{
+		width: auto;
+		margin-left: 0;
+		margin-top: 0;		
+	}
+
+	.sopc-pp-company-popup:after{
+		content: none;
+	}
+
+	.bx-no-touch .sopc-pp-company-descr:hover + .sopc-pp-company-popup,
+	.bx-touch .sopc-pp-company-descr:active + .sopc-pp-company-popup{
+		left: 12px;
+		right: 12px;
+	}
+
+	.sopc-pp-company-smalltitle-container,
+	.sopc-pp-company-smalltitle-block{
+		height: auto;
+	}
+
+	.sod-payment-inner-select-pay__button-back .btn{
+		display: block;
+	}
+}

@@ -1,0 +1,100 @@
+@font-face {
+  font-family: '18-baby-shop-efn';
+  src:  url('../../fonts/efn/18-baby-shop-efn.eot?ay3lz7');
+  src:  url('../../fonts/efn/18-baby-shop-efn.eot?ay3lz7#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/18-baby-shop-efn.woff2?ay3lz7') format('woff2'),
+    url('../../fonts/efn/18-baby-shop-efn.ttf?ay3lz7') format('truetype'),
+    url('../../fonts/efn/18-baby-shop-efn.woff?ay3lz7') format('woff'),
+    url('../../fonts/efn/18-baby-shop-efn.svg?ay3lz7#18-baby-shop-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn18-"], [class*=" efn18-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '18-baby-shop-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn18-baby-nipple:before {
+  content: "\e900";
+}
+.efn18-boy:before {
+  content: "\e901";
+}
+.efn18-girl:before {
+  content: "\e902";
+}
+.efn18-woman:before {
+  content: "\e903";
+}
+.efn18-baby-bottle:before {
+  content: "\e904";
+}
+.efn18-baby-food:before {
+  content: "\e905";
+}
+.efn18-diaper:before {
+  content: "\e906";
+}
+.efn18-wet-wipes:before {
+  content: "\e907";
+}
+.efn18-baby-potty:before {
+  content: "\e908";
+}
+.efn18-baby-cosmetics:before {
+  content: "\e909";
+}
+.efn18-baby-bath:before {
+  content: "\e90a";
+}
+.efn18-baby-bed:before {
+  content: "\e90b";
+}
+.efn18-baby-carriage:before {
+  content: "\e90c";
+}
+.efn18-baby-bodysuit:before {
+  content: "\e90d";
+}
+.efn18-children-shoes:before {
+  content: "\e90e";
+}
+.efn18-abc-cubes:before {
+  content: "\e90f";
+}
+.efn18-teddy-bear:before {
+  content: "\e910";
+}
+.efn18-baby-book:before {
+  content: "\e911";
+}
+.efn18-baby-bicycle:before {
+  content: "\e912";
+}
+.efn18-baby-table-chair:before {
+  content: "\e913";
+}
+.efn18-baby-walker:before {
+  content: "\e914";
+}
+.efn18-discharge-envelope:before {
+  content: "\e915";
+}
+.efn18-baby-car-seat:before {
+  content: "\e916";
+}
+.efn18-playhouse:before {
+  content: "\e917";
+}

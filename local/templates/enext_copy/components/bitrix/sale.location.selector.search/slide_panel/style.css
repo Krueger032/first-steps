@@ -1,0 +1,192 @@
+.slide-panel-bx-sls .bx-ui-sls-input-title{
+	margin-bottom: 4px;
+	font-size: 14px;
+	color: #78909c;
+	line-height: 17px;
+}
+
+/***REGION***/
+.slide-panel-bx-sls .dropdown-block{
+	padding: 0 30px;
+	position: relative;
+	border: 1px solid #ced9db;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background: #fff;
+}
+
+.slide-panel-bx-sls .dropdown-icon{
+	width: 30px;
+	height: 34px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.slide-panel-bx-sls .dropdown-icon > i{
+	font-size: 16px;
+	color: #b2c7cb;
+}
+
+.slide-panel-bx-sls .bx-ui-sls-loader{
+	width: 30px;
+	height: 34px;
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: url("/bitrix/panel/main/images/waiter-white.gif") center no-repeat;
+}
+
+.slide-panel-bx-sls .bx-ui-sls-clear{
+	width: 30px;
+	height: 34px;
+	display: none;	
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: center;
+	line-height: 34px;
+	cursor: pointer;
+}
+
+.slide-panel-bx-sls .bx-ui-sls-clear > i{
+	font-size: 16px;
+	color: #b2c7cb;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .slide-panel-bx-sls .bx-ui-sls-clear:hover > i,
+.bx-touch .slide-panel-bx-sls .bx-ui-sls-clear:active > i{
+	color: #6639b6;
+}
+
+.slide-panel-bx-sls .bx-ui-sls-container{
+	height: 34px;
+	overflow: hidden;
+}
+
+.slide-panel-bx-sls .bx-ui-sls-fake,
+.slide-panel-bx-sls .bx-ui-sls-route{
+	width: 100%;
+	height: 34px;
+	padding: 0 !important;
+	position: absolute;	
+	left: 0;
+	top: 0;
+	font-family: "Museo Sans Cyrl 300", sans-serif;
+	font-size: 16px;	
+	color: #263238;
+	line-height: 19px;
+	border: none !important;
+	background: transparent;
+	z-index: 10;
+}
+
+.slide-panel-bx-sls .bx-ui-sls-route{
+	color: #78909c !important;
+	z-index: 5;
+}
+
+/***QUICK_LOCATIONS***/
+.slide-panel-bx-sls .quick-locations{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -6px;
+}
+
+.slide-panel-bx-sls .quick-location-tag{
+	margin-left: 6px;
+	margin-top: 6px;
+	padding: 9px 16px 8px;
+	border: 2px solid #e3ecef;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.slide-panel-bx-sls .quick-location-tag:link,
+.slide-panel-bx-sls .quick-location-tag:visited{
+	color: #263238;
+	text-decoration: none;
+}
+
+.bx-no-touch .slide-panel-bx-sls .quick-location-tag:hover,
+.bx-touch .slide-panel-bx-sls .quick-location-tag:active{
+	border-color: #78909c;
+	background: #e3ecef;
+}
+
+.quick-location-tag.selected,
+.bx-no-touch .quick-location-tag.selected:hover,
+.bx-touch .quick-location-tag.selected:active{
+	color: #263238;
+	border-color: #6639b6;
+	background: rgba(102, 57, 182, 0.16);
+}
+
+/***BTN***/
+.bx-ui-sls-btn{
+	margin-top: 18px;
+}
+
+/***DROPDOWN***/
+.slide-panel-bx-sls .bx-ui-sls-pane{
+	width: 100%;
+	max-height: 223px;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 40px;
+	overflow-y: scroll;
+	border: 1px solid #ced9db;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 9px 24px rgba(38, 50, 56, 0.16);
+    -moz-box-shadow: 0 9px 24px rgba(38, 50, 56, 0.16);
+    box-shadow: 0 9px 24px rgba(38, 50, 56, 0.16);
+	background: #fff;
+	z-index: 202;
+}
+
+.slide-panel-bx-sls .dropdown-item{
+	padding: 8px 12px 6px;
+	cursor: pointer;
+}
+
+.bx-no-touch .slide-panel-bx-sls .dropdown-item:hover,
+.bx-touch .slide-panel-bx-sls .dropdown-item:active{
+	background: #f1f6f7;
+}
+
+.slide-panel-bx-sls .dropdown-item-text{
+	color: #78909c;
+}
+
+.slide-panel-bx-sls .dropdown-item-text > span{
+	color: #263238;
+}
+
+/***ERROR***/
+.slide-panel-bx-sls .bx-ui-sls-error{
+	padding: 8px 12px 6px;
+}
+
+.slide-panel-bx-sls .bx-ui-sls-error-message > .alert{
+	margin-top: 6px;
+}

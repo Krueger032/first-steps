@@ -1,1 +1,0 @@
-<?$arResult = CMax::getChilds($arResult);?>

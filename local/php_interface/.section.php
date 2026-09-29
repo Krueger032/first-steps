@@ -1,0 +1,3 @@
+<?
+$sSectionName="php_interface";
+?>

@@ -1,0 +1,168 @@
+@font-face {
+  font-family: '24-food-efn';
+  src:  url('../../fonts/efn/24-food-efn.eot?g35d2w');
+  src:  url('../../fonts/efn/24-food-efn.eot?g35d2w#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/24-food-efn.ttf?g35d2w') format('truetype'),
+    url('../../fonts/efn/24-food-efn.woff?g35d2w') format('woff'),
+    url('../../fonts/efn/24-food-efn.svg?g35d2w#24-food-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn24-"], [class*=" efn24-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '24-food-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn24-milk-pack:before {
+  content: "\e900";
+}
+.efn24-milk-bottle:before {
+  content: "\e901";
+}
+.efn24-cheese:before {
+  content: "\e902";
+}
+.efn24-oil-bottle:before {
+  content: "\e903";
+}
+.efn24-olive-oil:before {
+  content: "\e918";
+}
+.efn24-vinegar:before {
+  content: "\e919";
+}
+.efn24-bread:before {
+  content: "\e904";
+}
+.efn24-loaf:before {
+  content: "\e905";
+}
+.efn24-wheat-ear:before {
+  content: "\e906";
+}
+.efn24-pasta:before {
+  content: "\e907";
+}
+.efn24-sauce:before {
+  content: "\e91a";
+}
+.efn24-canned-food:before {
+  content: "\e908";
+}
+.efn24-pate:before {
+  content: "\e91b";
+}
+.efn24-caviar:before {
+  content: "\e91c";
+}
+.efn24-food-preservation:before {
+  content: "\e91d";
+}
+.efn24-jam:before {
+  content: "\e91e";
+}
+.efn24-olives:before {
+  content: "\e91f";
+}
+.efn24-broccoli:before {
+  content: "\e909";
+}
+.efn24-champignon:before {
+  content: "\e90a";
+}
+.efn24-apple:before {
+  content: "\e90b";
+}
+.efn24-cherry:before {
+  content: "\e90c";
+}
+.efn24-nuts:before {
+  content: "\e920";
+}
+.efn24-truffle:before {
+  content: "\e921";
+}
+.efn24-yogurt:before {
+  content: "\e90d";
+}
+.efn24-fish:before {
+  content: "\e90e";
+}
+.efn24-shrimp:before {
+  content: "\e922";
+}
+.efn24-chicken:before {
+  content: "\e90f";
+}
+.efn24-goose:before {
+  content: "\e923";
+}
+.efn24-cow:before {
+  content: "\e910";
+}
+.efn24-meat:before {
+  content: "\e911";
+}
+.efn24-sweets:before {
+  content: "\e912";
+}
+.efn24-chocolate:before {
+  content: "\e924";
+}
+.efn24-biscuit:before {
+  content: "\e925";
+}
+.efn24-flavored-syrup:before {
+  content: "\e926";
+}
+.efn24-chips:before {
+  content: "\e913";
+}
+.efn24-coffee-pack:before {
+  content: "\e914";
+}
+.efn24-tea-bag:before {
+  content: "\e915";
+}
+.efn24-juice-pack:before {
+  content: "\e916";
+}
+.efn24-alcohol:before {
+  content: "\e917";
+}
+.efn24-cognac:before {
+  content: "\e927";
+}
+.efn24-whiskey:before {
+  content: "\e928";
+}
+.efn24-tequila:before {
+  content: "\e929";
+}
+.efn24-rum:before {
+  content: "\e92a";
+}
+.efn24-champagne:before {
+  content: "\e92b";
+}
+.efn24-vodka:before {
+  content: "\e92c";
+}
+.efn24-sake:before {
+  content: "\e92d";
+}
+.efn24-beer-bottle:before {
+  content: "\e92e";
+}

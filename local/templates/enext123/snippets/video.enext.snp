@@ -1,0 +1,4 @@
+<div class="content-block-video">
+	<iframe width="100%" src="https://www.youtube.com/embed/HB6tefUlrw?list=PLKX8YynW6qFq6qLEmQ-JIg4wV1WT_KoGi" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="content-block__caption">Источник или описание видео при необходимости</div>
+</div>

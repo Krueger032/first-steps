@@ -1,0 +1,100 @@
+@font-face {
+  font-family: '03-garden-tools-efn';
+  src:  url('../../fonts/efn/03-garden-tools-efn.eot?snobg0');
+  src:  url('../../fonts/efn/03-garden-tools-efn.eot?snobg0#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/03-garden-tools-efn.woff2?snobg0') format('woff2'),
+    url('../../fonts/efn/03-garden-tools-efn.ttf?snobg0') format('truetype'),
+    url('../../fonts/efn/03-garden-tools-efn.woff?snobg0') format('woff'),
+    url('../../fonts/efn/03-garden-tools-efn.svg?snobg0#03-garden-tools-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn03-"], [class*=" efn03-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '03-garden-tools-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn03-grass-trimmer:before {
+  content: "\e900";
+}
+.efn03-gasoline-trimmer:before {
+  content: "\e901";
+}
+.efn03-lawn-mower:before {
+  content: "\e902";
+}
+.efn03-mower:before {
+  content: "\e903";
+}
+.efn03-lawn-mower-rider:before {
+  content: "\e904";
+}
+.efn03-lawn-mower-robot:before {
+  content: "\e905";
+}
+.efn03-hedge-trimmer:before {
+  content: "\e906";
+}
+.efn03-garden-trolley:before {
+  content: "\e907";
+}
+.efn03-tiller:before {
+  content: "\e908";
+}
+.efn03-motoblock:before {
+  content: "\e909";
+}
+.efn03-mini-tractor:before {
+  content: "\e90a";
+}
+.efn03-plow:before {
+  content: "\e90b";
+}
+.efn03-snow-blower:before {
+  content: "\e90c";
+}
+.efn03-air-blower:before {
+  content: "\e90d";
+}
+.efn03-backpack-sprayer:before {
+  content: "\e90e";
+}
+.efn03-earth-auger:before {
+  content: "\e90f";
+}
+.efn03-high-pressure-washer:before {
+  content: "\e910";
+}
+.efn03-irrigation-system:before {
+  content: "\e911";
+}
+.efn03-garden-shredder:before {
+  content: "\e912";
+}
+.efn03-pole-saw:before {
+  content: "\e913";
+}
+.efn03-trimmer-line:before {
+  content: "\e914";
+}
+.efn03-face-shield:before {
+  content: "\e915";
+}
+.efn03-oil-can:before {
+  content: "\e917";
+}
+.efn03-garden-tools:before {
+  content: "\e916";
+}

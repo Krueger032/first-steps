@@ -1,0 +1,1599 @@
+/***EVALUATION***/
+.reviews-evaluation{
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+	padding: 24px;
+	border: 2px solid #6639b6;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.reviews-evaluation-title{
+	font-family: "Museo Sans Cyrl 500", sans-serif;
+	font-size: 20px;
+	color: #263238;
+	line-height: 24px;
+	white-space: nowrap;
+}
+
+.reviews-evaluation-title > span{
+	display: block;
+	font-family: "Museo Sans Cyrl 300", sans-serif;
+	font-size: 16px;
+	text-align: right;
+	line-height: 19px;
+}
+
+.reviews-evaluation-stars{
+	display: flex;
+	align-items: center;
+	margin-left: 48px;
+	cursor: pointer;
+}
+
+.reviews-evaluation-star{
+	font-size: 32px;
+	color: #ced9db;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.reviews-evaluation-star-active{
+	color: #008d55;	
+}
+
+.reviews-evaluation-star + .reviews-evaluation-star{
+	padding-left: 4px;
+}
+
+.reviews-evaluation-val{
+	margin-left: 12px;
+	color: #78909c;
+}
+
+/***ITEM***/
+.reviews-item{
+	margin-top: 24px;
+}
+
+.reviews-item-user-name{
+	font-family: "Museo Sans Cyrl 500", sans-serif;
+	font-size: 20px;
+	color: #263238;
+	text-align: right;
+	line-height: 24px;
+}
+
+.reviews-item-date,
+.reviews-item-user-city{	
+	font-size: 14px;
+	color: #78909c;
+	text-align: right;
+	line-height: 17px;
+}
+
+/***ITEM_CAPTION***/
+.reviews-item-caption{
+	padding: 24px;
+	border: 1px solid #e3ecef;
+	-moz-border-radius: 0 16px 16px 16px;
+	-webkit-border-radius: 0 16px 16px 16px;
+	-khtml-border-radius: 0 16px 16px 16px;
+	border-radius: 0 16px 16px 16px;
+}
+
+.reviews-item-rating-container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.reviews-item-rating,
+.reviews-item-stars{
+	display: flex;
+	align-items: center;
+}
+
+.reviews-item-star{
+	color: #008d55;
+}
+
+.reviews-item-star-empty{
+	color: #ced9db;
+}
+
+.reviews-item-star + .reviews-item-star{
+	margin-left: 2px;
+}
+
+.reviews-item-term{
+	margin-left: 12px;
+	color: #78909c;
+}
+
+.reviews-item-likes{
+	color: #6639b6;
+}
+
+.reviews-item-likes-empty{
+	color: #ced9db;
+}
+
+.reviews-item-user-text{
+	margin-top: 18px;
+	color: #263238;
+}
+
+.reviews-item-user-props{
+	display: flex;
+	margin-top: 18px;
+	margin-left: -26px;
+}
+
+.reviews-item-user-prop{
+	width: -moz-calc(50% - 26px);
+	width: -webkit-calc(50% - 26px);
+	width: calc(50% - 26px);
+	margin-left: 26px;
+}
+
+.reviews-item-user-prop-title{
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+	color: #263238;
+}
+
+.reviews-item-user-prop-text{
+	margin-top: 8px;
+	color: #263238;
+}
+
+.reviews-item-photos{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -12px;
+	margin-top: 6px;	
+}
+
+.reviews-item-photo{
+	width: 80px;
+	height: 80px;
+	margin-left: 12px;
+	margin-top: 12px;
+	position: relative;
+	overflow: hidden;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.reviews-item-photo:after{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	content: "";
+	border: 2px solid transparent;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .reviews-item-photo:hover:after,
+.bx-touch .reviews-item-photo:active:after{
+	border-color: #78909c;
+}
+
+.reviews-item-photo > img{
+	width: 100%;
+	height: 100%;	
+	object-fit: cover;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.reviews-item-store{
+	margin-top: 18px;
+	padding: 24px;
+	-moz-border-radius: 0 16px 16px 16px;
+	-webkit-border-radius: 0 16px 16px 16px;
+	-khtml-border-radius: 0 16px 16px 16px;
+	border-radius: 0 16px 16px 16px;
+	background: #f1f6f7;
+}
+
+.reviews-item-store-title{
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+	color: #263238;
+}
+
+.reviews-item-store-text{
+	margin-top: 12px;
+	color: #263238;
+}
+
+.reviews-item-like{
+	display: inline-flex;
+	align-items: center;
+	margin-top: 24px;
+	cursor: pointer;
+}
+
+.reviews-item-like > i{
+	font-size: 25px;
+	color: #b2c7cb;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.reviews-item-like > span{
+	margin-left: 8px;
+	color: #78909c;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .reviews-item-like:hover > i,
+.bx-no-touch .reviews-item-like:hover > span,
+.bx-touch .reviews-item-like:active > i,
+.bx-touch .reviews-item-like:active > span,
+.reviews-item-like.reviews-item-liked > i,
+.reviews-item-like.reviews-item-liked > span{
+	color: #6639b6;
+}
+
+/***GENERAL_STATS***/
+.reviews-general-stats{
+	-moz-transform: translateX(10px);
+	-o-transform: translateX(10px);
+	-webkit-transform: translateX(10px);
+	transform: translateX(10px);
+}
+
+.reviews-general-stats-rating-circle{
+	width: 170px;
+	height: 170px;
+	margin: 0 auto;
+	position: relative;
+	border-radius: 50%;
+	background: #ced9db;
+}
+
+.reviews-general-stats-rating-circle:after{	
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 20px;
+	bottom: 20px;
+	content: " ";
+	border-radius: 50%;
+	background: #fff;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.reviews-general-stats-rating-circle-val{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 20px;
+	bottom: 20px;
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+	font-size: 36px;
+	color: #263238;	
+	line-height: 43px;
+	white-space: nowrap;
+	z-index: 200;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.bx-no-touch .reviews-general-stats-rating-circle:hover:after,
+.bx-touch .reviews-general-stats-rating-circle:active:after,
+.bx-no-touch .reviews-general-stats-rating-circle:hover > .reviews-general-stats-rating-circle-val,
+.bx-touch .reviews-general-stats-rating-circle:active > .reviews-general-stats-rating-circle-val{
+	-moz-transform: scale(1.15) rotate(0.02deg);
+	-o-transform: scale(1.15);
+	-webkit-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.reviews-general-stats-rating-circle-slice{
+	width: 170px;
+	height: 170px;
+	position: absolute;
+	clip: rect(0, 170px, 170px, 85px);
+}
+
+.p51 .reviews-general-stats-rating-circle-slice,
+.p52 .reviews-general-stats-rating-circle-slice,
+.p53 .reviews-general-stats-rating-circle-slice,
+.p54 .reviews-general-stats-rating-circle-slice,
+.p55 .reviews-general-stats-rating-circle-slice,
+.p56 .reviews-general-stats-rating-circle-slice,
+.p57 .reviews-general-stats-rating-circle-slice,
+.p58 .reviews-general-stats-rating-circle-slice,
+.p59 .reviews-general-stats-rating-circle-slice,
+.p60 .reviews-general-stats-rating-circle-slice,
+.p61 .reviews-general-stats-rating-circle-slice,
+.p62 .reviews-general-stats-rating-circle-slice,
+.p63 .reviews-general-stats-rating-circle-slice,
+.p64 .reviews-general-stats-rating-circle-slice,
+.p65 .reviews-general-stats-rating-circle-slice,
+.p66 .reviews-general-stats-rating-circle-slice,
+.p67 .reviews-general-stats-rating-circle-slice,
+.p68 .reviews-general-stats-rating-circle-slice,
+.p69 .reviews-general-stats-rating-circle-slice,
+.p70 .reviews-general-stats-rating-circle-slice,
+.p71 .reviews-general-stats-rating-circle-slice,
+.p72 .reviews-general-stats-rating-circle-slice,
+.p73 .reviews-general-stats-rating-circle-slice,
+.p74 .reviews-general-stats-rating-circle-slice,
+.p75 .reviews-general-stats-rating-circle-slice,
+.p76 .reviews-general-stats-rating-circle-slice,
+.p77 .reviews-general-stats-rating-circle-slice,
+.p78 .reviews-general-stats-rating-circle-slice,
+.p79 .reviews-general-stats-rating-circle-slice,
+.p80 .reviews-general-stats-rating-circle-slice,
+.p81 .reviews-general-stats-rating-circle-slice,
+.p82 .reviews-general-stats-rating-circle-slice,
+.p83 .reviews-general-stats-rating-circle-slice,
+.p84 .reviews-general-stats-rating-circle-slice,
+.p85 .reviews-general-stats-rating-circle-slice,
+.p86 .reviews-general-stats-rating-circle-slice,
+.p87 .reviews-general-stats-rating-circle-slice,
+.p88 .reviews-general-stats-rating-circle-slice,
+.p89 .reviews-general-stats-rating-circle-slice,
+.p90 .reviews-general-stats-rating-circle-slice,
+.p91 .reviews-general-stats-rating-circle-slice,
+.p92 .reviews-general-stats-rating-circle-slice,
+.p93 .reviews-general-stats-rating-circle-slice,
+.p94 .reviews-general-stats-rating-circle-slice,
+.p95 .reviews-general-stats-rating-circle-slice,
+.p96 .reviews-general-stats-rating-circle-slice,
+.p97 .reviews-general-stats-rating-circle-slice,
+.p98 .reviews-general-stats-rating-circle-slice,
+.p99 .reviews-general-stats-rating-circle-slice,
+.p100 .reviews-general-stats-rating-circle-slice{
+	clip: rect(auto, auto, auto, auto);
+}
+
+.reviews-general-stats-rating-circle-bar,
+.p51 .reviews-general-stats-rating-circle-fill,
+.p52 .reviews-general-stats-rating-circle-fill,
+.p53 .reviews-general-stats-rating-circle-fill,
+.p54 .reviews-general-stats-rating-circle-fill,
+.p55 .reviews-general-stats-rating-circle-fill,
+.p56 .reviews-general-stats-rating-circle-fill,
+.p57 .reviews-general-stats-rating-circle-fill,
+.p58 .reviews-general-stats-rating-circle-fill,
+.p59 .reviews-general-stats-rating-circle-fill,
+.p60 .reviews-general-stats-rating-circle-fill,
+.p61 .reviews-general-stats-rating-circle-fill,
+.p62 .reviews-general-stats-rating-circle-fill,
+.p63 .reviews-general-stats-rating-circle-fill,
+.p64 .reviews-general-stats-rating-circle-fill,
+.p65 .reviews-general-stats-rating-circle-fill,
+.p66 .reviews-general-stats-rating-circle-fill,
+.p67 .reviews-general-stats-rating-circle-fill,
+.p68 .reviews-general-stats-rating-circle-fill,
+.p69 .reviews-general-stats-rating-circle-fill,
+.p70 .reviews-general-stats-rating-circle-fill,
+.p71 .reviews-general-stats-rating-circle-fill,
+.p72 .reviews-general-stats-rating-circle-fill,
+.p73 .reviews-general-stats-rating-circle-fill,
+.p74 .reviews-general-stats-rating-circle-fill,
+.p75 .reviews-general-stats-rating-circle-fill,
+.p76 .reviews-general-stats-rating-circle-fill,
+.p77 .reviews-general-stats-rating-circle-fill,
+.p78 .reviews-general-stats-rating-circle-fill,
+.p79 .reviews-general-stats-rating-circle-fill,
+.p80 .reviews-general-stats-rating-circle-fill,
+.p81 .reviews-general-stats-rating-circle-fill,
+.p82 .reviews-general-stats-rating-circle-fill,
+.p83 .reviews-general-stats-rating-circle-fill,
+.p84 .reviews-general-stats-rating-circle-fill,
+.p85 .reviews-general-stats-rating-circle-fill,
+.p86 .reviews-general-stats-rating-circle-fill,
+.p87 .reviews-general-stats-rating-circle-fill,
+.p88 .reviews-general-stats-rating-circle-fill,
+.p89 .reviews-general-stats-rating-circle-fill,
+.p90 .reviews-general-stats-rating-circle-fill,
+.p91 .reviews-general-stats-rating-circle-fill,
+.p92 .reviews-general-stats-rating-circle-fill,
+.p93 .reviews-general-stats-rating-circle-fill,
+.p94 .reviews-general-stats-rating-circle-fill,
+.p95 .reviews-general-stats-rating-circle-fill,
+.p96 .reviews-general-stats-rating-circle-fill,
+.p97 .reviews-general-stats-rating-circle-fill,
+.p98 .reviews-general-stats-rating-circle-fill,
+.p99 .reviews-general-stats-rating-circle-fill,
+.p100 .reviews-general-stats-rating-circle-fill{
+	width: 170px;
+	height: 170px;
+	position: absolute;
+	border: 20px solid #008d55;
+	border-radius: 50%;
+	clip: rect(0, 85px, 170px, 0);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+.p1 .reviews-general-stats-rating-circle-bar,
+.p2 .reviews-general-stats-rating-circle-bar,
+.p3 .reviews-general-stats-rating-circle-bar,
+.p4 .reviews-general-stats-rating-circle-bar,
+.p5 .reviews-general-stats-rating-circle-bar,
+.p6 .reviews-general-stats-rating-circle-bar,
+.p7 .reviews-general-stats-rating-circle-bar,
+.p8 .reviews-general-stats-rating-circle-bar,
+.p9 .reviews-general-stats-rating-circle-bar,
+.p10 .reviews-general-stats-rating-circle-bar,
+.p11 .reviews-general-stats-rating-circle-bar,
+.p12 .reviews-general-stats-rating-circle-bar,
+.p13 .reviews-general-stats-rating-circle-bar,
+.p14 .reviews-general-stats-rating-circle-bar,
+.p15 .reviews-general-stats-rating-circle-bar,
+.p16 .reviews-general-stats-rating-circle-bar,
+.p17 .reviews-general-stats-rating-circle-bar,
+.p18 .reviews-general-stats-rating-circle-bar,
+.p19 .reviews-general-stats-rating-circle-bar,
+.p20 .reviews-general-stats-rating-circle-bar,
+.p21 .reviews-general-stats-rating-circle-bar,
+.p22 .reviews-general-stats-rating-circle-bar,
+.p23 .reviews-general-stats-rating-circle-bar,
+.p24 .reviews-general-stats-rating-circle-bar,
+.p25 .reviews-general-stats-rating-circle-bar,
+.p26 .reviews-general-stats-rating-circle-bar,
+.p27 .reviews-general-stats-rating-circle-bar,
+.p28 .reviews-general-stats-rating-circle-bar,
+.p29 .reviews-general-stats-rating-circle-bar,
+.p30 .reviews-general-stats-rating-circle-bar,
+.p31 .reviews-general-stats-rating-circle-bar,
+.p32 .reviews-general-stats-rating-circle-bar,
+.p33 .reviews-general-stats-rating-circle-bar,
+.p34 .reviews-general-stats-rating-circle-bar,
+.p35 .reviews-general-stats-rating-circle-bar,
+.p36 .reviews-general-stats-rating-circle-bar,
+.p37 .reviews-general-stats-rating-circle-bar,
+.p38 .reviews-general-stats-rating-circle-bar,
+.p39 .reviews-general-stats-rating-circle-bar{
+	border-color: #d03913;
+}
+
+.p40 .reviews-general-stats-rating-circle-bar,
+.p41 .reviews-general-stats-rating-circle-bar,
+.p42 .reviews-general-stats-rating-circle-bar,
+.p43 .reviews-general-stats-rating-circle-bar,
+.p44 .reviews-general-stats-rating-circle-bar,
+.p45 .reviews-general-stats-rating-circle-bar,
+.p46 .reviews-general-stats-rating-circle-bar,
+.p47 .reviews-general-stats-rating-circle-bar,
+.p48 .reviews-general-stats-rating-circle-bar,
+.p49 .reviews-general-stats-rating-circle-bar,
+.p50 .reviews-general-stats-rating-circle-bar,
+.p51 .reviews-general-stats-rating-circle-bar,
+.p52 .reviews-general-stats-rating-circle-bar,
+.p53 .reviews-general-stats-rating-circle-bar,
+.p54 .reviews-general-stats-rating-circle-bar,
+.p55 .reviews-general-stats-rating-circle-bar,
+.p56 .reviews-general-stats-rating-circle-bar,
+.p57 .reviews-general-stats-rating-circle-bar,
+.p58 .reviews-general-stats-rating-circle-bar,
+.p59 .reviews-general-stats-rating-circle-bar,
+.p51 .reviews-general-stats-rating-circle-fill,
+.p52 .reviews-general-stats-rating-circle-fill,
+.p53 .reviews-general-stats-rating-circle-fill,
+.p54 .reviews-general-stats-rating-circle-fill,
+.p55 .reviews-general-stats-rating-circle-fill,
+.p56 .reviews-general-stats-rating-circle-fill,
+.p57 .reviews-general-stats-rating-circle-fill,
+.p58 .reviews-general-stats-rating-circle-fill,
+.p59 .reviews-general-stats-rating-circle-fill{
+	border-color: #ca6c00;
+}
+
+.p60 .reviews-general-stats-rating-circle-bar,
+.p61 .reviews-general-stats-rating-circle-bar,
+.p62 .reviews-general-stats-rating-circle-bar,
+.p63 .reviews-general-stats-rating-circle-bar,
+.p64 .reviews-general-stats-rating-circle-bar,
+.p65 .reviews-general-stats-rating-circle-bar,
+.p66 .reviews-general-stats-rating-circle-bar,
+.p67 .reviews-general-stats-rating-circle-bar,
+.p68 .reviews-general-stats-rating-circle-bar,
+.p69 .reviews-general-stats-rating-circle-bar,
+.p70 .reviews-general-stats-rating-circle-bar,
+.p71 .reviews-general-stats-rating-circle-bar,
+.p72 .reviews-general-stats-rating-circle-bar,
+.p73 .reviews-general-stats-rating-circle-bar,
+.p74 .reviews-general-stats-rating-circle-bar,
+.p75 .reviews-general-stats-rating-circle-bar,
+.p76 .reviews-general-stats-rating-circle-bar,
+.p77 .reviews-general-stats-rating-circle-bar,
+.p78 .reviews-general-stats-rating-circle-bar,
+.p79 .reviews-general-stats-rating-circle-bar,
+.p60 .reviews-general-stats-rating-circle-fill,
+.p61 .reviews-general-stats-rating-circle-fill,
+.p62 .reviews-general-stats-rating-circle-fill,
+.p63 .reviews-general-stats-rating-circle-fill,
+.p64 .reviews-general-stats-rating-circle-fill,
+.p65 .reviews-general-stats-rating-circle-fill,
+.p66 .reviews-general-stats-rating-circle-fill,
+.p67 .reviews-general-stats-rating-circle-fill,
+.p68 .reviews-general-stats-rating-circle-fill,
+.p69 .reviews-general-stats-rating-circle-fill,
+.p70 .reviews-general-stats-rating-circle-fill,
+.p71 .reviews-general-stats-rating-circle-fill,
+.p72 .reviews-general-stats-rating-circle-fill,
+.p73 .reviews-general-stats-rating-circle-fill,
+.p74 .reviews-general-stats-rating-circle-fill,
+.p75 .reviews-general-stats-rating-circle-fill,
+.p76 .reviews-general-stats-rating-circle-fill,
+.p77 .reviews-general-stats-rating-circle-fill,
+.p78 .reviews-general-stats-rating-circle-fill,
+.p79 .reviews-general-stats-rating-circle-fill{
+	border-color: #a58900;
+}
+
+.p80 .reviews-general-stats-rating-circle-bar,
+.p81 .reviews-general-stats-rating-circle-bar,
+.p82 .reviews-general-stats-rating-circle-bar,
+.p83 .reviews-general-stats-rating-circle-bar,
+.p84 .reviews-general-stats-rating-circle-bar,
+.p85 .reviews-general-stats-rating-circle-bar,
+.p86 .reviews-general-stats-rating-circle-bar,
+.p87 .reviews-general-stats-rating-circle-bar,
+.p88 .reviews-general-stats-rating-circle-bar,
+.p89 .reviews-general-stats-rating-circle-bar,
+.p80 .reviews-general-stats-rating-circle-fill,
+.p81 .reviews-general-stats-rating-circle-fill,
+.p82 .reviews-general-stats-rating-circle-fill,
+.p83 .reviews-general-stats-rating-circle-fill,
+.p84 .reviews-general-stats-rating-circle-fill,
+.p85 .reviews-general-stats-rating-circle-fill,
+.p86 .reviews-general-stats-rating-circle-fill,
+.p87 .reviews-general-stats-rating-circle-fill,
+.p88 .reviews-general-stats-rating-circle-fill,
+.p89 .reviews-general-stats-rating-circle-fill{
+	border-color: #568d00;
+}
+
+.p1 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(3.6deg);
+	-moz-transform: rotate(3.6deg);
+	-ms-transform: rotate(3.6deg);
+	-o-transform: rotate(3.6deg);
+	transform: rotate(3.6deg);
+}
+
+.p2 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(7.2deg);
+	-moz-transform: rotate(7.2deg);
+	-ms-transform: rotate(7.2deg);
+	-o-transform: rotate(7.2deg);
+	transform: rotate(7.2deg);
+}
+
+.p3 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(10.8deg);
+	-moz-transform: rotate(10.8deg);
+	-ms-transform: rotate(10.8deg);
+	-o-transform: rotate(10.8deg);
+	transform: rotate(10.8deg);
+}
+
+.p4 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(14.4deg);
+	-moz-transform: rotate(14.4deg);
+	-ms-transform: rotate(14.4deg);
+	-o-transform: rotate(14.4deg);
+	transform: rotate(14.4deg);
+}
+
+.p5 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(18deg);
+	-moz-transform: rotate(18deg);
+	-ms-transform: rotate(18deg);
+	-o-transform: rotate(18deg);
+	transform: rotate(18deg);
+}
+
+.p6 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(21.6deg);
+	-moz-transform: rotate(21.6deg);
+	-ms-transform: rotate(21.6deg);
+	-o-transform: rotate(21.6deg);
+	transform: rotate(21.6deg);
+}
+
+.p7 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(25.2deg);
+	-moz-transform: rotate(25.2deg);
+	-ms-transform: rotate(25.2deg);
+	-o-transform: rotate(25.2deg);
+	transform: rotate(25.2deg);
+}
+
+.p8 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(28.8deg);
+	-moz-transform: rotate(28.8deg);
+	-ms-transform: rotate(28.8deg);
+	-o-transform: rotate(28.8deg);
+	transform: rotate(28.8deg);
+}
+
+.p9 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(32.4deg);
+	-moz-transform: rotate(32.4deg);
+	-ms-transform: rotate(32.4deg);
+	-o-transform: rotate(32.4deg);
+	transform: rotate(32.4deg);
+}
+
+.p10 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(36deg);
+	-moz-transform: rotate(36deg);
+	-ms-transform: rotate(36deg);
+	-o-transform: rotate(36deg);
+	transform: rotate(36deg);
+}
+
+.p11 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(39.6deg);
+	-moz-transform: rotate(39.6deg);
+	-ms-transform: rotate(39.6deg);
+	-o-transform: rotate(39.6deg);
+	transform: rotate(39.6deg);
+}
+
+.p12 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(43.2deg);
+	-moz-transform: rotate(43.2deg);
+	-ms-transform: rotate(43.2deg);
+	-o-transform: rotate(43.2deg);
+	transform: rotate(43.2deg);
+}
+
+.p13 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(46.800000000000004deg);
+	-moz-transform: rotate(46.800000000000004deg);
+	-ms-transform: rotate(46.800000000000004deg);
+	-o-transform: rotate(46.800000000000004deg);
+	transform: rotate(46.800000000000004deg);
+}
+
+.p14 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(50.4deg);
+	-moz-transform: rotate(50.4deg);
+	-ms-transform: rotate(50.4deg);
+	-o-transform: rotate(50.4deg);
+	transform: rotate(50.4deg);
+}
+
+.p15 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(54deg);
+	-moz-transform: rotate(54deg);
+	-ms-transform: rotate(54deg);
+	-o-transform: rotate(54deg);
+	transform: rotate(54deg);
+}
+
+.p16 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(57.6deg);
+	-moz-transform: rotate(57.6deg);
+	-ms-transform: rotate(57.6deg);
+	-o-transform: rotate(57.6deg);
+	transform: rotate(57.6deg);
+}
+
+.p17 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(61.2deg);
+	-moz-transform: rotate(61.2deg);
+	-ms-transform: rotate(61.2deg);
+	-o-transform: rotate(61.2deg);
+	transform: rotate(61.2deg);
+}
+
+.p18 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(64.8deg);
+	-moz-transform: rotate(64.8deg);
+	-ms-transform: rotate(64.8deg);
+	-o-transform: rotate(64.8deg);
+	transform: rotate(64.8deg);
+}
+
+.p19 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(68.4deg);
+	-moz-transform: rotate(68.4deg);
+	-ms-transform: rotate(68.4deg);
+	-o-transform: rotate(68.4deg);
+	transform: rotate(68.4deg);
+}
+
+.p20 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(72deg);
+	-moz-transform: rotate(72deg);
+	-ms-transform: rotate(72deg);
+	-o-transform: rotate(72deg);
+	transform: rotate(72deg);
+}
+
+.p21 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(75.60000000000001deg);
+	-moz-transform: rotate(75.60000000000001deg);
+	-ms-transform: rotate(75.60000000000001deg);
+	-o-transform: rotate(75.60000000000001deg);
+	transform: rotate(75.60000000000001deg);
+}
+
+.p22 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(79.2deg);
+	-moz-transform: rotate(79.2deg);
+	-ms-transform: rotate(79.2deg);
+	-o-transform: rotate(79.2deg);
+	transform: rotate(79.2deg);
+}
+
+.p23 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(82.8deg);
+	-moz-transform: rotate(82.8deg);
+	-ms-transform: rotate(82.8deg);
+	-o-transform: rotate(82.8deg);
+	transform: rotate(82.8deg);
+}
+
+.p24 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(86.4deg);
+	-moz-transform: rotate(86.4deg);
+	-ms-transform: rotate(86.4deg);
+	-o-transform: rotate(86.4deg);
+	transform: rotate(86.4deg);
+}
+
+.p25 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.p26 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(93.60000000000001deg);
+	-moz-transform: rotate(93.60000000000001deg);
+	-ms-transform: rotate(93.60000000000001deg);
+	-o-transform: rotate(93.60000000000001deg);
+	transform: rotate(93.60000000000001deg);
+}
+
+.p27 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(97.2deg);
+	-moz-transform: rotate(97.2deg);
+	-ms-transform: rotate(97.2deg);
+	-o-transform: rotate(97.2deg);
+	transform: rotate(97.2deg);
+}
+
+.p28 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(100.8deg);
+	-moz-transform: rotate(100.8deg);
+	-ms-transform: rotate(100.8deg);
+	-o-transform: rotate(100.8deg);
+	transform: rotate(100.8deg);
+}
+
+.p29 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(104.4deg);
+	-moz-transform: rotate(104.4deg);
+	-ms-transform: rotate(104.4deg);
+	-o-transform: rotate(104.4deg);
+	transform: rotate(104.4deg);
+}
+
+.p30 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(108deg);
+	-moz-transform: rotate(108deg);
+	-ms-transform: rotate(108deg);
+	-o-transform: rotate(108deg);
+	transform: rotate(108deg);
+}
+
+.p31 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(111.60000000000001deg);
+	-moz-transform: rotate(111.60000000000001deg);
+	-ms-transform: rotate(111.60000000000001deg);
+	-o-transform: rotate(111.60000000000001deg);
+	transform: rotate(111.60000000000001deg);
+}
+
+.p32 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(115.2deg);
+	-moz-transform: rotate(115.2deg);
+	-ms-transform: rotate(115.2deg);
+	-o-transform: rotate(115.2deg);
+	transform: rotate(115.2deg);
+}
+
+.p33 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(118.8deg);
+	-moz-transform: rotate(118.8deg);
+	-ms-transform: rotate(118.8deg);
+	-o-transform: rotate(118.8deg);
+	transform: rotate(118.8deg);
+}
+
+.p34 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(122.4deg);
+	-moz-transform: rotate(122.4deg);
+	-ms-transform: rotate(122.4deg);
+	-o-transform: rotate(122.4deg);
+	transform: rotate(122.4deg);
+}
+
+.p35 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(126deg);
+	-moz-transform: rotate(126deg);
+	-ms-transform: rotate(126deg);
+	-o-transform: rotate(126deg);
+	transform: rotate(126deg);
+}
+
+.p36 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(129.6deg);
+	-moz-transform: rotate(129.6deg);
+	-ms-transform: rotate(129.6deg);
+	-o-transform: rotate(129.6deg);
+	transform: rotate(129.6deg);
+}
+
+.p37 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(133.20000000000002deg);
+	-moz-transform: rotate(133.20000000000002deg);
+	-ms-transform: rotate(133.20000000000002deg);
+	-o-transform: rotate(133.20000000000002deg);
+	transform: rotate(133.20000000000002deg);
+}
+
+.p38 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(136.8deg);
+	-moz-transform: rotate(136.8deg);
+	-ms-transform: rotate(136.8deg);
+	-o-transform: rotate(136.8deg);
+	transform: rotate(136.8deg);
+}
+
+.p39 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(140.4deg);
+	-moz-transform: rotate(140.4deg);
+	-ms-transform: rotate(140.4deg);
+	-o-transform: rotate(140.4deg);
+	transform: rotate(140.4deg);
+}
+
+.p40 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(144deg);
+	-moz-transform: rotate(144deg);
+	-ms-transform: rotate(144deg);
+	-o-transform: rotate(144deg);
+	transform: rotate(144deg);
+}
+
+.p41 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(147.6deg);
+	-moz-transform: rotate(147.6deg);
+	-ms-transform: rotate(147.6deg);
+	-o-transform: rotate(147.6deg);
+	transform: rotate(147.6deg);
+}
+
+.p42 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(151.20000000000002deg);
+	-moz-transform: rotate(151.20000000000002deg);
+	-ms-transform: rotate(151.20000000000002deg);
+	-o-transform: rotate(151.20000000000002deg);
+	transform: rotate(151.20000000000002deg);
+}
+
+.p43 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(154.8deg);
+	-moz-transform: rotate(154.8deg);
+	-ms-transform: rotate(154.8deg);
+	-o-transform: rotate(154.8deg);
+	transform: rotate(154.8deg);
+}
+
+.p44 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(158.4deg);
+	-moz-transform: rotate(158.4deg);
+	-ms-transform: rotate(158.4deg);
+	-o-transform: rotate(158.4deg);
+	transform: rotate(158.4deg);
+}
+
+.p45 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(162deg);
+	-moz-transform: rotate(162deg);
+	-ms-transform: rotate(162deg);
+	-o-transform: rotate(162deg);
+	transform: rotate(162deg);
+}
+
+.p46 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(165.6deg);
+	-moz-transform: rotate(165.6deg);
+	-ms-transform: rotate(165.6deg);
+	-o-transform: rotate(165.6deg);
+	transform: rotate(165.6deg);
+}
+
+.p47 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(169.20000000000002deg);
+	-moz-transform: rotate(169.20000000000002deg);
+	-ms-transform: rotate(169.20000000000002deg);
+	-o-transform: rotate(169.20000000000002deg);
+	transform: rotate(169.20000000000002deg);
+}
+
+.p48 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(172.8deg);
+	-moz-transform: rotate(172.8deg);
+	-ms-transform: rotate(172.8deg);
+	-o-transform: rotate(172.8deg);
+	transform: rotate(172.8deg);
+}
+
+.p49 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(176.4deg);
+	-moz-transform: rotate(176.4deg);
+	-ms-transform: rotate(176.4deg);
+	-o-transform: rotate(176.4deg);
+	transform: rotate(176.4deg);
+}
+
+.p50 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.p51 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(183.6deg);
+	-moz-transform: rotate(183.6deg);
+	-ms-transform: rotate(183.6deg);
+	-o-transform: rotate(183.6deg);
+	transform: rotate(183.6deg);
+}
+
+.p52 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(187.20000000000002deg);
+	-moz-transform: rotate(187.20000000000002deg);
+	-ms-transform: rotate(187.20000000000002deg);
+	-o-transform: rotate(187.20000000000002deg);
+	transform: rotate(187.20000000000002deg);
+}
+
+.p53 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(190.8deg);
+	-moz-transform: rotate(190.8deg);
+	-ms-transform: rotate(190.8deg);
+	-o-transform: rotate(190.8deg);
+	transform: rotate(190.8deg);
+}
+
+.p54 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(194.4deg);
+	-moz-transform: rotate(194.4deg);
+	-ms-transform: rotate(194.4deg);
+	-o-transform: rotate(194.4deg);
+	transform: rotate(194.4deg);
+}
+
+.p55 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(198deg);
+	-moz-transform: rotate(198deg);
+	-ms-transform: rotate(198deg);
+	-o-transform: rotate(198deg);
+	transform: rotate(198deg);
+}
+
+.p56 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(201.6deg);
+	-moz-transform: rotate(201.6deg);
+	-ms-transform: rotate(201.6deg);
+	-o-transform: rotate(201.6deg);
+	transform: rotate(201.6deg);
+}
+
+.p57 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(205.20000000000002deg);
+	-moz-transform: rotate(205.20000000000002deg);
+	-ms-transform: rotate(205.20000000000002deg);
+	-o-transform: rotate(205.20000000000002deg);
+	transform: rotate(205.20000000000002deg);
+}
+
+.p58 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(208.8deg);
+	-moz-transform: rotate(208.8deg);
+	-ms-transform: rotate(208.8deg);
+	-o-transform: rotate(208.8deg);
+	transform: rotate(208.8deg);
+}
+
+.p59 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(212.4deg);
+	-moz-transform: rotate(212.4deg);
+	-ms-transform: rotate(212.4deg);
+	-o-transform: rotate(212.4deg);
+	transform: rotate(212.4deg);
+}
+
+.p60 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(216deg);
+	-moz-transform: rotate(216deg);
+	-ms-transform: rotate(216deg);
+	-o-transform: rotate(216deg);
+	transform: rotate(216deg);
+}
+
+.p61 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(219.6deg);
+	-moz-transform: rotate(219.6deg);
+	-ms-transform: rotate(219.6deg);
+	-o-transform: rotate(219.6deg);
+	transform: rotate(219.6deg);
+}
+
+.p62 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(223.20000000000002deg);
+	-moz-transform: rotate(223.20000000000002deg);
+	-ms-transform: rotate(223.20000000000002deg);
+	-o-transform: rotate(223.20000000000002deg);
+	transform: rotate(223.20000000000002deg);
+}
+
+.p63 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(226.8deg);
+	-moz-transform: rotate(226.8deg);
+	-ms-transform: rotate(226.8deg);
+	-o-transform: rotate(226.8deg);
+	transform: rotate(226.8deg);
+}
+
+.p64 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(230.4deg);
+	-moz-transform: rotate(230.4deg);
+	-ms-transform: rotate(230.4deg);
+	-o-transform: rotate(230.4deg);
+	transform: rotate(230.4deg);
+}
+
+.p65 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(234deg);
+	-moz-transform: rotate(234deg);
+	-ms-transform: rotate(234deg);
+	-o-transform: rotate(234deg);
+	transform: rotate(234deg);
+}
+
+.p66 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(237.6deg);
+	-moz-transform: rotate(237.6deg);
+	-ms-transform: rotate(237.6deg);
+	-o-transform: rotate(237.6deg);
+	transform: rotate(237.6deg);
+}
+
+.p67 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(241.20000000000002deg);
+	-moz-transform: rotate(241.20000000000002deg);
+	-ms-transform: rotate(241.20000000000002deg);
+	-o-transform: rotate(241.20000000000002deg);
+	transform: rotate(241.20000000000002deg);
+}
+
+.p68 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(244.8deg);
+	-moz-transform: rotate(244.8deg);
+	-ms-transform: rotate(244.8deg);
+	-o-transform: rotate(244.8deg);
+	transform: rotate(244.8deg);
+}
+
+.p69 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(248.4deg);
+	-moz-transform: rotate(248.4deg);
+	-ms-transform: rotate(248.4deg);
+	-o-transform: rotate(248.4deg);
+	transform: rotate(248.4deg);
+}
+
+.p70 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(252deg);
+	-moz-transform: rotate(252deg);
+	-ms-transform: rotate(252deg);
+	-o-transform: rotate(252deg);
+	transform: rotate(252deg);
+}
+
+.p71 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(255.6deg);
+	-moz-transform: rotate(255.6deg);
+	-ms-transform: rotate(255.6deg);
+	-o-transform: rotate(255.6deg);
+	transform: rotate(255.6deg);
+}
+
+.p72 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(259.2deg);
+	-moz-transform: rotate(259.2deg);
+	-ms-transform: rotate(259.2deg);
+	-o-transform: rotate(259.2deg);
+	transform: rotate(259.2deg);
+}
+
+.p73 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(262.8deg);
+	-moz-transform: rotate(262.8deg);
+	-ms-transform: rotate(262.8deg);
+	-o-transform: rotate(262.8deg);
+	transform: rotate(262.8deg);
+}
+
+.p74 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(266.40000000000003deg);
+	-moz-transform: rotate(266.40000000000003deg);
+	-ms-transform: rotate(266.40000000000003deg);
+	-o-transform: rotate(266.40000000000003deg);
+	transform: rotate(266.40000000000003deg);
+}
+
+.p75 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+
+.p76 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(273.6deg);
+	-moz-transform: rotate(273.6deg);
+	-ms-transform: rotate(273.6deg);
+	-o-transform: rotate(273.6deg);
+	transform: rotate(273.6deg);
+}
+
+.p77 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(277.2deg);
+	-moz-transform: rotate(277.2deg);
+	-ms-transform: rotate(277.2deg);
+	-o-transform: rotate(277.2deg);
+	transform: rotate(277.2deg);
+}
+
+.p78 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(280.8deg);
+	-moz-transform: rotate(280.8deg);
+	-ms-transform: rotate(280.8deg);
+	-o-transform: rotate(280.8deg);
+	transform: rotate(280.8deg);
+}
+
+.p79 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(284.40000000000003deg);
+	-moz-transform: rotate(284.40000000000003deg);
+	-ms-transform: rotate(284.40000000000003deg);
+	-o-transform: rotate(284.40000000000003deg);
+	transform: rotate(284.40000000000003deg);
+}
+
+.p80 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(288deg);
+	-moz-transform: rotate(288deg);
+	-ms-transform: rotate(288deg);
+	-o-transform: rotate(288deg);
+	transform: rotate(288deg);
+}
+
+.p81 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(291.6deg);
+	-moz-transform: rotate(291.6deg);
+	-ms-transform: rotate(291.6deg);
+	-o-transform: rotate(291.6deg);
+	transform: rotate(291.6deg);
+}
+
+.p82 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(295.2deg);
+	-moz-transform: rotate(295.2deg);
+	-ms-transform: rotate(295.2deg);
+	-o-transform: rotate(295.2deg);
+	transform: rotate(295.2deg);
+}
+
+.p83 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(298.8deg);
+	-moz-transform: rotate(298.8deg);
+	-ms-transform: rotate(298.8deg);
+	-o-transform: rotate(298.8deg);
+	transform: rotate(298.8deg);
+}
+
+.p84 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(302.40000000000003deg);
+	-moz-transform: rotate(302.40000000000003deg);
+	-ms-transform: rotate(302.40000000000003deg);
+	-o-transform: rotate(302.40000000000003deg);
+	transform: rotate(302.40000000000003deg);
+}
+
+.p85 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(306deg);
+	-moz-transform: rotate(306deg);
+	-ms-transform: rotate(306deg);
+	-o-transform: rotate(306deg);
+	transform: rotate(306deg);
+}
+
+.p86 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(309.6deg);
+	-moz-transform: rotate(309.6deg);
+	-ms-transform: rotate(309.6deg);
+	-o-transform: rotate(309.6deg);
+	transform: rotate(309.6deg);
+}
+
+.p87 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(313.2deg);
+	-moz-transform: rotate(313.2deg);
+	-ms-transform: rotate(313.2deg);
+	-o-transform: rotate(313.2deg);
+	transform: rotate(313.2deg);
+}
+
+.p88 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(316.8deg);
+	-moz-transform: rotate(316.8deg);
+	-ms-transform: rotate(316.8deg);
+	-o-transform: rotate(316.8deg);
+	transform: rotate(316.8deg);
+}
+
+.p89 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(320.40000000000003deg);
+	-moz-transform: rotate(320.40000000000003deg);
+	-ms-transform: rotate(320.40000000000003deg);
+	-o-transform: rotate(320.40000000000003deg);
+	transform: rotate(320.40000000000003deg);
+}
+
+.p90 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(324deg);
+	-moz-transform: rotate(324deg);
+	-ms-transform: rotate(324deg);
+	-o-transform: rotate(324deg);
+	transform: rotate(324deg);
+}
+
+.p91 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(327.6deg);
+	-moz-transform: rotate(327.6deg);
+	-ms-transform: rotate(327.6deg);
+	-o-transform: rotate(327.6deg);
+	transform: rotate(327.6deg);
+}
+
+.p92 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(331.2deg);
+	-moz-transform: rotate(331.2deg);
+	-ms-transform: rotate(331.2deg);
+	-o-transform: rotate(331.2deg);
+	transform: rotate(331.2deg);
+}
+
+.p93 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(334.8deg);
+	-moz-transform: rotate(334.8deg);
+	-ms-transform: rotate(334.8deg);
+	-o-transform: rotate(334.8deg);
+	transform: rotate(334.8deg);
+}
+
+.p94 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(338.40000000000003deg);
+	-moz-transform: rotate(338.40000000000003deg);
+	-ms-transform: rotate(338.40000000000003deg);
+	-o-transform: rotate(338.40000000000003deg);
+	transform: rotate(338.40000000000003deg);
+}
+
+.p95 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(342deg);
+	-moz-transform: rotate(342deg);
+	-ms-transform: rotate(342deg);
+	-o-transform: rotate(342deg);
+	transform: rotate(342deg);
+}
+
+.p96 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(345.6deg);
+	-moz-transform: rotate(345.6deg);
+	-ms-transform: rotate(345.6deg);
+	-o-transform: rotate(345.6deg);
+	transform: rotate(345.6deg);
+}
+
+.p97 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(349.2deg);
+	-moz-transform: rotate(349.2deg);
+	-ms-transform: rotate(349.2deg);
+	-o-transform: rotate(349.2deg);
+	transform: rotate(349.2deg);
+}
+
+.p98 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(352.8deg);
+	-moz-transform: rotate(352.8deg);
+	-ms-transform: rotate(352.8deg);
+	-o-transform: rotate(352.8deg);
+	transform: rotate(352.8deg);
+}
+
+.p99 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(356.40000000000003deg);
+	-moz-transform: rotate(356.40000000000003deg);
+	-ms-transform: rotate(356.40000000000003deg);
+	-o-transform: rotate(356.40000000000003deg);
+	transform: rotate(356.40000000000003deg);
+}
+
+.p100 .reviews-general-stats-rating-circle-bar{
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.reviews-general-stats-rating-title{
+	margin-top: 17px;
+	color: #263238;
+	text-align: center;
+}
+
+.reviews-general-stats-users-recommend{
+	margin-top: 6px;
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+	color: #008d55;
+	text-align: center;
+}
+
+.reviews-general-stats-btn{
+	margin-top: 24px;
+}
+
+.reviews-general-stats-btn > .btn{
+	width: 100%;
+}
+
+.reviews-general-stats-rating-list{
+	margin-top: 24px;
+}
+
+.reviews-general-stats-rating-item-container{	
+	padding: 12px 24px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;	
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .reviews-general-stats-rating-item-container:not(.disabled):hover,
+.bx-touch .reviews-general-stats-rating-item-container:not(.disabled):active,
+.reviews-general-stats-rating-item-container:not(.disabled).active{
+	background: #f1f6f7;
+	cursor: pointer;
+}
+
+.reviews-general-stats-rating-item-container + .reviews-general-stats-rating-item-container{
+	margin-top: 6px;
+}
+
+.reviews-general-stats-rating-item{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.reviews-general-stats-rating-item-title{
+	color: #263238;
+}
+
+.reviews-general-stats-rating-block,
+.reviews-general-stats-rating-stars{
+	display: flex;
+	align-items: center;
+}
+
+.reviews-general-stats-rating-star{
+	color: #566b75;
+}
+
+.reviews-general-stats-rating-item-container.disabled .reviews-general-stats-rating-star,
+.reviews-general-stats-rating-star-empty{
+	color: #ced9db;
+}
+
+.reviews-general-stats-rating-item-container.disabled .reviews-general-stats-rating-star-empty{
+	color: #f1f6f7;
+}
+
+.reviews-general-stats-rating-star + .reviews-general-stats-rating-star{
+	margin-left: 2px;
+}
+
+.reviews-general-stats-rating-percent,
+.reviews-general-stats-rating-item-val{
+	color: #78909c;
+}
+
+.reviews-general-stats-rating-percent{
+	margin-left: 12px;
+}
+
+.reviews-general-stats-rating-item-container.disabled .reviews-general-stats-rating-item-val{
+	color: #ced9db;
+}
+
+.reviews-general-stats-rating-progress-bar-container,
+.reviews-general-stats-rating-progress-bar{
+	height: 2px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	-khtml-border-radius: 1px;
+	border-radius: 1px;
+}
+
+.reviews-general-stats-rating-progress-bar-container{	
+	margin-top: 8px;
+	background: #e3ecef;
+}
+
+.reviews-general-stats-rating-progress-bar{
+	background: #566b75;
+}
+
+/***MORE***/
+.reviews-more{
+	margin-top: 24px;
+}
+
+.reviews-more .btn{
+	width: 100%;
+	height: 48px;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.reviews{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	/***GENERAL_STATS***/
+	.reviews-general-stats{
+		-moz-transform: unset;
+		-o-transform: unset;
+		-webkit-transform: unset;
+		transform: unset;
+	}
+
+	/***EVALUATION***/
+	.reviews-evaluation{
+		flex-direction: column;
+		margin-top: 32px;
+		margin-bottom: 0;
+	}
+
+	.reviews-evaluation-title > span{
+		text-align: center;
+	}
+
+	.reviews-evaluation-stars,
+	.reviews-evaluation-val{
+		margin-left: 0;
+		margin-top: 18px;
+	}
+
+	/***ITEM***/
+	.reviews-item{
+		margin-top: 32px;
+	}
+
+	.reviews-item-user-name,
+	.reviews-item-date,
+	.reviews-item-user-city{
+		text-align: left;
+	}
+
+	/***ITEM_CAPTION***/
+	.reviews-item-caption{
+		margin-top: 18px;
+	}
+
+	.reviews-item-rating{
+		max-width: 80%;
+	}
+
+	.reviews-item-term{
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.reviews-item-user-props{
+		flex-direction: column;
+		margin: 0;
+	}
+
+	.reviews-item-user-prop{
+		width: auto;
+		margin-left: 0;
+		margin-top: 18px;
+	}
+
+	/***MORE***/
+	.reviews-more{
+		margin: 18px -18px 0;
+	}
+
+	.reviews-more .btn{
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		-khtml-border-radius: 0;
+		border-radius: 0;
+	}
+}

@@ -1,0 +1,33 @@
+<?
+
+$MESS["LINKOR_REDIRECT_BTN_OPTIONS"] = "Настройки сайта ";
+$MESS["LINKOR_REDIRECT_BTN_REDIRECTS"] = "Список постраничных редиректов";
+$MESS["LINKOR_REDIRECT_TITLE_REDIRECTS"] = "Настройка URL редиректов";
+$MESS["LINKOR_REDIRECT_OPTIONS_TITLE"] = "Редиректы для сайта ";
+$MESS["LINKOR_REDIRECT_OPTIONS_WWW_TITLE"] = "С www на без www <br>(Пример: www.".$_SERVER['HTTP_HOST']." => ".$_SERVER['HTTP_HOST'].")";
+$MESS["LINKOR_REDIRECT_OPTIONS_ON"] = "Включить";
+$MESS["LINKOR_REDIRECT_OPTIONS_USE"] = "Использовать";
+$MESS["LINKOR_REDIRECT_OPTIONS_SLASH_TITLE"] = "Со страниц без слеша на слеш<br>(Пример: ".$_SERVER['HTTP_HOST']."/news => ".$_SERVER['HTTP_HOST']."/news/)";
+$MESS["LINKOR_REDIRECT_OPTIONS_INDEX_PHP_TITLE"] = "Cо страниц */index.php на */<br>(Пример: ".$_SERVER['HTTP_HOST']."/about/index.php => ".$_SERVER['HTTP_HOST']."/about/)";
+$MESS["LINKOR_REDIRECT_OPTIONS_INDEX_HTML_TITLE"] = "Cо страниц */index.html на */<br>(Пример: ".$_SERVER['HTTP_HOST']."/about/index.html => ".$_SERVER['HTTP_HOST']."/about/)";
+$MESS["LINKOR_REDIRECT_OPTIONS_MULTISLASH_TITLE"] = "Удаление множественных слешей<br>(Пример: ".$_SERVER['HTTP_HOST']."/// => ".$_SERVER['HTTP_HOST']."/)";
+$MESS["LINKOR_REDIRECT_URLS_TITLE"] = "Использовать редиректы из списка";
+$MESS["LINKOR_REDIRECT_IGNORE_QUERY"] = "Игнорировать параметры в URL";
+$MESS["LINKOR_REDIRECT_FROM_UPPERCASE"] = "С больших букв на маленькие<br>(Пример: ".$_SERVER['HTTP_HOST']."/AbOuT/ => ".$_SERVER['HTTP_HOST']."/about/)";
+$MESS["LINKOR_REDIRECT_FROM_404"] = "Редирект с 404 ошибки<br>(Пример: ".$_SERVER['HTTP_HOST']."/news/category/{404-ая страница} => ".$_SERVER['HTTP_HOST']."/news/category/)\"";
+$MESS["LINKOR_REDIRECT_URLS_FROM"] = "Откуда";
+$MESS["LINKOR_REDIRECT_URLS_TO"] = "Куда";
+$MESS["LINKOR_REDIRECT_URLS_STATUS"] = "Статус";
+$MESS["LINKOR_REDIRECT_URLS_IS_PART_URL"] = "Редирект по маске URL";
+$MESS["LINKOR_REDIRECT_SAVE_SETTINGS"] = "Применить настройки";
+$MESS["LINKOR_REDIRECT_SAVE_FILE"] = "Загрузить файл";
+$MESS["LINKOR_REDIRECT_DELETE_FILE"] = "Удалить файл";
+$MESS["LINKOR_REDIRECT_DOWNLOAD_FILE"] = "(скачать файл)";
+$MESS["LINKOR_REDIRECT_FILE_NAME"] = "upload_urls.csv";
+$MESS["LINKOR_REDIRECT_UPLOAD_FILE_LABEL"] = "Загрузить список редиректов из файла в формате csv<br>(Вы всегда можете вручную отредактировать этот файл, <br>он хранится в local\config\linkor.redirect\upload_urls.csv) <br>Скачивание доступно при указании URL сервера в настройках многосайтовости";
+$MESS["LINKOR_REDIRECT_TABLE_LABEL_FROM"] = "Откуда";
+$MESS["LINKOR_REDIRECT_TABLE_LABEL_TO"] = "Куда";
+$MESS["LINKOR_REDIRECT_TABLE_LABEL_TYPE"] = "Тип редиректа";
+$MESS["LINKOR_REDIRECT_TABLE_LABEL_USE_MASK"] = "Маска?";
+$MESS["LINKOR_REDIRECT_TABLE_USE_MASK_NOTICE"] = "Пример использования редиректа по маске:<br> Откуда: /news/*/*/ Куда: /articles/{1}/{2}.html Маска? Y";
+$MESS["LINKOR_REDIRECT_ERROR_SITE_PATH"] = "Укажите путь к корневой папке веб-сервера в настройках многосайтовости";

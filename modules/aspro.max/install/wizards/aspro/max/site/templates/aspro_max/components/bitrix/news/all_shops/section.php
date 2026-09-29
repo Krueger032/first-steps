@@ -1,1 +1,0 @@
-<?LocalRedirect(SITE_DIR.'contacts')?>

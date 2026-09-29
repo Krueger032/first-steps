@@ -1,0 +1,297 @@
+<?
+
+CModule::AddAutoloadClasses("", array(
+    '\Itb\Settings\Catalog' => '/local/php_interface/include/classes/Itb/Settings/Catalog.php',
+    '\Itb\Event\Catalog' => '/local/php_interface/include/classes/Itb/Event/Catalog.php',
+    '\Itb\Helpers\DeliveryDateCalc' => '/local/php_interface/include/classes/Itb/Helpers/DeliveryDateCalc.php',
+));
+
+/*if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/events.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/events.php");
+}
+*/
+
+use \Bitrix\Main\EventManager,
+\Bitrix\Main\Context;
+require_once(__DIR__ . '/classes/ProductBatchImporter.php');
+function isLighthouse()
+{
+
+    return (isset($_SERVER['HTTP_USER_AGENT']) && strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') !== false);
+
+}
+
+/** Пути каталога (от корня сайта), для которых в head — robots noindex,nofollow */
+function santehpobor_get_noindex_catalog_paths(): array
+{
+    return [
+        '/catalog/smesiteli1/dlya-rakoviny/smesitel-dlya-rakoviny-wonzon-woghand-zoloto-poverkhnost-brashirovannaya-1386160691',
+        '/catalog/vanny1/ekrany-dlya-vann/ekran-jacob-delafon-trocadero-e6d359ru-00-170-607847618',
+        '/catalog/smesiteli1/dlya-rakoviny/smesitel-dlya-rakoviny-wonzon-woghand-belyy-poverkhnost-matovaya-1860335610',
+        '/catalog/smesiteli1/dlya-rakoviny/smesitel-dlya-rakoviny-wonzon-woghand-belyy-poverkhnost-matovaya-2123288956',
+        '/catalog/smesiteli1/dlya-rakoviny/smesitel-dlya-rakoviny-wonzon-woghand-belyy-poverkhnost-matovaya-1292796730',
+        '/catalog/polotentsesushiteli1/elektricheskiye/polotentsesushitel-elektricheskiy-wonzon-woghand-kassel-kh-tsvet-temnyy-grafit-poverkhnost-brashirov-1043784357',
+        '/catalog/polotentsesushiteli1/elektricheskiye/polotentsesushitel-elektricheskiy-wonzon-woghand-kassel-kh-tsvet-zoloto-poverkhnost-brashirovannaya-527014606',
+        '/catalog/polotentsesushiteli1/elektricheskiye/polotentsesushitel-elektricheskiy-wonzon-woghand-kassel-13kh120-tsvet-nikel-poverkhnost-brashirovann-1955600862',
+        '/catalog/dushevye-kabiny-i-ograzhdeniya/dushevye-ograzhdeniya/dushevye-ugolki/dushevoy-ugolok-rgw-pa-36b-pa-06b-z-050-2b-derzhatel-o-204b-788470732',
+        '/catalog/dush/dushevye-komplekty/dushevaya-stoyka-wonzon-woghand-tsvet-chernyy-poverkhnost-matovaya-717530871',
+        '/catalog/dush/dushevye-komplekty/dushevaya-stoyka-wonzon-woghand-tsvet-chernyy-poverkhnost-matovaya-1539055599',
+        '/catalog/dush/dushevye-komplekty/dushevaya-stoyka-wonzon-woghand-tsvet-khrom-poverkhnost-glyantsevaya-1581986606',
+    ];
+}
+
+function santehpobor_normalize_request_path(string $requestUri): string
+{
+    $path = parse_url($requestUri, PHP_URL_PATH);
+    if ($path === null || $path === '' || $path === false) {
+        return '/';
+    }
+    $path = '/' . trim($path, '/');
+    return $path === '//' ? '/' : $path;
+}
+
+EventManager::getInstance()->addEventHandler(
+    'main',
+    'OnProlog',
+    static function () {
+        global $APPLICATION;
+        if (!is_object($APPLICATION) || !($APPLICATION instanceof CMain)) {
+            return;
+        }
+        $current = santehpobor_normalize_request_path($_SERVER['REQUEST_URI'] ?? '');
+        if (!in_array($current, santehpobor_get_noindex_catalog_paths(), true)) {
+            return;
+        }
+        $APPLICATION->SetPageProperty('noindex', 'Y');
+        $APPLICATION->SetPageProperty('robots', 'noindex, nofollow');
+    }
+);
+
+AddEventHandler( "main" ,  "OnPageStart" ,  "santehpodborRedirectDirectFilterAjaxRequest" );
+function santehpodborRedirectDirectFilterAjaxRequest () {
+   $requestUri  = $_SERVER [ 'REQUEST_URI' ] ?? '';
+   $queryString = $_SERVER [ 'QUERY_STRING' ] ?? '';
+
+   if (
+      $requestUri === ''
+      || strpos( $requestUri, '/filter/' ) === false
+      || strpos( $requestUri, '/apply/' ) === false
+   ) {
+      return;
+   }
+
+   $hasAjaxParams = isset( $_REQUEST [ 'AJAX_CALL' ] )
+      || isset( $_REQUEST [ 'bxajaxid' ] )
+      || stripos( $queryString, 'AJAX_CALL=' ) !== false
+      || stripos( $queryString, 'bxajaxid=' ) !== false;
+
+   if ( ! $hasAjaxParams ) {
+      return;
+   }
+
+   $isXmlHttpRequest = isset( $_SERVER [ 'HTTP_X_REQUESTED_WITH' ] )
+      && strtolower( (string) $_SERVER [ 'HTTP_X_REQUESTED_WITH' ] ) === 'xmlhttprequest';
+
+   if ( $isXmlHttpRequest ) {
+      return;
+   }
+
+   $fetchDest = strtolower( (string) ( $_SERVER [ 'HTTP_SEC_FETCH_DEST' ] ?? '' ) );
+   $fetchMode = strtolower( (string) ( $_SERVER [ 'HTTP_SEC_FETCH_MODE' ] ?? '' ) );
+
+   if ( $fetchDest !== '' && $fetchDest !== 'document' ) {
+      return;
+   }
+
+   if ( $fetchMode !== '' && $fetchMode !== 'navigate' ) {
+      return;
+   }
+
+   $cleanPath = parse_url( $requestUri, PHP_URL_PATH );
+   if ( ! is_string( $cleanPath ) || $cleanPath === '' ) {
+      return;
+   }
+
+   LocalRedirect( $cleanPath, false, '302 Found' );
+}
+
+AddEventHandler( "main" ,  "OnEpilog" ,  "OnABCtoabc" );
+function   OnABCtoabc  () { 
+   $requestUri  = $_SERVER [ 'REQUEST_URI' ] ?? '';
+   $queryString = $_SERVER [ 'QUERY_STRING' ] ?? '';
+   $normalizePercentCase = static function (string $value): string {
+      return preg_replace_callback(
+         '/%[0-9a-f]{2}/i',
+         static function (array $match): string {
+            return strtoupper( $match [ 0 ] );
+         },
+         $value
+      );
+   };
+   if (
+      isset( $_REQUEST [ 'AJAX_CALL' ] )
+      || isset( $_REQUEST [ 'bxajaxid' ] )
+      || ( isset( $_REQUEST [ 'ajax' ] ) && strtolower( (string) $_REQUEST [ 'ajax' ] ) === 'y' )
+      || stripos( $requestUri, 'AJAX_CALL=' ) !== false
+      || stripos( $requestUri, 'bxajaxid=' ) !== false
+      || preg_match( '/(^|&)ajax=y(&|$)/i', $queryString )
+      || (
+         isset( $_SERVER [ 'HTTP_X_REQUESTED_WITH' ] )
+         && strtolower( (string) $_SERVER [ 'HTTP_X_REQUESTED_WITH' ] ) === 'xmlhttprequest'
+      )
+   ) {
+      return;
+   }
+
+   $notBitrix  = strpos( $_SERVER [ 'REQUEST_URI' ],  '/bitrix/' );
+   $haveGet  = strripos( $_SERVER [ 'REQUEST_URI' ],  "?" ) !==  false ;
+   if  ( $haveGet ) {
+       $url  = explode( "?" ,  $_SERVER [ 'REQUEST_URI' ]);
+       if  (( $normalizePercentCase( $_SERVER [ 'REQUEST_URI' ] ) != $normalizePercentCase( strtolower( $url [ 0 ]) .  "?"  .  $url [ 1 ])) &&  $notBitrix  ===  false ) {
+          header( 'Location: //'  .  $_SERVER [ 'HTTP_HOST' ] . strtolower( $url [ 0 ]) .  "?"  .  $url [ 1 ],  true ,  301 );
+           exit ();
+      }
+  }  else  {
+       if  ( $normalizePercentCase( $_SERVER [ 'REQUEST_URI' ] ) != $normalizePercentCase( strtolower( $_SERVER [ 'REQUEST_URI' ])) &&  $notBitrix  ===  false ) {
+          header( 'Location: //'  .  $_SERVER [ 'HTTP_HOST' ] . strtolower( $_SERVER [ 'REQUEST_URI' ]),  true ,  301 );
+           exit ();
+      }
+  }
+} 
+
+
+AddEventHandler("main", "OnEndBufferContent", "deleteKernelJs2");
+
+AddEventHandler("main", "OnEndBufferContent", "deleteKernelCss2");
+
+
+
+// в файле /local/templates/ВАШ_ШАБЛОН/init.php
+AddEventHandler('main', 'OnEpilog', function() {
+    if (defined('ERROR_404') && ERROR_404 == 'Y') {
+        $GLOBALS['APPLICATION']->SetPageProperty('robots', 'noindex, nofollow');
+    }
+});
+
+function deleteKernelJs2(&$content)
+{
+
+    global $USER, $APPLICATION;
+
+
+
+    //if($USER->IsAuthorized()) return;
+
+    if (!isLighthouse())
+        return;
+
+
+
+    //if(defined("ADMIN_SECTION")) return;
+
+
+
+    $arPatternsToRemove = array(
+
+        '/<script.+?src=".+?kernel_htmleditor\/kernel_htmleditor_v1\.js\?\d+"><\/script\>/',
+
+        '/<script.+?src=".+?kernel_main\/kernel_main\.js\?\d+"><\/script\>/',
+
+        '/<script.+?src=".+?kernel_main\/kernel_main_v1\.js\?\d+"><\/script\>/',
+
+        '/<script.+?src=".+?bitrix\/js\/main\/core\/core[^"]+"><\/script\>/',
+
+        '/<script.+?>BX\.(setCSSList|setJSList)\(\[.+?\]\).*?<\/script>/',
+
+        '/<script.+?>if\(\!window\.BX\)window\.BX.+?<\/script>/',
+
+        '/<script[^>]+?>\(window\.BX\|\|top\.BX\)\.message[^<]+<\/script>/',
+
+    );
+
+
+
+    $content = preg_replace($arPatternsToRemove, "", $content);
+
+    $content = preg_replace("/\n{2,}/", "\n\n", $content);
+
+}
+
+
+
+function deleteKernelCss2(&$content)
+{
+
+    global $USER, $APPLICATION;
+
+
+
+    if (!isLighthouse())
+        return;
+
+
+
+    global $USER, $APPLICATION;
+
+
+
+    //if($USER->IsAuthorized()) return;
+
+
+
+    $arPatternsToRemove = array(
+
+        '/<link.+?href=".+?kernel_main\/kernel_main\.css\?\d+"[^>]+>/',
+
+        '/<link.+?href=".+?kernel_main\/kernel_main_v1\.css\?\d+"[^>]+>/',
+
+        '/<link.+?href=".+?bitrix\/js\/main\/core\/css\/core[^"]+"[^>]+>/',
+
+        // '/<link.+?href=".+?bitrix\/templates\/[\w\d_-]+\/styles.css[^"]+"[^>]+>/',
+
+        // '/<link.+?href=".+?bitrix\/templates\/[\w\d_-]+\/template_styles.css[^"]+"[^>]+>/',
+
+    );
+
+
+
+    $content = preg_replace($arPatternsToRemove, "", $content);
+
+    $content = preg_replace("/\n{2,}/", "\n\n", $content);
+
+}
+
+\Bitrix\Main\Loader::includeModule('shestpa.lastmodified');
+
+function dds($data, $file = false, $fileOnly = false)
+{
+    if (!$fileOnly) {
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
+    if ($file) {
+//        file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/dump.log', var_export($data, true));
+        file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/_dump.log', var_export($data, true), FILE_APPEND);
+    }
+}
+
+
+// Добавляем артикул в название элемента поискового индекса
+// Для поиска по артикулу
+
+AddEventHandler("search", "BeforeIndex", "BeforeIndexHandler"); 
+function BeforeIndexHandler($arFields){ 
+    if(!CModule::IncludeModule("iblock")) return $arFields; 
+    if($arFields["MODULE_ID"] == "iblock") { 
+        $db_props = CIBlockElement::GetProperty( 
+        $arFields["PARAM2"], 
+        $arFields["ITEM_ID"], 
+        array("sort" => "asc"), 
+        Array("ID" =>['154'])); // 999 - id свойства, которое нужно добавить в индекс 
+        while($ar_props = $db_props->Fetch()){ 
+            $arFields["TITLE"] = $ar_props["VALUE"] . " " . $arFields["TITLE"]; 
+        } 
+    } 
+    return $arFields; 
+}

@@ -1,0 +1,22 @@
+.reviews-container .reviews{
+	margin-top: 32px;
+}
+
+.reviews-container .description{
+	margin-top: 64px;
+}
+
+.reviews-container > div:first-child{
+	margin-top: 0;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.reviews-container .reviews{
+		margin-top: 18px;
+	}
+
+	.reviews-container .description{
+		margin-top: 32px;
+	}
+}
