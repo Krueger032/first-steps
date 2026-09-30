@@ -412,8 +412,10 @@
 					this.obPartnersMess = this.getEntity(this.obPartners, 'partners-message');
 					this.obPartnersBtn = BX(this.visual.PARTNERS_LINK);
 
-					this.obAskPrice = BX(this.visual.ASK_PRICE_LINK);
-					this.obNotAvail = BX(this.visual.NOT_AVAILABLE_MESS);
+					//PRO_WS//
+					//this.obAskPrice = BX(this.visual.ASK_PRICE_LINK);
+					//this.obNotAvail = BX(this.visual.NOT_AVAILABLE_MESS);
+					//PRO_WS//
 					
 					this.obQuickOrder = BX(this.visual.QUICK_ORDER_LINK);
 				} else {
@@ -432,6 +434,16 @@
 					this.obSelectSku = BX(this.visual.SELECT_SKU_LINK);
 				}
 			}
+			
+			//PRO_WS//
+			if(!this.obSkuItems) {
+				this.obAskPrice = BX(this.visual.ASK_PRICE_LINK);
+				this.obNotAvail = BX(this.visual.NOT_AVAILABLE_MESS);
+			} else {
+				this.obAskPrice = this.getEntities(this.obSkuItems, 'ask-price');
+				this.obNotAvail = this.getEntities(this.obSkuItems, 'not-available');
+			}
+			//PRO_WS//
 
 			if(this.config.showQuantity) {
 				if(!this.obSkuItems) {
@@ -482,7 +494,10 @@
 				if(this.visual.TREE_ID) {
 					this.obTree = BX(this.visual.TREE_ID);
 					if(!this.obTree) {
-						this.errorCode = -256;
+						//PRO_WS//
+						//this.errorCode = -256;
+						this.obTree = null;
+						//PRO_WS//
 					}
 				}
 
@@ -792,10 +807,12 @@
 						break;
 					case 3: //sku
 						if(!this.obSkuItems && this.offersView == 'PROPS') {
-							treeItems = this.obTree.querySelectorAll('li');
-							for(i = 0; i < treeItems.length; i++) {
-								BX.bind(treeItems[i], 'click', BX.delegate(this.selectOfferProp, this));
-							}
+							if(this.obTree) { //PRO_WS//
+								treeItems = this.obTree.querySelectorAll('li');
+								for(i = 0; i < treeItems.length; i++) {
+									BX.bind(treeItems[i], 'click', BX.delegate(this.selectOfferProp, this));
+								}
+							} //PRO_WS//
 						}
 
 						for(i = 0; i < this.offers.length; i++) {
@@ -1131,10 +1148,22 @@
 					this.maxQuantity = this.product.maxQuantity;
 					this.maxPcQuantity = this.product.maxPcQuantity;
 					this.maxSqMQuantity = this.product.maxSqMQuantity;
+					//PRO_WS//
+					/*
 					this.minQuantity = this.currentPriceMode === 'Q' ? parseFloat(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY) : this.stepQuantity;
 					this.minPcQuantity = this.stepPcQuantity;
 					this.minSqMQuantity = this.currentPriceMode === 'Q' ? parseFloat(this.currentPrices[this.currentPriceSelected].SQ_M_MIN_QUANTITY) : this.stepSqMQuantity;
+					*/
 					
+					this.minQuantity = (this.currentPriceMode === 'Q' && this.currentPrices && this.currentPrices[this.currentPriceSelected])
+						? parseFloat(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY)
+						: this.stepQuantity;
+					this.minPcQuantity = this.stepPcQuantity;
+					this.minSqMQuantity = (this.currentPriceMode === 'Q' && this.currentPrices && this.currentPrices[this.currentPriceSelected])
+						? parseFloat(this.currentPrices[this.currentPriceSelected].SQ_M_MIN_QUANTITY)
+						: this.stepSqMQuantity;
+					// PRO_WS
+
 					if(this.isDblQuantity) {
 						this.stepQuantity = Math.round(this.stepQuantity * this.precisionFactor) / this.precisionFactor;
 					}
@@ -1142,6 +1171,7 @@
 				}
 
 				this.product.canBuy = this.params.PRODUCT.CAN_BUY;
+				this.canBuy = this.product.canBuy; //PRO_WS//
 				this.canSubscription = this.product.canSubscription = this.params.PRODUCT.SUBSCRIPTION;
 
 				this.product.name = this.params.PRODUCT.NAME;
@@ -1196,6 +1226,28 @@
 				if(this.params.OFFER_SELECTED) {
 					this.offerNum = parseInt(this.params.OFFER_SELECTED, 10) || 0;
 				}
+
+				//PRO_WS//
+				if(this.offers.length > 0) {
+					var sel = this.offers[this.offerNum];
+					var prices = sel && sel.ITEM_PRICES;
+					var pSel = sel && (sel.ITEM_PRICE_SELECTED || 0);
+					var p = prices && prices[pSel];
+					var hasPrice = p && ((p.SQ_M_PRICE && p.SQ_M_PRICE > 0) || (!p.SQ_M_PRICE && p.PRICE > 0));
+
+					if(!hasPrice) {
+						for(var k = 0; k < this.offers.length; k++) {
+							var op = this.offers[k].ITEM_PRICES;
+							var os = this.offers[k].ITEM_PRICE_SELECTED || 0;
+							var pp = op && op[os];
+							if(pp && ((pp.SQ_M_PRICE && pp.SQ_M_PRICE > 0) || (!pp.SQ_M_PRICE && pp.PRICE > 0))) {
+								this.offerNum = k;
+								break;
+							}
+						}
+					}
+				}
+				//PRO_WS//
 
 				if(this.params.TREE_PROPS) {
 					this.treeProps = this.params.TREE_PROPS;
@@ -1324,9 +1376,6 @@
 				if(this.params.OBJECT.INSTAGRAM) {
 					this.object.instagram = this.params.OBJECT.INSTAGRAM.VALUE;
 					this.object.instagramDescription = this.params.OBJECT.INSTAGRAM.DESCRIPTION;
-				}
-				
-				if(this.params.OBJECT.MAX) {
 					this.object.max = this.params.OBJECT.MAX.VALUE;
 					this.object.maxDescription = this.params.OBJECT.MAX.DESCRIPTION;
 				}
@@ -2651,7 +2700,14 @@
 				
 				this.obSkuItemDelay = this.skuItemContainer.querySelector('[data-entity="delay"]');
 			
-				this.skuItemCanBuy = this.skuItem.CAN_BUY;			
+				this.skuItemCanBuy = this.skuItem.CAN_BUY;
+				//PRO_WS//
+				if(!this.skuItemCanBuy && (!this.skuItem.ITEM_PRICES || !this.skuItem.ITEM_PRICES.length)) {
+					if(!this.skuItem.CHECK_QUANTITY || parseFloat(this.skuItem.MAX_QUANTITY) > 0) {
+						this.skuItemCanBuy = true;
+					}
+				}
+				//PRO_WS//
 				this.skuItemCurrentPriceMode = this.skuItem.ITEM_PRICE_MODE;
 				this.skuItemCurrentPrices = this.skuItem.ITEM_PRICES;
 				this.skuItemCurrentPriceSelected = this.skuItem.ITEM_PRICE_SELECTED;				
@@ -2664,11 +2720,21 @@
 				if(this.skuItemIsDblQuantity) {
 					this.skuItemStepQuantity = Math.round(parseFloat(this.skuItem.STEP_QUANTITY) * this.precisionFactor) / this.precisionFactor;
 					this.skuItemMaxQuantity = parseFloat(this.skuItem.MAX_QUANTITY);
-					this.skuItemMinQuantity = this.skuItemCurrentPriceMode === 'Q' ? parseFloat(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].MIN_QUANTITY) : this.skuItemStepQuantity;
+					//PRO_WS//
+					//this.skuItemMinQuantity = this.skuItemCurrentPriceMode === 'Q' ? parseFloat(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].MIN_QUANTITY) : this.skuItemStepQuantity;
+					this.skuItemMinQuantity = (this.skuItemCurrentPriceMode === 'Q' && this.skuItemCurrentPrices && this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected])
+						? parseFloat(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].MIN_QUANTITY)
+						: this.skuItemStepQuantity;
+					//PRO_WS//
 				} else {
 					this.skuItemStepQuantity = parseInt(this.skuItem.STEP_QUANTITY, 10);
 					this.skuItemMaxQuantity = parseInt(this.skuItem.MAX_QUANTITY, 10);
-					this.skuItemMinQuantity = this.skuItemCurrentPriceMode === 'Q' ? parseInt(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].MIN_QUANTITY) : this.skuItemStepQuantity;
+					//PRO_WS//
+					//this.skuItemMinQuantity = this.skuItemCurrentPriceMode === 'Q' ? parseInt(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].MIN_QUANTITY) : this.skuItemStepQuantity;
+					this.skuItemMinQuantity = (this.skuItemCurrentPriceMode === 'Q' && this.skuItemCurrentPrices && this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected])
+						? parseInt(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].MIN_QUANTITY)
+						: this.skuItemStepQuantity;
+					//PRO_WS//
 				}
 				this.skuItemStepPcQuantity = parseInt(this.skuItem.PC_STEP_QUANTITY, 10);
 				this.skuItemMaxPcQuantity = parseInt(this.skuItem.PC_MAX_QUANTITY, 10);
@@ -3152,6 +3218,14 @@
 
 			if(this.errorCode === 0) {
 				this.canBuy = newOffer.CAN_BUY;
+				
+				//PRO_WS//
+				if(!this.canBuy && (!newOffer.ITEM_PRICES || !newOffer.ITEM_PRICES.length)) {
+					if(!newOffer.CHECK_QUANTITY || parseFloat(newOffer.MAX_QUANTITY) > 0) {
+						this.canBuy = true;
+					}
+				}
+				//PRO_WS//
 
 				this.currentPriceMode = newOffer.ITEM_PRICE_MODE;
 				this.currentPrices = newOffer.ITEM_PRICES;
@@ -3262,18 +3336,33 @@
 				if(this.isDblQuantity) {
 					this.stepQuantity = Math.round(parseFloat(newOffer.STEP_QUANTITY) * this.precisionFactor) / this.precisionFactor;
 					this.maxQuantity = parseFloat(newOffer.MAX_QUANTITY);
-					this.minQuantity = this.currentPriceMode === 'Q' ? parseFloat(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY) : this.stepQuantity;
+					//PRO_WS//
+					//this.minQuantity = this.currentPriceMode === 'Q' ? parseFloat(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY) : this.stepQuantity;
+					this.minQuantity = (this.currentPriceMode === 'Q' && this.currentPrices && this.currentPrices[this.currentPriceSelected])
+						? parseFloat(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY)
+						: this.stepQuantity;
+					//PRO_WS//	
 				} else {
 					this.stepQuantity = parseInt(newOffer.STEP_QUANTITY, 10);
 					this.maxQuantity = parseInt(newOffer.MAX_QUANTITY, 10);
-					this.minQuantity = this.currentPriceMode === 'Q' ? parseInt(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY) : this.stepQuantity;
+					//PRO_WS//
+					//this.minQuantity = this.currentPriceMode === 'Q' ? parseInt(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY) : this.stepQuantity;
+					this.minQuantity = (this.currentPriceMode === 'Q' && this.currentPrices && this.currentPrices[this.currentPriceSelected])
+						? parseInt(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY, 10)
+						: this.stepQuantity;
+					//PRO_WS//
 				}
 				this.stepPcQuantity = parseInt(newOffer.PC_STEP_QUANTITY, 10);
 				this.maxPcQuantity = parseInt(newOffer.PC_MAX_QUANTITY, 10);
 				this.minPcQuantity = this.stepPcQuantity;
 				this.stepSqMQuantity = Math.round(parseFloat(newOffer.SQ_M_STEP_QUANTITY) * this.precisionFactor) / this.precisionFactor;
 				this.maxSqMQuantity = parseFloat(newOffer.SQ_M_MAX_QUANTITY);
-				this.minSqMQuantity = this.currentPriceMode === 'Q' ? parseFloat(this.currentPrices[this.currentPriceSelected].SQ_M_MIN_QUANTITY) : this.stepSqMQuantity;
+				//PRO_WS//
+				//this.minSqMQuantity = this.currentPriceMode === 'Q' ? parseFloat(this.currentPrices[this.currentPriceSelected].SQ_M_MIN_QUANTITY) : this.stepSqMQuantity;
+				this.minSqMQuantity = (this.currentPriceMode === 'Q' && this.currentPrices && this.currentPrices[this.currentPriceSelected])
+					? parseFloat(this.currentPrices[this.currentPriceSelected].SQ_M_MIN_QUANTITY)
+					: this.stepSqMQuantity;				
+				//PRO_WS//
 
 				if(this.config.showQuantity) {
 					if(this.obQuantity) {
@@ -4034,12 +4123,23 @@
 			} else if((!this.obSkuItems && this.obPcQuantity && this.obSqMQuantity) || (!!this.obSkuItems && this.obSkuItemPcQuantity && this.obSkuItemSqMQuantity)) {
 				if(!this.obSkuItems) {
 					if(this.currentMeasure.SYMBOL_INTL == 'pc. 1' || this.currentMeasure.SYMBOL_INTL == 'm2') {
-						this.checkPriceRange(this.currentPrices[this.currentPriceSelected].SQ_M_PRICE ? this.obPcQuantity.value : this.obSqMQuantity.value);
+						//PRO_WS//
+						//this.checkPriceRange(this.currentPrices[this.currentPriceSelected].SQ_M_PRICE ? this.obPcQuantity.value : this.obSqMQuantity.value);
+						
+						var cur = this.currentPrices && this.currentPrices[this.currentPriceSelected];
+						if(cur)
+							this.checkPriceRange(cur.SQ_M_PRICE ? this.obPcQuantity.value : this.obSqMQuantity.value);
+						//PRO_WS//
 					} else {
 						this.checkPriceRange(this.obQuantity.value);
 					}
 				} else {
-					this.checkPriceRange(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].SQ_M_PRICE ? this.obSkuItemPcQuantity.value : this.obSkuItemSqMQuantity.value);
+					//PRO_WS//
+					//this.checkPriceRange(this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected].SQ_M_PRICE ? this.obSkuItemPcQuantity.value : this.obSkuItemSqMQuantity.value);
+					var skuCur = this.skuItemCurrentPrices && this.skuItemCurrentPrices[this.skuItemCurrentPriceSelected];
+					if(skuCur)
+						this.checkPriceRange(skuCur.SQ_M_PRICE ? this.obSkuItemPcQuantity.value : this.obSkuItemSqMQuantity.value);
+					//PRO_WS//
 				}
 			}
 			
@@ -4066,7 +4166,10 @@
 					}
 				} else {
 					this.obPriceCurrent && BX.adjust(this.obPriceCurrent, {html: '', style: {display: 'none'}});
-					this.obPriceNotSet && BX.adjust(this.obPriceNotSet, {style: {display: 'none'}});
+					//PRO_WS//
+					//this.obPriceNotSet && BX.adjust(this.obPriceNotSet, {style: {display: 'none'}});
+					this.obPriceNotSet && BX.adjust(this.obPriceNotSet, {style: {display: ''}});
+					//PRO_WS//
 				}
 				
 				if(price && price.PRICE !== price.BASE_PRICE) {
@@ -4121,7 +4224,10 @@
 					}
 				} else {
 					this.obPanelPriceCurrent && BX.adjust(this.obPanelPriceCurrent, {html: '', style: {display: 'none'}});
-					this.obPanelPriceNotSet && BX.adjust(this.obPanelPriceNotSet, {style: {display: 'none'}});
+					//PRO_WS//
+					//this.obPanelPriceNotSet && BX.adjust(this.obPanelPriceNotSet, {style: {display: 'none'}});
+					this.obPanelPriceNotSet && BX.adjust(this.obPanelPriceNotSet, {style: {display: ''}});
+					//PRO_WS//
 				}
 
 				if (price && price.PRICE !== price.BASE_PRICE) {
@@ -4133,6 +4239,17 @@
 					this.obPanelPriceOld && BX.adjust(this.obPanelPriceOld, {style: {display: 'none'}, html: ''});
 				}
 			}
+
+			//PRO_WS//
+			var hasPrice = !!(price && ((price.SQ_M_PRICE && price.SQ_M_PRICE > 0) || (!price.SQ_M_PRICE && price.PRICE > 0)));
+
+			if(this.obPriceMeasure) {
+				BX.adjust(this.obPriceMeasure, {style: {display: hasPrice ? '' : 'none'}});
+			}
+			if(this.obPanelPriceMeasure) {
+				BX.adjust(this.obPanelPriceMeasure, {style: {display: hasPrice ? '' : 'none'}});
+			}
+			//PRO_WS//
 
 			if(this.obTotalCost) {
 				if(this.obQuantity && !this.obPcQuantity && !this.obSqMQuantity) {
@@ -5322,7 +5439,8 @@
 				action: 'updateObjectOfferPrice',
 				productId: this.product.id,
 				productIblockId: this.product.iblockId,
-				offers: {}
+				offers: {},
+				sessid: BX.bitrix_sessid() //PRO_WS//
 			};
 
 			if(!result) {
@@ -5334,6 +5452,19 @@
 			if(!!result) {
 				for(var i in result) {
 					if(result.hasOwnProperty(i)) {
+						//PRO_WS//
+						var skuItem = this.offers[result[i]],
+							skuItemPrices = skuItem.ITEM_PRICES || [],
+							skuItemPriceSelected = skuItem.ITEM_PRICE_SELECTED,
+							price = skuItemPrices[skuItemPriceSelected] || skuItemPrices[0] || {};
+							
+						data['offers'][result[i]] = {
+							ID: skuItem.ID,
+							OBJECT_ID: (skuItem.OBJECT && skuItem.OBJECT.ID) || 0,
+							PRICE_TYPE_ID: price.PRICE_TYPE_ID || 1,
+							CURRENCY: price.CURRENCY || 'RUB'
+						};
+						/*
 						var skuItem = this.offers[result[i]],
 							skuItemPrices = skuItem.ITEM_PRICES,
 							skuItemPriceSelected = skuItem.ITEM_PRICE_SELECTED;
@@ -5344,6 +5475,8 @@
 							PRICE_TYPE_ID: skuItemPrices[skuItemPriceSelected].PRICE_TYPE_ID,							
 							CURRENCY: skuItemPrices[skuItemPriceSelected].CURRENCY
 						};
+						*/
+						//PRO_WS//
 					}
 				}
 			}
@@ -5645,7 +5778,7 @@
 						}
 					}
 
-					if(Object.keys(this.object.max).length > 0) {
+if(Object.keys(this.object.max).length > 0) {
 						for(var i in this.object.max) {
 							if(this.object.max.hasOwnProperty(i)) {
 								content += '<div class="slide-panel__contacts-item">';
@@ -5929,7 +6062,7 @@
 						}
 					}
 
-					if(Object.keys(this.skuItemObject.max).length > 0) {
+if(Object.keys(this.skuItemObject.max).length > 0) {
 						for(var i in this.skuItemObject.max) {
 							if(this.skuItemObject.max.hasOwnProperty(i)) {
 								content += '<div class="slide-panel__contacts-item">';

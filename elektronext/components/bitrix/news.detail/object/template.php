@@ -777,6 +777,7 @@ $arJSParams = array(
 		"VIBER" => $arResult["VIBER"],
 		"TELEGRAM" => $arResult["TELEGRAM"],
 		"INSTAGRAM" => $arResult["INSTAGRAM"],
+		"MAX" => $arResult["MAX"],
 		"EMAIL" => $arResult["EMAIL"],
 		"SKYPE" => $arResult["SKYPE"],
 		"CALLBACK_FORM" => $arResult["PHONE_SMS"] || $arResult["EMAIL_EMAIL"] ? true : false,
@@ -808,6 +809,7 @@ if($arParams["USE_REVIEW"] != "N") {
 		OBJECTS_ITEM_DETAIL_PRODUCTS_SECTIONS_ALL: '<?=GetMessageJS("OBJECTS_ITEM_DETAIL_PRODUCTS_SECTIONS_ALL")?>',
 		OBJECTS_ITEM_DETAIL_PRODUCTS_SECTIONS_SHOW_ALL: '<?=GetMessageJS("OBJECTS_ITEM_DETAIL_PRODUCTS_SECTIONS_SHOW_ALL")?>',
 		OBJECTS_ITEM_DETAIL_PRODUCTS_SECTIONS_HIDE: '<?=GetMessageJS("OBJECTS_ITEM_DETAIL_PRODUCTS_SECTIONS_HIDE")?>',		
+		OBJECTS_ITEM_DETAIL_MAX: '<?=GetMessageJS("OBJECTS_ITEM_DETAIL_MAX")?>',
 		OBJECT_TEMPLATE_PATH: '<?=$templateFolder?>'
 	});
 	var <?=$obName;?> = new JCNewsDetailObjects(<?=CUtil::PhpToJSObject($arJSParams, false, true);?>);

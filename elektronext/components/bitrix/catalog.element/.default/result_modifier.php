@@ -317,6 +317,9 @@ if(!empty($arResult["OFFERS"]) && $arParams["OFFERS_VIEW"] != "PROPS" && $arPara
 	
 	$minPrice = null;
 	$minPriceIndex = null;
+	
+	//PRO_WS//
+	/*
 	foreach($arResult["OFFERS"] as $key => $arOffer) {
 		if(!$arOffer["CAN_BUY"] || $arOffer["ITEM_PRICE_SELECTED"] === null)
 			continue;
@@ -337,6 +340,43 @@ if(!empty($arResult["OFFERS"]) && $arParams["OFFERS_VIEW"] != "PROPS" && $arPara
 		$arResult["OFFERS_SELECTED"] = $minPriceIndex;
 	
 	unset($minPriceIndex, $minPrice);
+	*/
+	
+	$minPriceAny = null;
+	$minPriceAnyIndex = null;
+	
+	foreach($arResult["OFFERS"] as $key => $arOffer) {
+		if($arOffer["ITEM_PRICE_SELECTED"] === null)
+			continue;
+		if(empty($arOffer["ITEM_PRICES"][$arOffer["ITEM_PRICE_SELECTED"]]))
+			continue;
+
+		$priceScale = (float)$arOffer["ITEM_PRICES"][$arOffer["ITEM_PRICE_SELECTED"]]["PRICE"];
+		if($priceScale <= 0)
+			continue;
+
+		if($minPriceAny === null || $minPriceAny > $priceScale) {
+			$minPriceAny = $priceScale;
+			$minPriceAnyIndex = $key;
+		}
+
+		if(!$arOffer["CAN_BUY"])
+			continue;
+
+		if($minPrice === null || $minPrice > $priceScale) {
+			$minPrice = $priceScale;
+			$minPriceIndex = $key;
+		}
+	}
+	unset($arOffer, $key);
+
+	$arResult["OFFERS_SELECTED"] = ($minPriceIndex !== null)
+		? $minPriceIndex
+		: $minPriceAnyIndex;
+
+	unset($minPriceIndex, $minPrice, $minPriceAnyIndex, $minPriceAny);
+	//PRO_WS//
+
 
 	//OFFERS_QUANTITY//
 	$arResult["CATALOG_QUANTITY_TRACE"] = Option::get("catalog", "default_quantity_trace");
@@ -1189,6 +1229,47 @@ if(!empty($arResult["OFFERS"]) && $arParams["OFFERS_VIEW"] == "OBJECTS") {
 	}
 	unset($arObjectsAffiliates, $arObjects);
 }
+
+//PRO_WS//
+if(!empty($arResult["OFFERS"])) {
+	$sumQty = 0;
+	$unlimited = false;
+
+	foreach($arResult["OFFERS"] as $key => &$arOffer) {
+		if(!$arOffer["CAN_BUY"] && empty($arOffer["ITEM_PRICES"])) {
+			if($arOffer["CATALOG_QUANTITY_TRACE"] !== "Y" || (float)$arOffer["CATALOG_QUANTITY"] > 0) {
+				$arOffer["CAN_BUY"] = true;
+				if(isset($arResult["JS_OFFERS"][$key]))
+					$arResult["JS_OFFERS"][$key]["CAN_BUY"] = true;
+			}
+		}
+
+		if(!empty($arOffer["HIDE_IN_SKU_LIST"]))
+			continue;
+
+		if($arOffer["CAN_BUY"]) {
+			if($arOffer["CATALOG_QUANTITY_TRACE"] !== "Y")
+				$unlimited = true;
+			else
+				$sumQty += (float)$arOffer["CATALOG_QUANTITY"];
+		}
+	}
+	unset($key, $arOffer);
+
+	if((float)$arResult["OFFERS_QUANTITY"] <= 0) {
+		if($unlimited)
+			$arResult["OFFERS_QUANTITY"] = 1;
+		elseif($sumQty > 0)
+			$arResult["OFFERS_QUANTITY"] = $sumQty;
+	}
+}
+
+if(empty($arResult["OFFERS"]) && empty($arResult["ITEM_PRICES"]) && !$arResult["CAN_BUY"]) {
+	if($arResult["CATALOG_QUANTITY_TRACE"] !== "Y" || (float)$arResult["CATALOG_QUANTITY"] > 0) {
+		$arResult["CAN_BUY"] = true;
+	}
+}
+//PRO_WS//
 
 //DISPLAY_PROPERTIES//
 if(!empty($arResult["DISPLAY_PROPERTIES"])) {

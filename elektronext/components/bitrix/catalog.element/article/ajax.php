@@ -336,12 +336,76 @@ if($request->isAjaxRequest()) {
 
 		echo Bitrix\Main\Web\Json::encode($result);
 	} elseif($action == "updateObjectOfferPrice") {
+		//PRO_WS//
+		if (!check_bitrix_sessid()) {
+			http_response_code(403);
+			die('Access denied');
+		}
+		//PRO_WS//
+		
 		$result = array();
 
-		$productId = intval($request->get("productId"));
+		global $USER;
+		if(!Bitrix\Main\Loader::includeModule("iblock")) {
+			http_response_code(403);
+			die('Access denied');
+		}
 		$productIblockId = intval($request->get("productIblockId"));
+		$publicPriceUpdate = false;
+		if(class_exists("CEnext")) {
+			$priceSettings = CEnext::GetFrontParametrsValues(SITE_ID);
+			$publicPriceUpdate = (!empty($priceSettings["PRICE_UPDATE_FOR_ALL"]) && $priceSettings["PRICE_UPDATE_FOR_ALL"] == "Y");
+		}
+		if($productIblockId <= 0 || (!$publicPriceUpdate && !$USER->IsAdmin() && CIBlock::GetPermission($productIblockId) < "W")) {
+			http_response_code(403);
+			die('Access denied');
+		}
+		$productId = intval($request->get("productId"));
 
-		$offers = $request->get("offers");
+		$allowedPriceTypes = array();
+		if(Bitrix\Main\Loader::includeModule("catalog")) {
+			$baseCurrency = Bitrix\Main\Loader::includeModule("currency") ? Bitrix\Currency\CurrencyManager::getBaseCurrency() : "";
+			$rsGroups = CCatalogGroup::GetList(array("SORT" => "ASC"), array("CAN_BUY" => "Y"));
+			while($arGroup = $rsGroups->Fetch())
+				$allowedPriceTypes[(int)$arGroup["ID"]] = $baseCurrency;
+			unset($arGroup, $rsGroups, $baseCurrency);
+		}
+		$offers = array();
+		foreach((array)$request->get("offers") as $key => $arOffer) {
+			if(!is_array($arOffer))
+				continue;
+			$priceTypeId = (int)$arOffer["PRICE_TYPE_ID"];
+			if(!isset($allowedPriceTypes[$priceTypeId]))
+				continue;
+			$arOffer["PRICE_TYPE_ID"] = $priceTypeId;
+			$arOffer["CURRENCY"] = $allowedPriceTypes[$priceTypeId];
+			$offers[$key] = $arOffer;
+		}
+		unset($key, $arOffer, $priceTypeId, $allowedPriceTypes);
+		if(!empty($offers) && $productId > 0 && $productIblockId > 0 && Bitrix\Main\Loader::includeModule("catalog") && Bitrix\Main\Loader::includeModule("iblock")) {
+			$skuInfo = CCatalogSKU::GetInfoByProductIBlock($productIblockId);
+			$allowedIds = array();
+			if(is_array($skuInfo)) {
+				$requestedIds = array();
+				foreach($offers as $arOffer)
+					$requestedIds[] = intval($arOffer["ID"]);
+				$requestedIds = array_filter($requestedIds);
+				if(!empty($requestedIds)) {
+					$rsAllowed = CIBlockElement::GetList(array(), array("IBLOCK_ID" => $skuInfo["IBLOCK_ID"], "ID" => $requestedIds, "PROPERTY_".$skuInfo["SKU_PROPERTY_ID"] => $productId), false, false, array("ID"));
+					while($arAllowed = $rsAllowed->Fetch())
+						$allowedIds[(int)$arAllowed["ID"]] = true;
+					unset($arAllowed, $rsAllowed);
+				}
+				unset($requestedIds);
+			}
+			$offersChecked = array();
+			foreach($offers as $key => $arOffer) {
+				if(!empty($allowedIds[(int)$arOffer["ID"]]))
+					$offersChecked[$key] = $arOffer;
+			}
+			$offers = $offersChecked;
+			unset($offersChecked, $allowedIds, $skuInfo);
+		}
 		if(!empty($offers)) {
 			$offersList = $objectsList = array();
 			foreach($offers as $arOffer) {
@@ -373,8 +437,14 @@ if($request->isAjaxRequest()) {
 
 			curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+			if(defined("CURLPROTO_HTTP") && defined("CURLPROTO_HTTPS"))
+				curl_setopt($ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
 			
 			foreach($offers as $key => $arOffer) {
+				$parserLink = "";
+				$parserTag = "";
+				$parserClass = "";
 				if(array_key_exists($arOffer["ID"], $offersList))
 					$parserLink = $offersList[$arOffer["ID"]]["PARSER_LINK"];
 				
@@ -384,17 +454,33 @@ if($request->isAjaxRequest()) {
 				}
 
 				if(!empty($parserLink) && !empty($parserTag) && !empty($parserClass)) {
+					$url = parse_url($parserLink);
+					$urlScheme = isset($url["scheme"]) ? strtolower($url["scheme"]) : "";
+					$urlHost = isset($url["host"]) ? $url["host"] : "";
+					if(($urlScheme != "http" && $urlScheme != "https") || $urlHost == "")
+						continue;
+					$resolvedIp = gethostbyname($urlHost);
+					if(!filter_var($resolvedIp, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE))
+						continue;
+
 					curl_setopt($ch, CURLOPT_URL, $parserLink);
 					
 					$page = curl_exec($ch);
 					
 					if(!empty($page)) {
 						$parsedPrice = 0;
+						$priceFound = false;
+						$parserTag = preg_quote($parserTag, "/");
+						$parserClass = preg_quote($parserClass, "/");
 						if(preg_match("/<span[^>]+itemprop=\"price\"[^>]+content=\"(.*?)\"/is", $page, $matches)) {
 							$parsedPrice = (float)$matches[1];
+							$priceFound = true;
 						} elseif(preg_match("/<".$parserTag."[^>]+".$parserClass."[^>]+>(.*?)<\/[^>]+>/is", $page, $matches)) {
 							$parsedPrice = (float)str_replace(",", ".", preg_replace("/[^0-9\,\.]/", "", strip_tags($matches[1])));
+							$priceFound = true;
 						}
+						if(!$priceFound)
+							continue;
 
 						$parsedPriceList[] = $parsedPrice;
 

@@ -721,20 +721,35 @@ $arParams["MESS_RELATIVE_QUANTITY_FEW"] = $arParams["MESS_RELATIVE_QUANTITY_FEW"
 														if(!empty($arResult["PROPERTIES"]["M2_COUNT"]["VALUE"]) && ($arOffer["ITEM_MEASURE"]["SYMBOL_INTL"] == "pc. 1" || $arOffer["ITEM_MEASURE"]["SYMBOL_INTL"] == "m2")) {?>
 															<div class="product-item-detail-amount">
 																<a class="product-item-detail-amount-btn-minus" href="javascript:void(0)" rel="nofollow" data-entity="pc-quantity-down">-</a>
-																<input class="product-item-detail-amount-input" type="tel" value="<?=$offerPrice['PC_MIN_QUANTITY']?>" data-entity="pc-quantity" />
+																<?//PRO_WS//?>
+																<?if(false){?>
+																	<input class="product-item-detail-amount-input" type="tel" value="<?=$offerPrice['PC_MIN_QUANTITY']?>" data-entity="pc-quantity" />
+																<?}?>
+																<input class="product-item-detail-amount-input" type="tel" value="<?=(!empty($offerPrice) && isset($offerPrice['PC_MIN_QUANTITY'])) ? $offerPrice['PC_MIN_QUANTITY'] : 1?>" data-entity="pc-quantity" />
+																<?//PRO_WS//?>
 																<a class="product-item-detail-amount-btn-plus" href="javascript:void(0)" rel="nofollow" data-entity="pc-quantity-up">+</a>
 																<div class="product-item-detail-amount-measure"><?=Loc::getMessage("CT_BCE_CATALOG_MEASURE_PC")?></div>
 															</div>
 															<div class="product-item-detail-amount">
 																<a class="product-item-detail-amount-btn-minus" href="javascript:void(0)" rel="nofollow" data-entity="sq-m-quantity-down">-</a>
-																<input class="product-item-detail-amount-input" type="tel" value="<?=$offerPrice['SQ_M_MIN_QUANTITY']?>" data-entity="sq-m-quantity" />
+																<?//PRO_WS//?>
+																<?if(false){?>
+																	<input class="product-item-detail-amount-input" type="tel" value="<?=$offerPrice['SQ_M_MIN_QUANTITY']?>" data-entity="sq-m-quantity" />
+																<?}?>
+																<input class="product-item-detail-amount-input" type="tel" value="<?=(!empty($offerPrice) && isset($offerPrice['SQ_M_MIN_QUANTITY'])) ? $offerPrice['SQ_M_MIN_QUANTITY'] : 1?>" data-entity="sq-m-quantity" />
+																<?//PRO_WS//?>
 																<a class="product-item-detail-amount-btn-plus" href="javascript:void(0)" rel="nofollow" data-entity="sq-m-quantity-up">+</a>
 																<div class="product-item-detail-amount-measure"><?=Loc::getMessage("CT_BCE_CATALOG_MEASURE_SQ_M")?></div>
 															</div>
 														<?} else {?>
 															<div class="product-item-detail-amount">								
 																<a class="product-item-detail-amount-btn-minus" href="javascript:void(0)" rel="nofollow" data-entity="quantity-down">-</a>
-																<input class="product-item-detail-amount-input" type="tel" value="<?=$offerPrice['MIN_QUANTITY']?>" data-entity="quantity" />
+																<?//PRO_WS//?>
+																<?if(false){?>
+																	<input class="product-item-detail-amount-input" type="tel" value="<?=$offerPrice['MIN_QUANTITY']?>" data-entity="quantity" />
+																<?}?>
+																<input class="product-item-detail-amount-input" type="tel" value="<?=(!empty($offerPrice) && isset($offerPrice['MIN_QUANTITY'])) ? $offerPrice['MIN_QUANTITY'] : 1?>" data-entity="quantity" />
+																<?//PRO_WS//?>
 																<a class="product-item-detail-amount-btn-plus" href="javascript:void(0)" rel="nofollow" data-entity="quantity-up">+</a>
 																<div class="product-item-detail-amount-measure"><?=$arOffer["ITEM_MEASURE"]["TITLE"]?></div>
 															</div>
@@ -1516,20 +1531,35 @@ $arParams["MESS_RELATIVE_QUANTITY_FEW"] = $arParams["MESS_RELATIVE_QUANTITY_FEW"
 							<?if(!empty($arResult["PROPERTIES"]["M2_COUNT"]["VALUE"])) {?>
 								<div class="product-item-detail-amount"<?=($isMeasurePc || $isMeasureSqM ? "" : " style='display: none;'")?>>
 									<a class="product-item-detail-amount-btn-minus" id="<?=$itemIds['PC_QUANTITY_DOWN_ID']?>" href="javascript:void(0)" rel="nofollow">-</a>
-									<input class="product-item-detail-amount-input" id="<?=$itemIds['PC_QUANTITY_ID']?>" type="tel" value="<?=$price['PC_MIN_QUANTITY']?>" />
+									<?//PRO_WS//?>
+									<?if(false){?>
+										<input class="product-item-detail-amount-input" id="<?=$itemIds['PC_QUANTITY_ID']?>" type="tel" value="<?=$price['PC_MIN_QUANTITY']?>" />
+									<?}?>
+									<input class="product-item-detail-amount-input" id="<?=$itemIds['PC_QUANTITY_ID']?>" type="tel" value="<?=(!empty($price) && isset($price['PC_MIN_QUANTITY'])) ? $price['PC_MIN_QUANTITY'] : 1?>" />
+									<?//PRO_WS//?>
 									<a class="product-item-detail-amount-btn-plus" id="<?=$itemIds['PC_QUANTITY_UP_ID']?>" href="javascript:void(0)" rel="nofollow">+</a>
 									<div class="product-item-detail-amount-measure"><?=Loc::getMessage("CT_BCE_CATALOG_MEASURE_PC")?></div>
 								</div>
 								<div class="product-item-detail-amount"<?=($isMeasurePc || $isMeasureSqM ? "" : " style='display: none;'")?>>
 									<a class="product-item-detail-amount-btn-minus" id="<?=$itemIds['SQ_M_QUANTITY_DOWN_ID']?>" href="javascript:void(0)" rel="nofollow">-</a>
-									<input class="product-item-detail-amount-input" id="<?=$itemIds['SQ_M_QUANTITY_ID']?>" type="tel" value="<?=$price['SQ_M_MIN_QUANTITY']?>" />
+									<?//PRO_WS//?>
+									<?if(false){?>
+										<input class="product-item-detail-amount-input" id="<?=$itemIds['SQ_M_QUANTITY_ID']?>" type="tel" value="<?=$price['SQ_M_MIN_QUANTITY']?>" />
+									<?}?>
+									<input class="product-item-detail-amount-input" id="<?=$itemIds['SQ_M_QUANTITY_ID']?>" type="tel" value="<?=(!empty($price) && isset($price['SQ_M_MIN_QUANTITY'])) ? $price['SQ_M_MIN_QUANTITY'] : (!empty($measureRatio) ? $measureRatio : 1)?>" />
+									<?//PRO_WS//?>
 									<a class="product-item-detail-amount-btn-plus" id="<?=$itemIds['SQ_M_QUANTITY_UP_ID']?>" href="javascript:void(0)" rel="nofollow">+</a>
 									<div class="product-item-detail-amount-measure"><?=Loc::getMessage("CT_BCE_CATALOG_MEASURE_SQ_M")?></div>
 								</div>
 								<?if($haveOffers) {?>
 									<div class="product-item-detail-amount"<?=($isMeasurePc || $isMeasureSqM ? " style='display: none;'" : "")?>>
 										<a class="product-item-detail-amount-btn-minus" id="<?=$itemIds['QUANTITY_DOWN_ID']?>" href="javascript:void(0)" rel="nofollow">-</a>
-										<input class="product-item-detail-amount-input" id="<?=$itemIds['QUANTITY_ID']?>" type="tel" value="<?=$price['MIN_QUANTITY']?>" />
+										<?//PRO_WS//?>
+										<?if(false){?>
+											<input class="product-item-detail-amount-input" id="<?=$itemIds['QUANTITY_ID']?>" type="tel" value="<?=$price['MIN_QUANTITY']?>" />
+										<?}?>
+										<input class="product-item-detail-amount-input" id="<?=$itemIds['QUANTITY_ID']?>" type="tel" value="<?=(!empty($price) && isset($price['MIN_QUANTITY'])) ? $price['MIN_QUANTITY'] : (!empty($measureRatio) ? $measureRatio : 1)?>" />
+										<?//PRO_WS//?>
 										<a class="product-item-detail-amount-btn-plus" id="<?=$itemIds['QUANTITY_UP_ID']?>" href="javascript:void(0)" rel="nofollow">+</a>
 										<div class="product-item-detail-amount-measure" id="<?=$itemIds['QUANTITY_MEASURE']?>"><?=$actualItem["ITEM_MEASURE"]["TITLE"]?></div>
 									</div>
@@ -1538,7 +1568,12 @@ $arParams["MESS_RELATIVE_QUANTITY_FEW"] = $arParams["MESS_RELATIVE_QUANTITY_FEW"
 							<?} else {?>
 								<div class="product-item-detail-amount">								
 									<a class="product-item-detail-amount-btn-minus" id="<?=$itemIds['QUANTITY_DOWN_ID']?>" href="javascript:void(0)" rel="nofollow">-</a>
-									<input class="product-item-detail-amount-input" id="<?=$itemIds['QUANTITY_ID']?>" type="tel" value="<?=$price['MIN_QUANTITY']?>" />
+									<?//PRO_WS//?>
+									<?if(false){?>
+										<input class="product-item-detail-amount-input" id="<?=$itemIds['QUANTITY_ID']?>" type="tel" value="<?=$price['MIN_QUANTITY']?>" />
+									<?}?>
+									<input class="product-item-detail-amount-input" id="<?=$itemIds['QUANTITY_ID']?>" type="tel" value="<?=(!empty($price) && isset($price['MIN_QUANTITY'])) ? $price['MIN_QUANTITY'] : (!empty($measureRatio) ? $measureRatio : 1)?>" />
+									<?//PRO_WS//?>
 									<a class="product-item-detail-amount-btn-plus" id="<?=$itemIds['QUANTITY_UP_ID']?>" href="javascript:void(0)" rel="nofollow">+</a>
 									<div class="product-item-detail-amount-measure" id="<?=$itemIds['QUANTITY_MEASURE']?>"><?=$actualItem["ITEM_MEASURE"]["TITLE"]?></div>
 								</div>
@@ -2426,12 +2461,12 @@ if($moreProductsIds) {
 		CATALOG_ELEMENT_GEO_DELIVERY_SLIDE_PANEL_TITLE: '<?=GetMessageJS("CT_BCE_CATALOG_GEO_DELIVERY_SLIDE_PANEL_TITLE")?>',
 		CATALOG_ELEMENT_SKU_ITEMS_SLIDE_PANEL_TITLE: '<?=GetMessageJS("CT_BCE_CATALOG_SKU_ITEMS")?>',
 		CATALOG_ELEMENT_OBJECT_TODAY: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_TODAY")?>',
+		CATALOG_ELEMENT_OBJECT_MAX: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_MAX")?>',
 		CATALOG_ELEMENT_OBJECT_24_HOURS: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_24_HOURS")?>',
 		CATALOG_ELEMENT_OBJECT_OFF: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_OFF")?>',
 		CATALOG_ELEMENT_OBJECT_BREAK: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_BREAK")?>',
 		CATALOG_ELEMENT_OBJECT_SEE_REVIEWS: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_SEE_REVIEWS")?>',
 		CATALOG_ELEMENT_OBJECT_ADD_REVIEW: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_ADD_REVIEW")?>',
-		CATALOG_ELEMENT_OBJECT_MAX: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_MAX")?>',
 		CATALOG_ELEMENT_OBJECT_LOADING: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_LOADING");?>',
 		CATALOG_ELEMENT_SECTIONS_ALL: '<?=GetMessageJS("CT_BCE_CATALOG_SECTIONS_ALL")?>',
 		CATALOG_ELEMENT_SECTIONS_SHOW_ALL: '<?=GetMessageJS("CT_BCE_CATALOG_SECTIONS_SHOW_ALL")?>',

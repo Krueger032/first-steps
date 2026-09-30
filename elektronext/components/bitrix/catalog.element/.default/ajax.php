@@ -364,12 +364,76 @@ if($request->isAjaxRequest()) {
 
 		echo Bitrix\Main\Web\Json::encode($result);
 	} elseif($action == "updateObjectOfferPrice") {
+		//PRO_WS//
+		if (!check_bitrix_sessid()) {
+			http_response_code(403);
+			die('Access denied');
+		}
+		//PRO_WS//
+		
 		$result = array();
-		
-		$productId = intval($request->get("productId"));
+
+		global $USER;
+		if(!Bitrix\Main\Loader::includeModule("iblock")) {
+			http_response_code(403);
+			die('Access denied');
+		}
 		$productIblockId = intval($request->get("productIblockId"));
-		
-		$offers = $request->get("offers");
+		$publicPriceUpdate = false;
+		if(class_exists("CEnext")) {
+			$priceSettings = CEnext::GetFrontParametrsValues(SITE_ID);
+			$publicPriceUpdate = (!empty($priceSettings["PRICE_UPDATE_FOR_ALL"]) && $priceSettings["PRICE_UPDATE_FOR_ALL"] == "Y");
+		}
+		if($productIblockId <= 0 || (!$publicPriceUpdate && !$USER->IsAdmin() && CIBlock::GetPermission($productIblockId) < "W")) {
+			http_response_code(403);
+			die('Access denied');
+		}
+		$productId = intval($request->get("productId"));
+
+		$allowedPriceTypes = array();
+		if(Bitrix\Main\Loader::includeModule("catalog")) {
+			$baseCurrency = Bitrix\Main\Loader::includeModule("currency") ? Bitrix\Currency\CurrencyManager::getBaseCurrency() : "";
+			$rsGroups = CCatalogGroup::GetList(array("SORT" => "ASC"), array("CAN_BUY" => "Y"));
+			while($arGroup = $rsGroups->Fetch())
+				$allowedPriceTypes[(int)$arGroup["ID"]] = $baseCurrency;
+			unset($arGroup, $rsGroups, $baseCurrency);
+		}
+		$offers = array();
+		foreach((array)$request->get("offers") as $key => $arOffer) {
+			if(!is_array($arOffer))
+				continue;
+			$priceTypeId = (int)$arOffer["PRICE_TYPE_ID"];
+			if(!isset($allowedPriceTypes[$priceTypeId]))
+				continue;
+			$arOffer["PRICE_TYPE_ID"] = $priceTypeId;
+			$arOffer["CURRENCY"] = $allowedPriceTypes[$priceTypeId];
+			$offers[$key] = $arOffer;
+		}
+		unset($key, $arOffer, $priceTypeId, $allowedPriceTypes);
+		if(!empty($offers) && $productId > 0 && $productIblockId > 0 && Bitrix\Main\Loader::includeModule("catalog") && Bitrix\Main\Loader::includeModule("iblock")) {
+			$skuInfo = CCatalogSKU::GetInfoByProductIBlock($productIblockId);
+			$allowedIds = array();
+			if(is_array($skuInfo)) {
+				$requestedIds = array();
+				foreach($offers as $arOffer)
+					$requestedIds[] = intval($arOffer["ID"]);
+				$requestedIds = array_filter($requestedIds);
+				if(!empty($requestedIds)) {
+					$rsAllowed = CIBlockElement::GetList(array(), array("IBLOCK_ID" => $skuInfo["IBLOCK_ID"], "ID" => $requestedIds, "PROPERTY_".$skuInfo["SKU_PROPERTY_ID"] => $productId), false, false, array("ID"));
+					while($arAllowed = $rsAllowed->Fetch())
+						$allowedIds[(int)$arAllowed["ID"]] = true;
+					unset($arAllowed, $rsAllowed);
+				}
+				unset($requestedIds);
+			}
+			$offersChecked = array();
+			foreach($offers as $key => $arOffer) {
+				if(!empty($allowedIds[(int)$arOffer["ID"]]))
+					$offersChecked[$key] = $arOffer;
+			}
+			$offers = $offersChecked;
+			unset($offersChecked, $allowedIds, $skuInfo);
+		}
 		if(!empty($offers)) {
 			$offersList = $objectsList = array();
 			foreach($offers as $arOffer) {
@@ -401,8 +465,14 @@ if($request->isAjaxRequest()) {
 
 			curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+			if(defined("CURLPROTO_HTTP") && defined("CURLPROTO_HTTPS"))
+				curl_setopt($ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
 			
 			foreach($offers as $key => $arOffer) {
+				$parserLink = "";
+				$parserTag = "";
+				$parserClass = "";
 				if(array_key_exists($arOffer["ID"], $offersList))
 					$parserLink = $offersList[$arOffer["ID"]]["PARSER_LINK"];
 				
@@ -412,17 +482,33 @@ if($request->isAjaxRequest()) {
 				}
 
 				if(!empty($parserLink) && !empty($parserTag) && !empty($parserClass)) {
+					$url = parse_url($parserLink);
+					$urlScheme = isset($url["scheme"]) ? strtolower($url["scheme"]) : "";
+					$urlHost = isset($url["host"]) ? $url["host"] : "";
+					if(($urlScheme != "http" && $urlScheme != "https") || $urlHost == "")
+						continue;
+					$resolvedIp = gethostbyname($urlHost);
+					if(!filter_var($resolvedIp, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE))
+						continue;
+
 					curl_setopt($ch, CURLOPT_URL, $parserLink);
 					
 					$page = curl_exec($ch);
 					
 					if(!empty($page)) {
-						$parsedPrice = 0;						
+						$parsedPrice = 0;
+						$priceFound = false;
+						$parserTag = preg_quote($parserTag, "/");
+						$parserClass = preg_quote($parserClass, "/");
 						if(preg_match("/<span[^>]+itemprop=\"price\"[^>]+content=\"(.*?)\"/is", $page, $matches)) {
 							$parsedPrice = (float)$matches[1];
+							$priceFound = true;
 						} elseif(preg_match("/<".$parserTag."[^>]+".$parserClass."[^>]+>(.*?)<\/[^>]+>/is", $page, $matches)) {
 							$parsedPrice = (float)str_replace(",", ".", preg_replace("/[^0-9\,\.]/", "", strip_tags($matches[1])));
+							$priceFound = true;
 						}
+						if(!$priceFound)
+							continue;
 						
 						$parsedPriceList[] = $parsedPrice;
 						
@@ -436,6 +522,35 @@ if($request->isAjaxRequest()) {
 								),
 								"select" => array("ID", "PRICE")
 							));
+							//PRO_WS//
+							if($arPrice = $rsPrice->fetch()) {
+								$resultPrice = Bitrix\Catalog\Model\Price::update($arPrice["ID"], array("PRICE" => $parsedPrice));
+							} else {
+								$resultPrice = Bitrix\Catalog\Model\Price::add(array(
+									"PRODUCT_ID" => $arOffer["ID"],
+									"CATALOG_GROUP_ID" => $arOffer["PRICE_TYPE_ID"],
+									"PRICE" => $parsedPrice,
+									"CURRENCY" => $arOffer["CURRENCY"]
+								));
+							}
+							if($resultPrice->isSuccess()) {
+								$result[$key] = array(
+									"status" => true,
+									"price" => $parsedPrice,
+									"printPrice" => CCurrencyLang::CurrencyFormat($parsedPrice, $arOffer["CURRENCY"]),
+									"timestampX" => $timestamp
+								);
+								if(Bitrix\Main\Loader::includeModule("iblock")) {
+									$el = new CIBlockElement;
+									$el->Update($arOffer["ID"], array("TIMESTAMP_X" => $timestamp));
+								}
+							} else {
+								$result[$key] = array(
+									"status" => false,
+									"message" => $resultPrice->getErrorMessages()
+								);
+							}
+							/*
 							if($arPrice = $rsPrice->fetch()) {
 								$resultPrice = Bitrix\Catalog\Model\Price::update($arPrice["ID"], array("PRICE" => $parsedPrice));
 								if($resultPrice->isSuccess()) {
@@ -456,6 +571,8 @@ if($request->isAjaxRequest()) {
 									);
 								}
 							}
+							*/
+							//PRO_WS//
 							unset($resultPrice, $arPrice, $rsPrice, $timestamp);
 						}
 					}
@@ -859,6 +976,8 @@ if($request->isAjaxRequest()) {
 		$parameters = unserialize(base64_decode($signer->unsign($request->get("parameters"), "catalog.element")));
 
 		$arSettings = CEnext::GetFrontParametrsValues(SITE_ID);
+
+		$partnersInfoMessage = htmlspecialcharsbx((string)$arSettings["PARTNERS_INFO_MESSAGE"]); //PRO_WS//
 		
 		$parameters["DISABLE_BASKET"] = false;
 		if($arSettings["DISABLE_BASKET"] == "Y")
@@ -878,6 +997,14 @@ if($request->isAjaxRequest()) {
 					$offerPrice = $arOffer["ITEM_PRICES"][$arOffer["ITEM_PRICE_SELECTED"]];
 					$offerMeasureRatio = $arOffer["ITEM_MEASURE_RATIOS"][$arOffer["ITEM_MEASURE_RATIO_SELECTED"]]["RATIO"];
 					
+					//PRO_WS//
+					$objectUrl   = htmlspecialcharsbx((string)$arOffer["OBJECT"]["DETAIL_PAGE_URL"]);
+					$objectName = htmlspecialcharsbx((string)iconv("UTF-8", $siteCharset, (string)($arOffer["OBJECT"]["NAME"] ?? '')), ENT_NOQUOTES);
+					$ratingValue = htmlspecialcharsbx((string)$arOffer["OBJECT"]["RATING_VALUE"]);
+					$reviewsCount = (int)$arOffer["OBJECT"]["REVIEWS_COUNT"];
+					$reviewsDeclension = htmlspecialcharsbx((string)iconv("UTF-8", $siteCharset, $arOffer["OBJECT"]["REVIEWS_DECLENSION"] ?? ''));
+					//PRO_WS//
+					
 					$map["PLACEMARKS"][$i] = array(
 						"OBJECT_ID" => $arOffer["OBJECT"]["ID"],
 						"LON" => $arTmp[1],
@@ -886,11 +1013,21 @@ if($request->isAjaxRequest()) {
 						"PRINT_PRICE" => $offerPrice["PRICE"] > 0 ? iconv("UTF-8", $siteCharset, $offerPrice["PRINT_PRICE"]) : Bitrix\Main\Localization\Loc::getMessage("CT_BCE_CATALOG_PRICE_NOT_SET"),
 						"CAN_BUY" => $arOffer["CAN_BUY"] == "true" ? true : false,
 						"JS_NAME" => $jsName,
+						//PRO_WS//
+						/*
 						"TEXT" => "<div class='product-item-detail-scu-item-object-marker' data-entity='sku-item' data-num='".$key."'><div class='product-item-detail-scu-item-object-marker-caption'><a target='_blank' class='product-item-detail-scu-item-object-marker-title' href='".$arOffer["OBJECT"]["DETAIL_PAGE_URL"]."'>".iconv("UTF-8", $siteCharset, $arOffer["OBJECT"]["NAME"])."</a>"
+						*/
+						"TEXT" => "<div class='product-item-detail-scu-item-object-marker' data-entity='sku-item' data-num='".intval($key)."'><div class='product-item-detail-scu-item-object-marker-caption'><a target='_blank' class='product-item-detail-scu-item-object-marker-title' href='".$objectUrl."'>".$objectName."</a>"
+						//PRO_WS//
 					);
 					
 					if(isset($arOffer["OBJECT"]["REVIEWS_COUNT"]) && $arOffer["OBJECT"]["REVIEWS_COUNT"] > 0) {
+						//PRO_WS//
+						/*
 						$map["PLACEMARKS"][$i]["TEXT"] .= "<div class='product-item-detail-scu-item-object-rating'><div class='product-item-detail-scu-item-object-rating-val'".($arOffer["OBJECT"]["RATING_VALUE"] <= 4.4 ? " data-rate='".intval($arOffer["OBJECT"]["RATING_VALUE"])."'" : "").">".$arOffer["OBJECT"]["RATING_VALUE"]."</div><div class='product-item-detail-scu-item-object-rating-reviews-count'>".$arOffer["OBJECT"]["REVIEWS_COUNT"]." ".iconv("UTF-8", $siteCharset, $arOffer["OBJECT"]["REVIEWS_DECLENSION"])."</div></div>";
+						*/		
+						$map["PLACEMARKS"][$i]["TEXT"] .= "<div class='product-item-detail-scu-item-object-rating'><div class='product-item-detail-scu-item-object-rating-val'".($arOffer["OBJECT"]["RATING_VALUE"] <= 4.4 ? " data-rate='".intval($arOffer["OBJECT"]["RATING_VALUE"])."'" : "").">".$ratingValue."</div><div class='product-item-detail-scu-item-object-rating-reviews-count'>".$reviewsCount." ".$reviewsDeclension."</div></div>";
+						//PRO_WS//
 					}
 					
 					if(!empty($arOffer["OBJECT"]["WORKING_HOURS_TODAY"])) {
@@ -901,12 +1038,22 @@ if($request->isAjaxRequest()) {
 							}
 							if(isset($arWorkingHoursToday["WORK_START"]) && isset($arWorkingHoursToday["WORK_END"])) {
 								if($arWorkingHoursToday["WORK_START"] != $arWorkingHoursToday["WORK_END"]) {
+									//PRO_WS//
+									/*
 									$map["PLACEMARKS"][$i]["TEXT"] .= $arWorkingHoursToday["WORK_START"]." - ".$arWorkingHoursToday["WORK_END"];
 									if(isset($arWorkingHoursToday["BREAK_START"]) && isset($arWorkingHoursToday["BREAK_END"])) {
 										if($arWorkingHoursToday["BREAK_START"] != $arWorkingHoursToday["BREAK_END"]) {
 											$map["PLACEMARKS"][$i]["TEXT"] .= "<span class='product-item-detail-scu-item-object-marker-hours-break'>".Bitrix\Main\Localization\Loc::getMessage("CT_BCE_CATALOG_OBJECT_BREAK")." ".$arWorkingHoursToday["BREAK_START"]." ".$arWorkingHoursToday["BREAK_END"]."</span>";
 										}
 									}
+									*/
+									$map["PLACEMARKS"][$i]["TEXT"] .= htmlspecialcharsbx((string)$arWorkingHoursToday["WORK_START"])." - ".htmlspecialcharsbx((string)$arWorkingHoursToday["WORK_END"]);
+									if(isset($arWorkingHoursToday["BREAK_START"]) && isset($arWorkingHoursToday["BREAK_END"])) {
+										if($arWorkingHoursToday["BREAK_START"] != $arWorkingHoursToday["BREAK_END"]) {
+											$map["PLACEMARKS"][$i]["TEXT"] .= "<span class='product-item-detail-scu-item-object-marker-hours-break'>".Bitrix\Main\Localization\Loc::getMessage("CT_BCE_CATALOG_OBJECT_BREAK")." ".htmlspecialcharsbx((string)$arWorkingHoursToday["BREAK_START"])." ".htmlspecialcharsbx((string)$arWorkingHoursToday["BREAK_END"])."</span>";
+										}
+									}
+									//PRO_WS//
 								} else {
 									$map["PLACEMARKS"][$i]["TEXT"] .= Bitrix\Main\Localization\Loc::getMessage("CT_BCE_CATALOG_OBJECT_24_HOURS");
 								}
@@ -948,7 +1095,10 @@ if($request->isAjaxRequest()) {
 					}
 					
 					if(!$parameters["DISABLE_BASKET"] && $arOffer["CAN_BUY"] == "true" && $offerPrice["PRICE"] > 0 && $arOffer["PARTNERS_URL"] == "true" && !empty($arSettings["PARTNERS_INFO_MESSAGE"])) {
-						$map["PLACEMARKS"][$i]["TEXT"] .= "<div class='product-item-detail-info-message'>".$arSettings["PARTNERS_INFO_MESSAGE"]."</div>";
+						//PRO_WS//
+						//$map["PLACEMARKS"][$i]["TEXT"] .= "<div class='product-item-detail-info-message'>".$arSettings["PARTNERS_INFO_MESSAGE"]."</div>";
+						$map["PLACEMARKS"][$i]["TEXT"] .= "<div class='product-item-detail-info-message'>".$partnersInfoMessage."</div>";
+						//PRO_WS//
 					}
 					
 					$map["PLACEMARKS"][$i]["TEXT"] .= "</div><div class='product-item-detail-scu-item-object-marker-buttons'><button type='button' class='btn btn-default' data-entity='object'><i class='icon-phone-call'></i></button>";
@@ -975,7 +1125,7 @@ if($request->isAjaxRequest()) {
 			}
 			unset($arReviewsDeclension, $arTmp, $arOffer, $i);
 		}
-		
+
 		if(count($map["PLACEMARKS"]) == 1) {
 			$map["yandex_lat"] = $map["PLACEMARKS"][0]["LAT"];
 			$map["yandex_lon"] = $map["PLACEMARKS"][0]["LON"];

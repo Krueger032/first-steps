@@ -4346,7 +4346,8 @@
 				action: 'updateObjectOfferPrice',
 				productId: this.product.id,
 				productIblockId: this.product.iblockId,
-				offers: {}
+				offers: {},
+				sessid: BX.bitrix_sessid() //PRO_WS//
 			};
 
 			if(!result) {
