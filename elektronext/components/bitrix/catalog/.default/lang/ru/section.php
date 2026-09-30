@@ -10,3 +10,4 @@ $MESS["CATALOG_SECTION_LINKS_ALL"] = "Все";
 $MESS["CATALOG_SECTION_LINKS_SHOW_ALL"] = "Показать все";
 $MESS["CATALOG_SECTION_LINKS_HIDE"] = "Свернуть";
 $MESS["CATALOG_PAGE"] = "Страница";
+$MESS["CATALOG_EMPTY_SECTION_TEXT"] = "В данный момент товары в категории отсутствуют. Мы активно работаем над пополнением ассортимента и ожидаем поступление новых товаров в ближайшее время.<br> Пожалуйста, посетите раздел позже.";
