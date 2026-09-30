@@ -18,6 +18,8 @@ $request = Bitrix\Main\Application::getInstance()->getContext()->getRequest();?>
 		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/csshake-default.min.css");
 		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/js/scrollbar/jquery.scrollbar.min.css");
 		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/bootstrap.min.css");
+		$APPLICATION->AddHeadString("<link rel='preload' href='".SITE_TEMPLATE_PATH."/fonts/ruicons/ruicons.woff2' as='font' type='font/woff2' crossorigin />", true);
+		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/ruicons.min.css");
 		CJSCore::Init(array("jquery2", "elektronextIntlTelInput"));
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/bootstrap.min.js");
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/formValidation.min.js");
