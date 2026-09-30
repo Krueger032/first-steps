@@ -11,3 +11,4 @@ $MESS["HEADER_CONTACTS_REVIEWS_2"] = "отзывов";
 $MESS["HEADER_CONTACTS_SEE_REVIEWS"] = "Смотреть отзывы";
 $MESS["HEADER_CONTACTS_ADD_REVIEW"] = "Оставить первый отзыв";
 $MESS["HEADER_CONTACTS_CALLBACK"] = "Заказать звонок";
+$MESS["HEADER_CONTACTS_ITEM_MAX"] = "Чат в MAX";

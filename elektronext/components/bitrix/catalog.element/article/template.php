@@ -1221,6 +1221,7 @@ if($haveOffers) {
 				"VIBER" => $offerObject["VIBER"],
 				"TELEGRAM" => $offerObject["TELEGRAM"],
 				"INSTAGRAM" => $offerObject["INSTAGRAM"],
+				"MAX" => $offerObject["MAX"],
 				"EMAIL" => $offerObject["EMAIL"],
 				"SKYPE" => $offerObject["SKYPE"],
 				"CALLBACK_FORM" => $offerObjectContacts
@@ -1400,6 +1401,7 @@ if($object) {
 		"VIBER" => $object["VIBER"],
 		"TELEGRAM" => $object["TELEGRAM"],
 		"INSTAGRAM" => $object["INSTAGRAM"],
+		"MAX" => $object["MAX"],
 		"EMAIL" => $object["EMAIL"],
 		"SKYPE" => $object["SKYPE"],
 		"CALLBACK_FORM" => $objectContacts
@@ -1438,6 +1440,7 @@ $signedParams = $signer->sign(base64_encode(serialize($arResult["ORIGINAL_PARAME
 		CATALOG_ELEMENT_ARTICLE_OBJECT_BREAK: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_BREAK")?>',
 		CATALOG_ELEMENT_ARTICLE_OBJECT_SEE_REVIEWS: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_SEE_REVIEWS")?>',
 		CATALOG_ELEMENT_ARTICLE_OBJECT_ADD_REVIEW: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_ADD_REVIEW")?>',
+		CATALOG_ELEMENT_ARTICLE_OBJECT_MAX: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_MAX")?>',
 		CATALOG_ELEMENT_ARTICLE_OBJECT_LOADING: '<?=GetMessageJS("CT_BCE_CATALOG_OBJECT_LOADING");?>',
 		CATALOG_ELEMENT_ARTICLE_TEMPLATE_PATH: '<?=$templateFolder?>',
 		CATALOG_ELEMENT_ARTICLE_PARAMETERS: '<?=CUtil::JSEscape($signedParams)?>'

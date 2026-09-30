@@ -16,3 +16,4 @@ $MESS["OBJECT_ITEM_AFFILIATES"] = "Филиалы";
 $MESS["OBJECT_ITEM_REVIEWS"] = "Отзывы";
 $MESS["OBJECTS_SHOW_MORE_ITEMS"] = "Показать еще";
 $MESS["OBJECTS_LOADING"] = "Загрузка...";
+$MESS["OBJECT_ITEM_MAX"] = "Чат в MAX";

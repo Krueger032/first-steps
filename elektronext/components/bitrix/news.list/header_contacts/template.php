@@ -24,6 +24,7 @@ $signerParams = $signer->sign(base64_encode(serialize($arParams)), "news.list");
 		HEADER_CONTACTS_SEE_REVIEWS: '<?=GetMessageJS("HEADER_CONTACTS_SEE_REVIEWS")?>',
 		HEADER_CONTACTS_ADD_REVIEW: '<?=GetMessageJS("HEADER_CONTACTS_ADD_REVIEW")?>',
 		HEADER_CONTACTS_CALLBACK: '<?=GetMessageJS("HEADER_CONTACTS_CALLBACK")?>',
+		HEADER_CONTACTS_ITEM_MAX: '<?=GetMessageJS("HEADER_CONTACTS_ITEM_MAX")?>',
 		HEADER_CONTACTS_TEMPLATE_PATH: '<?=CUtil::JSEscape($templateFolder)?>'
 	});
 </script>
@@ -61,6 +62,7 @@ $signerParams = $signer->sign(base64_encode(serialize($arParams)), "news.list");
 				"VIBER" => $arItem["VIBER"],
 				"TELEGRAM" => $arItem["TELEGRAM"],
 				"INSTAGRAM" => $arItem["INSTAGRAM"],
+				"MAX" => $arItem["MAX"],
 				"EMAIL" => $arItem["EMAIL"],
 				"SKYPE" => $arItem["SKYPE"]
 			),

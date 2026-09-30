@@ -444,7 +444,7 @@ foreach($arResult["PROPERTIES"] as &$arProp) {
 				} elseif(in_array($arElProp["CODE"], $arDays) && !empty($arElProp["VALUE"])) {
 					$workingHoursIds[] = $arElProp["VALUE"];
 				//OBJECT_PHONE_WHATSAPP_VIBER_TELEGRAM_INSTAGRAM_EMAIL_SKYPE//
-				} elseif(($arElProp["CODE"] == "PHONE" || $arElProp["CODE"] == "WHATSAPP" || $arElProp["CODE"] == "VIBER" || $arElProp["CODE"] == "TELEGRAM" || $arElProp["CODE"] == "INSTAGRAM" || $arElProp["CODE"] == "EMAIL" || $arElProp["CODE"] == "SKYPE") && !empty($arElProp["VALUE"])) {
+				} elseif(($arElProp["CODE"] == "PHONE" || $arElProp["CODE"] == "WHATSAPP" || $arElProp["CODE"] == "VIBER" || $arElProp["CODE"] == "TELEGRAM" || $arElProp["CODE"] == "INSTAGRAM" || $arElProp["CODE"] == "MAX" || $arElProp["CODE"] == "EMAIL" || $arElProp["CODE"] == "SKYPE") && !empty($arElProp["VALUE"])) {
 					$arProp["FULL_VALUE"][$arElProp["CODE"]] = array(
 						"VALUE" => $arElProp["VALUE"],
 						"DESCRIPTION" => $arElProp["DESCRIPTION"]
@@ -892,7 +892,7 @@ if(intval($arParams["CONTACTS_IBLOCK_ID"]) > 0) {
 			} elseif(in_array($arElProp["CODE"], $arDays) && !empty($arElProp["VALUE"])) {
 				$workingHoursIds[] = $arElProp["VALUE"];
 			//CONTACTS_PHONE_WHATSAPP_VIBER_TELEGRAM_INSTAGRAM_EMAIL_SKYPE//
-			} elseif(($arElProp["CODE"] == "PHONE" || $arElProp["CODE"] == "WHATSAPP" || $arElProp["CODE"] == "VIBER" || $arElProp["CODE"] == "TELEGRAM" || $arElProp["CODE"] == "INSTAGRAM" || $arElProp["CODE"] == "EMAIL" || $arElProp["CODE"] == "SKYPE") && !empty($arElProp["VALUE"])) {
+			} elseif(($arElProp["CODE"] == "PHONE" || $arElProp["CODE"] == "WHATSAPP" || $arElProp["CODE"] == "VIBER" || $arElProp["CODE"] == "TELEGRAM" || $arElProp["CODE"] == "INSTAGRAM" || $arElProp["CODE"] == "MAX" || $arElProp["CODE"] == "EMAIL" || $arElProp["CODE"] == "SKYPE") && !empty($arElProp["VALUE"])) {
 				$arResult["CONTACTS"][$arElProp["CODE"]] = array(
 					"VALUE" => $arElProp["VALUE"],
 					"DESCRIPTION" => $arElProp["DESCRIPTION"]
@@ -1035,7 +1035,7 @@ if(!empty($arResult["OFFERS"]) && $arParams["OFFERS_VIEW"] == "OBJECTS") {
 				} elseif(in_array($arElProp["CODE"], $arDays) && !empty($arElProp["VALUE"])) {
 					$workingHoursIds[] = $arElProp["VALUE"];
 				//OBJECT_PHONE_WHATSAPP_VIBER_TELEGRAM_INSTAGRAM_EMAIL_SKYPE//
-				} elseif(($arElProp["CODE"] == "PHONE" || $arElProp["CODE"] == "WHATSAPP" || $arElProp["CODE"] == "VIBER" || $arElProp["CODE"] == "TELEGRAM" || $arElProp["CODE"] == "INSTAGRAM" || $arElProp["CODE"] == "EMAIL" || $arElProp["CODE"] == "SKYPE") && !empty($arElProp["VALUE"])) {
+				} elseif(($arElProp["CODE"] == "PHONE" || $arElProp["CODE"] == "WHATSAPP" || $arElProp["CODE"] == "VIBER" || $arElProp["CODE"] == "TELEGRAM" || $arElProp["CODE"] == "INSTAGRAM" || $arElProp["CODE"] == "MAX" || $arElProp["CODE"] == "EMAIL" || $arElProp["CODE"] == "SKYPE") && !empty($arElProp["VALUE"])) {
 					$arObjects[$arElement["ID"]][$arElProp["CODE"]] = array(
 						"VALUE" => $arElProp["VALUE"],
 						"DESCRIPTION" => $arElProp["DESCRIPTION"]
@@ -1164,6 +1164,7 @@ if(!empty($arResult["OFFERS"]) && $arParams["OFFERS_VIEW"] == "OBJECTS") {
 									"VIBER" => $arAffiliate["VIBER"],
 									"TELEGRAM" => $arAffiliate["TELEGRAM"],
 									"INSTAGRAM" => $arAffiliate["INSTAGRAM"],
+									"MAX" => $arAffiliate["MAX"],
 									"EMAIL" => $arAffiliate["EMAIL"],
 									"SKYPE" => $arAffiliate["SKYPE"],
 									"PHONE_SMS" => $arObject["PHONE_SMS"],

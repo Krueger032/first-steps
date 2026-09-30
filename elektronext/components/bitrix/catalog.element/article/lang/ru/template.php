@@ -40,3 +40,4 @@ $MESS["CT_BCE_CATALOG_OBJECT_BREAK"] = "Перерыв";
 $MESS["CT_BCE_CATALOG_OBJECT_SEE_REVIEWS"] = "Смотреть отзывы";
 $MESS["CT_BCE_CATALOG_OBJECT_ADD_REVIEW"] = "Оставить первый отзыв";
 $MESS["CT_BCE_CATALOG_OBJECT_LOADING"] = "Загрузка...";
+$MESS["CT_BCE_CATALOG_OBJECT_MAX"] = "Чат в MAX";

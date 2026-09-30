@@ -49,6 +49,7 @@ $containerName = $prefix."container-".$navParams["NavNum"];?>
 		OBJECT_ITEM_SEE_REVIEWS: '<?=GetMessageJS("OBJECT_ITEM_SEE_REVIEWS")?>',
 		OBJECT_ITEM_ADD_REVIEW: '<?=GetMessageJS("OBJECT_ITEM_ADD_REVIEW")?>',
 		OBJECTS_LOADING: '<?=GetMessageJS("OBJECTS_LOADING")?>',
+		OBJECT_ITEM_MAX: '<?=GetMessageJS("OBJECT_ITEM_MAX")?>',
 		OBJECTS_TEMPLATE_PATH: '<?=CUtil::JSEscape($templateFolder)?>'
 	});
 </script>
@@ -133,6 +134,7 @@ $containerName = $prefix."container-".$navParams["NavNum"];?>
 					"VIBER" => $arItem["VIBER"],
 					"TELEGRAM" => $arItem["TELEGRAM"],
 					"INSTAGRAM" => $arItem["INSTAGRAM"],
+					"MAX" => $arItem["MAX"],
 					"EMAIL" => $arItem["EMAIL"],
 					"SKYPE" => $arItem["SKYPE"],
 					"CALLBACK_FORM" => $arItem["PHONE_SMS"] || $arItem["EMAIL_EMAIL"] ? true : false

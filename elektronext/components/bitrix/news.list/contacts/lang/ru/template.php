@@ -12,3 +12,4 @@ $MESS["CONTACTS_ITEM_ADD_REVIEW"] = "Оставить первый отзыв";
 $MESS["CONTACTS_ITEM_CALLBACK"] = "Заказать звонок";
 $MESS["CONTACTS_ITEM_OBJECT_MORE"] = "Подробнее";
 $MESS["CONTACTS_LOADING"] = "Загрузка...";
+$MESS["CONTACTS_ITEM_MAX"] = "Чат в MAX";

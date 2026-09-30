@@ -80,6 +80,15 @@ $elementDeleteParams = array("CONFIRM" => Loc::getMessage("CONTACTS_ITEM_DELETE_
 								<?}
 								unset($key, $val);
 							}
+							if(!empty($arItem["MAX"])) {
+								foreach($arItem["MAX"]["VALUE"] as $key => $val) {?>
+									<div class="contacts-item-row contacts-item-max">
+										<div class="contacts-item-icon"><i class="ri-max"></i></div>
+										<a target="_blank" class="contacts-item-text contacts-item-link" href="https://max.ru/u/<?=$val?>"><?=Loc::getMessage("CONTACTS_ITEM_MAX").(!empty($arItem["MAX"]["DESCRIPTION"][$key]) ? "<span class='contacts-item-descr'>".$arItem["MAX"]["DESCRIPTION"][$key]."</span>" : "")?></a>
+									</div>
+								<?}
+								unset($key, $val);
+							}
 							if(!empty($arItem["EMAIL"])) {
 								foreach($arItem["EMAIL"]["VALUE"] as $key => $val) {?>
 									<div class="contacts-item-row contacts-item-email">

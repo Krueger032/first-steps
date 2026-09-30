@@ -206,6 +206,7 @@
 				viber: {},
 				telegram: {},
 				instagram: {},
+				max: {},
 				email: {},
 				skype: {},
 				callbackForm: false,
@@ -239,6 +240,8 @@
 				this.item.telegramDescription = arParams.ITEM.TELEGRAM.DESCRIPTION;
 				this.item.instagram = arParams.ITEM.INSTAGRAM.VALUE;
 				this.item.instagramDescription = arParams.ITEM.INSTAGRAM.DESCRIPTION;
+				this.item.max = arParams.ITEM.MAX.VALUE;
+				this.item.maxDescription = arParams.ITEM.MAX.DESCRIPTION;
 				this.item.email = arParams.ITEM.EMAIL.VALUE;
 				this.item.emailDescription = arParams.ITEM.EMAIL.DESCRIPTION;
 				this.item.skype = arParams.ITEM.SKYPE.VALUE;
@@ -361,7 +364,7 @@
 			adjustContacts: function() {
 				var content = '';
 				
-				if(this.item.address || this.item.workingHours || this.item.workingHoursToday || this.item.phone || this.item.whatsapp || this.item.viber || this.item.telegram || this.item.instagram || this.item.email || this.item.skype || !!this.item.btnAddReview || this.item.reviewsCount > 0) {
+				if(this.item.address || this.item.workingHours || this.item.workingHoursToday || this.item.phone || this.item.whatsapp || this.item.viber || this.item.telegram || this.item.instagram || this.item.max || this.item.email || this.item.skype || !!this.item.btnAddReview || this.item.reviewsCount > 0) {
 					content += '<div class="slide-panel__contacts" id="' + this.visual.ID + '_contacts">';
 
 						if(this.item.address) {
@@ -556,6 +559,24 @@
 												content += '<a target="_blank" class="slide-panel__contacts-item__link" href="https://www.instagram.com/' + this.item.instagram[i] + '">' + this.item.instagram[i] + '</a>';
 												if(this.item.instagramDescription.hasOwnProperty(i) && this.item.instagramDescription[i].length > 0) {
 													content += '<span class="slide-panel__contacts-item__descr">' + this.item.instagramDescription[i] + '</span>';
+												}
+											content += '</div>';
+										content += '</div>';
+									content += '</div>';
+								}
+							}
+						}
+
+						if(this.item.max) {
+							for(var i in this.item.max) {
+								if(this.item.max.hasOwnProperty(i)) {
+									content += '<div class="slide-panel__contacts-item">';
+										content += '<div class="slide-panel__contacts-item__block">';
+											content += '<div class="slide-panel__contacts-item__icon"><i class="ri-max"></i></div>';
+											content += '<div class="slide-panel__contacts-item__text">';
+												content += '<a target="_blank" class="slide-panel__contacts-item__link" href="https://max.ru/u/' + this.item.max[i] + '">' + BX.message('OBJECT_ITEM_MAX') + '</a>';
+												if(this.item.maxDescription.hasOwnProperty(i) && this.item.maxDescription[i].length > 0) {
+													content += '<span class="slide-panel__contacts-item__descr">' + this.item.maxDescription[i] + '</span>';
 												}
 											content += '</div>';
 										content += '</div>';

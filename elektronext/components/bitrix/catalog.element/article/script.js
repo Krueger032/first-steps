@@ -123,6 +123,7 @@
 			viber: {},
 			telegram: {},
 			instagram: {},
+			max: {},
 			email: {},
 			skype: {},
 			callbackForm: false,
@@ -144,6 +145,7 @@
 			viber: {},
 			telegram: {},
 			instagram: {},
+			max: {},
 			email: {},
 			skype: {},
 			callbackForm: false,
@@ -1165,6 +1167,11 @@
 				if(this.params.OBJECT.INSTAGRAM) {
 					this.object.instagram = this.params.OBJECT.INSTAGRAM.VALUE;
 					this.object.instagramDescription = this.params.OBJECT.INSTAGRAM.DESCRIPTION;
+				}
+				
+				if(this.params.OBJECT.MAX) {
+					this.object.max = this.params.OBJECT.MAX.VALUE;
+					this.object.maxDescription = this.params.OBJECT.MAX.DESCRIPTION;
 				}   
 				
 				if(this.params.OBJECT.EMAIL) {
@@ -1990,6 +1997,8 @@
 					this.skuItemObject.telegramDescription = this.skuItem.OBJECT.TELEGRAM.DESCRIPTION ? this.skuItem.OBJECT.TELEGRAM.DESCRIPTION : {};
 					this.skuItemObject.instagram = this.skuItem.OBJECT.INSTAGRAM.VALUE ? this.skuItem.OBJECT.INSTAGRAM.VALUE : {};
 					this.skuItemObject.instagramDescription = this.skuItem.OBJECT.INSTAGRAM.DESCRIPTION ? this.skuItem.OBJECT.INSTAGRAM.DESCRIPTION : {};
+					this.skuItemObject.max = this.skuItem.OBJECT.MAX.VALUE ? this.skuItem.OBJECT.MAX.VALUE : {};
+					this.skuItemObject.maxDescription = this.skuItem.OBJECT.MAX.DESCRIPTION ? this.skuItem.OBJECT.MAX.DESCRIPTION : {};
 					this.skuItemObject.email = this.skuItem.OBJECT.EMAIL.VALUE ? this.skuItem.OBJECT.EMAIL.VALUE : {};
 					this.skuItemObject.emailDescription = this.skuItem.OBJECT.EMAIL.DESCRIPTION ? this.skuItem.OBJECT.EMAIL.DESCRIPTION : {};
 					this.skuItemObject.skype = this.skuItem.OBJECT.SKYPE.VALUE ? this.skuItem.OBJECT.SKYPE.VALUE : {};
@@ -4457,7 +4466,7 @@
 		adjustObjectContacts: function(sPanelContent) {
 			var content = '';
 			
-			if(this.object.address || Object.keys(this.object.workingHours).length > 0 || this.object.workingHoursToday || Object.keys(this.object.phone).length > 0 || Object.keys(this.object.whatsapp).length > 0 || Object.keys(this.object.viber).length > 0 || Object.keys(this.object.telegram).length > 0 || Object.keys(this.object.instagram).length > 0 || Object.keys(this.object.email).length > 0 || Object.keys(this.object.skype).length > 0 || !!this.object.btnAddReview || this.object.reviewsCount > 0) {
+			if(this.object.address || Object.keys(this.object.workingHours).length > 0 || this.object.workingHoursToday || Object.keys(this.object.phone).length > 0 || Object.keys(this.object.whatsapp).length > 0 || Object.keys(this.object.viber).length > 0 || Object.keys(this.object.telegram).length > 0 || Object.keys(this.object.instagram).length > 0 || Object.keys(this.object.max).length > 0 || Object.keys(this.object.email).length > 0 || Object.keys(this.object.skype).length > 0 || !!this.object.btnAddReview || this.object.reviewsCount > 0) {
 				content += '<div class="slide-panel__contacts" id="' + this.visual.ID + '_contacts">';
 
 					if(this.object.address) {
@@ -4659,6 +4668,24 @@
 							}
 						}
 					}
+
+					if(Object.keys(this.object.max).length > 0) {
+						for(var i in this.object.max) {
+							if(this.object.max.hasOwnProperty(i)) {
+								content += '<div class="slide-panel__contacts-item">';
+									content += '<div class="slide-panel__contacts-item__block">';
+										content += '<div class="slide-panel__contacts-item__icon"><i class="ri-max"></i></div>';
+										content += '<div class="slide-panel__contacts-item__text">';
+											content += '<a target="_blank" class="slide-panel__contacts-item__link" href="https://max.ru/u/' + this.object.max[i] + '">' + BX.message('CATALOG_ELEMENT_ARTICLE_OBJECT_MAX') + '</a>';
+											if(this.object.maxDescription.hasOwnProperty(i) && this.object.maxDescription[i].length > 0) {
+												content += '<span class="slide-panel__contacts-item__descr">' + this.object.maxDescription[i] + '</span>';
+											}
+										content += '</div>';
+									content += '</div>';
+								content += '</div>';
+							}
+						}
+					}
 					
 					if(Object.keys(this.object.email).length > 0) {
 						for(var i in this.object.email) {
@@ -4723,7 +4750,7 @@
 		adjustSkuItemObjectContacts: function(sPanelContent) {
 			var content = '';
 			
-			if(this.skuItemObject.address || Object.keys(this.skuItemObject.workingHours).length > 0 || this.skuItemObject.workingHoursToday || Object.keys(this.skuItemObject.phone).length > 0 || Object.keys(this.skuItemObject.whatsapp).length > 0 || Object.keys(this.skuItemObject.viber).length > 0 || Object.keys(this.skuItemObject.telegram).length > 0 || Object.keys(this.skuItemObject.instagram).length > 0 || Object.keys(this.skuItemObject.email).length > 0 || Object.keys(this.skuItemObject.skype).length > 0 || !!this.skuItemObject.btnAddReview || this.skuItemObject.reviewsCount > 0) {
+			if(this.skuItemObject.address || Object.keys(this.skuItemObject.workingHours).length > 0 || this.skuItemObject.workingHoursToday || Object.keys(this.skuItemObject.phone).length > 0 || Object.keys(this.skuItemObject.whatsapp).length > 0 || Object.keys(this.skuItemObject.viber).length > 0 || Object.keys(this.skuItemObject.telegram).length > 0 || Object.keys(this.skuItemObject.instagram).length > 0 || Object.keys(this.skuItemObject.max).length > 0 || Object.keys(this.skuItemObject.email).length > 0 || Object.keys(this.skuItemObject.skype).length > 0 || !!this.skuItemObject.btnAddReview || this.skuItemObject.reviewsCount > 0) {
 				content += '<div class="slide-panel__contacts" id="' + this.visual.ID + '_' + this.skuItem.ID + '_contacts">';
 
 					if(this.skuItemObject.address) {
@@ -4918,6 +4945,24 @@
 											content += '<a target="_blank" class="slide-panel__contacts-item__link" href="https://www.instagram.com/' + this.skuItemObject.instagram[i] + '">' + this.skuItemObject.instagram[i] + '</a>';
 											if(this.skuItemObject.instagramDescription.hasOwnProperty(i) && this.skuItemObject.instagramDescription[i].length > 0) {
 												content += '<span class="slide-panel__contacts-item__descr">' + this.skuItemObject.instagramDescription[i] + '</span>';
+											}
+										content += '</div>';
+									content += '</div>';
+								content += '</div>';
+							}
+						}
+					}
+
+					if(Object.keys(this.skuItemObject.max).length > 0) {
+						for(var i in this.skuItemObject.max) {
+							if(this.skuItemObject.max.hasOwnProperty(i)) {
+								content += '<div class="slide-panel__contacts-item">';
+									content += '<div class="slide-panel__contacts-item__block">';
+										content += '<div class="slide-panel__contacts-item__icon"><i class="ri-max"></i></div>';
+										content += '<div class="slide-panel__contacts-item__text">';
+											content += '<a target="_blank" class="slide-panel__contacts-item__link" href="https://max.ru/u/' + this.skuItemObject.max[i] + '">' + BX.message('CATALOG_ELEMENT_ARTICLE_OBJECT_MAX') + '</a>';
+											if(this.skuItemObject.maxDescription.hasOwnProperty(i) && this.skuItemObject.maxDescription[i].length > 0) {
+												content += '<span class="slide-panel__contacts-item__descr">' + this.skuItemObject.maxDescription[i] + '</span>';
 											}
 										content += '</div>';
 									content += '</div>';
