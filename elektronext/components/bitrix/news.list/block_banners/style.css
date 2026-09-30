@@ -1,0 +1,174 @@
+.banners-wrapper{
+	width: 100%;
+}
+
+.banners-items{
+	width: 100%;
+	display: table;
+}
+
+.banners-item-container{
+	display: table-cell;
+}
+
+.banners-item-container:link,
+.banners-item-container:visited{
+	text-decoration: none;		
+}
+
+.banners-item{	
+	height: 350px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.banners-item-pic,
+.banners-item-block-container,
+.banners-item-block-container:before,
+.banners-item-block-container:after,
+.banners-item-block{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.banners-item-pic{
+	background-color: #566b75;
+	z-index: 197;
+}
+
+.banners-item-pic > img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	left: 50%;
+	top: 50%;	
+	z-index: 198;
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);	
+	-webkit-transition: -webkit-transform 0.45s ease 0s;
+	-moz-transition: -moz-transform 0.45s ease 0s;
+	-o-transition: -o-transform 0.45s ease 0s;
+	transition: transform 0.45s ease 0s;
+}
+
+.banners-item-pic > img[data-lazyload-src]{
+	-webkit-transition: -webkit-transform 0.45s ease 0s, opacity 0.3s ease 0s;
+	-moz-transition: -moz-transform 0.45s ease 0s, opacity 0.3s ease 0s;
+	-o-transition: -o-transform 0.45s ease 0s, opacity 0.3s ease 0s;
+	transition: transform 0.45s ease 0s, opacity 0.3s ease 0s;
+}
+
+.bx-no-touch .banners-item-container:hover .banners-item-pic > img,
+.bx-touch .banners-item-container:active .banners-item-pic > img{
+	-moz-transform: translate(-50%, -50%) scale(1.1) rotate(0.02deg);
+	-o-transform: translate(-50%, -50%) scale(1.1);
+	-webkit-transform: translate(-50%, -50%) scale(1.1);
+	transform: translate(-50%, -50%) scale(1.1);
+}
+
+.banners-item-block-container{	
+	z-index: 199;
+}
+
+.banners-item-block-container:before{
+	content: "";
+	background: -moz-linear-gradient(top, rgba(38, 50, 56, 0) 0%, #263238 100%);
+	background: -webkit-linear-gradient(top, rgba(38, 50, 56, 0) 0%, #263238 100%);
+	background: linear-gradient(to bottom, rgba(38, 50, 56, 0) 0%, #263238 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#263238", endColorstr="#263238", GradientType=0);
+}
+
+.banners-item-block-container:after{
+	opacity: 0;
+	content: "";
+	background: -moz-linear-gradient(top, rgba(38, 50, 56, 0.5) 0%, #6639b6 100%);
+	background: -webkit-linear-gradient(top, rgba(38, 50, 56, 0.5) 0%, #6639b6 100%);
+	background: linear-gradient(to bottom, rgba(38, 50, 56, 0.5) 50%, #6639b6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#80263238", endColorstr="#6639b6", GradientType=0);
+	-webkit-transition: opacity 0.3s ease 0s;
+	-moz-transition: opacity 0.3s ease 0s;
+	-o-transition: opacity 0.3s ease 0s;
+	transition: opacity 0.3s ease 0s;
+}
+
+.bx-no-touch .banners-item-container:hover .banners-item-block-container:after,
+.bx-touch .banners-item-container:active .banners-item-block-container:after{
+	opacity: 1;
+}
+
+.banners-item-block{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 32px;
+	z-index: 200;
+}
+
+.banners-item-icon{
+	margin-bottom: 32px;
+}
+
+.banners-item-icon > i{
+	font-size: 150px;
+	color: #fff;
+}
+
+.banners-item-title,
+.banners-item-text{
+	max-width: 100%;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.banners-item-title{
+	font-family: "Museo Sans Cyrl 500", sans-serif;
+	font-size: 30px;	
+	color: #fff;
+	line-height: 36px;
+}
+
+.banners-item-text{	
+	color: #fff;	
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.banners-item-container{
+		display: table-row;
+	}
+
+	.banners-item{	
+		height: 178px;
+	}
+
+	.banners-item-block{
+		padding: 18px;
+	}
+	
+	.banners-item-icon{
+		margin-bottom: 18px;
+	}
+
+	.banners-item-icon > i{
+		font-size: 75px;
+	}
+
+	.banners-item-title{
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	.banners-item-text{
+		margin-top: 6px;
+	}
+}

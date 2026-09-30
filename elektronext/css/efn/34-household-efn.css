@@ -1,0 +1,90 @@
+@font-face {
+    font-family: '34-household-efn';
+    src:  url('../../fonts/efn/34-household-efn.eot?3lcaux');
+    src:  url('../../fonts/efn/34-household-efn.eot?3lcaux#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/34-household-efn.ttf?3lcaux') format('truetype'),
+    url('../../fonts/efn/34-household-efn.woff?3lcaux') format('woff'),
+    url('../../fonts/efn/34-household-efn.svg?3lcaux#34-household-efn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="efn34-"], [class*=" efn34-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '34-household-efn' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.efn34-household-chemicals:before {
+    content: "\e900";
+}
+.efn34-washing-powder:before {
+    content: "\e901";
+}
+.efn34-fabric-softener:before {
+    content: "\e902";
+}
+.efn34-detergent-canister:before {
+    content: "\e903";
+}
+.efn34-cleaning-spray:before {
+    content: "\e904";
+}
+.efn34-floor-cleaner:before {
+    content: "\e905";
+}
+.efn34-liquid-pipe-cleaner:before {
+    content: "\e906";
+}
+.efn34-toilet-cleaner:before {
+    content: "\e907";
+}
+.efn34-dishwashing-liquid:before {
+    content: "\e908";
+}
+.efn34-sponge:before {
+    content: "\e909";
+}
+.efn34-air-freshener:before {
+    content: "\e90a";
+}
+.efn34-flat-mop:before {
+    content: "\e90b";
+}
+.efn34-bucket:before {
+    content: "\e90c";
+}
+.efn34-scoop:before {
+    content: "\e90d";
+}
+.efn34-broom:before {
+    content: "\e90e";
+}
+.efn34-classic-mop:before {
+    content: "\e90f";
+}
+.efn34-cleaning-brush:before {
+    content: "\e910";
+}
+.efn34-cleaning-cloths:before {
+    content: "\e911";
+}
+.efn34-latex-gloves:before {
+    content: "\e912";
+}
+.efn34-trash-bag:before {
+    content: "\e913";
+}
+.efn34-garbage-container:before {
+    content: "\e914";
+}

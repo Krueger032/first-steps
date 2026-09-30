@@ -1,0 +1,423 @@
+/***ITEM***/
+.contacts-item{
+	width: 100vw;	
+	margin-left: -moz-calc((100vw - 100%) / -2);
+	margin-left: -webkit-calc((100vw  - 100%) / -2);
+	margin-left: calc((100vw - 100%) / -2);
+	margin-top: -40px;
+	position: relative;
+}
+
+.slide-menu-interface-2-0-1 .contacts-item{
+	width: -moz-calc(100vw - 276px);
+	width: -webkit-calc(100vw - 276px);
+	width: calc(100vw - 276px);	
+	margin-left: -moz-calc((100vw - 276px - 100%) / -2);
+	margin-left: -webkit-calc((100vw - 276px - 100%) / -2);
+	margin-left: calc((100vw - 276px - 100%) / -2);
+}
+
+.slide-menu-option-1-active .contacts-item{
+	width: -moz-calc(100vw - 324px);
+	width: -webkit-calc(100vw - 324px);
+	width: calc(100vw - 324px);	
+	margin-left: -moz-calc((100vw - 324px - 100%) / -2);
+	margin-left: -webkit-calc((100vw - 324px - 100%) / -2);
+	margin-left: calc((100vw - 324px - 100%) / -2);
+}
+
+.slide-menu-interface-2-0-1-inner .contacts-item,
+.slide-menu-option-2 .contacts-item{
+	width: -moz-calc(100vw - 72px);
+	width: -webkit-calc(100vw - 72px);
+	width: calc(100vw - 72px);	
+	margin-left: -moz-calc((100vw - 72px - 100%) / -2);
+	margin-left: -webkit-calc((100vw - 72px - 100%) / -2);
+	margin-left: calc((100vw - 72px - 100%) / -2);
+}
+
+/***ITEM_CAPTION***/
+.contacts-item-caption{	
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-bottom: 32px;
+	position: relative;
+	overflow: hidden;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 24px rgba(38, 50, 56, 0.16);
+	-moz-box-shadow: 0 0 24px rgba(38, 50, 56, 0.16);
+	box-shadow: 0 0 24px rgba(38, 50, 56, 0.16);
+	background: #fff;
+	z-index: 200;
+}
+
+/***ITEM_TITLE***/
+.contacts-item-title{
+	padding: 24px 32px;
+	font-family: "Museo Sans Cyrl 500", sans-serif;
+	font-size: 20px;
+	line-height: 24px;
+	text-transform: uppercase;
+	background: #f1f6f7;
+}
+
+/***ITEM_ROW***/
+.contacts-item-row{
+	display: flex;
+	align-items: center;
+	padding: 16px 32px 15px;
+	border-bottom: 1px solid #e3ecef;
+}
+
+/***ITEM_ICON***/
+.contacts-item-icon{
+	width: 24px;
+	min-width: 24px;
+	margin-right: 16px;
+}
+
+.contacts-item-address .contacts-item-icon{
+	align-self: flex-start;
+}
+
+.contacts-item-icon > i{
+	font-size: 24px;
+	color: #b2c7cb;
+}
+
+/***ITEM_LOADER***/
+.contacts-item-loader{
+	width: 24px;
+	height: 24px;
+	position: relative;
+}
+
+.contacts-item-loader:after,
+.contacts-item-loader > div,
+.contacts-item-loader > div > span,
+.contacts-item-loader > div > span:after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.contacts-item-loader:after{
+	content: "";
+	border: 3px solid #e3ecef;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-khtml-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.contacts-item-loader > div{
+	z-index: 1;
+	-webkit-animation: loaderRotate1 4.8s linear infinite;
+	animation: loaderRotate1 4.8s linear infinite;
+}
+
+.contacts-item-loader > div > span{
+	clip: rect(0, 24px, 24px, 12px);
+	-webkit-animation: loaderRotate2 1.2s linear infinite;
+	animation: loaderRotate2 1.2s linear infinite;
+}
+
+.contacts-item-loader > div > span:after{
+	content: "";
+	clip: rect(0, 24px, 24px, 12px);
+	border: 3px solid #6639b6;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-khtml-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-animation: loaderRotate3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+	animation: loaderRotate3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+/***ITEM_TEXT***/
+.contacts-item-text{
+	width: 100%;
+}
+
+.contacts-item-link:link,
+.contacts-item-link:visited{
+	color: #263238;
+	text-decoration: none;
+}
+
+.contacts-item-phone .contacts-item-link,
+.contacts-item-whatsapp .contacts-item-link,
+.contacts-item-viber .contacts-item-link{
+	font-family: "Museo Sans Cyrl 700", sans-serif;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.bx-no-touch .contacts-item-viber .contacts-item-link + .contacts-item-link,
+.bx-touch .contacts-item-viber .contacts-item-link{
+	display: none;
+}
+
+.bx-touch .contacts-item-viber .contacts-item-link + .contacts-item-link{
+	display: block;
+}
+
+.contacts-item-descr{
+	display: block;
+	font-family: "Museo Sans Cyrl 300", sans-serif;
+	font-size: 14px;
+	color: #78909c;
+	line-height: 17px;
+}
+
+/***ITEM_WORKING_HOURS***/
+.contacts-item-working-hours-hidden{
+	display: none;
+}
+
+.contacts-item-working-hours-all,
+.contacts-item-working-hours-today{
+	width: 100%;
+}
+
+.contacts-item-working-hours-today{
+	display: flex;
+}
+
+.contacts-item-working-hours-today + .contacts-item-working-hours-today{
+	margin-top: 11px;
+}
+
+.contacts-item-today-container{
+	width: 102px;
+	min-width: 102px;
+}
+
+.contacts-item-today{
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.contacts-item-today-title{
+	width: 100%;
+	text-align: right;
+}
+
+.contacts-item-today-status{
+	width: 5px;
+	height: 5px;
+	position: absolute;
+	right: -12px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+.contacts-item-today-status-open{
+	background: #3ac769;
+}
+
+.contacts-item-today-status-closed{
+	background: #ed4343;
+}
+
+.contacts-item-hours-break{
+	width: 100%;
+	margin-left: 19px;
+}
+
+.contacts-item-hours{
+	display: flex;
+	align-items: center;	
+}
+
+.contacts-item-hours-first{
+	margin-top: 4px;
+}
+
+.contacts-item-hours-title{
+	width: 100%;
+}
+
+.contacts-item-hours-icon{
+	width: 16px;
+	min-width: 16px;
+	margin-left: 16px;
+}
+
+.contacts-item-hours-icon > i{
+	font-size: 16px;
+	color: #b2c7cb;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+	cursor: pointer;
+}
+
+.bx-no-touch .contacts-item-hours-icon > i:hover,
+.bx-touch .contacts-item-hours-icon > i:active{
+	color: #6639b6;
+}
+
+.contacts-item-break{
+	font-size: 14px;
+	color: #78909c;
+	line-height: 17px;
+}
+
+/***ITEM_RATING_REVIEWS_COUNT***/
+.contacts-item-rating-link{
+	width: 100%;
+	display: flex;	
+	align-items: center;
+	justify-content: space-between;
+}
+
+.contacts-item-rating-link:link,
+.contacts-item-rating-link:visited{
+	text-decoration: none;
+}
+
+.contacts-item-rating{
+	display: flex;
+	align-items: center;
+}
+
+.contacts-item-rating-val{
+	margin-right: 6px;
+	padding: 4px 8px 3px;
+	font-family: "Museo Sans Cyrl 500", sans-serif;
+	font-size: 14px;
+	color: #fff;
+	line-height: 17px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	background: #008d55;
+}
+
+.contacts-item-rating-val[data-rate="1"]{
+	background: #d03913;
+}
+
+.contacts-item-rating-val[data-rate="2"]{
+	background: #ca6c00;
+}
+
+.contacts-item-rating-val[data-rate="3"]{
+	background: #a58900;
+}
+
+.contacts-item-rating-val[data-rate="4"]{
+	background: #568d00;
+}
+
+.contacts-item-rating-reviews-count{
+	color: #263238;
+}
+
+.contacts-item-rating-text{
+	color: #78909c;
+}
+
+/***ITEM_BTN***/
+.contacts-item-btn{
+	padding: 18px 32px 0;
+}
+
+.contacts-item-btn > .btn{
+	width: 100%;
+}
+
+/***ITEM_MAP***/
+.contacts-item-map{	
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	/***ITEM***/
+	.contacts-item,
+	.slide-menu-interface-2-0-1 .contacts-item,
+	.slide-menu-interface-2-0-1-inner .contacts-item,
+	.slide-menu-option-1-active .contacts-item,
+	.slide-menu-option-2 .contacts-item{
+		width: unset;
+		margin: 0 -18px;
+		position: unset;
+	}
+
+	/***ITEM_CAPTION***/
+	.contacts-item-caption{	
+		margin: 0 -18px;
+		position: unset;
+		overflow: visible;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		-khtml-border-radius: 0;
+		border-radius: 0;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		background: none;
+		z-index: unset;
+	}
+
+	/***ITEM_MAP***/
+	.contacts-item-map{	
+		height: 320px;
+		position: unset;
+	}
+}
+
+/***DESKTOPS_LARGE_DESKTOPS***/
+@media(min-width: 1043px) and (max-width: 1271px){
+	/***ITEM***/
+	.slide-menu-interface-2-0-1 .contacts-item{
+		width: -moz-calc(100vw - 72px);
+		width: -webkit-calc(100vw - 72px);
+		width: calc(100vw - 72px);	
+		margin-left: -moz-calc((100vw - 72px - 100%) / -2);
+		margin-left: -webkit-calc((100vw - 72px - 100%) / -2);
+		margin-left: calc((100vw - 72px - 100%) / -2);
+	}
+
+	.slide-menu-option-1-active .contacts-item{
+		width: 100vw;	
+		margin-left: -moz-calc((100vw - 100%) / -2);
+		margin-left: -webkit-calc((100vw  - 100%) / -2);
+		margin-left: calc((100vw - 100%) / -2);
+	}
+}
+
+@media(min-width: 1272px) and (max-width: 1545px){
+	/***ITEM***/
+	.slide-menu-interface-2-0-1 .contacts-item{
+		width: -moz-calc(100vw - 72px);
+		width: -webkit-calc(100vw - 72px);
+		width: calc(100vw - 72px);	
+		margin-left: -moz-calc((100vw - 72px - 100%) / -2);
+		margin-left: -webkit-calc((100vw - 72px - 100%) / -2);
+		margin-left: calc((100vw - 72px - 100%) / -2);
+	}
+
+	.slide-menu-option-1-active .contacts-item{
+		width: 100vw;	
+		margin-left: -moz-calc((100vw - 100%) / -2);
+		margin-left: -webkit-calc((100vw  - 100%) / -2);
+		margin-left: calc((100vw - 100%) / -2);
+	}
+}

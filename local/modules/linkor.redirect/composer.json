@@ -1,8 +1,0 @@
-{
-	"name": "just-guy/linkor.redirect",
-	"description": "SEO редиректы",
-	"type": "bitrix-module",
-	"license": "MIT",
-	"minimum-stability": "stable",
-	"prefer-stable": true
-}

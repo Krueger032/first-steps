@@ -1,0 +1,8 @@
+<?
+$MESS["CT_BCE_CATALOG_REVIEW"] = "отзыв";
+$MESS["CT_BCE_CATALOG_REVIEWS_1"] = "отзыва";
+$MESS["CT_BCE_CATALOG_REVIEWS_2"] = "отзывов";
+$MESS["CT_BCE_CATALOG_PRICE_NOT_SET"] = "Не указана цена";
+$MESS["CT_BCE_CATALOG_OBJECT_24_HOURS"] = "Круглосуточно";
+$MESS["CT_BCE_CATALOG_OBJECT_OFF"] = "Выходной";
+$MESS["CT_BCE_CATALOG_OBJECT_BREAK"] = "Перерыв";

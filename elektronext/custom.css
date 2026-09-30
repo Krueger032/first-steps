@@ -1,0 +1,58 @@
+/***CUSTOM CSS RULES FOR YOUR SITE***/
+
+a.widget {
+	width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 24px;
+    bottom: 70px;
+    z-index: 202;
+	color: #229ED9;
+	background: white;
+    border-radius: 50%;
+	text-decoration: none;
+}
+
+a.widget:hover {
+	opacity: 0.7;
+}
+
+.widget i {
+	font-size: 40px;
+}
+
+@media(max-width: 1042px){
+	a.widget {
+	    right: 20px;
+		bottom: 130px;
+	}
+
+	/*YANDEX_MOBILE_PAGES_FIX*/
+	.top-panel__catalog-icon-title,
+    .top-panel__search-btn-title,
+    .mini-cart__title,
+    .top-panel__user-title,
+	.mini-cart__count,
+	img,
+	.catalog-menu-text,
+	.catalog-compare-count,
+	.card.one_in_row_list .product-item-marker-14px>span,
+	.card.one_in_row_list .product-item-marker-24px>span,
+	.card.one_in_row_list .product-item-marker>span,
+	.card.two_in_row .product-item-marker-14px>span,
+	.card.two_in_row .product-item-marker-24px>span,
+	.card.two_in_row .product-item-marker>span,
+	.list .product-item-marker-14px>span,
+	.list .product-item-marker-24px>span,
+	.list .product-item-marker>span,
+	.bx-filter-count,
+	.catalog-section-item__count,
+	html {
+        font-size: 12px;
+
+    }
+}

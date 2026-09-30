@@ -1,0 +1,21 @@
+<?
+$MESS["CP_BNL_SORT_ASC"] = "по возрастанию";
+$MESS["CP_BNL_SORT_DESC"] = "по убыванию";
+$MESS["CP_BNL_USE_REVIEW"] = "Показывать отзывы";
+$MESS["CP_BNL_REVIEWS_IBLOCK_TYPE"] = "Тип инфоблока отзывов";
+$MESS["CP_BNL_REVIEWS_IBLOCK_ID"] = "ID инфоблока отзывов";
+$MESS["CP_BNL_REVIEWS_PAGE_LINK"] = "Ссылка на страницу с отзывами";
+$MESS["CP_BNL_SHOW_MAP"] = "Показывать карту";
+$MESS["CP_BNL_SHOW_OBJECTS"] = "Показывать объекты";
+$MESS["CP_BNL_OBJECTS_TITLE"] = "Заголовок объектов";
+$MESS["CP_BNL_OBJECTS_IBLOCK_TYPE"] = "Тип инфоблока объектов";
+$MESS["CP_BNL_OBJECTS_IBLOCK_ID"] = "ID инфоблока объектов";
+$MESS["CP_BNL_OBJECTS_NEWS_COUNT"] = "Количество выводимых объектов";
+$MESS["CP_BNL_OBJECTS_SORT_BY1"] = "Поле для сортировки объектов";
+$MESS["CP_BNL_OBJECTS_SORT_ORDER1"] = "Порядок сортировки объектов";
+$MESS["CP_BNL_OBJECTS_SORT_BY2"] = "Поле для второй сортировки объектов";
+$MESS["CP_BNL_OBJECTS_SORT_ORDER2"] = "Порядок второй сортировки объектов";
+$MESS["CP_BNL_OBJECTS_PROPERTY_CODE"] = "Свойства объектов";
+$MESS["CP_BNL_OBJECTS_USE_REVIEW"] = "Показывать отзывы объекта";
+$MESS["CP_BNL_OBJECTS_REVIEWS_IBLOCK_TYPE"] = "Тип инфоблока отзывов";
+$MESS["CP_BNL_OBJECTS_REVIEWS_IBLOCK_ID"] = "ID инфоблока отзывов";

@@ -1,0 +1,252 @@
+@font-face {
+  font-family: '07-building-materials-efn';
+  src:  url('../../fonts/efn/07-building-materials-efn.eot?yijdju');
+  src:  url('../../fonts/efn/07-building-materials-efn.eot?yijdju#iefix') format('embedded-opentype'),
+  url('../../fonts/efn/07-building-materials-efn.ttf?yijdju') format('truetype'),
+  url('../../fonts/efn/07-building-materials-efn.woff?yijdju') format('woff'),
+  url('../../fonts/efn/07-building-materials-efn.svg?yijdju#07-building-materials-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn07-"], [class*=" efn07-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '07-building-materials-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn07-home-building:before {
+  content: "\e936";
+}
+.efn07-home-construction:before {
+  content: "\e937";
+}
+.efn07-home-repair:before {
+  content: "\e938";
+}
+.efn07-silicate-brick:before {
+  content: "\e900";
+}
+.efn07-facing-brick:before {
+  content: "\e901";
+}
+.efn07-block:before {
+  content: "\e902";
+}
+.efn07-hollow-block:before {
+  content: "\e903";
+}
+.efn07-lego-cement-brick:before {
+  content: "\e904";
+}
+.efn07-bricks:before {
+  content: "\e905";
+}
+.efn07-cement-bag:before {
+  content: "\e906";
+}
+.efn07-sand:before {
+  content: "\e907";
+}
+.efn07-concrete-mixer:before {
+  content: "\e908";
+}
+.efn07-construction-helmet:before {
+  content: "\e909";
+}
+.efn07-drywall:before {
+  content: "\e90a";
+}
+.efn07-extruded-polystyrene-foam-board:before {
+  content: "\e935";
+}
+.efn07-osb-3-board:before {
+  content: "\e939";
+}
+.efn07-construction-board:before {
+  content: "\e93f";
+}
+.efn07-building-board:before {
+  content: "\e93e";
+}
+.efn07-acoustic-panel:before {
+  content: "\e93a";
+}
+.efn07-drywall-profile:before {
+  content: "\e934";
+}
+.efn07-corner-bead:before {
+  content: "\e90b";
+}
+.efn07-expansion-bolt-shield:before {
+  content: "\e940";
+}
+.efn07-screw:before {
+  content: "\e90c";
+}
+.efn07-mineral-wool-pack:before {
+  content: "\e930";
+}
+.efn07-stone-wool:before {
+  content: "\e932";
+}
+.efn07-rainproof-facade-membrane:before {
+  content: "\e931";
+}
+.efn07-vapor-proof-film:before {
+  content: "\e933";
+}
+.efn07-reinforced-concrete-slab:before {
+  content: "\e90d";
+}
+.efn07-fiberglass-mesh-roll:before {
+  content: "\e941";
+}
+.efn07-welded-mesh:before {
+  content: "\e90e";
+}
+.efn07-rebar:before {
+  content: "\e90f";
+}
+.efn07-timber:before {
+  content: "\e910";
+}
+.efn07-lumber:before {
+  content: "\e911";
+}
+.efn07-wood-planks:before {
+  content: "\e94a";
+}
+.efn07-insulation-roll:before {
+  content: "\e912";
+}
+.efn07-roof:before {
+  content: "\e913";
+}
+.efn07-roof-tile:before {
+  content: "\e914";
+}
+.efn07-wavy-roof:before {
+  content: "\e949";
+}
+.efn07-bitumen-shingles:before {
+  content: "\e93d";
+}
+.efn07-polycarbonate:before {
+  content: "\e944";
+}
+.efn07-gutter-system:before {
+  content: "\e915";
+}
+.efn07-door:before {
+  content: "\e916";
+}
+.efn07-interior-door:before {
+  content: "\e917";
+}
+.efn07-window:before {
+  content: "\e918";
+}
+.efn07-roof-window:before {
+  content: "\e947";
+}
+.efn07-tiles:before {
+  content: "\e919";
+}
+.efn07-mosaic-tile:before {
+  content: "\e943";
+}
+.efn07-parquet:before {
+  content: "\e91a";
+}
+.efn07-laminate:before {
+  content: "\e91b";
+}
+.efn07-underlayment:before {
+  content: "\e91c";
+}
+.efn07-foam-underlayment:before {
+  content: "\e91d";
+}
+.efn07-linoleum:before {
+  content: "\e91e";
+}
+.efn07-carpet-roll:before {
+  content: "\e91f";
+}
+.efn07-wooden-boards:before {
+  content: "\e920";
+}
+.efn07-vinyl-floor:before {
+  content: "\e921";
+}
+.efn07-door-threshold:before {
+  content: "\e922";
+}
+.efn07-wallpaper:before {
+  content: "\e923";
+}
+.efn07-glue:before {
+  content: "\e924";
+}
+.efn07-tile-grout:before {
+  content: "\e925";
+}
+.efn07-tile-adhesive:before {
+  content: "\e926";
+}
+.efn07-mortar-mix:before {
+  content: "\e942";
+}
+.efn07-refractory-cement:before {
+  content: "\e946";
+}
+.efn07-attic-ladder:before {
+  content: "\e93c";
+}
+.efn07-stairs:before {
+  content: "\e927";
+}
+.efn07-baluster:before {
+  content: "\e928";
+}
+.efn07-glass-block:before {
+  content: "\e929";
+}
+.efn07-acrylic-primer:before {
+  content: "\e93b";
+}
+.efn07-paint-can:before {
+  content: "\e92a";
+}
+.efn07-varnish:before {
+  content: "\e948";
+}
+.efn07-silicone-sealant:before {
+  content: "\e92b";
+}
+.efn07-polyurethane-foam-spray:before {
+  content: "\e945";
+}
+.efn07-h-paving-slab:before {
+  content: "\e92c";
+}
+.efn07-metal-nail:before {
+  content: "\e92d";
+}
+.efn07-siding:before {
+  content: "\e92e";
+}
+.efn07-rocks:before {
+  content: "\e92f";
+}

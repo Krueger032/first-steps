@@ -1,0 +1,2 @@
+<?
+$MESS["HEADER_CONTACTS_AJAX_PLACEMARK_MORE"] = "Подробнее";

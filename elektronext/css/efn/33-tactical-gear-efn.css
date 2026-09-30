@@ -1,0 +1,99 @@
+@font-face {
+    font-family: '33-tactical-gear-efn';
+    src:  url('../../fonts/efn/33-tactical-gear-efn.eot?8x1svf');
+    src:  url('../../fonts/efn/33-tactical-gear-efn.eot?8x1svf#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/33-tactical-gear-efn.ttf?8x1svf') format('truetype'),
+    url('../../fonts/efn/33-tactical-gear-efn.woff?8x1svf') format('woff'),
+    url('../../fonts/efn/33-tactical-gear-efn.svg?8x1svf#33-tactical-gear-efn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="efn33-"], [class*=" efn33-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '33-tactical-gear-efn' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.efn33-tactical-jacket:before {
+    content: "\e911";
+}
+.efn33-camouflage-jacket:before {
+    content: "\e904";
+}
+.efn33-tactical-pants:before {
+    content: "\e913";
+}
+.efn33-tactical-gloves:before {
+    content: "\e90d";
+}
+.efn33-tactical-vest:before {
+    content: "\e915";
+}
+.efn33-bulletproof-vest:before {
+    content: "\e903";
+}
+.efn33-military-boots:before {
+    content: "\e907";
+}
+.efn33-tactical-belt:before {
+    content: "\e909";
+}
+.efn33-tactical-backpack:before {
+    content: "\e908";
+}
+.efn33-tactical-hat:before {
+    content: "\e90f";
+}
+.efn33-tactical-full-face-mask:before {
+    content: "\e90c";
+}
+.efn33-tactical-goggles:before {
+    content: "\e90e";
+}
+.efn33-balaclava:before {
+    content: "\e901";
+}
+.efn33-tactical-helmet:before {
+    content: "\e910";
+}
+.efn33-knee-pads:before {
+    content: "\e905";
+}
+.efn33-tactical-knife:before {
+    content: "\e912";
+}
+.efn33-airsoft-rifle:before {
+    content: "\e900";
+}
+.efn33-binoculars:before {
+    content: "\e902";
+}
+.efn33-magnesium-flint:before {
+    content: "\e906";
+}
+.efn33-tactical-flashlight:before {
+    content: "\e90b";
+}
+.efn33-tactical-watch:before {
+    content: "\e916";
+}
+.efn33-tactical-water-bottle:before {
+    content: "\e917";
+}
+.efn33-tactical-pouches:before {
+    content: "\e914";
+}
+.efn33-tactical-first-aid-pouch:before {
+    content: "\e90a";
+}

@@ -1,0 +1,207 @@
+@font-face {
+  font-family: '08-sanitary-ware-efn';
+  src:  url('../../fonts/efn/08-sanitary-ware-efn.eot?p2lbhd');
+  src:  url('../../fonts/efn/08-sanitary-ware-efn.eot?p2lbhd#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/08-sanitary-ware-efn.ttf?p2lbhd') format('truetype'),
+    url('../../fonts/efn/08-sanitary-ware-efn.woff?p2lbhd') format('woff'),
+    url('../../fonts/efn/08-sanitary-ware-efn.svg?p2lbhd#08-sanitary-ware-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn08-"], [class*=" efn08-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '08-sanitary-ware-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn08-faucet:before {
+  content: "\e900";
+}
+.efn08-bidet-faucet:before {
+  content: "\e91d";
+}
+.efn08-sanitary-faucet:before {
+  content: "\e928";
+}
+.efn08-bath:before {
+  content: "\e901";
+}
+.efn08-bath-panel:before {
+  content: "\e902";
+}
+.efn08-freestanding-bathtub:before {
+  content: "\e922";
+}
+.efn08-corner-bath:before {
+  content: "\e91e";
+}
+.efn08-bathtub:before {
+  content: "\e903";
+}
+.efn08-hydromassage-bath:before {
+  content: "\e925";
+}
+.efn08-shower-curtain:before {
+  content: "\e929";
+}
+.efn08-sink:before {
+  content: "\e904";
+}
+.efn08-pedestal-sink:before {
+  content: "\e905";
+}
+.efn08-corner-washbasin:before {
+  content: "\e91f";
+}
+.efn08-top-view-washbasin:before {
+  content: "\e932";
+}
+.efn08-bathroom-curbstone:before {
+  content: "\e906";
+}
+.efn08-bathroom-mirror-cabinet:before {
+  content: "\e91a";
+}
+.efn08-hand-shower:before {
+  content: "\e923";
+}
+.efn08-shower:before {
+  content: "\e907";
+}
+.efn08-shower-cabin:before {
+  content: "\e908";
+}
+.efn08-shower-enclosure:before {
+  content: "\e92a";
+}
+.efn08-shower-partition:before {
+  content: "\e92b";
+}
+.efn08-shower-screen:before {
+  content: "\e92c";
+}
+.efn08-shower-tray:before {
+  content: "\e909";
+}
+.efn08-shower-drain:before {
+  content: "\e90a";
+}
+.efn08-toilet:before {
+  content: "\e90b";
+}
+.efn08-floor-standing-toilet:before {
+  content: "\e921";
+}
+.efn08-floor-standing-bidet:before {
+  content: "\e920";
+}
+.efn08-top-view-toilet:before {
+  content: "\e931";
+}
+.efn08-wc:before {
+  content: "\e93b";
+}
+.efn08-top-view-bidet:before {
+  content: "\e930";
+}
+.efn08-urinal:before {
+  content: "\e933";
+}
+.efn08-in-wall-toilet-system:before {
+  content: "\e90c";
+}
+.efn08-wall-hung-toilet:before {
+  content: "\e90d";
+}
+.efn08-wall-hung-bidet:before {
+  content: "\e934";
+}
+.efn08-flush-button:before {
+  content: "\e90e";
+}
+.efn08-heated-rail:before {
+  content: "\e90f";
+}
+.efn08-heated-towel-rail:before {
+  content: "\e924";
+}
+.efn08-bathroom-hanger:before {
+  content: "\e919";
+}
+.efn08-illuminated-mirror:before {
+  content: "\e910";
+}
+.efn08-bathroom-accessories:before {
+  content: "\e911";
+}
+.efn08-toothbrush-glass:before {
+  content: "\e92f";
+}
+.efn08-kitchen-faucet:before {
+  content: "\e912";
+}
+.efn08-kitchen-sink:before {
+  content: "\e913";
+}
+.efn08-plumbing-pipes:before {
+  content: "\e914";
+}
+.efn08-bathroom-siphon:before {
+  content: "\e91b";
+}
+.efn08-faucet-adapters:before {
+  content: "\e915";
+}
+.efn08-plumbing-fittings:before {
+  content: "\e916";
+}
+.efn08-water-valve:before {
+  content: "\e93a";
+}
+.efn08-adjustable-wrench:before {
+  content: "\e918";
+}
+.efn08-water-leak:before {
+  content: "\e938";
+}
+.efn08-inspection-hatch:before {
+  content: "\e926";
+}
+.efn08-plumbing-inspection-hatch:before {
+  content: "\e927";
+}
+.efn08-water-heater:before {
+  content: "\e937";
+}
+.efn08-water-filter:before {
+  content: "\e936";
+}
+.efn08-bath-toilet-mats:before {
+  content: "\e91c";
+}
+.efn08-toilet-brush:before {
+  content: "\e92d";
+}
+.efn08-toilet-roll-holder:before {
+  content: "\e92e";
+}
+.efn08-drop:before {
+  content: "\e917";
+}
+.efn08-water-drops:before {
+  content: "\e935";
+}
+.efn08-water-leak-protection:before {
+  content: "\e939";
+}

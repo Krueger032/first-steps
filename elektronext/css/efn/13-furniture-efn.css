@@ -1,0 +1,153 @@
+@font-face {
+  font-family: '13-furniture-efn';
+  src:  url('../../fonts/efn/13-furniture-efn.eot?q0udis');
+  src:  url('../../fonts/efn/13-furniture-efn.eot?q0udis#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/13-furniture-efn.ttf?q0udis') format('truetype'),
+    url('../../fonts/efn/13-furniture-efn.woff?q0udis') format('woff'),
+    url('../../fonts/efn/13-furniture-efn.svg?q0udis#13-furniture-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn13-"], [class*=" efn13-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '13-furniture-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn13-double-bed:before {
+  content: "\e900";
+}
+.efn13-single-bed:before {
+  content: "\e901";
+}
+.efn13-sofa:before {
+  content: "\e902";
+}
+.efn13-couch:before {
+  content: "\e922";
+}
+.efn13-corner-sofa:before {
+  content: "\e921";
+}
+.efn13-armchair:before {
+  content: "\e903";
+}
+.efn13-pouf:before {
+  content: "\e927";
+}
+.efn13-chair:before {
+  content: "\e904";
+}
+.efn13-table:before {
+  content: "\e905";
+}
+.efn13-coffee-table:before {
+  content: "\e91f";
+}
+.efn13-console-table:before {
+  content: "\e920";
+}
+.efn13-mattress:before {
+  content: "\e906";
+}
+.efn13-mattress-topper:before {
+  content: "\e926";
+}
+.efn13-wardrobe:before {
+  content: "\e907";
+}
+.efn13-closet:before {
+  content: "\e908";
+}
+.efn13-baby-bed:before {
+  content: "\e909";
+}
+.efn13-bunk-bed:before {
+  content: "\e90a";
+}
+.efn13-kids-room-furniture:before {
+  content: "\e90b";
+}
+.efn13-bag-chair:before {
+  content: "\e90c";
+}
+.efn13-hallway-furniture:before {
+  content: "\e90d";
+}
+.efn13-tv-stand:before {
+  content: "\e90e";
+}
+.efn13-living-room-tv-furniture:before {
+  content: "\e90f";
+}
+.efn13-working-desk:before {
+  content: "\e910";
+}
+.efn13-desk:before {
+  content: "\e923";
+}
+.efn13-drawer-chest:before {
+  content: "\e911";
+}
+.efn13-buffet:before {
+  content: "\e91d";
+}
+.efn13-bedside-table:before {
+  content: "\e91a";
+}
+.efn13-dressing-table:before {
+  content: "\e924";
+}
+.efn13-bookcase:before {
+  content: "\e91b";
+}
+.efn13-bookshelf:before {
+  content: "\e91c";
+}
+.efn13-bed-car:before {
+  content: "\e919";
+}
+.efn13-kitchen:before {
+  content: "\e912";
+}
+.efn13-lounge-area:before {
+  content: "\e913";
+}
+.efn13-office-chair:before {
+  content: "\e914";
+}
+.efn13-rattan-swing-chair:before {
+  content: "\e915";
+}
+.efn13-chaise-longue:before {
+  content: "\e91e";
+}
+.efn13-beach-umbrella:before {
+  content: "\e918";
+}
+.efn13-table-chairs:before {
+  content: "\e916";
+}
+.efn13-bathroom-furniture:before {
+  content: "\e917";
+}
+.efn13-shelving-unit:before {
+  content: "\e928";
+}
+.efn13-shoe-rack:before {
+  content: "\e929";
+}
+.efn13-fabric-samples:before {
+  content: "\e925";
+}

@@ -1,0 +1,207 @@
+@font-face {
+    font-family: '31-stationery-efn';
+    src:  url('../../fonts/efn/31-stationery-efn.eot?8jdlk6');
+    src:  url('../../fonts/efn/31-stationery-efn.eot?8jdlk6#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/31-stationery-efn.ttf?8jdlk6') format('truetype'),
+    url('../../fonts/efn/31-stationery-efn.woff?8jdlk6') format('woff'),
+    url('../../fonts/efn/31-stationery-efn.svg?8jdlk6#31-stationery-efn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="efn31-"], [class*=" efn31-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '31-stationery-efn' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.efn31-clip:before {
+    content: "\e90b";
+}
+.efn31-pen-holder:before {
+    content: "\e927";
+}
+.efn31-stationery:before {
+    content: "\e934";
+}
+.efn31-measurement-tools:before {
+    content: "\e91e";
+}
+.efn31-calculator:before {
+    content: "\e908";
+}
+.efn31-pencil:before {
+    content: "\e926";
+}
+.efn31-pen:before {
+    content: "\e925";
+}
+.efn31-magnifier:before {
+    content: "\e91c";
+}
+.efn31-scissors:before {
+    content: "\e92e";
+}
+.efn31-ruler:before {
+    content: "\e92d";
+}
+.efn31-eraser:before {
+    content: "\e914";
+}
+.efn31-sharpener:before {
+    content: "\e92f";
+}
+.efn31-push-pin:before {
+    content: "\e92b";
+}
+.efn31-hole-puncher:before {
+    content: "\e91a";
+}
+.efn31-stapler:before {
+    content: "\e932";
+}
+.efn31-staples:before {
+    content: "\e933";
+}
+.efn31-highlighter:before {
+    content: "\e919";
+}
+.efn31-pen-marker:before {
+    content: "\e928";
+}
+.efn31-stationery-knife:before {
+    content: "\e937";
+}
+.efn31-binder-clip:before {
+    content: "\e904";
+}
+.efn31-sticky-note:before {
+    content: "\e938";
+}
+.efn31-correction-fluid:before {
+    content: "\e90e";
+}
+.efn31-stamp-ink:before {
+    content: "\e931";
+}
+.efn31-stamp:before {
+    content: "\e930";
+}
+.efn31-ink-pad:before {
+    content: "\e91b";
+}
+.efn31-archive-box:before {
+    content: "\e901";
+}
+.efn31-binder:before {
+    content: "\e903";
+}
+.efn31-paper-tray-set:before {
+    content: "\e924";
+}
+.efn31-document-tray:before {
+    content: "\e911";
+}
+.efn31-paper-tray:before {
+    content: "\e923";
+}
+.efn31-file-box:before {
+    content: "\e915";
+}
+.efn31-address-book:before {
+    content: "\e900";
+}
+.efn31-document:before {
+    content: "\e90f";
+}
+.efn31-documents:before {
+    content: "\e910";
+}
+.efn31-binder-dividers:before {
+    content: "\e905";
+}
+.efn31-clipboard:before {
+    content: "\e90c";
+}
+.efn31-button-folder:before {
+    content: "\e907";
+}
+.efn31-calendar:before {
+    content: "\e909";
+}
+.efn31-cardboard-folder:before {
+    content: "\e90a";
+}
+.efn31-duct-tape:before {
+    content: "\e912";
+}
+.efn31-elastic-folder:before {
+    content: "\e913";
+}
+.efn31-file-folder:before {
+    content: "\e916";
+}
+.efn31-folder:before {
+    content: "\e918";
+}
+.efn31-notebook:before {
+    content: "\e91f";
+}
+.efn31-paper:before {
+    content: "\e921";
+}
+.efn31-papers:before {
+    content: "\e922";
+}
+.efn31-transparent-plastic-file:before {
+    content: "\e939";
+}
+.efn31-marker-board:before {
+    content: "\e91d";
+}
+.efn31-pen-refill-rods:before {
+    content: "\e929";
+}
+.efn31-plasticine:before {
+    content: "\e92a";
+}
+.efn31-rubber-band:before {
+    content: "\e92c";
+}
+.efn31-stationery-glue:before {
+    content: "\e936";
+}
+.efn31-finger-wet-sponge:before {
+    content: "\e917";
+}
+.efn31-watercolor:before {
+    content: "\e93b";
+}
+.efn31-paint-tube:before {
+    content: "\e920";
+}
+.efn31-backpack:before {
+    content: "\e902";
+}
+.efn31-clock:before {
+    content: "\e90d";
+}
+.efn31-stationery-clip:before {
+    content: "\e935";
+}
+.efn31-briefcase:before {
+    content: "\e906";
+}
+.efn31-waste-paper-basket:before {
+    content: "\e93a";
+}
