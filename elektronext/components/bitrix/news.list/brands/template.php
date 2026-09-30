@@ -4,7 +4,7 @@ use Bitrix\Main\Localization\Loc;
 
 $this->setFrameMode(true);
 
-if(count($arResult["ITEMS"]) < 1)
+if(empty($arResult["ITEMS"]) && (int)$arResult["ITEMS_COUNT"] < 1)
 	return;
 
 if(!empty($arResult["NAV_RESULT"])) {
@@ -36,20 +36,35 @@ $elementDeleteParams = array("CONFIRM" => Loc::getMessage("BRANDS_ITEM_DELETE_CO
 $obName = "ob".preg_replace("/[^a-zA-Z0-9_]/", "x", $this->GetEditAreaId($navParams["NavNum"]));
 $containerName = "container-".$navParams["NavNum"];?>
 
+<?if(!empty($arResult["SHOW_ALPHABET"])) {?>
+<div class="brands-alphabet<?=(empty($arResult["SHOW_COUNTRIES"]) ? " brands-alphabet-last" : "")?>">
+	<div class="brands-alphabet-links" aria-label="<?=htmlspecialcharsbx(Loc::getMessage("BRANDS_ALPHABET"))?>">
+		<button type="button" class="brands-country-link brands-alphabet-link active" data-letter="" aria-pressed="true"><?=Loc::getMessage("BRANDS_ITEMS_LINKS_ALL")?></button>
+		<?foreach($arResult["LETTERS"] as $arLetter) {?>
+			<button type="button" class="brands-country-link brands-alphabet-link" data-letter="<?=htmlspecialcharsbx($arLetter["VALUE"])?>" aria-pressed="false" title="<?=htmlspecialcharsbx(Loc::getMessage("BRANDS_LETTER_COUNT", array("#LETTER#" => $arLetter["VALUE"], "#COUNT#" => $arLetter["COUNT"])))?>"><?=htmlspecialcharsbx($arLetter["VALUE"])?></button>
+		<?}
+		unset($arLetter);?>
+	</div>
+</div>
+<?}?>
+
+<?if(!empty($arResult["SHOW_COUNTRIES"])) {?>
 <div class="brands-countries-links">
 	<div class="brands-country-link active" data-country-id="0"><?=Loc::getMessage("BRANDS_ITEMS_LINKS_ALL")?><span><?=$arResult["ITEMS_COUNT"]?></span></div>
-	<?if(!empty($arResult["COUNTRIES"])) {
-		foreach($arResult["COUNTRIES"] as $arCountry) {?>
-			<div class="brands-country-link" data-country-id="<?=$arCountry['ID']?>"><?=$arCountry["NAME"]?><span><?=$arCountry["COUNT"]?></span></div>
-		<?}
-		unset($arCountry);
-	}?>
+	<?foreach($arResult["COUNTRIES"] as $arCountry) {?>
+		<div class="brands-country-link" data-country-id="<?=$arCountry['ID']?>"><?=$arCountry["NAME"]?><span><?=$arCountry["COUNT"]?></span></div>
+	<?}
+	unset($arCountry);?>
 </div>
+<?}?>
 
 <div class="brands-items-container">
 	<!-- items-container -->
 	<div class="row brands-items" data-entity="<?=$containerName?>">
-		<?foreach($arResult["ITEMS"] as $arItem) {
+		<?if(empty($arResult["ITEMS"])) {?>
+			<div class="brands-empty"><?=Loc::getMessage("BRANDS_EMPTY")?></div>
+		<?}
+		foreach($arResult["ITEMS"] as $arItem) {
 			$this->AddEditAction($arItem["ID"], $arItem["EDIT_LINK"], $elementEdit);
 			$this->AddDeleteAction($arItem["ID"], $arItem["DELETE_LINK"], $elementDelete, $elementDeleteParams);?>
 			<div class="col-xs-6 col-md-2" id="<?=$this->GetEditAreaId($arItem['ID'])?>" data-entity="item">

@@ -150,6 +150,12 @@ if(is_array($arCurSection["UF_BANNER"])) {
 	ob_end_clean();
 }
 
+//SMART_FILTER_SEO_AUTO//
+if(!isset($seoMeta) || !is_array($seoMeta))
+	$seoMeta = array();
+if(empty($seoMeta["SMART_FILTER_LINK"]) && Bitrix\Main\Loader::includeModule("altop.elektronext"))
+	CEnext::resolveMeta($arCurSection, $arParams, $arResult);
+
 include($_SERVER["DOCUMENT_ROOT"]."/".$this->GetFolder()."/section_vertical.php");
 
 //SECTION_BREADCRUMBS//

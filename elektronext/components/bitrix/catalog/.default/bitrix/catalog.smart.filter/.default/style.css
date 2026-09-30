@@ -250,6 +250,15 @@
 	outline: none;
 }
 
+/***VALUE_SEARCH***/
+.bx-filter .bx-filter-value-search{
+	margin-bottom: 12px;
+}
+
+.bx-filter .bx-filter-param-label.bx-filter-search-miss{
+	display: none;
+}
+
 /***TRACK***/
 .bx-filter .bx-ui-slider-track-container{
 	padding: 22px 12px 10px;

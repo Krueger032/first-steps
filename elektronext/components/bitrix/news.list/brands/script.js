@@ -35,6 +35,10 @@
 		this.countriesLinks = document.body.querySelector('.brands-countries-links');
 		if(!!this.countriesLinks)
 			BX.ready(BX.delegate(this.initCountriesLinks, this));
+
+		this.alphabetLinks = document.body.querySelector('.brands-alphabet-links');
+		if(!!this.alphabetLinks)
+			BX.ready(BX.delegate(this.initAlphabetLinks, this));
 	};
 
 	window.JCNewsListBrandsComponent.prototype = {
@@ -93,6 +97,8 @@
 					}
 				}
 			}
+
+			defaultData.letter = this.getActiveFilterValue(this.alphabetLinks, '.brands-alphabet-link', 'data-letter', '');
 			
 			BX.ajax({
 				url: this.templatePath + '/ajax.php' + (document.location.href.indexOf('clear_cache=Y') !== -1 ? '?clear_cache=Y' : ''),
@@ -225,30 +231,106 @@
 			}
 		},
 
+		initAlphabetLinks: function() {
+			var alphabetLinks = !!this.alphabetLinks && this.alphabetLinks.querySelectorAll('.brands-alphabet-link'),
+				haveActive = false;
+
+			if(!!alphabetLinks) {
+				for(var i in alphabetLinks) {
+					if(alphabetLinks.hasOwnProperty(i) && BX.type.isDomNode(alphabetLinks[i])) {
+						BX.bind(alphabetLinks[i], 'click', BX.proxy(this.changeCountryLink, this));
+
+						if(BX.hasClass(alphabetLinks[i], 'active') && !haveActive) {
+							haveActive = true;
+							alphabetLinks[i].setAttribute('aria-pressed', 'true');
+						} else {
+							BX.removeClass(alphabetLinks[i], 'active');
+							alphabetLinks[i].setAttribute('aria-pressed', 'false');
+						}
+					}
+				}
+
+				if(!haveActive && alphabetLinks.length) {
+					BX.addClass(alphabetLinks[0], 'active');
+					alphabetLinks[0].setAttribute('aria-pressed', 'true');
+				}
+			}
+		},
+
+		getActiveFilterValue: function(container, selector, attribute, defaultValue) {
+			if(!container)
+				return defaultValue;
+
+			var links = container.querySelectorAll(selector);
+			for(var i in links) {
+				if(links.hasOwnProperty(i) && BX.type.isDomNode(links[i]) && BX.hasClass(links[i], 'active')) {
+					var value = links[i].getAttribute(attribute);
+					return value === null || value === undefined ? defaultValue : value;
+				}
+			}
+
+			return defaultValue;
+		},
+
+		updateFilterLinks: function(container, selector, attribute, activeValue) {
+			if(!container)
+				return;
+
+			var links = container.querySelectorAll(selector),
+				current = activeValue === null || activeValue === undefined ? '' : String(activeValue);
+
+			for(var i in links) {
+				if(links.hasOwnProperty(i) && BX.type.isDomNode(links[i])) {
+					var isActive = (links[i].getAttribute(attribute) || '') === current;
+					if(isActive)
+						BX.addClass(links[i], 'active');
+					else
+						BX.removeClass(links[i], 'active');
+
+					if(links[i].hasAttribute('aria-pressed'))
+						links[i].setAttribute('aria-pressed', isActive ? 'true' : 'false');
+				}
+			}
+		},
+
 		changeCountryLink: function(event) {
 			BX.PreventDefault(event);
 
-			var countryId = BX.proxy_context && BX.proxy_context.getAttribute('data-country-id');			
-			if(!BX.hasClass(BX.proxy_context, 'active') && countryId) {
-				var itemsContainer = document.body.querySelector('.brands-items-container');
-				if(!!itemsContainer) {
-					itemsContainer.style.opacity = 0.2;
-					BX.ajax({
-						url: this.templatePath + '/ajax.php' + (document.location.href.indexOf('clear_cache=Y') !== -1 ? '?clear_cache=Y' : ''),
-						method: 'POST',
-						dataType: 'json',
-						timeout: 60,
-						data: {
-							'action': 'changeCountryLink',
-							'requestUri': window.location.pathname,
-							'siteId': this.siteId,
-							'template': this.template,
-							'parameters': this.parameters,
-							'countryId': countryId
-						},
-						onsuccess: BX.delegate(function(result) {
-							if(!result || !result.JS)
-								return;
+			var target = BX.proxy_context;
+			if(!target || BX.hasClass(target, 'active'))
+				return;
+
+			var isAlphabet = target.hasAttribute('data-letter'),
+				countryId = this.getActiveFilterValue(this.countriesLinks, '.brands-country-link', 'data-country-id', '0'),
+				letter = this.getActiveFilterValue(this.alphabetLinks, '.brands-alphabet-link', 'data-letter', '');
+
+			if(isAlphabet)
+				letter = target.getAttribute('data-letter') || '';
+			else
+				countryId = target.getAttribute('data-country-id') || '0';
+
+			var itemsContainer = document.body.querySelector('.brands-items-container');
+			if(!!itemsContainer) {
+				itemsContainer.style.opacity = 0.2;
+				BX.ajax({
+					url: this.templatePath + '/ajax.php' + (document.location.href.indexOf('clear_cache=Y') !== -1 ? '?clear_cache=Y' : ''),
+					method: 'POST',
+					dataType: 'json',
+					timeout: 60,
+					data: {
+						'action': 'changeCountryLink',
+						'requestUri': window.location.pathname,
+						'siteId': this.siteId,
+						'template': this.template,
+						'parameters': this.parameters,
+						'countryId': countryId,
+						'letter': letter
+					},
+					onsuccess: BX.delegate(function(result) {
+						if(!result || !result.JS) {
+							itemsContainer.removeAttribute('style');
+							return;
+						}
 
 							BX.ajax.processScripts(
 								BX.processHTML(result.JS).SCRIPT,
@@ -319,7 +401,7 @@
 
 										var pagination = temporaryNode.querySelector('.brands-pagination');
 										if(!!pagination) {
-											if(countryId == 0)
+											if(countryId == 0 && !letter)
 												itemsContainer.appendChild(pagination);
 										
 											this.navParams = {
@@ -344,23 +426,15 @@
 									}).animate();
 								}, this)
 							);
-						}, this)
+						}, this),
+						onfailure: function() {
+							itemsContainer.removeAttribute('style');
+						}
 					});
 				}
-				
-				var countryLinks = this.countriesLinks.querySelectorAll('.brands-country-link');
-				if(!!countryLinks) {
-					for(var i in countryLinks) {
-						if(countryLinks.hasOwnProperty(i) && BX.type.isDomNode(countryLinks[i])) {
-							if(countryLinks[i].getAttribute('data-country-id') === countryId) {
-								BX.addClass(countryLinks[i], 'active');
-							} else {
-								BX.removeClass(countryLinks[i], 'active');
-							}
-						}
-					}
-				}
-			}
+
+			this.updateFilterLinks(this.countriesLinks, '.brands-country-link', 'data-country-id', countryId);
+			this.updateFilterLinks(this.alphabetLinks, '.brands-alphabet-link', 'data-letter', letter);
 		}
 	}
 })(window);

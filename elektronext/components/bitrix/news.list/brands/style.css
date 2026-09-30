@@ -444,3 +444,92 @@
 		border-right: none;
 	}
 }
+
+/***ALPHABET***/
+.brands-alphabet{
+	margin-top: 46px;
+	margin-bottom: 18px;
+}
+
+.brands-alphabet-last{
+	margin-bottom: 32px;
+}
+
+.brands-alphabet + .brands-countries-links{
+	margin-top: 0;
+}
+
+.brands-alphabet-links{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -6px;
+}
+
+.brands-alphabet-link{
+	min-width: 38px;
+	height: 38px;
+	padding: 0 10px;
+	font-family: inherit;
+	font-size: 14px;
+	line-height: 34px;
+	color: inherit;
+	text-align: center;
+	background: #fff;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.brands-alphabet-link:focus-visible{
+	outline: 3px solid rgba(102, 57, 182, 0.28);
+	outline-offset: 2px;
+}
+
+.brands-empty{
+	width: 100%;
+	flex: 1 0 100%;
+	padding: 36px 18px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #78909c;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+@media(max-width: 1042px){
+	.brands-alphabet{
+		margin-top: 14px;
+		margin-bottom: 12px;
+	}
+
+	.brands-alphabet-last{
+		margin-bottom: 18px;
+	}
+
+	.brands-alphabet-links{
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+		margin-left: 0;
+		padding-bottom: 8px;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: thin;
+	}
+
+	.brands-alphabet-link{
+		min-width: 40px;
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 6px;
+		flex: 0 0 auto;
+	}
+
+	.container-ws .brands-alphabet{
+		margin-right: -18px;
+	}
+
+	.container-ws .brands-alphabet-links{
+		padding-right: 18px;
+	}
+}

@@ -81,6 +81,8 @@ JCSmartFilter.prototype.init = function() {
 				}
 			}			
 		}
+
+		this.bindValueSearch();
 	}
 };
 
@@ -451,6 +453,8 @@ JCSmartFilter.prototype.postHandler = function (result, fromCache) {
 				this.updateItem(PID, result.ITEMS[PID]);
 			}
 		}
+
+		this.refreshValueSearch();
 		
 		if(!!filter_count)
 			filter_count.innerHTML = result.ELEMENT_COUNT;
@@ -515,6 +519,8 @@ JCSmartFilter.prototype.gatherInputsValues = function (values, elements) {
 			var el = elements[i];
 			if(el.disabled || !el.type)
 				continue;
+			if(el.getAttribute('data-role') === 'filter-value-search')
+				continue;
 
 			switch(el.type.toLowerCase()) {
 				case 'text':
@@ -577,6 +583,79 @@ JCSmartFilter.prototype.values2post = function (values) {
 		}
 	}
 	return post;
+};
+
+JCSmartFilter.prototype.bindValueSearch = function() {
+	if(!this.filter || this.valueSearchBound)
+		return;
+
+	this.valueSearchBound = true;
+	BX.bindDelegate(this.filter, 'input', {attr: {'data-role': 'filter-value-search'}}, BX.proxy(this.onValueSearchInput, this));
+	BX.bindDelegate(this.filter, 'keydown', {attr: {'data-role': 'filter-value-search'}}, function(event) {
+		if(event.keyCode === 13) {
+			BX.PreventDefault(event);
+			return false;
+		}
+	});
+};
+
+JCSmartFilter.prototype.onValueSearchInput = function(event) {
+	event = event || window.event;
+	var input = event.target || event.srcElement;
+	if(!input || input.getAttribute('data-role') !== 'filter-value-search')
+		return;
+
+	if(input.valueSearchTimer)
+		clearTimeout(input.valueSearchTimer);
+
+	input.valueSearchTimer = setTimeout(BX.delegate(function() {
+		this.applyValueSearch(input);
+	}, this), 150);
+};
+
+JCSmartFilter.prototype.refreshValueSearch = function() {
+	if(!this.filter)
+		return;
+
+	var inputs = this.filter.querySelectorAll('[data-role="filter-value-search"]');
+	for(var i = 0; i < inputs.length; i++)
+		this.applyValueSearch(inputs[i]);
+};
+
+JCSmartFilter.prototype.applyValueSearch = function(input) {
+	var box = BX.findParent(input, {className: 'bx-filter-parameters-box'});
+	if(!box)
+		return;
+
+	var query = (input.value || '').replace(/^\s+|\s+$/g, '').toLowerCase();
+	var labels = box.querySelectorAll('[data-role^="label_"]');
+	for(var i = 0; i < labels.length; i++) {
+		var label = labels[i];
+		if(!query.length) {
+			BX.removeClass(label, 'bx-filter-search-miss');
+			continue;
+		}
+
+		var textNode = label.querySelector('.bx-filter-param-text');
+		var text = '';
+		if(textNode) {
+			text = textNode.getAttribute('title') || '';
+			if(!text.length && textNode.firstChild && textNode.firstChild.nodeType === 3)
+				text = textNode.firstChild.nodeValue || '';
+		}
+		text = text.replace(/^\s+|\s+$/g, '').toLowerCase();
+
+		if(text.indexOf(query) === -1)
+			BX.addClass(label, 'bx-filter-search-miss');
+		else
+			BX.removeClass(label, 'bx-filter-search-miss');
+	}
+
+	if(window.jQuery) {
+		var scrollNodes = box.querySelectorAll('[data-role="scrollbar"]');
+		for(var s = 0; s < scrollNodes.length; s++)
+			jQuery(scrollNodes[s]).trigger('scroll');
+	}
 };
 
 JCSmartFilter.prototype.hideFilterProps = function(element) {

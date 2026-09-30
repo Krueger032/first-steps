@@ -10,7 +10,7 @@ if(!empty($siteId) && is_string($siteId)) {
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 
 $request = Bitrix\Main\Application::getInstance()->getContext()->getRequest();
-if($request->isAjaxRequest() && ($request->get("action") == "changeCountryLink" || $request->get("action") == "showMoreBrands")) {
+if($request->isAjaxRequest() && ($request->get("action") == "changeCountryLink" || $request->get("action") == "changeBrandFilter" || $request->get("action") == "showMoreBrands")) {
 	$signer = new \Bitrix\Main\Security\Sign\Signer;
 	$template = $signer->unsign($request->get("template"), "news.list");
 	$parameters = unserialize(base64_decode($signer->unsign($request->get("parameters"), "news.list")));
@@ -38,9 +38,71 @@ if($request->isAjaxRequest() && ($request->get("action") == "changeCountryLink" 
 	}
 	unset($name, $value);
 	
+	//BRAND_FILTER//
+	$charset = defined("SITE_CHARSET") && SITE_CHARSET != "" ? SITE_CHARSET : "UTF-8";
+	$isUtf = strtoupper($charset) == "UTF-8";
+	$normalizeBrandLetter = static function($name) use ($charset, $isUtf) {
+		$name = trim((string)$name);
+		if($name == "")
+			return "";
+
+		if(!$isUtf)
+			$name = Bitrix\Main\Text\Encoding::convertEncoding($name, $charset, "UTF-8");
+
+		$letter = mb_strtoupper(mb_substr($name, 0, 1, "UTF-8"), "UTF-8");
+		if($letter == mb_chr(0x401, "UTF-8"))
+			$letter = mb_chr(0x415, "UTF-8");
+
+		if(preg_match("/^[0-9]$/u", $letter))
+			return "0-9";
+
+		if(preg_match("/^[A-Z]$/", $letter))
+			return $letter;
+
+		$code = mb_ord($letter, "UTF-8");
+		if($code >= 0x410 && $code <= 0x42F)
+			return $letter;
+
+		return "";
+	};
+
 	$countryId = intval($request->get("countryId"));
+	$letterRaw = trim((string)$request->get("letter"));
+	if(!$isUtf && $letterRaw != "")
+		$letterRaw = Bitrix\Main\Text\Encoding::convertEncoding($letterRaw, $charset, "UTF-8");
+	if(mb_strlen($letterRaw, "UTF-8") > 3)
+		$letterRaw = "";
+
+	$letter = $letterRaw != "" ? $normalizeBrandLetter($letterRaw) : "";
+
+	$brandFilter = array();
 	if($countryId > 0)
-		$GLOBALS[$parameters["FILTER_NAME"]] = array("PROPERTY_COUNTRY" => $countryId);
+		$brandFilter["PROPERTY_COUNTRY"] = $countryId;
+
+	if($letter != "" && !empty($parameters["IBLOCK_ID"]) && Bitrix\Main\Loader::includeModule("iblock")) {
+		$brandIds = array();
+		$rsBrands = CIBlockElement::GetList(
+			array(),
+			array("ACTIVE" => "Y", "IBLOCK_ID" => $parameters["IBLOCK_ID"]),
+			false,
+			false,
+			array("ID", "NAME")
+		);
+		while($arBrand = $rsBrands->GetNext()) {
+			$brandLetter = $normalizeBrandLetter(isset($arBrand["~NAME"]) ? $arBrand["~NAME"] : $arBrand["NAME"]);
+			if($brandLetter == $letter)
+				$brandIds[] = (int)$arBrand["ID"];
+		}
+		unset($brandLetter, $arBrand, $rsBrands);
+
+		$brandFilter["ID"] = !empty($brandIds) ? $brandIds : array(-1);
+		unset($brandIds);
+	}
+	unset($letterRaw, $letter, $charset, $isUtf, $normalizeBrandLetter);
+
+	if(!empty($brandFilter) && !empty($parameters["FILTER_NAME"]))
+		$GLOBALS[$parameters["FILTER_NAME"]] = $brandFilter;
+	unset($brandFilter, $countryId);
 
 	if(isset($parameters["PARENT_NAME"])) {
 		$parent = new CBitrixComponent();

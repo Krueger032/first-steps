@@ -4,7 +4,24 @@ $this->setFrameMode(true);
 
 global $arSettings;
 
-$arResult["JS_FILTER_PARAMS"]["HIDE_DISABLED_PROPS"] = $arSettings["SMART_FILTER_HIDE_DISABLED_PROPS"]["VALUE"];?>
+$arResult["JS_FILTER_PARAMS"]["HIDE_DISABLED_PROPS"] = $arSettings["SMART_FILTER_HIDE_DISABLED_PROPS"]["VALUE"];
+
+if(!defined("ENEXT_SMART_FILTER_VALUE_SEARCH_MIN"))
+	define("ENEXT_SMART_FILTER_VALUE_SEARCH_MIN", 5);
+
+if(!function_exists("enextSmartFilterValueSearch")) {
+	function enextSmartFilterValueSearch($valuesCount) {
+		if($valuesCount <= ENEXT_SMART_FILTER_VALUE_SEARCH_MIN)
+			return;
+		?>
+		<div class="bx-filter-value-search">
+			<div class="bx-filter-input-container">
+				<input type="text" value="" autocomplete="off" placeholder="<?=GetMessage("CT_BCSF_FILTER_SEARCH")?>" data-role="filter-value-search" />
+			</div>
+		</div>
+		<?
+	}
+}?>
 
 <div class="bx-filter">				
 	<div class="bx-filter-title-container">
@@ -206,7 +223,8 @@ $arResult["JS_FILTER_PARAMS"]["HIDE_DISABLED_PROPS"] = $arSettings["SMART_FILTER
 								<?break;
 
 							//CHECKBOXES_WITH_PICTURES_AND_LABELS//
-							case "H":?>
+							case "H":
+								enextSmartFilterValueSearch(count($arItem["VALUES"]));?>
 								<div class="bx-filter-param-btn-block scrollbar-inner" data-role="scrollbar">
 									<?foreach($arItem["VALUES"] as $val => $ar) {?>
 										<input style="display: none;" type="checkbox" name="<?=$ar['CONTROL_NAME']?>" id="<?=$ar['CONTROL_ID']?>" value="<?=$ar['HTML_VALUE']?>"<?=($ar["CHECKED"] ? ' checked="checked"' : '');?> />
@@ -327,7 +345,8 @@ $arResult["JS_FILTER_PARAMS"]["HIDE_DISABLED_PROPS"] = $arSettings["SMART_FILTER
 								<?break;
 							
 							//RADIO_BUTTONS//
-							case "K":?>
+							case "K":
+								enextSmartFilterValueSearch(count($arItem["VALUES"]));?>
 								<div class="bx-filter-input-radio scrollbar-inner" data-role="scrollbar">
 									<label class="bx-filter-param-label" for="all_<?=$arCur['CONTROL_ID']?>">
 										<input style="display: none;" type="radio" value="" name="<?=$arCur['CONTROL_NAME_ALT']?>" id="all_<?=$arCur['CONTROL_ID']?>" onclick="smartFilter.click(this)" />
@@ -390,7 +409,8 @@ $arResult["JS_FILTER_PARAMS"]["HIDE_DISABLED_PROPS"] = $arSettings["SMART_FILTER
 								<?break;
 							
 							//CHECKBOXES//
-							default:?>
+							default:
+								enextSmartFilterValueSearch(count($arItem["VALUES"]));?>
 								<div class="bx-filter-input-checkbox scrollbar-inner" data-role="scrollbar">
 									<?foreach($arItem["VALUES"] as $val => $ar) {?>
 										<label data-role="label_<?=$ar['CONTROL_ID']?>" class="bx-filter-param-label<?=($ar["DISABLED"] ? ' disabled' : '');?>" for="<?=$ar['CONTROL_ID']?>">
