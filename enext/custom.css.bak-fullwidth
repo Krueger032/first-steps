@@ -1,0 +1,171 @@
+/***CUSTOM CSS RULES FOR YOUR SITE***/
+
+/*PRO_WS*/
+.product-delivery-info.product-item-detail-info-message {
+	font-size: 16px;
+	color: #1a1b1c;
+}
+/*
+.product-item-detail-magnifier {
+	display: none;
+}
+
+.product-item-detail-icons-container {
+	background-color: transparent;
+}
+*/
+/*PRO_WS*/
+
+/*PRO_WS: centered working area + symmetric side fields*/
+body.pw-side-fields{
+    background-color: var(--pw-bg-color, #e8f3eb);
+    background-image: var(--pw-bg-image, none);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-position-x: calc(50% - var(--pw-sb, 0px) / 2);
+    background-size: auto;
+}
+
+@media (min-width: 1043px){
+    /* z-index here would trap slide panels under the body backdrop */
+    body.pw-side-fields .page-wrapper{
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    body.pw-side-fields .top-panel.fixed,
+    body.pw-side-fields .top-panel__thead.fixed,
+    body.pw-side-fields .top-panel__tfoot.fixed{
+        left: 50%;
+        right: auto;
+        width: 100%;
+        max-width: 1400px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    /* sticky bars that were pinned to the viewport stay inside the sheet */
+    body.pw-side-fields .catalog-section-panel.fixed,
+    body.pw-side-fields .product-item-detail-tabs-block.fixed,
+    body.pw-side-fields .articles-detail-tabs-block.fixed,
+    body.pw-side-fields .brands-detail-tabs-block.fixed,
+    body.pw-side-fields .collections-detail-tabs-block.fixed,
+    body.pw-side-fields .objects-detail-tabs-block.fixed,
+    body.pw-side-fields .promotions-detail-tabs-block.fixed{
+        left: 50%;
+        right: auto;
+        width: 100%;
+        max-width: 1400px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    body.pw-side-fields .popup-panel .product-item-detail-tabs-block.fixed{
+        left: 0;
+        right: 0;
+        width: auto;
+        max-width: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        transform: none;
+    }
+
+    /* full-bleed bits that used the viewport must stay inside the sheet */
+    body.pw-side-fields .container-ws .product-item-detail-scu-items-container,
+    body.pw-side-fields .product-item-detail-scu-items-container{
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    body.pw-side-fields .catalog-section-pic{
+        height: calc(min(100vw, 1400px) * 0.1374);
+    }
+
+    /* tab bar background reaches the sheet edges; labels keep the template padding */
+    body.pw-side-fields .product-item-detail-tabs-container{
+        width: auto;
+        max-width: none;
+        margin-left: -32px;
+        margin-right: -32px;
+    }
+
+    body.pw-side-fields .bx-yandex-map,
+    body.pw-side-fields .bx-yandex-map > ymaps{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 1042px){
+    body.pw-side-fields{
+        background-image: none;
+        background-color: #fff;
+    }
+}
+
+@media print{
+    body.pw-side-fields{
+        background: #fff !important;
+    }
+
+    body.pw-side-fields .page-wrapper{
+        max-width: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* side fields are visible only above the sheet: give footer bands the same inset as the page */
+@media (min-width: 1401px){
+    body.pw-side-fields .page-wrapper{
+        margin-top: 60px;
+        min-height: calc(100vh - 60px);
+        border-left: 1px solid rgba(38, 50, 56, 0.06);
+        border-right: 1px solid rgba(38, 50, 56, 0.06);
+    }
+    body.pw-side-fields .objects-map{
+        right: calc((100% - 1400px) / 2);
+    }
+    body.pw-side-fields .page-wrapper .container{
+        width: 100%;
+        max-width: 1400px;
+    }
+    body.pw-side-fields .viewed-wrapper > .container,
+    body.pw-side-fields .bigdata-wrapper > .container,
+    body.pw-side-fields .feedback-wrapper > .container,
+    body.pw-side-fields .bottom-menu > .container,
+    body.pw-side-fields .footer-wrapper > .container{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    body.pw-side-fields .navigation-wrapper > .container:not(.container-ws),
+    body.pw-side-fields .content-wrapper.internal > .container:not(.container-ws){
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    body.pw-side-fields .contacts-item,
+    body.pw-side-fields .contacts-item-map{
+        width: auto !important;
+        max-width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    body.pw-side-fields .contacts-item-map{
+        left: -32px;
+        right: -32px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 1380px){
+    body.pw-side-fields .popup-panel .product-item-detail-tabs-container{
+        margin-left: -64px;
+        margin-right: -64px;
+    }
+}

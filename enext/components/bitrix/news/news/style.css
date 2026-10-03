@@ -1,0 +1,22 @@
+.news-container .news{
+	margin-top: 32px;
+}
+
+.news-container .description{
+	margin-top: 64px;
+}
+
+.news-container > div:first-child{
+	margin-top: 0;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.news-container .news{
+		margin-top: 18px;
+	}
+
+	.news-container .description{
+		margin-top: 32px;
+	}
+}

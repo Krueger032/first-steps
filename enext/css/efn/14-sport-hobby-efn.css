@@ -1,0 +1,120 @@
+@font-face {
+  font-family: '14-sport-hobby-efn';
+  src:  url('../../fonts/efn/14-sport-hobby-efn.eot?kwjccl');
+  src:  url('../../fonts/efn/14-sport-hobby-efn.eot?kwjccl#iefix') format('embedded-opentype'),
+    url('../../fonts/efn/14-sport-hobby-efn.ttf?kwjccl') format('truetype'),
+    url('../../fonts/efn/14-sport-hobby-efn.woff?kwjccl') format('woff'),
+    url('../../fonts/efn/14-sport-hobby-efn.svg?kwjccl#14-sport-hobby-efn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="efn14-"], [class*=" efn14-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '14-sport-hobby-efn' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.efn14-board-game:before {
+  content: "\e900";
+}
+.efn14-rubik-cube:before {
+  content: "\e901";
+}
+.efn14-constructor-blocks:before {
+  content: "\e902";
+}
+.efn14-puzzle:before {
+  content: "\e903";
+}
+.efn14-basketball:before {
+  content: "\e904";
+}
+.efn14-football:before {
+  content: "\e905";
+}
+.efn14-gym:before {
+  content: "\e906";
+}
+.efn14-exercise-bike:before {
+  content: "\e907";
+}
+.efn14-skates:before {
+  content: "\e908";
+}
+.efn14-ping-pong:before {
+  content: "\e909";
+}
+.efn14-diving:before {
+  content: "\e90a";
+}
+.efn14-bicycle:before {
+  content: "\e90b";
+}
+.efn14-drone:before {
+  content: "\e90c";
+}
+.efn14-book:before {
+  content: "\e90d";
+}
+.efn14-brain-gears:before {
+  content: "\e90e";
+}
+.efn14-collectable-figure:before {
+  content: "\e90f";
+}
+.efn14-robot:before {
+  content: "\e91b";
+}
+.efn14-gamepad:before {
+  content: "\e910";
+}
+.efn14-guitar:before {
+  content: "\e911";
+}
+.efn14-hunting:before {
+  content: "\e912";
+}
+.efn14-fishing:before {
+  content: "\e913";
+}
+.efn14-paintbrush:before {
+  content: "\e914";
+}
+.efn14-playing-cards:before {
+  content: "\e915";
+}
+.efn14-rc-controller:before {
+  content: "\e91a";
+}
+.efn14-rc-car:before {
+  content: "\e919";
+}
+.efn14-train:before {
+  content: "\e91d";
+}
+.efn14-tank:before {
+  content: "\e91c";
+}
+.efn14-retro-plane:before {
+  content: "\e916";
+}
+.efn14-helicopter:before {
+  content: "\e918";
+}
+.efn14-sailing-yacht:before {
+  content: "\e917";
+}
+.efn14-submarine:before {
+  content: "\e91e";
+}

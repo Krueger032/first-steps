@@ -1,0 +1,144 @@
+.personal-menu-wrapper{
+	width: 100%;
+	background: #e3ecef;
+}
+
+.personal-menu{
+	width: 100%;
+	height: 112px;
+	display: flex;
+}
+
+.personal-menu-item{
+	min-width: 0;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 12px;
+	position: relative;
+}
+
+.personal-menu-item:link,
+.personal-menu-item:visited{
+	text-decoration: none;
+}
+
+.personal-menu-item + .personal-menu-item{
+	border-left: 1px solid #ced9db;
+}
+
+.bx-no-touch .personal-menu-item:hover,
+.bx-touch .personal-menu-item:active,
+.personal-menu-item.selected{
+	background: #ced9db;
+}
+
+.personal-menu-item:after{	
+	height: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: "";
+	background: #6639b6;
+}
+
+.personal-menu-item.selected:after{
+	height: 2px;
+}
+
+.personal-menu-item-block{
+	min-width: 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.personal-menu-item-icon > i{
+	font-size: 36px;
+	color: #566b75;
+}
+
+.personal-menu-item-name{
+	width: 100%;
+	margin-top: 12px;
+	overflow: hidden;
+	font-size: 14px;
+	color: #263238;
+	text-align: center;
+	text-overflow: ellipsis;
+	line-height: 17px;
+	white-space: nowrap;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .personal-menu-item:hover .personal-menu-item-name,
+.bx-touch .personal-menu-item:active .personal-menu-item-name{
+	color: #6639b6;
+}
+
+.personal-menu-item-count{
+	position: absolute;
+	right: 12px;
+	top: 12px;
+	padding: 2px 5px 1px;
+	font-size: 11px;
+	color: #566b75;
+	line-height: 13px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	background: #ced9db;
+	-webkit-transition: all 0.15s ease 0s;
+	-moz-transition: all 0.15s ease 0s;
+	-o-transition: all 0.15s ease 0s;
+	transition: all 0.15s ease 0s;
+}
+
+.bx-no-touch .personal-menu-item:hover .personal-menu-item-count,
+.bx-touch .personal-menu-item:active .personal-menu-item-count,
+.personal-menu-item.selected .personal-menu-item-count{
+	color: #fff;
+	background: #566b75;
+}
+
+.personal-menu-item-scheme-count:not(.personal-menu-item-count-empty),
+.bx-no-touch .personal-menu-item:hover .personal-menu-item-scheme-count:not(.personal-menu-item-count-empty),
+.bx-touch .personal-menu-item:active .personal-menu-item-scheme-count:not(.personal-menu-item-count-empty),
+.personal-menu-item.selected .personal-menu-item-scheme-count:not(.personal-menu-item-count-empty){
+	color: #fff;
+	background: #6639b6;
+}
+
+/***PHONES***/
+@media(max-width: 1042px){
+	.personal-menu{
+		height: 55px;
+	}
+
+	.personal-menu-item{
+		min-width: unset;
+		padding: 0 18px;
+	}
+	
+	.personal-menu-item-block{
+		min-width: unset;
+		flex: unset;
+	}
+
+	.personal-menu-item-icon > i{
+		font-size: 24px;
+	}
+	
+	.personal-menu-item-count{
+		position: static;
+		margin: -15px 0 0 -5px;
+	}
+}
